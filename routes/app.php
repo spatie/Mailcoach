@@ -48,8 +48,6 @@ Route::prefix('settings')->group(function () {
         Route::put('password', [PasswordController::class, 'update']);
     });
 
-    Route::get('configuration', [ConfigurationController::class, 'index']);
-
     Route::prefix('users')->group(function () {
         Route::get('/', UsersIndexController::class);
         Route::get('create', [CreateUserController::class, 'create']);
