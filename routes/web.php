@@ -1,7 +1,6 @@
 <?php
 
-
-Route::emailCampaigns('email-campaigns');
+Route::mailcoach('mailcoach');
 
 Route::mailgunFeedback('mailgun-feedback');
 Route::sesFeedback('ses-feedback');
