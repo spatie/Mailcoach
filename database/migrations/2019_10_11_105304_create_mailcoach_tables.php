@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEmailCampaignTables extends Migration
+class CreateMailCoachTables extends Migration
 {
     public function up()
     {
@@ -13,6 +13,11 @@ class CreateEmailCampaignTables extends Migration
             $table->uuid('uuid');
             $table->string('name');
             $table->boolean('requires_double_opt_in')->default(false);
+
+            $table->string('redirect_after_already_subscribed')->nullable();
+            $table->string('redirect_after_pending')->nullable();
+            $table->string('redirect_after_subscribed')->nullable();
+
             $table->timestamps();
         });
 
@@ -81,10 +86,6 @@ class CreateEmailCampaignTables extends Migration
             $table->timestamp('sent_at')->nullable();
             $table->timestamp('statistics_calculated_at')->nullable();
             $table->timestamp('scheduled_at')->nullable();
-
-            $table->string('redirect_after_already_subscribed')->after('name')->nullable();
-            $table->string('redirect_after_pending')->after('name')->nullable();
-            $table->string('redirect_after_subscribed')->after('name')->nullable();
 
             $table->timestamps();
 

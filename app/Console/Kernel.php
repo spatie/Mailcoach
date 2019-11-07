@@ -4,7 +4,7 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
-use Spatie\EmailCampaigns\Commands\CalculateStatisticsCommand;
+use Spatie\MailCoach\Commands\CalculateStatisticsCommand;
 
 class Kernel extends ConsoleKernel
 {

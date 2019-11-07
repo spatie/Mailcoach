@@ -3,14 +3,14 @@
 namespace Tests\Feature\Api;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Spatie\EmailCampaigns\Models\EmailList;
+use Spatie\MailCoach\Models\EmailList;
 use Tests\TestCase;
 
 class SubscribeTest extends TestCase
 {
     use RefreshDatabase;
 
-    /** @var \Spatie\EmailCampaigns\Models\EmailList */
+    /** @var \Spatie\MailCoach\Models\EmailList */
     private $emailList;
 
     protected function setUp(): void

@@ -4,8 +4,8 @@ namespace App\Http\Api\Controllers;
 
 use App\Http\Api\Requests\CreateSubscriptionRequest;
 use App\Models\EmailList;
-use Spatie\EmailCampaigns\Enums\SubscriptionStatus;
-use Spatie\EmailCampaigns\Models\Subscription;
+use Spatie\MailCoach\Enums\SubscriptionStatus;
+use Spatie\MailCoach\Models\Subscription;
 use Symfony\Component\HttpFoundation\Response;
 
 class SubscribeController

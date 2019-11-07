@@ -5,7 +5,7 @@ namespace App\Support;
 use App\Models\EmailList;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
-use Spatie\EmailCampaigns\Enums\SubscriptionStatus;
+use Spatie\MailCoach\Enums\SubscriptionStatus;
 
 class ImportSubscriberRow
 {

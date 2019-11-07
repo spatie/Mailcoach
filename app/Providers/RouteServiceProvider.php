@@ -19,8 +19,7 @@ class RouteServiceProvider extends ServiceProvider
             ->mapWebRoutes($router)
             ->mapAuthRoutes($router)
             ->mapAppRoutes($router)
-            ->mapApiRoutes($router)
-            ->registerRouteBindings();
+            ->mapApiRoutes($router);
     }
 
     private function mapAuthRoutes(Router $router): self
