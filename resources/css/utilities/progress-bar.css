@@ -1,0 +1,41 @@
+.progress-bar {
+    @apply h-3;
+    @apply rounded-full;
+    @apply overflow-hidden;
+    @apply border;
+    @apply border-gray-400;
+}
+
+.progress-bar-value {
+    @apply h-full;
+    @apply bg-blue-300;
+}
+
+.progress-bar-value:after {
+    content: '';
+    @apply absolute;
+    @apply inset-0;
+    @apply z-10;
+    @apply overflow-hidden;
+    background-image: linear-gradient(
+        -45deg,
+        rgba(255, 255, 255, 0.2) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(255, 255, 255, 0.2) 75%,
+        transparent 75%,
+        transparent
+    );
+    background-size: 50px 50px;
+    animation: moveProgress 2s linear infinite;
+}
+
+@keyframes moveProgress {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 50px 50px;
+    }
+}

@@ -2,72 +2,61 @@
 
 namespace App\Providers;
 
+use App\Models\Campaign;
+use App\Models\EmailList;
+use App\Models\Subscriber;
+use App\Models\SubscriberImport;
+use App\Models\Subscription;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Route;
 
 class RouteServiceProvider extends ServiceProvider
 {
-    /**
-     * This namespace is applied to your controller routes.
-     *
-     * In addition, it is set as the URL generator's root namespace.
-     *
-     * @var string
-     */
-    protected $namespace = 'App\Http\Controllers';
-
-    /**
-     * Define your route model bindings, pattern filters, etc.
-     *
-     * @return void
-     */
-    public function boot()
+    public function map(Router $router)
     {
-        //
-
-        parent::boot();
+        $this
+            ->mapWebRoutes($router)
+            ->mapAuthRoutes($router)
+            ->mapAppRoutes($router)
+            ->mapApiRoutes($router)
+            ->registerRouteBindings();
     }
 
-    /**
-     * Define the routes for the application.
-     *
-     * @return void
-     */
-    public function map()
+    private function mapAuthRoutes(Router $router): self
     {
-        $this->mapApiRoutes();
+        $router
+            ->middleware(['web', 'guest'])
+            ->group(base_path('routes/auth.php'));
 
-        $this->mapWebRoutes();
-
-        //
+        return $this;
     }
 
-    /**
-     * Define the "web" routes for the application.
-     *
-     * These routes all receive session state, CSRF protection, etc.
-     *
-     * @return void
-     */
-    protected function mapWebRoutes()
+    protected function mapWebRoutes(Router $router)
     {
-        Route::middleware('web')
-             ->namespace($this->namespace)
-             ->group(base_path('routes/web.php'));
+        $router
+            ->middleware('web')
+            ->group(base_path('routes/web.php'));
+
+        return $this;
     }
 
-    /**
-     * Define the "api" routes for the application.
-     *
-     * These routes are typically stateless.
-     *
-     * @return void
-     */
-    protected function mapApiRoutes()
+    protected function mapAppRoutes(Router $router)
     {
-        Route::prefix('api')
-             ->middleware('api')
-             ->namespace($this->namespace)
-             ->group(base_path('routes/api.php'));
+        $router
+            ->middleware(['web', 'auth'])
+            ->group(base_path('routes/app.php'));
+
+        return $this;
+    }
+
+    protected function mapApiRoutes(Router $router)
+    {
+        $router
+            ->prefix('api')
+            ->middleware('api')
+            ->group(base_path('routes/api.php'));
+
+        return $this;
     }
 }

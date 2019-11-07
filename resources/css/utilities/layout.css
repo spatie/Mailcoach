@@ -1,0 +1,12 @@
+.layout-col {
+    @apply max-w-6xl;
+    @apply px-4;
+    @apply mx-auto;
+}
+
+.layout-main {
+    @apply max-w-6xl;
+    @apply px-4;
+    @apply pb-16;
+    @apply mx-auto;
+}

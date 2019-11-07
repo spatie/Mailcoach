@@ -1,0 +1,91 @@
+.link {
+    @apply text-blue-500;
+    @apply underline;
+    text-decoration-color: var(--blue-400);
+}
+
+.link-hover {
+    @apply text-blue-600;
+    text-decoration-color: var(--blue-500);
+}
+
+.link:hover {
+    @apply link-hover;
+}
+
+.links a {
+    @apply link;
+}
+
+.links a:hover {
+    @apply link-hover;
+}
+
+.link-dimmed {
+    @apply text-gray-500;
+    @apply underline;
+    text-decoration-color: var(--gray-400);
+}
+
+.link-dimmed-hover {
+    @apply text-gray-600;
+    text-decoration-color: var(--gray-500);
+}
+
+.link-dimmed:hover {
+    @apply link-dimmed-hover;
+}
+
+.links-dimmed a {
+    @apply link-dimmed;
+}
+
+.links-dimmed a:hover {
+    @apply link-dimmed-hover;
+}
+
+.link-delete {
+    @apply text-gray-500;
+    @apply underline;
+    text-decoration-color: var(--gray-400);
+}
+
+.link-delete-hover {
+    @apply text-red-500;
+    text-decoration-color: var(--red-400);
+}
+
+.link-delete:hover {
+    @apply link-delete-hover;
+}
+
+.links-delete a {
+    @apply link-delete;
+}
+
+.links-delete a:hover {
+    @apply link-delete-hover;
+}
+
+.link-duplicate {
+    @apply text-gray-500;
+    @apply underline;
+    text-decoration-color: var(--gray-400);
+}
+
+.link-duplicate-hover {
+    @apply text-red-500;
+    text-decoration-color: var(--orange-400);
+}
+
+.link-duplicate:hover {
+    @apply link-duplicate-hover;
+}
+
+.links-duplicate a {
+    @apply link-duplicate;
+}
+
+.links-delete a:hover {
+    @apply link-duplicate-hover;
+}

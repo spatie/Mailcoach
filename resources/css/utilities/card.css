@@ -1,0 +1,18 @@
+.card {
+    @apply border;
+    @apply border-gray-300;
+    @apply bg-white;
+    @apply shadow-lg;
+    @apply rounded-sm;
+    @apply p-12;
+}
+
+.card-grid {
+    @apply grid;
+    @apply gap-8;
+}
+
+.card-checkboxes {
+    @apply grid;
+    @apply gap-2;
+}

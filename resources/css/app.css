@@ -1,0 +1,25 @@
+@charset 'UTF-8';
+
+@import './bootstrap.css';
+@import '~codemirror/lib/codemirror.css';
+@import '~react-datepicker/dist/react-datepicker.css';
+
+@import './utilities/link.css';
+@import './utilities/markup.css';
+
+@import './utilities/alert.css';
+@import './utilities/button.css';
+@import './utilities/card.css';
+@import './utilities/grid.css';
+@import './utilities/layout.css';
+@import './utilities/linechart.css';
+@import './utilities/breadcrumb.css';
+@import './utilities/table.css';
+@import './utilities/tab.css';
+@import './utilities/toggle.css';
+@import './utilities/modal.css';
+@import './utilities/progress-bar.css';
+@import './utilities/navigation.css';
+
+@tailwind components;
+@tailwind utilities;

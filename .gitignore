@@ -1,7 +1,11 @@
 /node_modules
+/public/css
 /public/hot
+/public/js
 /public/storage
+/public/mix-manifest.json
 /storage/*.key
+/storage/temp
 /vendor
 .env
 .env.backup
@@ -10,3 +14,6 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+_ide_helper.php
+_ide_helper_models.php
+.php_cs.cache

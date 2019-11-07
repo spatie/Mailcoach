@@ -1,0 +1,31 @@
+.tabs {
+    @apply grid;
+    @apply cols-auto;
+    @apply justify-start;
+    @apply border-b;
+    @apply border-gray-300;
+    @apply gap-8;
+}
+
+.tabs li {
+    @apply border-b-2;
+    @apply border-transparent;
+    @apply cursor-pointer;
+    @apply uppercase;
+    @apply text-sm;
+    @apply tracking-wider;
+}
+
+.tabs li a {
+    @apply inline-block;
+    @apply py-2;
+}
+
+.tabs li:not(.is-active):hover {
+    @apply text-green-500;
+}
+
+.tabs li.is-active {
+    @apply border-green-300;
+    @apply font-semibold;
+}

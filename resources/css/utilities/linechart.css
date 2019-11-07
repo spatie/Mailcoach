@@ -1,0 +1,57 @@
+.linechart {
+    font-size: 10px;
+    height: 200px;
+    position: relative;
+    width: 100%;
+    font-variant-numeric: tabular-nums;
+}
+
+.linechart-x-line {
+    @apply bg-gray-300;
+    bottom: 0;
+    position: absolute;
+    top: 0;
+    width: 1px;
+}
+
+.linechart-x-label {
+    bottom: -20px;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    @apply text-gray-500;
+}
+
+.linechart-x-value {
+    border-radius: 4px;
+    color: white;
+    font-weight: 600;
+    left: 50%;
+    padding: 0 3px;
+    position: absolute;
+    text-align: center;
+    transform: translateX(-50%) translateY(6px);
+    z-index: 10;
+}
+
+.linechart-y-line {
+    @apply bg-gray-300;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    font-size: 10px;
+}
+
+.linechart-y-label {
+    transform: translateX(-15px) translateY(-7px);
+    @apply text-gray-500;
+}
+
+.linechart-chart,
+.linechart > div {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
