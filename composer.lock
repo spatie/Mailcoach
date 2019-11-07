@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5b6a5d8ced0d1262a1ad045d8ea06b24",
+    "content-hash": "11657246a473b9a75d1947bbcb90932b",
     "packages": [
         {
             "name": "aws/aws-php-sns-message-validator",
@@ -565,24 +565,24 @@
         },
         {
             "name": "composer/xdebug-handler",
-            "version": "1.3.3",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/xdebug-handler.git",
-                "reference": "46867cbf8ca9fb8d60c506895449eb799db1184f"
+                "reference": "cbe23383749496fe0f373345208b79568e4bc248"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/xdebug-handler/zipball/46867cbf8ca9fb8d60c506895449eb799db1184f",
-                "reference": "46867cbf8ca9fb8d60c506895449eb799db1184f",
+                "url": "https://api.github.com/repos/composer/xdebug-handler/zipball/cbe23383749496fe0f373345208b79568e4bc248",
+                "reference": "cbe23383749496fe0f373345208b79568e4bc248",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.3.2 || ^7.0",
+                "php": "^5.3.2 || ^7.0 || ^8.0",
                 "psr/log": "^1.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.5"
+                "phpunit/phpunit": "^4.8.35 || ^5.7 || 6.5 - 8"
             },
             "type": "library",
             "autoload": {
@@ -600,12 +600,12 @@
                     "email": "john-stevenson@blueyonder.co.uk"
                 }
             ],
-            "description": "Restarts a process without xdebug.",
+            "description": "Restarts a process without Xdebug.",
             "keywords": [
                 "Xdebug",
                 "performance"
             ],
-            "time": "2019-05-27T17:52:04+00:00"
+            "time": "2019-11-06T16:40:04+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1327,6 +1327,58 @@
                 "fixtures"
             ],
             "time": "2018-07-12T10:23:15+00:00"
+        },
+        {
+            "name": "geoip2/geoip2",
+            "version": "v2.9.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/maxmind/GeoIP2-php.git",
+                "reference": "a807fbf65212eef5d8d2db1a1b31082b53633d77"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maxmind/GeoIP2-php/zipball/a807fbf65212eef5d8d2db1a1b31082b53633d77",
+                "reference": "a807fbf65212eef5d8d2db1a1b31082b53633d77",
+                "shasum": ""
+            },
+            "require": {
+                "maxmind-db/reader": "~1.0",
+                "maxmind/web-service-common": "~0.5",
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "2.*",
+                "phpunit/phpunit": "4.*",
+                "squizlabs/php_codesniffer": "3.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "GeoIp2\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Gregory J. Oschwald",
+                    "email": "goschwald@maxmind.com",
+                    "homepage": "http://www.maxmind.com/"
+                }
+            ],
+            "description": "MaxMind GeoIP2 PHP API",
+            "homepage": "https://github.com/maxmind/GeoIP2-php",
+            "keywords": [
+                "IP",
+                "geoip",
+                "geoip2",
+                "geolocation",
+                "maxmind"
+            ],
+            "time": "2018-04-10T15:32:59+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
@@ -2261,6 +2313,109 @@
             "time": "2019-07-17T11:01:58+00:00"
         },
         {
+            "name": "maxmind-db/reader",
+            "version": "v1.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/maxmind/MaxMind-DB-Reader-php.git",
+                "reference": "bd436094fc0a9b0558a899fb80b0ae34fe1808a0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maxmind/MaxMind-DB-Reader-php/zipball/bd436094fc0a9b0558a899fb80b0ae34fe1808a0",
+                "reference": "bd436094fc0a9b0558a899fb80b0ae34fe1808a0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "2.*",
+                "php-coveralls/php-coveralls": "^2.1",
+                "phpunit/phpcov": "^3.0",
+                "phpunit/phpunit": "5.*",
+                "squizlabs/php_codesniffer": "3.*"
+            },
+            "suggest": {
+                "ext-bcmath": "bcmath or gmp is required for decoding larger integers with the pure PHP decoder",
+                "ext-gmp": "bcmath or gmp is required for decoding larger integers with the pure PHP decoder",
+                "ext-maxminddb": "A C-based database decoder that provides significantly faster lookups"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MaxMind\\Db\\": "src/MaxMind/Db"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Gregory J. Oschwald",
+                    "email": "goschwald@maxmind.com",
+                    "homepage": "https://www.maxmind.com/"
+                }
+            ],
+            "description": "MaxMind DB Reader API",
+            "homepage": "https://github.com/maxmind/MaxMind-DB-Reader-php",
+            "keywords": [
+                "database",
+                "geoip",
+                "geoip2",
+                "geolocation",
+                "maxmind"
+            ],
+            "time": "2019-09-30T22:56:38+00:00"
+        },
+        {
+            "name": "maxmind/web-service-common",
+            "version": "v0.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/maxmind/web-service-common-php.git",
+                "reference": "61a9836fa3bb1743ab89752bae5005d71e78c73b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maxmind/web-service-common-php/zipball/61a9836fa3bb1743ab89752bae5005d71e78c73b",
+                "reference": "61a9836fa3bb1743ab89752bae5005d71e78c73b",
+                "shasum": ""
+            },
+            "require": {
+                "composer/ca-bundle": "^1.0.3",
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "2.*",
+                "phpunit/phpunit": "4.*",
+                "squizlabs/php_codesniffer": "3.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MaxMind\\Exception\\": "src/Exception",
+                    "MaxMind\\WebService\\": "src/WebService"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Gregory Oschwald",
+                    "email": "goschwald@maxmind.com"
+                }
+            ],
+            "description": "Internal MaxMind Web Service API",
+            "homepage": "https://github.com/maxmind/web-service-common-php",
+            "time": "2018-02-12T22:31:54+00:00"
+        },
+        {
             "name": "mockery/mockery",
             "version": "1.2.4",
             "source": {
@@ -3093,28 +3248,28 @@
         },
         {
             "name": "phpoption/phpoption",
-            "version": "1.5.1",
+            "version": "1.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/php-option.git",
-                "reference": "894e8f93890b79f29911cce497fe811fe9d931ba"
+                "reference": "2ba2586380f8d2b44ad1b9feb61c371020b27793"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/894e8f93890b79f29911cce497fe811fe9d931ba",
-                "reference": "894e8f93890b79f29911cce497fe811fe9d931ba",
+                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/2ba2586380f8d2b44ad1b9feb61c371020b27793",
+                "reference": "2ba2586380f8d2b44ad1b9feb61c371020b27793",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "4.7.*"
+                "phpunit/phpunit": "^4.7|^5.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.3-dev"
+                    "dev-master": "1.5-dev"
                 }
             },
             "autoload": {
@@ -3139,7 +3294,7 @@
                 "php",
                 "type"
             ],
-            "time": "2019-11-06T12:42:47+00:00"
+            "time": "2019-11-06T22:27:00+00:00"
         },
         {
             "name": "phpspec/prophecy",
@@ -4791,219 +4946,6 @@
             "time": "2019-08-28T14:33:06+00:00"
         },
         {
-            "name": "spatie/laravel-email-campaigns",
-            "version": "dev-master",
-            "dist": {
-                "type": "path",
-                "url": "../laravel-email-campaigns",
-                "reference": "801df870bb7218a1437ed0619e76436b4b2c9e6b"
-            },
-            "require": {
-                "ext-dom": "*",
-                "ext-libxml": "*",
-                "illuminate/database": "^6.0",
-                "illuminate/events": "^6.0",
-                "illuminate/mail": "^6.0",
-                "illuminate/queue": "^6.0",
-                "illuminate/redis": "^6.0",
-                "illuminate/support": "^6.0",
-                "php": "^7.3",
-                "spatie/laravel-rate-limited-job-middleware": "^1.0",
-                "spatie/laravel-schemaless-attributes": "^1.6",
-                "symfony/css-selector": "^4.3",
-                "symfony/dom-crawler": "^4.3.4"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.16",
-                "fzaninotto/faker": "^1.8",
-                "orchestra/testbench": "^4.0",
-                "phpunit/phpunit": "^8.2",
-                "predis/predis": "^1.1",
-                "spatie/test-time": "^1.1",
-                "symfony/var-dumper": "^4.3"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Spatie\\EmailCampaigns\\EmailCampaignsServiceProvider"
-                    ],
-                    "aliases": {
-                        "EmailCampaigns": "Spatie\\EmailCampaigns\\EmailCampaignsFacade"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Spatie\\EmailCampaigns\\": "src"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Spatie\\EmailCampaigns\\Tests\\": "tests"
-                }
-            },
-            "scripts": {
-                "test": [
-                    "vendor/bin/phpunit"
-                ],
-                "test-coverage": [
-                    "vendor/bin/phpunit --coverage-html coverage"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Freek Van der Herten",
-                    "email": "freek@spatie.be",
-                    "homepage": "https://spatie.be",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Send email campaigns using Laravel",
-            "homepage": "https://github.com/spatie/laravel-email-campaigns",
-            "keywords": [
-                "laravel-email-campaigns",
-                "mail",
-                "mass mailing",
-                "spatie"
-            ]
-        },
-        {
-            "name": "spatie/laravel-email-campaigns-mailgun-feedback",
-            "version": "dev-master",
-            "dist": {
-                "type": "path",
-                "url": "../laravel-email-campaigns-mailgun-feedback",
-                "reference": "09e024ef52c597e27b3830b714fe6174f9dc84bd"
-            },
-            "require": {
-                "illuminate/http": "^6.4",
-                "orchestra/testbench": "^4.3",
-                "php": "^7.3",
-                "spatie/laravel-email-campaigns": "dev-master",
-                "spatie/laravel-webhook-client": "^2.2"
-            },
-            "require-dev": {
-                "ext-json": "*",
-                "friendsofphp/php-cs-fixer": "^2.16",
-                "phpunit/phpunit": "^8.2",
-                "symfony/var-dumper": "^4.3"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Spatie\\MailgunFeedback\\MailgunFeedbackServiceProvider"
-                    ],
-                    "aliases": {
-                        "Skeleton": "Spatie\\MailgunFeedback\\MailgunFeedbackFacade"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Spatie\\MailgunFeedback\\": "src"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Spatie\\MailgunFeedback\\Tests\\": "tests"
-                }
-            },
-            "scripts": {
-                "test": [
-                    "vendor/bin/phpunit"
-                ],
-                "test-coverage": [
-                    "vendor/bin/phpunit --coverage-html coverage"
-                ]
-            },
-            "authors": [
-                {
-                    "name": "Freek Van der Herten",
-                    "email": "freek@spatie.be",
-                    "homepage": "https://spatie.be",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Process feedback for email campaigns sent using Mailgun",
-            "homepage": "https://github.com/spatie/laravel-email-campaigns-mailgun-feedback",
-            "keywords": [
-                "laravel-email-campaigns-mailgun-feedback",
-                "spatie"
-            ]
-        },
-        {
-            "name": "spatie/laravel-email-campaigns-ses-feedback",
-            "version": "dev-master",
-            "dist": {
-                "type": "path",
-                "url": "../laravel-email-campaigns-ses-feedback",
-                "reference": "86e9500a4324b86d2405601ca5ef4f53c7c7aa75"
-            },
-            "require": {
-                "aws/aws-php-sns-message-validator": "^1.5",
-                "ext-json": "*",
-                "illuminate/http": "^6.4",
-                "orchestra/testbench": "^4.3",
-                "php": "^7.3",
-                "spatie/laravel-email-campaigns": "dev-master",
-                "spatie/laravel-webhook-client": "^2.2"
-            },
-            "require-dev": {
-                "ext-json": "*",
-                "friendsofphp/php-cs-fixer": "^2.16",
-                "phpunit/phpunit": "^8.2",
-                "symfony/var-dumper": "^4.3"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Spatie\\SesFeedback\\SesFeedbackServiceProvider"
-                    ],
-                    "aliases": {
-                        "Skeleton": "Spatie\\SesFeedback\\SesFeedbackFacade"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Spatie\\SesFeedback\\": "src"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Spatie\\SesFeedback\\Tests\\": "tests"
-                }
-            },
-            "scripts": {
-                "test": [
-                    "vendor/bin/phpunit"
-                ],
-                "test-coverage": [
-                    "vendor/bin/phpunit --coverage-html coverage"
-                ]
-            },
-            "authors": [
-                {
-                    "name": "Freek Van der Herten",
-                    "email": "freek@spatie.be",
-                    "homepage": "https://spatie.be",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Process feedback for email campaigns sent using Amazon SES",
-            "homepage": "https://github.com/spatie/laravel-email-campaigns-ses-feedback",
-            "keywords": [
-                "laravel-email-campaigns-ses-feedback",
-                "spatie"
-            ]
-        },
-        {
             "name": "spatie/laravel-flash",
             "version": "1.3.0",
             "source": {
@@ -5107,6 +5049,220 @@
                 "spatie"
             ],
             "time": "2019-09-04T11:35:38+00:00"
+        },
+        {
+            "name": "spatie/laravel-mailcoach",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "../laravel-mailcoach",
+                "reference": "a2dbaa01fa58a11edefb807bd105ed89344194d4"
+            },
+            "require": {
+                "ext-dom": "*",
+                "ext-libxml": "*",
+                "geoip2/geoip2": "^2.9",
+                "illuminate/database": "^6.4",
+                "illuminate/events": "^6.4",
+                "illuminate/mail": "^6.4",
+                "illuminate/queue": "^6.4",
+                "illuminate/redis": "^6.4",
+                "illuminate/support": "^6.3",
+                "inertiajs/inertia-laravel": "^0.1.3",
+                "laravel/horizon": "^3.4",
+                "php": "^7.3",
+                "spatie/laravel-flash": "^1.3",
+                "spatie/laravel-json-api-paginate": "^1.6",
+                "spatie/laravel-medialibrary": "^7.14",
+                "spatie/laravel-model-cleanup": "^2.3",
+                "spatie/laravel-query-builder": "^2.3",
+                "spatie/laravel-rate-limited-job-middleware": "^1.0",
+                "spatie/laravel-schemaless-attributes": "^1.6",
+                "spatie/laravel-validation-rules": "^2.4",
+                "spatie/laravel-view-models": "^1.2",
+                "spatie/laravel-webhook-client": "^2.3",
+                "spatie/simple-excel": "^1.1",
+                "spatie/temporary-directory": "^1.2",
+                "symfony/css-selector": "^4.3",
+                "symfony/dom-crawler": "^4.3.4"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.16",
+                "fzaninotto/faker": "^1.8",
+                "orchestra/testbench": "^4.0",
+                "phpunit/phpunit": "^8.2",
+                "predis/predis": "^1.1",
+                "spatie/test-time": "^1.1",
+                "symfony/var-dumper": "^4.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\MailCoach\\MailCoachServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\MailCoach\\": "src"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Spatie\\MailCoach\\Tests\\": "tests"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "vendor/bin/phpunit"
+                ],
+                "test-coverage": [
+                    "vendor/bin/phpunit --coverage-html coverage"
+                ]
+            },
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Send email campaigns using Laravel",
+            "homepage": "https://mailcoach.app",
+            "keywords": [
+                "laravel-mailcoach",
+                "mail",
+                "mass mailing",
+                "spatie"
+            ]
+        },
+        {
+            "name": "spatie/laravel-mailcoach-mailgun-feedback",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "../laravel-mailcoach-mailgun-feedback",
+                "reference": "e8a4643cc1a64c48106dc5f30b31300fd98d09a9"
+            },
+            "require": {
+                "illuminate/http": "^6.4",
+                "orchestra/testbench": "^4.3",
+                "php": "^7.3",
+                "spatie/laravel-mailcoach": "dev-master",
+                "spatie/laravel-webhook-client": "^2.2"
+            },
+            "require-dev": {
+                "ext-json": "*",
+                "friendsofphp/php-cs-fixer": "^2.16",
+                "phpunit/phpunit": "^8.2",
+                "symfony/var-dumper": "^4.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\MailCoachMailgunFeedback\\MailCoachMailgunFeedbackServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\MailCoachMailgunFeedback\\": "src"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Spatie\\MailCoachMailgunFeedback\\Tests\\": "tests"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "vendor/bin/phpunit"
+                ],
+                "test-coverage": [
+                    "vendor/bin/phpunit --coverage-html coverage"
+                ]
+            },
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Process feedback for email campaigns sent using Mailgun",
+            "homepage": "https://github.com/spatie/laravel-mailcoach-mailgun-feedback",
+            "keywords": [
+                "laravel-mailcoach-mailgun-feedback",
+                "spatie"
+            ]
+        },
+        {
+            "name": "spatie/laravel-mailcoach-ses-feedback",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "../laravel-mailcoach-ses-feedback",
+                "reference": "bb52007e4a2a37ceaf9b52bc7bb5ab936045dc2f"
+            },
+            "require": {
+                "aws/aws-php-sns-message-validator": "^1.5",
+                "ext-json": "*",
+                "illuminate/http": "^6.4",
+                "orchestra/testbench": "^4.3",
+                "php": "^7.3",
+                "spatie/laravel-mailcoach": "dev-master",
+                "spatie/laravel-webhook-client": "^2.2"
+            },
+            "require-dev": {
+                "ext-json": "*",
+                "friendsofphp/php-cs-fixer": "^2.16",
+                "phpunit/phpunit": "^8.2",
+                "symfony/var-dumper": "^4.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\MailCoachSesFeedback\\MailCoachSesFeedbackServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\MailCoachSesFeedback\\": "src"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Spatie\\MailCoachSesFeedback\\Tests\\": "tests"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "vendor/bin/phpunit"
+                ],
+                "test-coverage": [
+                    "vendor/bin/phpunit --coverage-html coverage"
+                ]
+            },
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Process feedback for email campaigns sent using Amazon SES",
+            "homepage": "https://github.com/spatie/laravel-mailcoach-ses-feedback",
+            "keywords": [
+                "laravel-mailcoach-ses-feedback",
+                "spatie"
+            ]
         },
         {
             "name": "spatie/laravel-medialibrary",
@@ -5696,11 +5852,17 @@
         },
         {
             "name": "spatie/simple-excel",
-            "version": "dev-master",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/simple-excel.git",
+                "reference": "63d15483dddd1bff41ccd0d3746790d9b4004451"
+            },
             "dist": {
-                "type": "path",
-                "url": "../simple-excel",
-                "reference": "f64743641034b094e1a197767887f28dd7c52849"
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/simple-excel/zipball/63d15483dddd1bff41ccd0d3746790d9b4004451",
+                "reference": "63d15483dddd1bff41ccd0d3746790d9b4004451",
+                "shasum": ""
             },
             "require": {
                 "box/spout": "^3.0",
@@ -5710,7 +5872,8 @@
             "require-dev": {
                 "phpunit/phpunit": "^8.2",
                 "spatie/phpunit-snapshot-assertions": "^2.1",
-                "spatie/temporary-directory": "^1.2"
+                "spatie/temporary-directory": "^1.2",
+                "symfony/var-dumper": "^4.3"
             },
             "type": "library",
             "autoload": {
@@ -5718,19 +5881,7 @@
                     "Spatie\\SimpleExcel\\": "src"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Spatie\\SimpleExcel\\Tests\\": "tests"
-                }
-            },
-            "scripts": {
-                "test": [
-                    "vendor/bin/phpunit"
-                ],
-                "test-coverage": [
-                    "vendor/bin/phpunit --coverage-html coverage"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -5747,7 +5898,8 @@
             "keywords": [
                 "simple-excel",
                 "spatie"
-            ]
+            ],
+            "time": "2019-10-27T14:59:45+00:00"
         },
         {
             "name": "spatie/temporary-directory",
@@ -5794,59 +5946,6 @@
                 "temporary-directory"
             ],
             "time": "2019-08-28T06:53:51+00:00"
-        },
-        {
-            "name": "spatie/test-time",
-            "version": "1.1.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spatie/test-time.git",
-                "reference": "09e1228923ea20a8f9941e73674d4c5ce13ed096"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/test-time/zipball/09e1228923ea20a8f9941e73674d4c5ce13ed096",
-                "reference": "09e1228923ea20a8f9941e73674d4c5ce13ed096",
-                "shasum": ""
-            },
-            "require": {
-                "nesbot/carbon": "^2.19",
-                "php": "^7.2"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^8.2"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Spatie\\TestTime\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Freek Van der Herten",
-                    "email": "freek@spatie.be",
-                    "homepage": "https://spatie.be",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Alex Vanderbist",
-                    "email": "alex@spatie.be",
-                    "homepage": "https://spatie.be",
-                    "role": "Developer"
-                }
-            ],
-            "description": "A small package to control the flow time",
-            "homepage": "https://github.com/spatie/test-time",
-            "keywords": [
-                "spatie",
-                "test-time"
-            ],
-            "time": "2019-06-16T17:35:00+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -8326,10 +8425,9 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "spatie/laravel-email-campaigns": 20,
-        "spatie/laravel-email-campaigns-mailgun-feedback": 20,
-        "spatie/laravel-email-campaigns-ses-feedback": 20,
-        "spatie/simple-excel": 20
+        "spatie/laravel-mailcoach": 20,
+        "spatie/laravel-mailcoach-mailgun-feedback": 20,
+        "spatie/laravel-mailcoach-ses-feedback": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
