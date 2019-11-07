@@ -48,30 +48,9 @@ class InertiaServiceProvider extends ServiceProvider
                         'password' => action([PasswordController::class, 'index']),
                         'logout' => action(LogoutController::class)
                     ],
-                    'campaigns' => [
-                        'index' => action(CampaignsIndexController::class),
-                        'store' => action(CreateCampaignController::class),
-                    ],
-                    'templates' => [
-                        'index' => action([TemplatesController::class, 'index']),
-                        'create' => action([TemplatesController::class, 'create']),
-                    ],
-                    'email_lists' => [
-                        'index' => action(EmailListsIndexController::class),
-                        'store' => action(CreateEmailListController::class)
-                    ],
-                    'subscribers' => [
-                        'index' => action(SubscribersIndexController::class),
-                        'store' => action([CreateSubscriberController::class, 'store']),
-                        'create' => action([CreateSubscriberController::class, 'create']),
-                        'import' => action([ImportSubscribersController::class, 'showImportScreen'])
-                    ],
                     'users' => [
                         'index' => action(UsersIndexController::class),
                         'create' => action([CreateUserController::class, 'create']),
-                    ],
-                    'configuration' => [
-                        'index' => action([ConfigurationController::class, 'index']),
                     ],
                 ];
             },

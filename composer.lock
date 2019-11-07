@@ -5056,7 +5056,7 @@
             "dist": {
                 "type": "path",
                 "url": "../laravel-mailcoach",
-                "reference": "a2dbaa01fa58a11edefb807bd105ed89344194d4"
+                "reference": "c9cf98607f005a01ca72d317cea4015be3234e29"
             },
             "require": {
                 "ext-dom": "*",
@@ -5144,7 +5144,7 @@
             "dist": {
                 "type": "path",
                 "url": "../laravel-mailcoach-mailgun-feedback",
-                "reference": "73fd9b3190ab66b2faedc07f855b643d4c3421e2"
+                "reference": "a6ba21d16e3b0a20943b6c70200c5b596ed07249"
             },
             "require": {
                 "illuminate/http": "^6.4",
@@ -5206,7 +5206,7 @@
             "dist": {
                 "type": "path",
                 "url": "../laravel-mailcoach-ses-feedback",
-                "reference": "3fb3894651d9d5e51039cf8f060d28f7d0b28d6d"
+                "reference": "a33f88d416b202b89ac7689c2eebb70f8ac12dc1"
             },
             "require": {
                 "aws/aws-php-sns-message-validator": "^1.5",
