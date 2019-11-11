@@ -42,7 +42,7 @@
                     Displaying {{ $users->count() }} of {{ $totalUsersCount }}
                     {{ Illuminate\Support\Str::plural('template', $totalUsersCount) }}.
                     <a
-                        href="{{ route('mailcoach-app.users') }}"
+                        href="{{ route('users') }}"
                         class="link"
                     >
                         Show all

@@ -3,7 +3,7 @@
 @section('account')
     <form
         class="card-grid"
-        action="{{ route('mailcoach-app.password') }}"
+        action="{{ route('password') }}"
         method="POST"
     >
         @csrf
@@ -15,7 +15,7 @@
         <x-text-field label="Confirm new password" name="password_confirmation" type="password" required />
 
         <button type="submit" class="button">
-            Save
+            Update password
         </button>
     </form>
 @endsection

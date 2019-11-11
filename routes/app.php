@@ -12,15 +12,15 @@ Route::mailcoach('/');
 
 Route::prefix('settings')->group(function () {
     Route::prefix('account')->group(function () {
-        Route::get('/', [AccountController::class, 'index'])->name('mailcoach-app.account');
+        Route::get('/', [AccountController::class, 'index'])->name('account');
         Route::put('/', [AccountController::class, 'update']);
 
-        Route::get('password', [PasswordController::class, 'index'])->name('mailcoach-app.password');
+        Route::get('password', [PasswordController::class, 'index'])->name('password');
         Route::put('password', [PasswordController::class, 'update']);
     });
 
     Route::prefix('users')->group(function () {
-        Route::get('/', UsersIndexController::class)->name('mailcoach-app.users');
+        Route::get('/', UsersIndexController::class)->name('users');
         Route::get('create', [CreateUserController::class, 'create']);
         Route::post('/', [CreateUserController::class, 'store']);
 

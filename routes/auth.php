@@ -15,6 +15,6 @@ Route::get('reset-password', [ResetPasswordController::class, 'showResetForm'])-
 Route::post('reset-password', [ResetPasswordController::class, 'reset']);
 
 Route::group(['middleware' => 'guest'], function () {
-    Route::get('welcome/{token}', [WelcomeController::class, 'index']);
+    Route::get('welcome/{token}', [WelcomeController::class, 'index'])->name('welcome');
     Route::post('welcome/save-password', [WelcomeController::class, 'savePassword']);
 });

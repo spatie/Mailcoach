@@ -3,7 +3,7 @@
 @section('account')
     <form
         class="card-grid"
-        action="{{ route('mailcoach-app.account') }}"
+        action="{{ route('account') }}"
         method="POST"
     >
         @csrf

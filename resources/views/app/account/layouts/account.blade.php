@@ -6,7 +6,7 @@
             <nav class="breadcrumbs">
                 <ul>
                     <li>
-                        <a href="{{ route('mailcoach.subscribers') }}">
+                        <a href="{{ route('account') }}">
                             Account
                         </a>
                     </li>
@@ -15,10 +15,10 @@
 
             <nav>
                 <ul class="tabs">
-                    <x-navigation-item :href="route('mailcoach-app.account')">
+                    <x-navigation-item :href="route('account')">
                         Details
                     </x-navigation-item>
-                    <x-navigation-item :href="route('mailcoach-app.password')">
+                    <x-navigation-item :href="route('password')">
                         Password
                     </x-navigation-item>
                 </ul>
