@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Auth\Passwords\DatabaseTokenRepository;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -35,15 +36,4 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
-    public function hasResetToken(string $token): bool
-    {
-        $resetRecord = app('db')->table('password_resets')->where('email', $this->email)->first();
-
-        if (! $resetRecord) {
-            return false;
-        }
-
-        return password_verify($token, $resetRecord->token);
-    }
 }

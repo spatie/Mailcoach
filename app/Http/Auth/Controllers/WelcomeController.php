@@ -3,6 +3,8 @@
 namespace App\Http\Auth\Controllers;
 
 use App\Models\User;
+use Illuminate\Auth\Passwords\DatabaseTokenRepository;
+use Illuminate\Auth\Passwords\TokenRepositoryInterface;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 use Illuminate\Http\Request;
 
@@ -12,7 +14,7 @@ class WelcomeController
 
     public function index(Request $request, User $user, string $token = null)
     {
-        if (! $user->hasResetToken($token)) {
+        if (! $this->broker()->tokenExists($user, $token)) {
             flash()->error('The link you clicked is invalid.');
 
             return redirect()->route('login');

@@ -1,7 +1,6 @@
 @extends('auth.layouts.master')
 
 @section('content')
-    {{ dump($errors) }}
     <form method="POST" action="{{ route('welcome.save-password') }}">
         @csrf
 
