@@ -1,14 +1,14 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateMailCoachTables extends Migration
 {
     public function up()
     {
-        Schema::create('email_lists', function(Blueprint $table) {
+        Schema::create('email_lists', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->uuid('uuid');
             $table->string('name');
@@ -31,7 +31,7 @@ class CreateMailCoachTables extends Migration
             $table->nullableTimestamps();
         });
 
-        Schema::create('email_list_subscriptions', function(Blueprint $table) {
+        Schema::create('email_list_subscriptions', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('uuid');
             $table->unsignedBigInteger('email_list_id');
@@ -110,7 +110,7 @@ class CreateMailCoachTables extends Migration
                 ->onDelete('cascade');
         });
 
-        Schema::create('campaign_sends', function(Blueprint $table) {
+        Schema::create('campaign_sends', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->uuid('uuid');
             $table->string('transport_message_id')->nullable();
@@ -178,7 +178,7 @@ class CreateMailCoachTables extends Migration
                 ->onDelete('set null');
         });
 
-        Schema::create('campaign_unsubscribes', function(Blueprint $table) {
+        Schema::create('campaign_unsubscribes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('email_campaign_id');
             $table->unsignedBigInteger('email_list_subscriber_id');

@@ -2,14 +2,8 @@
 
 namespace App\Providers;
 
-use App\Models\Campaign;
-use App\Models\EmailList;
-use App\Models\Subscriber;
-use App\Models\SubscriberImport;
-use App\Models\Subscription;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Routing\Router;
-use Illuminate\Support\Facades\Route;
 
 class RouteServiceProvider extends ServiceProvider
 {
