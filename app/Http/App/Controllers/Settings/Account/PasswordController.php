@@ -9,7 +9,7 @@ class PasswordController
 {
     public function index()
     {
-        return inertia()->render('account.Password');
+        return view('app.account.password');
     }
 
     public function update(UpdatePasswordRequest $request)

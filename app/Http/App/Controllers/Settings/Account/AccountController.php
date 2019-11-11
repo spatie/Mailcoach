@@ -4,14 +4,13 @@ namespace App\Http\App\Controllers\Settings\Account;
 
 use App\Http\App\Requests\UpdateAccountRequest;
 use App\Http\App\Resources\UserResource;
-use Inertia\Inertia;
 
 class AccountController
 {
     public function index()
     {
-        return inertia()->render('account.Index', [
-            'user' => new UserResource(auth()->user()),
+        return view('app.account.index', [
+            'user' => auth()->user(),
         ]);
     }
 

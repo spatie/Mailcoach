@@ -12,10 +12,10 @@ Route::mailcoach('/');
 
 Route::prefix('settings')->group(function () {
     Route::prefix('account')->group(function () {
-        Route::get('/', [AccountController::class, 'index']);
+        Route::get('/', [AccountController::class, 'index'])->name('mailcoach-app.account');
         Route::put('/', [AccountController::class, 'update']);
 
-        Route::get('password', [PasswordController::class, 'index']);
+        Route::get('password', [PasswordController::class, 'index'])->name('mailcoach-app.password');
         Route::put('password', [PasswordController::class, 'update']);
     });
 
@@ -33,4 +33,4 @@ Route::prefix('settings')->group(function () {
     });
 });
 
-Route::post('logout', LogoutController::class);
+Route::post('logout', LogoutController::class)->name('logout');
