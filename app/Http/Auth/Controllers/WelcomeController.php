@@ -10,12 +10,12 @@ class WelcomeController
 {
     use ResetsPasswords;
 
-    public function index(Request $request, string $token = null)
+    public function index(Request $request, User $user, string $token = null)
     {
-        if (!$user = User::findByToken($token)) {
+        if (! $user->hasResetToken($token)) {
             flash()->error('The link you clicked is invalid.');
 
-            return redirect()->action(LoginController::class);
+            return redirect()->route('login');
         };
 
         return view('auth.welcome')->with([
@@ -32,7 +32,7 @@ class WelcomeController
 
     protected function sendResetResponse(string $response): Response
     {
-        flash()->info('Welcome! You are now logged in! Your password was saved.');
+        flash()->success('Welcome! You are now logged in! Your password was saved.');
 
         return redirect()->route('mailcoach.campaigns');
     }

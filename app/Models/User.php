@@ -36,14 +36,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public static function findByToken(string $token): ?User
+    public function hasResetToken(string $token): bool
     {
-        $resetRecord = app('db')->table('password_resets')->where('token', $token)->first();
+        $resetRecord = app('db')->table('password_resets')->where('email', $this->email)->first();
 
-        if (empty($resetRecord)) {
-            return null;
+        if (! $resetRecord) {
+            return false;
         }
 
-        return static::where('email', $resetRecord->email)->first();
+        return password_verify($token, $resetRecord->token);
     }
 }

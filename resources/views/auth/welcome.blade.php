@@ -1,8 +1,12 @@
 @extends('auth.layouts.master')
 
 @section('content')
-    <form method="POST" action="{{ route('welcome') }}">
+    {{ dump($errors) }}
+    <form method="POST" action="{{ route('welcome.save-password') }}">
         @csrf
+
+        <input type="hidden" name="email" value="{{ $user->email }}" />
+        <input type="hidden" name="token" value="{{ $token }}" />
 
         <div class="form-group row">
             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>

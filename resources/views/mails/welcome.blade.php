@@ -9,7 +9,7 @@
     <tr>
         <td>
             <p>
-                <a href="{{ route('welcome', $token) }}" class="btn-primary">
+                <a href="{{ route('welcome', [$user->id, $token]) }}" class="btn-primary">
                     Pick a password
                 </a>
             </p>

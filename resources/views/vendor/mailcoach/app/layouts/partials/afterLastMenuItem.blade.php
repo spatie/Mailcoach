@@ -6,3 +6,9 @@
     Users
 </x-navigation-item>
 
+
+<li>
+    <form method="post" action="{{ route('logout') }}">
+        <button type="submit">Log out</button>
+    </form>
+</li>
