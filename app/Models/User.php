@@ -35,4 +35,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function findByToken(string $token): ?User
+    {
+        $resetRecord = app('db')->table('password_resets')->where('token', $token)->first();
+
+        if (empty($resetRecord)) {
+            return null;
+        }
+
+        return static::where('email', $resetRecord->email)->first();
+    }
 }
