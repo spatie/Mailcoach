@@ -39,6 +39,8 @@ use App\Http\App\Controllers\Subscribers\UpdateSubscriberController;
 use App\Http\App\Controllers\TemplatesController;
 use App\Http\Auth\Controllers\LogoutController;
 
+Route::mailcoach('/');
+
 Route::prefix('settings')->group(function () {
     Route::prefix('account')->group(function () {
         Route::get('/', [AccountController::class, 'index']);
@@ -49,7 +51,7 @@ Route::prefix('settings')->group(function () {
     });
 
     Route::prefix('users')->group(function () {
-        Route::get('/', UsersIndexController::class);
+        Route::get('/', UsersIndexController::class)->name('mailcoach-app.users');
         Route::get('create', [CreateUserController::class, 'create']);
         Route::post('/', [CreateUserController::class, 'store']);
 

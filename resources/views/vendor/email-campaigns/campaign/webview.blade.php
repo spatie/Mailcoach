@@ -1,1 +1,0 @@
-{!! $campaign->webview_html !!}

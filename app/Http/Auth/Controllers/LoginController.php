@@ -18,13 +18,13 @@ class LoginController
 
     public function showLoginForm()
     {
-        return Inertia::render('auth.Login');
+        return view('auth.login');
     }
 
     public function authenticated(Request $request, $user)
     {
         flash()->success('You are now logged in!');
 
-        return redirect()->intended(action(CampaignsIndexController::class));
+        return redirect()->intended(route('mailcoach.campaigns'));
     }
 }

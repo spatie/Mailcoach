@@ -22,20 +22,20 @@ class RouteServiceProvider extends ServiceProvider
             ->mapApiRoutes($router);
     }
 
-    private function mapAuthRoutes(Router $router): self
-    {
-        $router
-            ->middleware(['web', 'guest'])
-            ->group(base_path('routes/auth.php'));
-
-        return $this;
-    }
-
     protected function mapWebRoutes(Router $router)
     {
         $router
             ->middleware('web')
             ->group(base_path('routes/web.php'));
+
+        return $this;
+    }
+
+    protected function mapAuthRoutes(Router $router): self
+    {
+        $router
+            ->middleware(['web', 'guest'])
+            ->group(base_path('routes/auth.php'));
 
         return $this;
     }
