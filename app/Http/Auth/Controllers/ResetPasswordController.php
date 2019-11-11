@@ -15,7 +15,7 @@ class ResetPasswordController
 
     public function showResetForm(Request $request, $token = null)
     {
-        inertia()->render('auth.ResetPassword', [
+        view('auth.passwords.reset', [
             'token' => $token,
             'email' => $request->email,
         ]);

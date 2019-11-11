@@ -15,7 +15,7 @@ class ForgotPasswordController
 
     public function showLinkRequestForm()
     {
-        return Inertia::render('auth.ForgotPassword');
+        return view('auth.passwords.email');
     }
 
     protected function sendResetLinkResponse(Request $request, $response)
