@@ -10,8 +10,8 @@ class UpdateUserController
 {
     public function edit(User $user)
     {
-        return inertia()->render('users.Edit', [
-            'user' => new UserResource($user),
+        return view('app.users.edit', [
+            'user' => $user,
         ]);
     }
 

@@ -11,8 +11,8 @@ class CreateUserController
 {
     public function create()
     {
-        return inertia()->render('users.Create', [
-            'user' => new UserResource(new User()),
+        return view('app.users.create', [
+            'user' => new User(),
         ]);
     }
 

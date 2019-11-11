@@ -34,11 +34,11 @@
         "laravel/framework": "^6.2",
         "laravel/horizon": "^3.4",
         "laravel/tinker": "^1.0",
+        "spatie/laravel-flash": "^1.3",
+        "spatie/laravel-json-api-paginate": "^1.6",
         "spatie/laravel-mailcoach": "dev-master",
         "spatie/laravel-mailcoach-mailgun-feedback": "dev-master",
         "spatie/laravel-mailcoach-ses-feedback": "dev-master",
-        "spatie/laravel-flash": "^1.3",
-        "spatie/laravel-json-api-paginate": "^1.6",
         "spatie/laravel-query-builder": "^2.3",
         "spatie/laravel-tail": "^3.3"
     },
