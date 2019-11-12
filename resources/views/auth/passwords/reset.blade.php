@@ -4,7 +4,6 @@
     <form method="POST" action="{{ route('password.update') }}">
         @csrf
 
-        {{ dump($errors) }}
         <input type="hidden" name="token" value="{{ $token }}">
 
         <div class="form-group row">
