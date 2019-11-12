@@ -2,22 +2,22 @@
 
 namespace App\Http\Auth\Controllers;
 
-use App\Http\App\Controllers\Campaigns\CampaignsIndexController;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
+use Spatie\MailCoach\Http\App\Controllers\Campaigns\CampaignsIndexController;
 
 class ResetPasswordController
 {
     use ResetsPasswords, AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function showResetForm(Request $request, $token = null)
+    public function showResetForm(Request $request)
     {
-        view('auth.passwords.reset', [
-            'token' => $token,
-            'email' => $request->email,
+        return view('auth.passwords.reset', [
+            'token' => $request->get('token'),
+            'email' => $request->get('email'),
         ]);
     }
 
@@ -25,6 +25,6 @@ class ResetPasswordController
     {
         flash()->success(trans($response));
 
-        return action([CampaignsIndexController::class, 'index']);
+        return action(CampaignsIndexController::class);
     }
 }

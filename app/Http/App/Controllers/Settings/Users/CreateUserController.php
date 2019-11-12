@@ -9,6 +9,7 @@ use App\Mail\WelcomeMail;
 use App\Models\User;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
+use Spatie\WelcomeNotification\WelcomeNotification;
 
 class CreateUserController
 {
@@ -25,7 +26,7 @@ class CreateUserController
 
         $user = User::create(array_merge($validatedProperties, ['password' => Str::random(64)]));
 
-        Mail::send(new WelcomeMail($user));
+        $user->notifyNow(new WelcomeNotification());
 
         flash()->success("The user has been created. A mail with login instructions has been sent to {$user->email}");
 
