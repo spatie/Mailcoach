@@ -2,7 +2,7 @@
 
 namespace App\Http\App\Queries;
 
-use Spatie\MailCoach\Http\App\Filters\FuzzyFilter;
+use Spatie\Mailcoach\Http\App\Filters\FuzzyFilter;
 use App\Models\User;
 use Spatie\QueryBuilder\AllowedFilter;
 use Spatie\QueryBuilder\QueryBuilder;

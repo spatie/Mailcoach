@@ -1735,16 +1735,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v6.5.0",
+            "version": "v6.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "6d120a21ef0c69630e92dec67932ef434c746019"
+                "reference": "e47180500498cf8aa2a8ffb59a3b4daa007fa13d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/6d120a21ef0c69630e92dec67932ef434c746019",
-                "reference": "6d120a21ef0c69630e92dec67932ef434c746019",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/e47180500498cf8aa2a8ffb59a3b4daa007fa13d",
+                "reference": "e47180500498cf8aa2a8ffb59a3b4daa007fa13d",
                 "shasum": ""
             },
             "require": {
@@ -1877,7 +1877,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2019-11-05T14:32:58+00:00"
+            "time": "2019-11-12T15:20:18+00:00"
         },
         {
             "name": "laravel/horizon",
@@ -5173,7 +5173,7 @@
             "dist": {
                 "type": "path",
                 "url": "../laravel-mailcoach",
-                "reference": "b068b282024e529c577c0eb4d205e870e69a1299"
+                "reference": "2baca81797377ff372ee945610d4d8454fcf0d08"
             },
             "require": {
                 "cakephp/chronos": "^1.2.8",
@@ -5219,18 +5219,18 @@
             "extra": {
                 "laravel": {
                     "providers": [
-                        "Spatie\\MailCoach\\MailCoachServiceProvider"
+                        "Spatie\\Mailcoach\\MailcoachServiceProvider"
                     ]
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "Spatie\\MailCoach\\": "src"
+                    "Spatie\\Mailcoach\\": "src"
                 }
             },
             "autoload-dev": {
                 "psr-4": {
-                    "Spatie\\MailCoach\\Tests\\": "tests"
+                    "Spatie\\Mailcoach\\Tests\\": "tests"
                 }
             },
             "scripts": {
@@ -5264,7 +5264,7 @@
             "dist": {
                 "type": "path",
                 "url": "../laravel-mailcoach-mailgun-feedback",
-                "reference": "5545a6e10481ae1f139570d62a60b34a6cad17e2"
+                "reference": "e12cb8bd9154f8561d347f6e8f80f4d40f6b7b5b"
             },
             "require": {
                 "illuminate/http": "^6.4",
@@ -5283,18 +5283,18 @@
             "extra": {
                 "laravel": {
                     "providers": [
-                        "Spatie\\MailCoachMailgunFeedback\\MailCoachMailgunFeedbackServiceProvider"
+                        "Spatie\\MailcoachMailgunFeedback\\MailcoachMailgunFeedbackServiceProvider"
                     ]
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "Spatie\\MailCoachMailgunFeedback\\": "src"
+                    "Spatie\\MailcoachMailgunFeedback\\": "src"
                 }
             },
             "autoload-dev": {
                 "psr-4": {
-                    "Spatie\\MailCoachMailgunFeedback\\Tests\\": "tests"
+                    "Spatie\\MailcoachMailgunFeedback\\Tests\\": "tests"
                 }
             },
             "scripts": {
@@ -5326,7 +5326,7 @@
             "dist": {
                 "type": "path",
                 "url": "../laravel-mailcoach-ses-feedback",
-                "reference": "ba31592375005b7f7982bb49fd6881b76a2c7ce1"
+                "reference": "b761e47f9add4cbe94e3f04d54d7176f77dc5f4b"
             },
             "require": {
                 "aws/aws-php-sns-message-validator": "^1.5",
@@ -5347,18 +5347,18 @@
             "extra": {
                 "laravel": {
                     "providers": [
-                        "Spatie\\MailCoachSesFeedback\\MailCoachSesFeedbackServiceProvider"
+                        "Spatie\\MailcoachSesFeedback\\MailCoachSesFeedbackServiceProvider"
                     ]
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "Spatie\\MailCoachSesFeedback\\": "src"
+                    "Spatie\\MailcoachSesFeedback\\": "src"
                 }
             },
             "autoload-dev": {
                 "psr-4": {
-                    "Spatie\\MailCoachSesFeedback\\Tests\\": "tests"
+                    "Spatie\\MailcoachSesFeedback\\Tests\\": "tests"
                 }
             },
             "scripts": {

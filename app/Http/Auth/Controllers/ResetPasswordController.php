@@ -7,7 +7,7 @@ use Illuminate\Foundation\Auth\ResetsPasswords;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
-use Spatie\MailCoach\Http\App\Controllers\Campaigns\CampaignsIndexController;
+use Spatie\Mailcoach\Http\App\Controllers\Campaigns\CampaignsIndexController;
 
 class ResetPasswordController
 {
