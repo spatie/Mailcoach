@@ -14,9 +14,7 @@ class CreateMailCoachTables extends Migration
             $table->string('name');
             $table->boolean('requires_double_opt_in')->default(false);
 
-            $table->string('redirect_after_already_subscribed')->nullable();
-            $table->string('redirect_after_pending')->nullable();
-            $table->string('redirect_after_subscribed')->nullable();
+            $table->string('campaigns_feed_enabled')->default(true);
 
             $table->timestamps();
         });
@@ -195,10 +193,11 @@ class CreateMailCoachTables extends Migration
                 ->onDelete('cascade');
         });
 
-        Schema::create('campaign_send_bounces', function (Blueprint $table) {
+        Schema::create('campaign_send_feedback_items', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('type');
             $table->unsignedBigInteger('campaign_send_id');
-            $table->string('severity')->nullable();
+            $table->json('extra_attributes')->nullable();
             $table->timestamps();
 
             $table
