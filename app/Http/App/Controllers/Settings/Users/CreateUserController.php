@@ -26,7 +26,8 @@ class CreateUserController
 
         $user = User::create(array_merge($validatedProperties, ['password' => Str::random(64)]));
 
-        $user->notifyNow(new WelcomeNotification());
+        $expiresAt = now()->addDay();
+        $user->sendWelcomeNotification($expiresAt);
 
         flash()->success("The user has been created. A mail with login instructions has been sent to {$user->email}");
 
