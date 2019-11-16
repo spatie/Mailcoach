@@ -47,6 +47,7 @@ class CampaignSeeder extends Seeder
             $campaign->emailList
                 ->subscriptions
                 ->each(function (Subscription $subscription) use ($campaign) {
+                    /** @var CampaignSend $campaignSend */
                     $campaignSend = factory(CampaignSend::class)->create([
                         'email_list_subscription_id' => $subscription->id,
                         'email_campaign_id' => $campaign->id,
@@ -61,8 +62,33 @@ class CampaignSeeder extends Seeder
                         ]);
                     }
 
-                    (new CalculateStatisticsJob($campaign))->handle();
+                    $campaign->links->each(function (CampaignLink $campaignLink) use ($campaignSend, $subscription) {
+                        if (faker()->boolean(20)) {
+                            $campaignLink->registerClick($campaignSend);
+                        }
+
+                        if (faker()->boolean(20)) {
+                            $campaignLink->registerClick($campaignSend);
+                        }
+                    });
+
+                    if (faker()->boolean(20)) {
+                        $campaign->emailList->unsubscribe($subscription->subscriber->email);
+                    }
+
+                    if (faker()->boolean(10)) {
+                        $campaignSend->markAsBounced();
+                    }
+
+                    if (faker()->boolean(10)) {
+                        $campaignSend->complaintReceived();
+                    }
+
                 });
+
+            (new CalculateStatisticsJob($campaign))->handle();
         });
+
+
     }
 }
