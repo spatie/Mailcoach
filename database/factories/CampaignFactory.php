@@ -8,6 +8,7 @@ use Spatie\Mailcoach\Models\EmailList;
 
 $factory->define(Campaign::class, function (Generator $faker) {
     return [
+        'name' => $faker->word,
         'subject' => $faker->sentence,
         'from_email' => $faker->email,
         'from_name' => $faker->name,

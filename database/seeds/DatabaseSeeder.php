@@ -10,6 +10,7 @@ class DatabaseSeeder extends Seeder
         $this
             ->call(UserSeeder::class)
             ->call(TemplateSeeder::class)
-            ->call(EmailListSeeder::class);
+            ->call(EmailListSeeder::class)
+            ->call(CampaignSeeder::class);
     }
 }
