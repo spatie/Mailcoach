@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "70d754f3f9c2f449cd73b9a050d6ee6a",
+    "content-hash": "bb0736965976469fba096c050c68636e",
     "packages": [
         {
             "name": "aws/aws-php-sns-message-validator",
@@ -642,16 +642,16 @@
         },
         {
             "name": "doctrine/cache",
-            "version": "1.9.0",
+            "version": "1.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "c15dcd24b756f9e52ea7c3ae8227354f3628f11a"
+                "reference": "89a5c76c39c292f7798f964ab3c836c3f8192a55"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/c15dcd24b756f9e52ea7c3ae8227354f3628f11a",
-                "reference": "c15dcd24b756f9e52ea7c3ae8227354f3628f11a",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/89a5c76c39c292f7798f964ab3c836c3f8192a55",
+                "reference": "89a5c76c39c292f7798f964ab3c836c3f8192a55",
                 "shasum": ""
             },
             "require": {
@@ -721,7 +721,7 @@
                 "riak",
                 "xcache"
             ],
-            "time": "2019-11-11T10:31:52+00:00"
+            "time": "2019-11-15T14:31:57+00:00"
         },
         {
             "name": "doctrine/dbal",
@@ -5171,7 +5171,7 @@
             "dist": {
                 "type": "path",
                 "url": "../laravel-mailcoach",
-                "reference": "1bfe57e3329a1733f1c0029470fecd40cfab684d"
+                "reference": "1b0e85a100d82af2a462b88fc9f7a1095c8c871f"
             },
             "require": {
                 "cakephp/chronos": "^1.2.8",
@@ -5199,6 +5199,7 @@
                 "spatie/laravel-validation-rules": "^2.4",
                 "spatie/laravel-view-models": "^1.2",
                 "spatie/laravel-webhook-client": "^2.3",
+                "spatie/query-string": "^1.0",
                 "spatie/simple-excel": "^1.1",
                 "spatie/temporary-directory": "^1.2",
                 "symfony/css-selector": "^4.3",
@@ -5920,16 +5921,16 @@
         },
         {
             "name": "spatie/laravel-welcome-notification",
-            "version": "dev-master",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-welcome-notification.git",
-                "reference": "4eb5ebaf93e421ef64e0d4d499fa6e9bcbfcc770"
+                "reference": "f37e7fd299a4c4f05cbb01aa2f9f3b62f47b6f63"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-welcome-notification/zipball/4eb5ebaf93e421ef64e0d4d499fa6e9bcbfcc770",
-                "reference": "4eb5ebaf93e421ef64e0d4d499fa6e9bcbfcc770",
+                "url": "https://api.github.com/repos/spatie/laravel-welcome-notification/zipball/f37e7fd299a4c4f05cbb01aa2f9f3b62f47b6f63",
+                "reference": "f37e7fd299a4c4f05cbb01aa2f9f3b62f47b6f63",
                 "shasum": ""
             },
             "require": {
@@ -5974,7 +5975,7 @@
                 "laravel-welcome-mail",
                 "spatie"
             ],
-            "time": "2019-11-14T20:57:01+00:00"
+            "time": "2019-11-15T09:46:40+00:00"
         },
         {
             "name": "spatie/pdf-to-image",
@@ -6025,6 +6026,53 @@
                 "spatie"
             ],
             "time": "2019-07-31T06:46:19+00:00"
+        },
+        {
+            "name": "spatie/query-string",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/query-string.git",
+                "reference": "e2f6fd4a40c7c6a01ad577d5e744e4684d5f3875"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/query-string/zipball/e2f6fd4a40c7c6a01ad577d5e744e4684d5f3875",
+                "reference": "e2f6fd4a40c7c6a01ad577d5e744e4684d5f3875",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1"
+            },
+            "require-dev": {
+                "larapack/dd": "^1.0",
+                "phpunit/phpunit": "^7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\QueryString\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brent Roose",
+                    "email": "brent@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Manipulate query strings",
+            "homepage": "https://github.com/spatie/query-string",
+            "keywords": [
+                "query-string",
+                "spatie"
+            ],
+            "time": "2019-11-15T10:28:01+00:00"
         },
         {
             "name": "spatie/simple-excel",
@@ -8603,8 +8651,7 @@
     "stability-flags": {
         "spatie/laravel-mailcoach": 20,
         "spatie/laravel-mailcoach-mailgun-feedback": 20,
-        "spatie/laravel-mailcoach-ses-feedback": 20,
-        "spatie/laravel-welcome-notification": 20
+        "spatie/laravel-mailcoach-ses-feedback": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
