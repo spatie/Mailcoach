@@ -2,14 +2,13 @@
 
 namespace Tests\Feature\Controllers\Auth;
 
-use App\Http\App\Controllers\Campaigns\CampaignsIndexController;
 use App\Http\Auth\Controllers\LoginController;
 use App\Models\User;
 use Tests\TestCase;
 
 class LoginControllerTest extends TestCase
 {
-    /** @var \App\Models\User  */
+    /** @var \App\Models\User */
     private $user;
 
     public function setUp(): void
@@ -25,12 +24,14 @@ class LoginControllerTest extends TestCase
     /** @test */
     public function it_can_login()
     {
-        $this
-            ->post(action([LoginController::class, 'login']), [
+        $this->post(
+            action([LoginController::class, 'login']),
+            [
                 'email' => 'john@example.com',
                 'password' => 'my-password',
-            ])
-            ->assertRedirect(action(CampaignsIndexController::class));
+            ]
+        )
+            ->assertRedirect('/campaigns');
 
         $this->assertAuthenticatedAs($this->user);
     }

@@ -5171,7 +5171,7 @@
             "dist": {
                 "type": "path",
                 "url": "../laravel-mailcoach",
-                "reference": "0efbd5b060447f365654d3fb8a6b18d14fe47a3d"
+                "reference": "f71b479394cec4f165aa9defccb62397867d25ac"
             },
             "require": {
                 "cakephp/chronos": "^1.2.8",
