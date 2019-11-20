@@ -59,6 +59,7 @@ class CampaignSeeder extends Seeder
                             'campaign_send_id' => $campaignSend->id,
                             'email_campaign_id' => $campaign->id,
                             'email_list_subscriber_id' => $subscription->subscriber->id,
+                            'created_at' => faker()->dateTimeBetween('-1 week', '+1 week')
                         ]);
                     }
 
