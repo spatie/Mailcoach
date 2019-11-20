@@ -25,30 +25,21 @@ class CreateMailcoachTables extends Migration
 
         Schema::create('email_list_subscribers', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('email_list_id');
+
             $table->string('email')->unique();
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
             $table->json('extra_attributes')->nullable();
-            $table->uuid('uuid');
-            $table->nullableTimestamps();
-        });
 
-        Schema::create('email_list_subscriptions', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('uuid');
-            $table->unsignedBigInteger('email_list_id');
-            $table->unsignedBigInteger('email_list_subscriber_id');
-            $table->string('status');
-            $table->timestamps();
+            $table->uuid('uuid');
+            $table->timestamp('subscribed_at')->nullable();
+            $table->timestamp('unsubscribed_at')->nullable();
+            $table->nullableTimestamps();
 
             $table
                 ->foreign('email_list_id')
                 ->references('id')->on('email_lists')
-                ->onDelete('cascade');
-
-            $table
-                ->foreign('email_list_subscriber_id')
-                ->references('id')->on('email_list_subscribers')
                 ->onDelete('cascade');
         });
 
@@ -119,7 +110,7 @@ class CreateMailcoachTables extends Migration
             $table->uuid('uuid');
             $table->string('transport_message_id')->nullable();
             $table->unsignedBigInteger('email_campaign_id');
-            $table->unsignedBigInteger('email_list_subscription_id');
+            $table->unsignedBigInteger('email_list_subscriber_id');
             $table->timestamp('sent_at')->nullable();
             $table->timestamps();
 
@@ -129,8 +120,8 @@ class CreateMailcoachTables extends Migration
                 ->onDelete('cascade');
 
             $table
-                ->foreign('email_list_subscription_id')
-                ->references('id')->on('email_list_subscriptions')
+                ->foreign('email_list_subscriber_id')
+                ->references('id')->on('email_list_subscribers')
                 ->onDelete('cascade');
 
             $table->unique('transport_message_id');
