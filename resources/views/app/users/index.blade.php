@@ -3,7 +3,7 @@
 @section('content')
     <main class="layout-main">
         <section class="card card-grid">
-            <h1 class="markup-h1">Templates</h1>
+            <h1 class="markup-h1">Users</h1>
 
             <div class="flex justify-between">
                 <a href="{{ action([\App\Http\App\Controllers\Settings\Users\CreateUserController::class, 'create']) }}" class="button">
