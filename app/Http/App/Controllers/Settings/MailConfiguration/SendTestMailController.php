@@ -20,11 +20,15 @@ class SendTestMailController
             'email' => 'email',
         ]);
         try {
-            Mail::to($request->email)->send(new TestMail());
+            Mail::to($request->email)->sendNow(new TestMail($request->email));
+
+            flash()->success("A test mail has been sent to {$request->email}. Please check if it arrived.");
         } catch (Exception $exception) {
             report($exception);
 
             flash()->error("Something went wrong with sending the mail: {$exception->getMessage()}");
         }
+
+        return redirect()->back();
     }
 }

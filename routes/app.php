@@ -36,7 +36,7 @@ Route::prefix('settings')->group(function () {
     Route::get('mail-configuration', [EditMailConfigurationController::class, 'edit'])->name('mailConfiguration');
     Route::put('mail-configuration', [EditMailConfigurationController::class, 'update']);
     Route::get('send-test-mail', [SendTestMailController::class, 'show'])->name('sendTestMail');
-    Route::post('send-test-mail', [SendTestMailController::class, 'show']);
+    Route::post('send-test-mail', [SendTestMailController::class, 'sendTestEmail']);
 
 });
 

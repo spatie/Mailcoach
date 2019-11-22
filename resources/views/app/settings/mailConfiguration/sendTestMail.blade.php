@@ -1,5 +1,11 @@
 @extends('app.settings.mailConfiguration.layouts.mailConfiguration', ['title' => 'Mail configuration'])
 
 @section('mailConfiguration')
-    Mail configuration
+    <form method="POST">
+        <x-text-field label="Email" name="email" type="email"/>
+
+        <button type="submit" class="button">
+            Send test mail
+        </button>
+    </form>
 @endsection
