@@ -12,8 +12,8 @@ Route::mailcoach('/');
 
 Route::prefix('settings')->group(function () {
     Route::prefix('account')->group(function () {
-        Route::get('/', [AccountController::class, 'index'])->name('account');
-        Route::put('/', [AccountController::class, 'update']);
+        Route::get('details', [AccountController::class, 'index'])->name('account');
+        Route::put('details', [AccountController::class, 'update']);
 
         Route::get('password', [PasswordController::class, 'index'])->name('password');
         Route::put('password', [PasswordController::class, 'update']);
