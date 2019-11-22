@@ -36,7 +36,7 @@ class MailConfiguration
 
     public function register()
     {
-        $this->config->set('mail.driver', 'smtp');
+        $this->config->set('mail.driver', $this->valuestore->get('mail_driver'));
         $this->config->set('mail.host', $this->valuestore->get('mail_host'));
         $this->config->set('mail.port', $this->valuestore->get('mail_port'));
         $this->config->set('mail.encryption', $this->valuestore->get('mail_encryption'));

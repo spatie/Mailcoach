@@ -2,6 +2,7 @@
 
 namespace App\Http\App\Controllers\Settings\MailConfiguration;
 
+use App\Http\App\Requests\UpdateMailConfigurationRequest;
 use App\Support\MailConfiguration;
 use Illuminate\Http\Request;
 
@@ -12,9 +13,9 @@ class EditMailConfigurationController
         return view('app.settings.mailConfiguration.edit', compact('mailConfiguration'));
     }
 
-    public function update(Request $request, MailConfiguration $mailConfiguration)
+    public function update(UpdateMailConfigurationRequest $request, MailConfiguration $mailConfiguration)
     {
-        $mailConfiguration->put($request->all());
+        $mailConfiguration->put($request->validated());
 
         flash()->success('The mail configuration was saved.');
 
