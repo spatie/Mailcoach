@@ -1,5 +1,15 @@
 @extends('mailcoach::app.layouts.app', ['title' => 'Users'])
 
+@section('header')
+    <nav class="breadcrumbs">
+        <ul>
+            <li>
+                Users
+            </li>
+        </ul>
+    </nav>
+@endsection
+
 @section('content')
     <main class="layout-main">
         <section class="card card-grid">
@@ -11,7 +21,7 @@
                     </button>
 
                     <x-modal title="Create user" name="create-template" :open="$errors->any()">
-                        @include('app.users.partials.create')
+                        @include('app.settings.users.partials.create')
                     </x-modal>
 
                     <x-search placeholder="Filter users…" />

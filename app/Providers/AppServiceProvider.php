@@ -3,9 +3,11 @@
 namespace App\Providers;
 
 use App\Models\User;
+use App\Support\MailConfiguration;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 use Spatie\Flash\Flash;
+use Spatie\Valuestore\Valuestore;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -20,5 +22,13 @@ class AppServiceProvider extends ServiceProvider
             'warning' => 'warning',
             'error' => 'error',
         ]);
+
+        $this->app->bind(MailConfiguration::class, function () {
+            $valueStore = Valuestore::make(base_path('mailConfiguration.json'));
+
+            return new MailConfiguration($valueStore, app()->get('config'));
+        });
+
+        app(MailConfiguration::class)->register();
     }
 }

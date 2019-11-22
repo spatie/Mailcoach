@@ -2,6 +2,8 @@
 
 use App\Http\App\Controllers\Settings\Account\AccountController;
 use App\Http\App\Controllers\Settings\Account\PasswordController;
+use App\Http\App\Controllers\Settings\MailConfiguration\EditMailConfigurationController;
+use App\Http\App\Controllers\Settings\MailConfiguration\SendTestMailController;
 use App\Http\App\Controllers\Settings\Users\CreateUserController;
 use App\Http\App\Controllers\Settings\Users\DestroyUserController;
 use App\Http\App\Controllers\Settings\Users\UpdateUserController;
@@ -21,7 +23,7 @@ Route::prefix('settings')->group(function () {
 
     Route::prefix('users')->group(function () {
         Route::get('/', UsersIndexController::class)->name('users');
-        Route::post('create', CreateUserController::class);
+        Route::post('create', CreateUserController::class)->name('users.create');
 
         Route::prefix('{user}')->group(function () {
             Route::get('edit', [UpdateUserController::class, 'edit'])->name('users.edit');
@@ -30,6 +32,12 @@ Route::prefix('settings')->group(function () {
             Route::delete('/', DestroyUserController::class)->name('users.destroy');
         });
     });
+
+    Route::get('mail-configuration', [EditMailConfigurationController::class, 'edit'])->name('mailConfiguration');
+    Route::put('mail-configuration', [EditMailConfigurationController::class, 'update']);
+    Route::get('send-test-mail', [SendTestMailController::class, 'show'])->name('sendTestMail');
+    Route::post('send-test-mail', [SendTestMailController::class, 'show']);
+
 });
 
 Route::post('logout', LogoutController::class)->name('logout');

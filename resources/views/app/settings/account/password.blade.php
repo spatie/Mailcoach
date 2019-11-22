@@ -1,4 +1,4 @@
-@extends('app.account.layouts.account')
+@extends('app.settings.account.layouts.account')
 
 @section('account')
     <form

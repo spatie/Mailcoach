@@ -14,6 +14,11 @@
             </a>
         </li>
         <li>
+            <a href="{{ route('mailConfiguration') }}">
+                Mail configuration
+            </a>
+        </li>
+        <li>
             <form method="post" action="{{ route('logout') }}">
                 <button type="submit">Log out</button>
             </form>

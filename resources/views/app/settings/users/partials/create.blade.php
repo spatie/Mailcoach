@@ -1,4 +1,4 @@
-<form action="{{ action(\App\Http\App\Controllers\Settings\Users\CreateUserController::class) }}" method="POST">
+<form action="{{ route('users.create') }}" method="POST">
     @csrf
     <x-text-field type="email" label="Email" name="email" required />
 

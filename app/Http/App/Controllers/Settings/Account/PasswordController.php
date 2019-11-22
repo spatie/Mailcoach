@@ -9,7 +9,7 @@ class PasswordController
 {
     public function index()
     {
-        return view('app.account.password');
+        return view('app.settings.account.password');
     }
 
     public function update(UpdatePasswordRequest $request)

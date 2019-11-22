@@ -9,7 +9,7 @@ class UsersIndexController
 {
     public function __invoke(UsersQuery $usersQuery)
     {
-        return view('app.users.index', [
+        return view('app.settings.users.index', [
             'users' => $usersQuery->paginate(),
             'totalUsersCount' => User::count(),
         ]);

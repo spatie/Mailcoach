@@ -10,7 +10,7 @@ class UpdateUserController
 {
     public function edit(User $user)
     {
-        return view('app.users.edit', [
+        return view('app.settings.users.edit', [
             'user' => $user,
         ]);
     }
