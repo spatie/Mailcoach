@@ -1,6 +1,6 @@
-<li class="dropdown" data-dropdown>
+<div class="dropdown" data-dropdown>
     <button data-dropdown-trigger>
-        <img class="w-4 h-4 bg-blue-300 rounded-full">
+        <i class="fas fa-user-circle | block text-2xl opacity-50 | hover:opacity-75"></i>
     </button>
     <ul class="dropdown-list | hidden" data-dropdown-list>
         <li>
@@ -19,4 +19,4 @@
             </form>
         </li>
     </ul>
-</li>
+</div>
