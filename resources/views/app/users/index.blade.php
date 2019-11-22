@@ -6,9 +6,15 @@
             <h1 class="markup-h1">Users</h1>
 
             <div class="flex justify-between">
-                <a href="{{ action([\App\Http\App\Controllers\Settings\Users\CreateUserController::class, 'create']) }}" class="button">
-                    Create new user
-                </a>
+                    <button class="button" data-modal-trigger="create-template">
+                        Create a new user
+                    </button>
+
+                    <x-modal title="Create user" name="create-template" :open="$errors->any()">
+                        @include('app.users.partials.create')
+                    </x-modal>
+
+                    <x-search placeholder="Filter users…" />
 
                 <input
                     type="text"

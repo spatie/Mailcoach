@@ -13,14 +13,7 @@ use Spatie\WelcomeNotification\WelcomeNotification;
 
 class CreateUserController
 {
-    public function create()
-    {
-        return view('app.users.create', [
-            'user' => new User(),
-        ]);
-    }
-
-    public function store(UpdateUserRequest $request)
+    public function __invoke(UpdateUserRequest $request)
     {
         $validatedProperties = $request->validated();
 

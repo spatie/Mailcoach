@@ -21,8 +21,7 @@ Route::prefix('settings')->group(function () {
 
     Route::prefix('users')->group(function () {
         Route::get('/', UsersIndexController::class)->name('users');
-        Route::get('create', [CreateUserController::class, 'create']);
-        Route::post('/', [CreateUserController::class, 'store']);
+        Route::post('create', CreateUserController::class);
 
         Route::prefix('{user}')->group(function () {
             Route::get('edit', [UpdateUserController::class, 'edit']);
