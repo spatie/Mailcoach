@@ -24,10 +24,10 @@ Route::prefix('settings')->group(function () {
         Route::post('create', CreateUserController::class);
 
         Route::prefix('{user}')->group(function () {
-            Route::get('edit', [UpdateUserController::class, 'edit']);
+            Route::get('edit', [UpdateUserController::class, 'edit'])->name('users.edit');
             Route::put('edit', [UpdateUserController::class, 'update']);
 
-            Route::delete('/', DestroyUserController::class);
+            Route::delete('/', DestroyUserController::class)->name('users.destroy');
         });
     });
 });

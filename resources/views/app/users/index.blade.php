@@ -26,40 +26,44 @@
             <table class="table">
                 <thead>
                 <tr>
-                    <th>Email</th>
-                    <th>Name</th>
+                    <x-th sort-by="email" sort-default>Email</x-th>
+                    <x-th sort-by="-name">Name</x-th>
+                    <th></th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach($users as $user)
-                    <tr
-                        class="tr-clickable"
-                        data-href="{{ action([\App\Http\App\Controllers\Settings\Users\UpdateUserController::class, 'edit'], $user) }}"
-                    >
-                        <td>{{ $user->email }}</td>
+                    <tr>
+                        <td class="markup-links">
+                            <a href="{{ route('users.edit', $user) }}">
+                                {{ $user->email }}
+                            </a>
+                        </td>
                         <td>{{ $user->name }}</td>
+                        <td>
+                            <form
+                                class="card-grid"
+                                action="{{ route('users.destroy', $user) }}"
+                                method="POST"
+                            >
+                                @csrf
+                                @method('DELETE')
+
+                                <button class="link-delete">
+                                    Delete
+                                </button>
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
                 </tbody>
             </table>
 
-            <p class="table-status">
-                @if($users->hasMorePages())
-                    Displaying {{ $users->count() }} of {{ $totalUsersCount }}
-                    {{ Illuminate\Support\Str::plural('template', $totalUsersCount) }}.
-                    <a
-                        href="{{ route('users') }}"
-                        class="link"
-                    >
-                        Show all
-                    </a>
-                @else
-                    Displaying all {{ $totalUsersCount }}
-                    {{ Illuminate\Support\Str::plural('user', $totalUsersCount) }}.
-                @endif
-            </p>
-
-            {{ $users->links() }}
-        </section>
+            <x-table-status
+                name="user"
+                :paginator="$users"
+                :total-count="$totalUsersCount"
+                :show-all-url="route('users')"
+            ></x-table-status>
     </main>
 @endsection

@@ -32,19 +32,6 @@
                     </button>
                 </div>
             </form>
-
-            <form
-                class="card-grid"
-                action="{{ action(\App\Http\App\Controllers\Settings\Users\DestroyUserController::class, $user) }}"
-                method="POST"
-            >
-                @csrf
-                @method('DELETE')
-
-                <button class="link-delete">
-                    Delete
-                </button>
-            </form>
         </section>
     </main>
 @endsection
