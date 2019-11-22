@@ -5,12 +5,16 @@
     <ul class="dropdown-list | hidden" data-dropdown-list>
         <li>
             <a href="{{ route('account') }}">
-                Account
+                <span class="icon-label">
+                    <i class="fas fa-user"></i> Account
+                </span>
             </a>
         </li>
         <li>
             <a href="{{ route('users') }}">
-                Users
+                <span class="icon-label">
+                    <i class="fas fa-users"></i> Users
+                </span>
             </a>
         </li>
         <li>
@@ -20,7 +24,12 @@
         </li>
         <li>
             <form method="post" action="{{ route('logout') }}">
-                <button type="submit">Log out</button>
+                <button type="submit">
+                    <span class="icon-label">
+                        <i class="fas fa-power-off text-red-500"></i>
+                        Log out
+                    </span>
+                </button>
             </form>
         </li>
     </ul>
