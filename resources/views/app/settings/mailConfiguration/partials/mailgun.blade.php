@@ -6,7 +6,7 @@
     @csrf
     @method('PUT')
 
-    <input type="hidden" name="driver" name="mailgun" />
+    <input type="hidden" name="driver" value="mailgun" />
     <x-text-field label="Domain" name="domain" type="text" :value="$mailConfiguration->domain"/>
     <x-text-field label="Secret" name="secret" type="password" :value="$mailConfiguration->secret"/>
     <x-text-field label="Endpoint" name="endpoint" type="text"
