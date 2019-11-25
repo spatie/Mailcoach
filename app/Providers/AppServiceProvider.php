@@ -2,10 +2,12 @@
 
 namespace App\Providers;
 
+use App\Http\App\ViewComposers\HealthViewComposer;
 use App\Models\User;
 use App\Support\MailConfiguration\MailConfiguration;
 use App\Support\MailConfiguration\MailConfigurationDriverRepository;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use Spatie\Flash\Flash;
 use Spatie\Valuestore\Valuestore;
@@ -35,5 +37,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         app(MailConfiguration::class)->registerConfigValues();
+
+        View::composer('app.layouts.partials.health', HealthViewComposer::class);
     }
 }

@@ -4,7 +4,7 @@ namespace App\Http\App\Controllers\Settings\MailConfiguration;
 
 use App\Http\App\Requests\UpdateMailConfigurationRequest;
 use App\Support\MailConfiguration\MailConfiguration;
-use Illuminate\Http\Request;
+use Artisan;
 
 class EditMailConfigurationController
 {
@@ -16,6 +16,8 @@ class EditMailConfigurationController
     public function update(UpdateMailConfigurationRequest $request, MailConfiguration $mailConfiguration)
     {
         $mailConfiguration->put($request->validated());
+
+        Artisan::call('horizon:terminate');
 
         flash()->success('The mail configuration was saved.');
 
