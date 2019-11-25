@@ -12,7 +12,7 @@ class EmailListSeeder extends Seeder
             ->each(function (EmailList $emailList) {
                 foreach (range(1, faker()->numberBetween(1, 100)) as $i) {
                     $email = faker()->email;
-                    $emailList->subscribeNow($email);
+                    $emailList->subscribeSkippingDoubleOptIn($email);
 
                     if (faker()->boolean(5)) {
                         $emailList->unsubscribe($email);
