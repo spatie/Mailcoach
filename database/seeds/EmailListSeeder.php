@@ -2,12 +2,13 @@
 
 use Illuminate\Database\Seeder;
 use Spatie\Mailcoach\Models\EmailList;
+use Spatie\Mailcoach\Models\Subscriber;
 
 class EmailListSeeder extends Seeder
 {
     public function run()
     {
-        factory(EmailList::class, 5)
+        factory(EmailList::class, 1)
             ->create()
             ->each(function (EmailList $emailList) {
                 foreach (range(1, faker()->numberBetween(1, 100)) as $i) {
@@ -19,5 +20,9 @@ class EmailListSeeder extends Seeder
                     }
                 }
             });
+
+        $emailList = EmailList::create(['name' => 'freek.dev newsletter #1']);
+
+        Subscriber::createWithEmail('freek@spatie.be')->subscribeTo($emailList);
     }
 }

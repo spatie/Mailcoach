@@ -14,24 +14,24 @@ class CampaignSeeder extends Seeder
 {
     public function run()
     {
-        factory(Campaign::class, 4)->create([
+        factory(Campaign::class, 1)->create([
             'status' => CampaignStatus::DRAFT,
             'scheduled_at' => null,
             'email_list_id' => EmailList::all()->random()->id,
         ]);
 
-        factory(Campaign::class, 4)->create([
+        factory(Campaign::class, 1)->create([
             'status' => CampaignStatus::DRAFT,
             'scheduled_at' => faker()->dateTimeBetween('+1 day', '+1 year'),
             'email_list_id' => EmailList::all()->random()->id,
         ]);
 
-        factory(Campaign::class, 2)->create([
+        factory(Campaign::class, 1)->create([
             'status' => CampaignStatus::SENDING,
             'email_list_id' => EmailList::all()->random()->id,
         ]);
 
-        factory(Campaign::class, 2)->create([
+        factory(Campaign::class, 1)->create([
             'status' => CampaignStatus::SENT,
             'track_opens' => true,
             'track_clicks' => true,
