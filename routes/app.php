@@ -10,8 +10,6 @@ use App\Http\App\Controllers\Settings\Users\UpdateUserController;
 use App\Http\App\Controllers\Settings\Users\UsersIndexController;
 use App\Http\Auth\Controllers\LogoutController;
 
-Route::mailcoach('/');
-
 Route::prefix('settings')->group(function () {
     Route::prefix('account')->group(function () {
         Route::get('details', [AccountController::class, 'index'])->name('account');
