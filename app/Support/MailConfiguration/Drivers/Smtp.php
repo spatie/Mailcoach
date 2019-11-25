@@ -14,18 +14,19 @@ class Smtp extends Driver
     public function validationRules(): array
     {
         return [
-            'host' => 'required',
-            'port' => 'required',
-            'username' => 'required',
-            'password' => 'required',
+            'smtp_host' => 'required',
+            'smtp_port' => 'required',
+            'smtp_username' => 'required',
+            'smtp_password' => 'required',
         ];
     }
 
     public function registerConfigValues(Repository $config, array $values)
     {
         $config->set('mail.driver', $this->name());
-        $config->set('mail.host', $values['host']);
-        $config->set('mail.username', $values['username']);
-        $config->set('mail.password', $values['password']);
+        $config->set('mail.host', $values['smtp_host']);
+        $config->set('mail.port', $values['smtp_port']);
+        $config->set('mail.username', $values['smtp_username']);
+        $config->set('mail.password', $values['smtp_password']);
     }
 }

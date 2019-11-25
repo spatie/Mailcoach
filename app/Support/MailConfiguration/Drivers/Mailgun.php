@@ -14,10 +14,10 @@ class Mailgun extends Driver
     public function validationRules(): array
     {
         return [
-            'domain' => 'required',
-            'secret' => 'required',
-            'endpoint' => 'required',
-            'signing_secret' => 'required',
+            'mailgun_domain' => 'required',
+            'mailgun_secret' => 'required',
+            'mailgun_endpoint' => 'required',
+            'mailgun_signing_secret' => 'required',
         ];
     }
 
@@ -25,12 +25,12 @@ class Mailgun extends Driver
     {
         $config->set('mail.driver', $this->name());
         $config->set('services.mailgun', [
-            'domain' => $values['domain'],
-            'secret' => $values['secret'],
-            'endpoint' => $values['endpoint'],
+            'domain' => $values['mailgun_domain'],
+            'secret' => $values['mailgun_secret'],
+            'endpoint' => $values['mailgun_endpoint'],
         ]);
         $config->set('mailcoach.mailgun_feedback', [
-            'signing_secret' => $values['signing_secret'],
+            'signing_secret' => $values['mailgun_signing_secret'],
         ]);
     }
 }

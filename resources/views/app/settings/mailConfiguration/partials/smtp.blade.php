@@ -7,12 +7,12 @@
     @method('PUT')
 
     <input type="hidden" name="driver" value="smtp" />
-    <x-text-field label="Host" name="host" type="text" :value="$mailConfiguration->host"/>
-    <x-text-field label="Port" name="port" type="text" :value="$mailConfiguration->port"/>
-    <x-text-field label="Username" name="username" type="text"
-                  :value="$mailConfiguration->username"/>
-    <x-text-field label="Password" name="password" type="password"
-                  :value="$mailConfiguration->password"/>
+    <x-text-field label="Host" name="smtp_host" type="text" :value="$mailConfiguration->smtp_host"/>
+    <x-text-field label="Port" name="smtp_port" type="text" :value="$mailConfiguration->smtp_port"/>
+    <x-text-field label="Username" name="smtp_username" type="text"
+                  :value="$mailConfiguration->smtp_username"/>
+    <x-text-field label="Password" name="smtp_password" type="password"
+                  :value="$mailConfiguration->smtp_password"/>
 
     <button type="submit" class="button">
         Save
