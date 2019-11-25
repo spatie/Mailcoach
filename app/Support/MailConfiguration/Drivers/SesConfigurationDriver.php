@@ -15,9 +15,9 @@ class SesConfigurationDriver extends MailConfigurationDriver
     public function validationRules(): array
     {
         return [
-            'key' => 'required',
-            'secret' => 'required',
-            'region' => 'required',
+            'ses_key' => 'required',
+            'ses_secret' => 'required',
+            'ses_region' => 'required',
         ];
     }
 
@@ -25,9 +25,9 @@ class SesConfigurationDriver extends MailConfigurationDriver
     {
         $config->set('mail.driver', $this->name());
         $config->set('services.ses', [
-            'key' => $values['key'],
-            'secret' => $values['secret'],
-            'region' => $values['region'],
+            'key' => $values['ses_key'],
+            'secret' => $values['ses_secret'],
+            'region' => $values['ses_region'],
         ]);
     }
 }
