@@ -76,10 +76,6 @@ class CreateMailcoachTables extends Migration
             $table->integer('bounce_count')->default(0);
             $table->integer('bounce_rate')->default(0);
 
-            $table->string('utm_campaign')->nullable();
-            $table->string('utm_source')->nullable();
-            $table->string('utm_medium')->nullable();
-
             $table->timestamp('sent_at')->nullable();
             $table->timestamp('statistics_calculated_at')->nullable();
             $table->timestamp('scheduled_at')->nullable();
@@ -96,9 +92,8 @@ class CreateMailcoachTables extends Migration
 
         Schema::create('campaign_links', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->uuid('uuid');
             $table->unsignedBigInteger('email_campaign_id');
-            $table->string('original_link');
+            $table->string('link');
             $table->integer('click_count')->default(0);
             $table->integer('unique_click_count')->default(0);
             $table->nullableTimestamps();
