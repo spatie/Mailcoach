@@ -21,7 +21,11 @@ class EmailListSeeder extends Seeder
                 }
             });
 
-        $emailList = EmailList::create(['name' => 'freek.dev newsletter #1']);
+        $emailList = EmailList::create([
+            'name' => 'freek.dev newsletter #1',
+            'default_from_email' => 'freek@spatie.be',
+            'default_from_name' => 'Freek Van der Herten',
+        ]);
 
         Subscriber::createWithEmail('freek@spatie.be')->subscribeTo($emailList);
     }
