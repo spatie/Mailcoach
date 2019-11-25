@@ -2,6 +2,7 @@
 
 namespace App\Http\App\Requests;
 
+use App\Support\MailConfiguration\MailConfigurationDriverRepository;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
@@ -9,41 +10,19 @@ class UpdateMailConfigurationRequest extends FormRequest
 {
     public function rules(): array
     {
+        $mailConfigurationDriverRepository = new MailConfigurationDriverRepository();
+
         return array_merge([
-          'driver' => ['required',  Rule::in(['smtp', 'mailgun'])]
-        ], $this->getDriverSpecificRules());
+          'driver' => ['required','bail',  Rule::in($mailConfigurationDriverRepository->getSupportedDrivers())]
+        ], $this->getDriverSpecificValidationRules($mailConfigurationDriverRepository));
     }
 
-    protected function getDriverSpecificRules(): array
+    public function getDriverSpecificValidationRules(MailConfigurationDriverRepository $mailConfigurationDriverRepository): array
     {
-        $driver = ucFirst($this->driver);
-
-        if (! $driver) {
+        if (! $driver = $mailConfigurationDriverRepository->getForDriver($this->driver ?? '')) {
             return [];
         }
 
-        $methodName = "get{$driver}Rules";
-
-        return $this->$methodName;
-    }
-
-    protected function getSmtpRules()
-    {
-        return [
-            'mail_host' => 'required',
-            'mail_port' => 'required',
-            'mail_username' => 'required',
-            'mail_password' => 'required',
-        ];
-    }
-
-    protected function getMailgunRules(): array
-    {
-        return [
-            'mailgun_domain' => 'required',
-            'mailgun_secret' => 'required',
-            'mailgun_endpoint' => 'required',
-            'mailgun_signing_secret' => 'required',
-        ];
+        return $driver->validationRules();
     }
 }

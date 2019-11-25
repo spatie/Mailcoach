@@ -28,6 +28,7 @@
     "require": {
         "php": "^7.2",
         "ext-json": "*",
+        "aws/aws-sdk-php": "^3.121",
         "barryvdh/laravel-ide-helper": "^2.6",
         "box/spout": "^3.0",
         "fideloper/proxy": "^4.0",

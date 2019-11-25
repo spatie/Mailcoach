@@ -3,7 +3,8 @@
 namespace App\Providers;
 
 use App\Models\User;
-use App\Support\MailConfiguration;
+use App\Support\MailConfiguration\MailConfiguration;
+use App\Support\MailConfiguration\MailConfigurationDriverRepository;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 use Spatie\Flash\Flash;
@@ -26,9 +27,13 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(MailConfiguration::class, function () {
             $valueStore = Valuestore::make(base_path('mailConfiguration.json'));
 
-            return new MailConfiguration($valueStore, app()->get('config'));
+            return new MailConfiguration(
+                $valueStore,
+                app()->get('config'),
+                new MailConfigurationDriverRepository()
+            );
         });
 
-        app(MailConfiguration::class)->register();
+        app(MailConfiguration::class)->registerConfigValues();
     }
 }

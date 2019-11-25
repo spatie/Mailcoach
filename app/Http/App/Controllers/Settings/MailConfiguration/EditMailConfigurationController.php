@@ -3,7 +3,7 @@
 namespace App\Http\App\Controllers\Settings\MailConfiguration;
 
 use App\Http\App\Requests\UpdateMailConfigurationRequest;
-use App\Support\MailConfiguration;
+use App\Support\MailConfiguration\MailConfiguration;
 use Illuminate\Http\Request;
 
 class EditMailConfigurationController
