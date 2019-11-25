@@ -4,7 +4,7 @@ namespace App\Support\MailConfiguration\Drivers;
 
 use Illuminate\Contracts\Config\Repository;
 
-class Mailgun extends Driver
+class MailgunConfigurationDriver extends MailConfigurationDriver
 {
     public function name(): string
     {

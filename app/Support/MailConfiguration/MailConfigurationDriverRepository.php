@@ -2,17 +2,17 @@
 
 namespace App\Support\MailConfiguration;
 
-use App\Support\MailConfiguration\Drivers\Driver;
-use App\Support\MailConfiguration\Drivers\Mailgun;
-use App\Support\MailConfiguration\Drivers\Ses;
-use App\Support\MailConfiguration\Drivers\Smtp;
+use App\Support\MailConfiguration\Drivers\MailConfigurationDriver;
+use App\Support\MailConfiguration\Drivers\MailgunConfigurationDriver;
+use App\Support\MailConfiguration\Drivers\SesConfigurationDriver;
+use App\Support\MailConfiguration\Drivers\SmtpConfigurationDriver;
 
 class MailConfigurationDriverRepository
 {
     protected $drivers = [
-        'mailgun' => Mailgun::class,
-        'ses' => Ses::class,
-        'smtp' => Smtp::class,
+        'mailgun' => MailgunConfigurationDriver::class,
+        'ses' => SesConfigurationDriver::class,
+        'smtp' => SmtpConfigurationDriver::class,
     ];
 
     public function getSupportedDrivers(): array
@@ -20,13 +20,13 @@ class MailConfigurationDriverRepository
         return array_keys($this->drivers);
     }
 
-    public function getForDriver(string $driverName): ?Driver
+    public function getForDriver(string $driverName): ?MailConfigurationDriver
     {
         return collect($this->drivers)
             ->map(function (string $driverClass) {
                 return app($driverClass);
             })
-            ->first(function (Driver $driver) use ($driverName) {
+            ->first(function (MailConfigurationDriver $driver) use ($driverName) {
                 return $driver->name() === $driverName;
             });
     }

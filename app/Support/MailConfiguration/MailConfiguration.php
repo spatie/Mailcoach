@@ -2,7 +2,7 @@
 
 namespace App\Support\MailConfiguration;
 
-use App\Support\MailConfiguration\Drivers\Driver;
+use App\Support\MailConfiguration\Drivers\MailConfigurationDriver;
 use Illuminate\Config\Repository;
 use Spatie\Valuestore\Valuestore;
 
@@ -58,7 +58,7 @@ class MailConfiguration
         return $this->getDriver() !== null;
     }
 
-    protected function getDriver() : ?Driver
+    protected function getDriver() : ?MailConfigurationDriver
     {
         return $this->mailConfigurationDriverRepository->getForDriver($this->valuestore->get('driver', ''));
     }

@@ -4,7 +4,7 @@ namespace App\Support\MailConfiguration\Drivers;
 
 use Illuminate\Contracts\Config\Repository;
 
-class Smtp extends Driver
+class SmtpConfigurationDriver extends MailConfigurationDriver
 {
     public function name(): string
     {

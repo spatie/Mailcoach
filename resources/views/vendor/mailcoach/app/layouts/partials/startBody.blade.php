@@ -6,3 +6,9 @@
         </div>
     @endif
 @endif
+
+@if(! app(\App\Support\HorizonStatus::class)->is(\App\Support\HorizonStatus::STATUS_ACTIVE))
+    <div style="z-index: 10000" class="bg-red-200">
+        Horizon is not active
+    </div>
+@endif

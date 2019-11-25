@@ -4,7 +4,7 @@ namespace App\Support\MailConfiguration\Drivers;
 
 use Illuminate\Contracts\Config\Repository;
 
-class Ses extends Driver
+class SesConfigurationDriver extends MailConfigurationDriver
 {
 
     public function name(): string

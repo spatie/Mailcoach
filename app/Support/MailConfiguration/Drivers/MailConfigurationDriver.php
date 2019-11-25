@@ -4,7 +4,7 @@ namespace App\Support\MailConfiguration\Drivers;
 
 use Illuminate\Contracts\Config\Repository;
 
-abstract class Driver
+abstract class MailConfigurationDriver
 {
     abstract public function name(): string;
 
