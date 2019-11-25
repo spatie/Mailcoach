@@ -8,7 +8,7 @@ class TemplateSeeder extends Seeder
     public function run()
     {
         factory(Template::class, 1)->create([
-            'html' => '<html><body><a href="https://spatie.be">Spatie</a><br /><a href="https://flare.io">Flare</a></body></html>'
+            'html' => '<html><body><a href="https://spatie.be">Spatie</a><br /><a href="https://flare.io">Flare</a><br /><a href="::unsubscribeUrl::">Click here to unsubscribe</a></body></html>'
         ]);
     }
 }
