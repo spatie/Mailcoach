@@ -13,7 +13,7 @@
                   :value="$mailConfiguration->ses_region"/>
 
     <br />
-    You must set a webhook to {{ url(action(\Spatie\MailCoachSesFeedback\SesWebhookController::class)) }}
+    You must set a webhook to {{ url(action(\Spatie\MailcoachSesFeedback\SesWebhookController::class)) }}
 
     <button type="submit" class="button">
         Save
