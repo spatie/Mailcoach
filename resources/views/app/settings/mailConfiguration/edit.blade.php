@@ -13,6 +13,7 @@
         <x-select-field
             label="Driver"
             name="driver"
+            :value="$mailConfiguration->driver"
             :options="[
                 'ses' => 'Amazon SES',
                 'mailgun' => 'Mailgun',
