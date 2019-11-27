@@ -27,7 +27,7 @@ Route::prefix('settings')->group(function () {
             Route::get('edit', [UpdateUserController::class, 'edit'])->name('users.edit');
             Route::put('edit', [UpdateUserController::class, 'update']);
 
-            Route::delete('/', DestroyUserController::class)->name('users.destroy');
+            Route::delete('/', DestroyUserController::class)->name('users.delete');
         });
     });
 

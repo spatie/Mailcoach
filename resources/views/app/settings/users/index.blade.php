@@ -16,15 +16,15 @@
             <h1 class="markup-h1">Users</h1>
 
             <div class="flex justify-between">
-                    <button class="button" data-modal-trigger="create-template">
-                        Create a new user
-                    </button>
+                <button class="button" data-modal-trigger="create-template">
+                    Create a new user
+                </button>
 
-                    <x-modal title="Create user" name="create-template" :open="$errors->any()">
-                        @include('app.settings.users.partials.create')
-                    </x-modal>
+                <x-modal title="Create user" name="create-template" :open="$errors->any()">
+                    @include('app.settings.users.partials.create')
+                </x-modal>
 
-                    <x-search placeholder="Filter users…" />
+                <x-search placeholder="Filter users…"/>
 
                 <input
                     type="text"
@@ -51,18 +51,15 @@
                         </td>
                         <td>{{ $user->name }}</td>
                         <td>
-                            <form
-                                class="card-grid"
-                                action="{{ route('users.destroy', $user) }}"
-                                method="POST"
-                            >
-                                @csrf
-                                @method('DELETE')
-
-                                <button class="link-delete">
+                            @if ($user->id !== auth()->user()->id)
+                                <x-form-button
+                                    :action="route('users.delete', $user)"
+                                    method="DELETE"
+                                    data-confirm
+                                >
                                     Delete
-                                </button>
-                            </form>
+                                </x-form-button>
+                            @endif
                         </td>
                     </tr>
                 @endforeach

@@ -1,3 +1,6 @@
+TODO: add link to Mailgun setup instructions
+
+
 <x-text-field label="Domain" name="mailgun_domain" type="text" :value="$mailConfiguration->mailgun_domain"/>
 <x-text-field label="Secret" name="mailgun_secret" type="password" :value="$mailConfiguration->mailgun_secret"/>
 <x-text-field label="Endpoint" name="mailgun_endpoint" type="text"
