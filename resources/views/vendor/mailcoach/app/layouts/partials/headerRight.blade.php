@@ -19,7 +19,9 @@
         </li>
         <li>
             <a href="{{ route('mailConfiguration') }}">
-                Mail configuration
+                <span class="icon-label">
+                    <i class="fas fa-cog"></i> Mail&nbsp;config
+                </span>
             </a>
         </li>
         <li>
