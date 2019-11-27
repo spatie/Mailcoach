@@ -31,7 +31,7 @@ class CampaignSeeder extends Seeder
             'email_list_id' => EmailList::all()->random()->id,
         ]);
 
-        factory(Campaign::class, 1)->create([
+        factory(Campaign::class, 5)->create([
             'status' => CampaignStatus::SENT,
             'track_opens' => true,
             'track_clicks' => true,
@@ -54,7 +54,7 @@ class CampaignSeeder extends Seeder
                         'sent_at' => $campaign->sent_at,
                     ]);
 
-                    if (faker()->boolean(50)) {
+                    if (faker()->boolean(90)) {
                         factory(CampaignOpen::class)->create([
                             'campaign_send_id' => $campaignSend->id,
                             'email_campaign_id' => $campaign->id,
@@ -63,33 +63,37 @@ class CampaignSeeder extends Seeder
                         ]);
                     }
 
-                    $campaign->links->each(function (CampaignLink $campaignLink) use ($campaignSend, $subscriber) {
-                        if (faker()->boolean(20)) {
-                            $campaignLink->registerClick($campaignSend);
+                    $linkUrl = faker()->url;
+                    if (faker()->boolean(40)) {
+                        $campaignClick = $campaignSend->registerClick($linkUrl);
+                        if ($campaignClick) {
+                            $campaignClick->created_at = faker()->dateTimeBetween('now', '+1 day');
+                            $campaignClick->save();
                         }
+                    }
 
-                        if (faker()->boolean(20)) {
-                            $campaignLink->registerClick($campaignSend);
+                    if (faker()->boolean(40)) {
+                        $campaignClick = $campaignSend->registerClick($linkUrl);
+                        if ($campaignClick) {
+                            $campaignClick->created_at = faker()->dateTimeBetween('now', '+1 day');
+                            $campaignClick->save();
                         }
-                    });
+                    }
 
                     if (faker()->boolean(20)) {
                         $campaign->emailList->unsubscribe($subscriber->email);
                     }
 
                     if (faker()->boolean(10)) {
-                        $campaignSend->markAsBounced();
+                        $campaignSend->registerBounce();
                     }
 
                     if (faker()->boolean(10)) {
-                        $campaignSend->complaintReceived();
+                        $campaignSend->registerComplaint();
                     }
-
                 });
 
             (new CalculateStatisticsJob($campaign))->handle();
         });
-
-
     }
 }

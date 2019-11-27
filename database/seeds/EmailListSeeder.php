@@ -11,7 +11,7 @@ class EmailListSeeder extends Seeder
         factory(EmailList::class, 1)
             ->create()
             ->each(function (EmailList $emailList) {
-                foreach (range(1, faker()->numberBetween(1, 100)) as $i) {
+                foreach (range(1, faker()->numberBetween(1, 500)) as $i) {
                     $email = faker()->email;
                     $emailList->subscribeSkippingDoubleOptIn($email);
 
