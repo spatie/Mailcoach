@@ -11,6 +11,9 @@ class RouteServiceProvider extends ServiceProvider
     public function map(Router $router)
     {
         Route::mailcoach('/');
+        Route::sesFeedback('ses-feedback');
+        Route::mailgunFeedback('mailgun-feedback');
+        Route::sendgridFeedback('sendgrid-feedback');
 
         $this
             ->mapWebRoutes($router)

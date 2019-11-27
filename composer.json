@@ -22,7 +22,11 @@
         },
         {
             "type": "path",
-            "url": "../laravel-mailcoach-ses-feedback"
+            "url": "../laravel-mailcoach-mailgun-feedback"
+        },
+        {
+            "type": "path",
+            "url": "../laravel-mailcoach-sendgrid-feedback"
         }
     ],
     "require": {
@@ -40,6 +44,7 @@
         "spatie/laravel-mailcoach": "dev-master",
         "spatie/laravel-mailcoach-mailgun-feedback": "dev-master",
         "spatie/laravel-mailcoach-ses-feedback": "dev-master",
+        "spatie/laravel-mailcoach-sendgrid-feedback": "dev-master",
         "spatie/laravel-query-builder": "^2.3",
         "spatie/laravel-tail": "^3.3",
         "spatie/laravel-welcome-notification": "^1.0",
