@@ -2,7 +2,7 @@
     <button data-dropdown-trigger>
         <i class="fas fa-user-circle | block text-2xl opacity-50 | hover:opacity-75"></i>
     </button>
-    <ul class="dropdown-list | hidden" data-dropdown-list>
+    <ul class="dropdown-list dropdown-list-left | hidden" data-dropdown-list>
         <li>
             <a href="{{ route('account') }}">
                 <span class="icon-label">
