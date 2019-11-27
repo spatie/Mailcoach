@@ -16,6 +16,7 @@
             :value="$mailConfiguration->driver"
             :options="[
                 'ses' => 'Amazon SES',
+                'sendgrid' => 'SendGrid',
                 'mailgun' => 'Mailgun',
                 'smtp' => 'SMTP',
             ]"
@@ -27,6 +28,9 @@
         </div>
         <div data-conditional-driver="mailgun">
             @include('app.settings.mailConfiguration.partials.mailgun')
+        </div>
+        <div data-conditional-driver="sendgrid">
+            @include('app.settings.mailConfiguration.partials.sendgrid')
         </div>
         <div data-conditional-driver="smtp">
             @include('app.settings.mailConfiguration.partials.smtp')

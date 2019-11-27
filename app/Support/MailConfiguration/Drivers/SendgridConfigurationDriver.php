@@ -25,7 +25,7 @@ class SendgridConfigurationDriver extends MailConfigurationDriver
         $config->set('mail.host', 'smtp.sendgrid.net');
         $config->set('mail.username', 'apikey');
         $config->set('mail.encryption', null);
-        $config->set('mail.password', $values['sendgrid_password']);
+        $config->set('mail.password', $values['sendgrid_api_key']);
 
         $config->set('mailcoach.sendgrid_feedback', [
             'signing_secret' => $values['sendgrid_signing_secret'],
