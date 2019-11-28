@@ -8,5 +8,6 @@ TODO: add link to Mailgun setup instructions
 <x-text-field label="Webhook signing secret" name="mailgun_signing_secret" type="secret"
                 :value="$mailConfiguration->mailgun_signing_secret"/>
 
-<br />
+<p class="form-row alert alert-info">
 You must set a webhook to {{ url(action(\Spatie\MailcoachMailgunFeedback\MailgunWebhookController::class)) }}
+</p>
