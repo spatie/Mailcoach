@@ -6,7 +6,6 @@ use Illuminate\Contracts\Config\Repository;
 
 class SesConfigurationDriver extends MailConfigurationDriver
 {
-
     public function name(): string
     {
         return 'ses';
@@ -18,6 +17,7 @@ class SesConfigurationDriver extends MailConfigurationDriver
             'ses_key' => 'required',
             'ses_secret' => 'required',
             'ses_region' => 'required',
+            'ses_configuration_set' => 'required',
         ];
     }
 
@@ -28,6 +28,9 @@ class SesConfigurationDriver extends MailConfigurationDriver
             'key' => $values['ses_key'],
             'secret' => $values['ses_secret'],
             'region' => $values['ses_region'],
+        ]);
+        $config->set('mailcoach.ses_feedback', [
+            'configuration_set' => $values['ses_configuration_set']
         ]);
     }
 }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1952ec20c7b7b141ba2a930ae6e5838d",
+    "content-hash": "cf6d913f247263420f6c3aaddaea7d3a",
     "packages": [
         {
             "name": "aws/aws-php-sns-message-validator",
@@ -5494,7 +5494,7 @@
             "dist": {
                 "type": "path",
                 "url": "../laravel-mailcoach",
-                "reference": "d12d24f0e7caff5a2c8801adc6bc880db17bbff6"
+                "reference": "564a13fc198c055c9e055fed18b0d5c97be711ec"
             },
             "require": {
                 "cakephp/chronos": "^1.2.8",
@@ -5650,7 +5650,7 @@
             "dist": {
                 "type": "path",
                 "url": "../laravel-mailcoach-sendgrid-feedback",
-                "reference": "ba457e3559c9e65a62737eb5ceeba65608c93634"
+                "reference": "860976c472abfc28dedb1c0589deaedc7caa122b"
             },
             "require": {
                 "illuminate/http": "^6.4",
@@ -5712,7 +5712,7 @@
             "dist": {
                 "type": "path",
                 "url": "../laravel-mailcoach-ses-feedback",
-                "reference": "ccdb9f842a9cd194ae308800d75f399e94c6c85a"
+                "reference": "a2bbe725b2bbc10e68d1b79373ebb2460cb8498e"
             },
             "require": {
                 "aws/aws-php-sns-message-validator": "^1.5",
@@ -5733,7 +5733,7 @@
             "extra": {
                 "laravel": {
                     "providers": [
-                        "Spatie\\MailcoachSesFeedback\\MailCoachSesFeedbackServiceProvider"
+                        "Spatie\\MailcoachSesFeedback\\MailcoachSesFeedbackServiceProvider"
                     ]
                 }
             },
