@@ -4,14 +4,16 @@ namespace App\Support\MailConfiguration;
 
 use App\Support\MailConfiguration\Drivers\MailConfigurationDriver;
 use App\Support\MailConfiguration\Drivers\MailgunConfigurationDriver;
+use App\Support\MailConfiguration\Drivers\SendgridConfigurationDriver;
 use App\Support\MailConfiguration\Drivers\SesConfigurationDriver;
 use App\Support\MailConfiguration\Drivers\SmtpConfigurationDriver;
 
 class MailConfigurationDriverRepository
 {
     protected $drivers = [
-        'mailgun' => MailgunConfigurationDriver::class,
         'ses' => SesConfigurationDriver::class,
+        'mailgun' => MailgunConfigurationDriver::class,
+        'sendgrid' => SendgridConfigurationDriver::class,
         'smtp' => SmtpConfigurationDriver::class,
     ];
 
