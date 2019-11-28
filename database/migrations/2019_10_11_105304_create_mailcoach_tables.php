@@ -93,7 +93,7 @@ class CreateMailcoachTables extends Migration
         Schema::create('campaign_links', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('email_campaign_id');
-            $table->string('url')->nullable();
+            $table->string('url');
             $table->integer('click_count')->default(0);
             $table->integer('unique_click_count')->default(0);
             $table->nullableTimestamps();
@@ -222,6 +222,34 @@ class CreateMailcoachTables extends Migration
             $table
                 ->foreign('email_list_id')
                 ->references('id')->on('email_lists')
+                ->onDelete('cascade');
+        });
+
+        Schema::create('mailcoach_tags', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('name');
+            $table->unsignedBigInteger('email_list_id');
+            $table->timestamps();
+
+            $table
+                ->foreign('email_list_id')
+                ->references('id')->on('email_lists')
+                ->onDelete('cascade');
+        });
+
+        Schema::create('email_list_subscriber_tags', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('email_list_subscriber_id');
+            $table->unsignedBigInteger('mailcoach_tag_id');
+
+            $table
+                ->foreign('email_list_subscriber_id')
+                ->references('id')->on('email_list_subscribers')
+                ->onDelete('cascade');
+
+            $table
+                ->foreign('mailcoach_tag_id')
+                ->references('id')->on('mailcoach_tags')
                 ->onDelete('cascade');
         });
     }
