@@ -14,15 +14,15 @@
     <nav>
         <ul class="tabs">
             <x-navigation-item :href="route('account')">
-                Details
+                <x-icon-label icon="fa-user-circle" text="User details" />
             </x-navigation-item>
             <x-navigation-item :href="route('password')">
-                Password
+                <x-icon-label icon="fa-lock" text="Password" />
             </x-navigation-item>
         </ul>
     </nav>
 
-    <section class="card card-grid">
+    <section class="card">
         @yield('account')
     </section>
 @endsection

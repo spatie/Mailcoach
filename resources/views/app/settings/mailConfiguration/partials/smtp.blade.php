@@ -1,6 +1,6 @@
-<div class="warning">
+<p class="form-row alert alert-warning">
     Open and click tracking is not available for the SMTP driver.
-</div>
+</p>
 
 <x-text-field label="Host" name="smtp_host" type="text" :value="$mailConfiguration->smtp_host"/>
 <x-text-field label="Port" name="smtp_port" type="text" :value="$mailConfiguration->smtp_port"/>

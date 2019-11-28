@@ -14,10 +14,10 @@
     <nav>
         <ul class="tabs">
             <x-navigation-item :href="route('mailConfiguration')">
-                Mail configuration
+                <x-icon-label icon="fa-cogs" text="Mail configuration" />
             </x-navigation-item>
             <x-navigation-item :href="route('sendTestMail')">
-                Send test mail
+                <x-icon-label icon="fa-paper-plane" text="Send test mail" />
             </x-navigation-item>
         </ul>
     </nav>

@@ -1,15 +1,15 @@
-<form action="{{ route('users.create') }}" method="POST">
+<form class="form-grid" action="{{ route('users.create') }}" method="POST">
     @csrf
     <x-text-field type="email" label="Email" name="email" required />
 
     <x-text-field label="Name" name="name" required />
 
-    <div class="buttons">
-        <button type="button" class="button-secondary" data-modal-dismiss>
-            Cancel
-        </button>
+    <div class="form-buttons">
         <button class="button">
-            Create
+            <x-icon-label icon="fa-user-circle" text="Create new user" />
+        </button>
+        <button type="button" class="button-cancel" data-modal-dismiss>
+            Cancel
         </button>
     </div>
 </form>

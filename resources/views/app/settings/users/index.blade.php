@@ -13,11 +13,9 @@
 @section('content')
     <main class="layout-main">
         <section class="card card-grid">
-            <h1 class="markup-h1">Users</h1>
-
             <div class="flex justify-between">
                 <button class="button" data-modal-trigger="create-template">
-                    Create a new user
+                    <x-icon-label icon="fa-user-circle" text="Create new user" />
                 </button>
 
                 <x-modal title="Create user" name="create-template" :open="$errors->any()">
@@ -25,12 +23,6 @@
                 </x-modal>
 
                 <x-search placeholder="Filter users…"/>
-
-                <input
-                    type="text"
-                    class="form-input w-64 rounded-full"
-                    placeholder="Filter users…"
-                >
             </div>
 
             <table class="table">

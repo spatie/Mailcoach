@@ -1,8 +1,8 @@
 @extends('mailcoach::app.layouts.app', ['title' => $user->name])
 
 @section('header')
-    <nav class="breadcrumbs">
-        <ul>
+    <nav>
+        <ul class="breadcrumbs">
             <li>
                 <a href="{{ route('users') }}">Users</a>
             </li>
@@ -14,10 +14,10 @@
 @endsection
 
 @section('content')
-    <section class="card card-grid">
+    <section class="card">
 
         <form
-            class="card-grid"
+            class="form-grid"
             action="{{ route('users.edit', $user) }}"
             method="POST"
         >
@@ -28,9 +28,9 @@
 
             <x-text-field label="Name" name="name" :value="$user->name" required/>
 
-            <div class="buttons">
+            <div class="form-buttons">
                 <button type="submit" class="button">
-                    Save
+                    <x-icon-label icon="fa-user-circle" text="Save user" />
                 </button>
             </div>
         </form>

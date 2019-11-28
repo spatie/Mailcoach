@@ -2,7 +2,7 @@
 
 @section('account')
     <form
-        class="card-grid"
+        class="form-grid"
         action="{{ route('account') }}"
         method="POST"
     >
@@ -11,9 +11,11 @@
 
         <x-text-field label="Email" name="email" type="email" :value="$user->email" required />
         <x-text-field label="Name" name="name" :value="$user->name" required />
-
-        <button type="submit" class="button">
-            Save
-        </button>
+        
+        <div class="form-buttons">
+            <button type="submit" class="button">
+                <x-icon-label icon="fa-user-circle" text="Save user" />
+            </button>
+        </div>
     </form>
 @endsection

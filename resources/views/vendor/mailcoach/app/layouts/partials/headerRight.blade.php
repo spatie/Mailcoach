@@ -1,6 +1,6 @@
 <div class="dropdown" data-dropdown>
-    <button data-dropdown-trigger>
-        <i class="fas fa-user-circle | block text-2xl opacity-50 | hover:opacity-75"></i>
+    <button class="dropdown-trigger" data-dropdown-trigger>
+        <i class="fas fa-user-circle | block text-2xl opacity-50 | hover:opacity-75 dropdown-trigger-opacity"></i>
     </button>
     <ul class="dropdown-list dropdown-list-left | hidden" data-dropdown-list>
         <li>

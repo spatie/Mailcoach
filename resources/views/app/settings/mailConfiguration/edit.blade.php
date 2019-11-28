@@ -2,7 +2,7 @@
 
 @section('mailConfiguration')
     <form
-        class="card-grid"
+        class="form-grid"
         action="{{ route('mailConfiguration') }}"
         method="POST"
         data-cloak
@@ -23,21 +23,26 @@
             data-conditional="driver"
         />
 
-        <div data-conditional-driver="ses">
+        <div class="form-grid" data-conditional-driver="ses">
             @include('app.settings.mailConfiguration.partials.ses')
         </div>
-        <div data-conditional-driver="mailgun">
+
+        <div class="form-grid" data-conditional-driver="mailgun">
             @include('app.settings.mailConfiguration.partials.mailgun')
         </div>
-        <div data-conditional-driver="sendgrid">
+
+        <div class="form-grid" data-conditional-driver="sendgrid">
             @include('app.settings.mailConfiguration.partials.sendgrid')
         </div>
-        <div data-conditional-driver="smtp">
+
+        <div class="form-grid" data-conditional-driver="smtp">
             @include('app.settings.mailConfiguration.partials.smtp')
         </div>
 
-        <button class="button">
-            Save
-        </button>
+        <div class="form-buttons">
+            <button class="button">
+                <x-icon-label icon="fa-cogs" text="Save configuration" />
+            </button>
+        </div>
     </form>
 @endsection

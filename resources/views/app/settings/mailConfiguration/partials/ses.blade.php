@@ -7,5 +7,6 @@ TODO: add link to SES setup instructions
 <x-text-field label="Configuration set name" name="ses_configuration_set" type="text"
               :value="$mailConfiguration->ses_configuration_set"/>
 
-<br />
+<p class="form-row alert alert-info">
 You must set a webhook to {{ url(action(\Spatie\MailcoachSesFeedback\SesWebhookController::class)) }}
+</p>
