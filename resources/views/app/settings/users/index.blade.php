@@ -42,15 +42,24 @@
                             </a>
                         </td>
                         <td>{{ $user->name }}</td>
-                        <td>
+                        <td class="td-action">
                             @if ($user->id !== auth()->user()->id)
-                                <x-form-button
-                                    :action="route('users.delete', $user)"
-                                    method="DELETE"
-                                    data-confirm
-                                >
-                                    Delete
-                                </x-form-button>
+                            <div class="dropdown" data-dropdown>
+                                <button class="icon-button" data-dropdown-trigger>
+                                    <i class="fas fa-ellipsis-v | dropdown-trigger-rotate"></i>
+                                </button>
+                                <ul class="dropdown-list dropdown-list-left | hidden" data-dropdown-list>
+                                    <li>
+                                        <x-form-button
+                                        :action="route('users.delete', $user)"
+                                        method="DELETE"
+                                        data-confirm
+                                        >
+                                        <x-icon-label icon="fa-trash-alt" text="Delete" :caution="true" />
+                                    </x-form-button>
+                                    </li>
+                                </ul>
+                            </div>
                             @endif
                         </td>
                     </tr>
