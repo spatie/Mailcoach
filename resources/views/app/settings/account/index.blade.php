@@ -14,7 +14,7 @@
         
         <div class="form-buttons">
             <button type="submit" class="button">
-                <x-icon-label icon="fa-user-circle" text="Save user" />
+                <x-icon-label icon="fa-user" text="Save user" />
             </button>
         </div>
     </form>

@@ -6,11 +6,10 @@
 
     <div class="form-buttons">
         <button class="button">
-            <x-icon-label icon="fa-user-circle" text="Create new user" />
+            <x-icon-label icon="fa-user" text="Create new user" />
         </button>
         <button type="button" class="button-cancel" data-modal-dismiss>
             Cancel
         </button>
     </div>
 </form>
-
