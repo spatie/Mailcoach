@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Console\Commands\MakeUserCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 use Laravel\Horizon\Console\TerminateCommand;
@@ -11,6 +12,7 @@ class Kernel extends ConsoleKernel
 {
     protected $commands = [
         TerminateCommand::class,
+        MakeUserCommand::class,
     ];
 
     protected function schedule(Schedule $schedule)

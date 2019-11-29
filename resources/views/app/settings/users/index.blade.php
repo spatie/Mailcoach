@@ -1,77 +1,69 @@
 @extends('mailcoach::app.layouts.app', ['title' => 'Users'])
 
 @section('header')
-    <nav class="breadcrumbs">
-        <ul>
-            <li>
-                Users
-            </li>
-        </ul>
-    </nav>
+<nav class="breadcrumbs">
+    <ul>
+        <li>
+            Users
+        </li>
+    </ul>
+</nav>
 @endsection
 
 @section('content')
-    <main class="layout-main">
-        <section class="card card-grid">
-            <div class="flex justify-between">
-                <button class="button" data-modal-trigger="create-template">
-                    <x-icon-label icon="fa-user-circle" text="Create new user" />
-                </button>
+<main class="layout-main">
+    <section class="card card-grid">
+        <div class="flex justify-between">
+            <button class="button" data-modal-trigger="create-template">
+                <x-icon-label icon="fa-user" text="Create new user" />
+            </button>
 
-                <x-modal title="Create user" name="create-template" :open="$errors->any()">
-                    @include('app.settings.users.partials.create')
-                </x-modal>
+            <x-modal title="Create user" name="create-template" :open="$errors->any()">
+                @include('app.settings.users.partials.create')
+            </x-modal>
 
-                <x-search placeholder="Filter users…"/>
-            </div>
+            <x-search placeholder="Filter users…" />
+        </div>
 
-            <table class="table">
-                <thead>
+        <table class="table">
+            <thead>
                 <tr>
                     <x-th sort-by="email" sort-default>Email</x-th>
                     <x-th sort-by="-name">Name</x-th>
                     <th></th>
                 </tr>
-                </thead>
-                <tbody>
+            </thead>
+            <tbody>
                 @foreach($users as $user)
-                    <tr>
-                        <td class="markup-links">
-                            <a href="{{ route('users.edit', $user) }}">
-                                {{ $user->email }}
-                            </a>
-                        </td>
-                        <td>{{ $user->name }}</td>
-                        <td class="td-action">
-                            @if ($user->id !== auth()->user()->id)
-                            <div class="dropdown" data-dropdown>
-                                <button class="icon-button" data-dropdown-trigger>
-                                    <i class="fas fa-ellipsis-v | dropdown-trigger-rotate"></i>
-                                </button>
-                                <ul class="dropdown-list dropdown-list-left | hidden" data-dropdown-list>
-                                    <li>
-                                        <x-form-button
-                                        :action="route('users.delete', $user)"
-                                        method="DELETE"
-                                        data-confirm
-                                        >
+                <tr>
+                    <td class="markup-links">
+                        <a href="{{ route('users.edit', $user) }}">
+                            {{ $user->email }}
+                        </a>
+                    </td>
+                    <td>{{ $user->name }}</td>
+                    <td class="td-action">
+                        @if ($user->id !== auth()->user()->id)
+                        <div class="dropdown" data-dropdown>
+                            <button class="icon-button" data-dropdown-trigger>
+                                <i class="fas fa-ellipsis-v | dropdown-trigger-rotate"></i>
+                            </button>
+                            <ul class="dropdown-list dropdown-list-left | hidden" data-dropdown-list>
+                                <li>
+                                    <x-form-button :action="route('users.delete', $user)" method="DELETE" data-confirm>
                                         <x-icon-label icon="fa-trash-alt" text="Delete" :caution="true" />
                                     </x-form-button>
-                                    </li>
-                                </ul>
-                            </div>
-                            @endif
-                        </td>
-                    </tr>
+                                </li>
+                            </ul>
+                        </div>
+                        @endif
+                    </td>
+                </tr>
                 @endforeach
-                </tbody>
-            </table>
+            </tbody>
+        </table>
 
-            <x-table-status
-                name="user"
-                :paginator="$users"
-                :total-count="$totalUsersCount"
-                :show-all-url="route('users')"
-            ></x-table-status>
-    </main>
+        <x-table-status name="user" :paginator="$users" :total-count="$totalUsersCount" :show-all-url="route('users')">
+        </x-table-status>
+</main>
 @endsection
