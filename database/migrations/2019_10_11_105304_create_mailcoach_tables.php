@@ -252,5 +252,21 @@ class CreateMailcoachTables extends Migration
                 ->references('id')->on('mailcoach_tags')
                 ->onDelete('cascade');
         });
+
+        Schema::create('email_list_allow_form_subscription_tags', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('email_list_id');
+            $table->unsignedBigInteger('mailcoach_tag_id');
+
+            $table
+                ->foreign('email_list_id')
+                ->references('id')->on('email_lists')
+                ->onDelete('cascade');
+
+            $table
+                ->foreign('mailcoach_tag_id')
+                ->references('id')->on('mailcoach_tags')
+                ->onDelete('cascade');
+        });
     }
 }
