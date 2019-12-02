@@ -1,5 +1,8 @@
-<p class="form-note">
-    TODO: add link to Mailgun setup instructions
+<p class="alert alert-info text-sm">
+    TODO: add link to Mailgun setup instructions.
+    <br>
+    You must set a webhook to 
+    <code class="markup-code">{{ url(action(\Spatie\MailcoachMailgunFeedback\MailgunWebhookController::class)) }}</code>
 </p>
 
 <x-text-field label="Domain" name="mailgun_domain" type="text" :value="$mailConfiguration->mailgun_domain"/>
@@ -8,8 +11,3 @@
                 :value="$mailConfiguration->mailgun_endpoint"/>
 <x-text-field label="Webhook signing secret" name="mailgun_signing_secret" type="secret"
                 :value="$mailConfiguration->mailgun_signing_secret"/>
-
-<p class="form-note">
-    You must set a webhook to 
-    <code class="markup-code">{{ url(action(\Spatie\MailcoachMailgunFeedback\MailgunWebhookController::class)) }}</code>
-</p>

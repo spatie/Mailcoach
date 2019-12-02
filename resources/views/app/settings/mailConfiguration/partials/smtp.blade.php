@@ -1,4 +1,4 @@
-<p class="form-note">
+<p class="alert alert-info text-sm">
     Open and click tracking is not available for the SMTP driver.
 </p>
 
