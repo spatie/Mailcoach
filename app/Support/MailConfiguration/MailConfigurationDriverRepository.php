@@ -10,7 +10,7 @@ use App\Support\MailConfiguration\Drivers\SmtpConfigurationDriver;
 
 class MailConfigurationDriverRepository
 {
-    protected $drivers = [
+    protected array $drivers = [
         'ses' => SesConfigurationDriver::class,
         'mailgun' => MailgunConfigurationDriver::class,
         'sendgrid' => SendgridConfigurationDriver::class,
@@ -25,11 +25,7 @@ class MailConfigurationDriverRepository
     public function getForDriver(string $driverName): ?MailConfigurationDriver
     {
         return collect($this->drivers)
-            ->map(function (string $driverClass) {
-                return app($driverClass);
-            })
-            ->first(function (MailConfigurationDriver $driver) use ($driverName) {
-                return $driver->name() === $driverName;
-            });
+            ->map(fn(string $driverClass) => app($driverClass))
+            ->first(fn(MailConfigurationDriver $driver) => $driver->name() === $driverName);
     }
 }

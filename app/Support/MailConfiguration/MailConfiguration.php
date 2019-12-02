@@ -8,14 +8,11 @@ use Spatie\Valuestore\Valuestore;
 
 class MailConfiguration
 {
-    /** @var \Spatie\Valuestore\Valuestore  */
-    protected $valuestore;
+    protected Valuestore $valuestore;
 
-    /**@var \Illuminate\Config\Repository */
-    protected $config;
+    protected Repository $config;
 
-    /** @var \App\Support\MailConfiguration\MailConfigurationDriverRepository */
-    protected $mailConfigurationDriverRepository;
+    protected MailConfigurationDriverRepository $mailConfigurationDriverRepository;
 
     public function __construct(Valuestore $valuestore, Repository $config, MailConfigurationDriverRepository $mailConfigurationDriverRepository)
     {

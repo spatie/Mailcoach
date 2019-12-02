@@ -12,7 +12,7 @@ class LoginController
 {
     use AuthenticatesUsers, AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    protected $redirectTo = '/campaigns';
+    protected string $redirectTo = '/campaigns';
 
     public function showLoginForm()
     {

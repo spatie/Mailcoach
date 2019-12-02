@@ -9,10 +9,9 @@ use Spatie\Mailcoach\Enums\SubscriptionStatus;
 
 class ImportSubscriberRow
 {
-    /** @var \App\Models\EmailList */
-    private $emailList;
+    private EmailList $emailList;
 
-    private $values = [];
+    private array $values = [];
 
     public function __construct(EmailList $emailList, array $values)
     {
@@ -56,12 +55,8 @@ class ImportSubscriberRow
     public function getExtraAttributes(): array
     {
         return collect($this->values)
-            ->reject(function ($value, string $key) {
-                return in_array($key, ['email', 'first_name', 'last_name']);
-            })
-            ->map(function ($value, string $key) {
-                return [$key, $value];
-            })
+            ->reject(fn($value, string $key) => in_array($key, ['email', 'first_name', 'last_name']))
+            ->map(fn($value, string $key) => [$key, $value])
             ->reduce(function (array $result, $keyValuePair) {
                 [$key, $value] = $keyValuePair;
 

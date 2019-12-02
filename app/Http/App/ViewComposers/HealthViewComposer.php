@@ -9,10 +9,10 @@ use Illuminate\View\View;
 class HealthViewComposer
 {
     /** @var \App\Support\HorizonStatus */
-    protected $horizonStatus;
+    protected HorizonStatus $horizonStatus;
 
     /** @var \App\Support\MailConfiguration\MailConfiguration */
-    protected $mailConfiguration;
+    protected MailConfiguration $mailConfiguration;
 
     public function __construct(HorizonStatus $horizonStatus, MailConfiguration $mailConfiguration)
     {

@@ -10,8 +10,7 @@ class HorizonStatus
     public const STATUS_INACTIVE = 'inactive';
     public const STATUS_PAUSED = 'paused';
 
-    /** @var \Laravel\Horizon\Contracts\MasterSupervisorRepository */
-    private $masterSupervisorRepository;
+    private MasterSupervisorRepository $masterSupervisorRepository;
 
     public function __construct(MasterSupervisorRepository $masterSupervisorRepository)
     {
@@ -29,9 +28,7 @@ class HorizonStatus
             return static::STATUS_INACTIVE;
         }
 
-        $isPaused = collect($masters)->contains(function ($master) {
-            return $master->status === 'paused';
-        });
+        $isPaused = collect($masters)->contains(fn($master) => $master->status === 'paused');
 
         return $isPaused
             ? static::STATUS_PAUSED
