@@ -20,6 +20,12 @@ class CreateMailcoachTables extends Migration
 
             $table->boolean('allow_form_subscriptions')->default(false);
 
+            $table->string('redirect_after_subscribed')->nullable();
+            $table->string('redirect_after_already_subscribed')->nullable();
+            $table->string('redirect_after_subscription_pending')->nullable();
+            $table->string('redirect_after_unsubscribed')->nullable();
+
+
             $table->timestamps();
         });
 
