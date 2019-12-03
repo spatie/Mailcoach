@@ -65,12 +65,16 @@ class CreateMailcoachTables extends Migration
             $table->longText('webview_html')->nullable();
 
             $table->string('mailable_class')->nullable();
-            $table->string('segment_class')->nullable();
 
             $table->boolean('track_opens')->default(false);
             $table->boolean('track_clicks')->default(false);
 
             $table->integer('sent_to_number_of_subscribers')->default(0);
+
+            $table->string('segment_class')->nullable();
+            $table->string('segment_description')->default(0);
+            $table->boolean('segment_using_all_tags')->default(false);
+
             $table->integer('open_count')->default(0);
             $table->integer('unique_open_count')->default(0);
             $table->integer('open_rate')->default(0);
@@ -267,6 +271,22 @@ class CreateMailcoachTables extends Migration
             $table
                 ->foreign('email_list_id')
                 ->references('id')->on('email_lists')
+                ->onDelete('cascade');
+
+            $table
+                ->foreign('mailcoach_tag_id')
+                ->references('id')->on('mailcoach_tags')
+                ->onDelete('cascade');
+        });
+
+        Schema::create('email_campaign_segment_tags', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('email_campaign_id');
+            $table->unsignedBigInteger('mailcoach_tag_id');
+
+            $table
+                ->foreign('email_campaign_id')
+                ->references('id')->on('email_campaigns')
                 ->onDelete('cascade');
 
             $table
