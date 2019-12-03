@@ -25,7 +25,6 @@ class CreateMailcoachTables extends Migration
             $table->string('redirect_after_subscription_pending')->nullable();
             $table->string('redirect_after_unsubscribed')->nullable();
 
-
             $table->timestamps();
         });
 
