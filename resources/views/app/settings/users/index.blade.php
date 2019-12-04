@@ -37,7 +37,7 @@
                 @foreach($users as $user)
                 <tr>
                     <td class="markup-links">
-                        <a href="{{ route('users.edit', $user) }}">
+                        <a href="{{ $user->id === auth()->user()->id ? route('account') : route('users.edit', $user) }}">
                             {{ $user->email }}
                         </a>
                     </td>
