@@ -12,7 +12,6 @@ class CreateMailcoachTables extends Migration
             $table->bigIncrements('id');
             $table->uuid('uuid');
             $table->string('name');
-            $table->boolean('requires_double_opt_in')->default(false);
             $table->string('campaigns_feed_enabled')->default(true);
 
             $table->string('default_from_email')->nullable();
@@ -24,6 +23,16 @@ class CreateMailcoachTables extends Migration
             $table->string('redirect_after_already_subscribed')->nullable();
             $table->string('redirect_after_subscription_pending')->nullable();
             $table->string('redirect_after_unsubscribed')->nullable();
+
+            $table->boolean('requires_confirmation')->default(false);
+            $table->string('confirmation_mail_subject')->nullable();
+            $table->string('confirmation_mail_content')->nullable();
+            $table->string('confirmation_mailable_class')->nullable();
+
+            $table->boolean('send_welcome_mail')->nullable();
+            $table->string('welcome_mail_subject')->nullable();
+            $table->string('welcome_mail_content')->nullable();
+            $table->string('welcome_mailable_class')->nullable();
 
             $table->timestamps();
         });
