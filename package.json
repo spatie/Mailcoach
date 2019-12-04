@@ -1,54 +1,21 @@
 {
     "private": true,
     "scripts": {
-        "hot": "webpack-dev-server --mode development --inline --hot",
-        "watch": "webpack --mode development --watch",
-        "dev": "webpack --mode development",
-        "production": "NODE_ENV=production webpack --mode production",
-        "analyze": "NODE_ENV=production webpack --mode production --analyze",
-        "format": "prettier 'resources/**/*.{css,js,json,css}' '*.{js,css}' --write"
+        "dev": "npm run development",
+        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "watch": "npm run development -- --watch",
+        "watch-poll": "npm run watch -- --watch-poll",
+        "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "prod": "npm run production",
+        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
     },
-    "dependencies": {},
     "devDependencies": {
-        "@babel/core": "^7.4.3",
-        "@babel/plugin-syntax-dynamic-import": "^7.2.0",
-        "@babel/plugin-transform-runtime": "^7.4.3",
-        "@babel/preset-env": "^7.4.3",
-        "@babel/preset-react": "^7.0.0",
-        "@babel/preset-typescript": "^7.3.3",
-        "babel-loader": "^8.0.5",
-        "clean-webpack-plugin": "^2.0.1",
-        "fork-ts-checker-webpack-plugin": "^1.2.0",
-        "husky": "^3.0.9",
-        "jest": "^24.8.0",
-        "lint-staged": "^8.1.5",
-        "prettier": "^1.18.2",
-        "webpack": "^4.29.6",
-        "webpack-bundle-analyzer": "^3.3.2",
-        "webpack-cli": "^3.3.0",
-        "webpack-dev-server": "^3.3.1",
-        "webpack-manifest-plugin": "^2.0.4",
-        "webpack-merge": "^4.2.1",
-        "webpack-notifier": "^1.7.0"
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged"
-        }
-    },
-    "lint-staged": {
-        "linters": {
-            "*.{css,js}": [
-                "prettier --write",
-                "git add"
-            ],
-            "*.php": [
-                "php ./vendor/bin/php-cs-fixer fix --config .php_cs",
-                "git add"
-            ]
-        },
-        "ignore": [
-            "public/**/*"
-        ]
+        "axios": "^0.19",
+        "cross-env": "^5.1",
+        "laravel-mix": "^4.0.7",
+        "lodash": "^4.17.13",
+        "resolve-url-loader": "^2.3.1",
+        "sass": "^1.15.2",
+        "sass-loader": "^7.1.0"
     }
 }
