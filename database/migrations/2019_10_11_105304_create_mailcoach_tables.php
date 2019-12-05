@@ -43,7 +43,7 @@ class CreateMailcoachTables extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('email_list_id');
 
-            $table->string('email')->unique();
+            $table->string('email');
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
             $table->json('extra_attributes')->nullable();
@@ -102,7 +102,7 @@ class CreateMailcoachTables extends Migration
 
             $table->timestamp('last_modified_at')->nullable();
 
-            $table->timestamp('statistics_report_sent_at')->nullable();
+            $table->timestamp('summary_mail_sent_at')->nullable();
 
             $table->timestamps();
 
