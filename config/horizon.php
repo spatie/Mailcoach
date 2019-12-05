@@ -141,22 +141,38 @@ return [
 
     'environments' => [
         'production' => [
-            'supervisor-1' => [
+            'supervisor-basic' => [
                 'connection' => 'redis',
                 'queue' => ['default'],
                 'balance' => 'simple',
                 'processes' => 10,
                 'tries' => 3,
             ],
+            'supervisor-heavy' => [
+                'connection' => 'redis-long-running',
+                'queue' => ['calculate-statistics', 'send-campaign', 'send-mail', 'send-test-mail'],
+                'balance' => 'simple',
+                'processes' => 10,
+                'tries' => 3,
+                'timeout' => 10 * 60,
+            ],
         ],
 
         'local' => [
-            'supervisor-1' => [
+            'supervisor-basic' => [
                 'connection' => 'redis',
                 'queue' => ['default'],
                 'balance' => 'simple',
                 'processes' => 3,
                 'tries' => 3,
+            ],
+            'supervisor-heavy' => [
+                'connection' => 'redis-long-running',
+                'queue' => ['calculate-statistics', 'send-campaign', 'send-mail', 'send-test-mail'],
+                'balance' => 'simple',
+                'processes' => 3,
+                'tries' => 3,
+                'timeout' => 10 * 60,
             ],
         ],
     ],
