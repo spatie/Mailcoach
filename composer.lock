@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cf6d913f247263420f6c3aaddaea7d3a",
+    "content-hash": "d3eb1ff589e4a4dee6895f6be5db8166",
     "packages": [
         {
             "name": "aws/aws-php-sns-message-validator",
@@ -61,16 +61,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.124.0",
+            "version": "3.128.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "6a8e621ac13b89a2cac8e36e7a1f29d396fba971"
+                "reference": "811e55f20b6455a0cce07ecdebe1398b9668c255"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/6a8e621ac13b89a2cac8e36e7a1f29d396fba971",
-                "reference": "6a8e621ac13b89a2cac8e36e7a1f29d396fba971",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/811e55f20b6455a0cce07ecdebe1398b9668c255",
+                "reference": "811e55f20b6455a0cce07ecdebe1398b9668c255",
                 "shasum": ""
             },
             "require": {
@@ -95,7 +95,8 @@
                 "nette/neon": "^2.3",
                 "phpunit/phpunit": "^4.8.35|^5.4.3",
                 "psr/cache": "^1.0",
-                "psr/simple-cache": "^1.0"
+                "psr/simple-cache": "^1.0",
+                "sebastian/comparator": "^1.2.3"
             },
             "suggest": {
                 "aws/aws-php-sns-message-validator": "To validate incoming SNS notifications",
@@ -140,7 +141,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2019-12-02T08:26:20+00:00"
+            "time": "2019-12-05T01:33:15+00:00"
         },
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -264,16 +265,16 @@
         },
         {
             "name": "box/spout",
-            "version": "v3.0.1",
+            "version": "v3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/box/spout.git",
-                "reference": "6c4086cf97b36f0ca87d19f051902ce8004ee6b0"
+                "reference": "7964dadc2128f3a00ffa393395b618ea115c8032"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/box/spout/zipball/6c4086cf97b36f0ca87d19f051902ce8004ee6b0",
-                "reference": "6c4086cf97b36f0ca87d19f051902ce8004ee6b0",
+                "url": "https://api.github.com/repos/box/spout/zipball/7964dadc2128f3a00ffa393395b618ea115c8032",
+                "reference": "7964dadc2128f3a00ffa393395b618ea115c8032",
                 "shasum": ""
             },
             "require": {
@@ -329,7 +330,7 @@
                 "write",
                 "xlsx"
             ],
-            "time": "2019-06-04T07:36:51+00:00"
+            "time": "2019-12-02T21:21:41+00:00"
         },
         {
             "name": "cakephp/chronos",
@@ -1418,58 +1419,6 @@
             "time": "2019-11-14T13:13:06+00:00"
         },
         {
-            "name": "geoip2/geoip2",
-            "version": "v2.9.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/maxmind/GeoIP2-php.git",
-                "reference": "a807fbf65212eef5d8d2db1a1b31082b53633d77"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/maxmind/GeoIP2-php/zipball/a807fbf65212eef5d8d2db1a1b31082b53633d77",
-                "reference": "a807fbf65212eef5d8d2db1a1b31082b53633d77",
-                "shasum": ""
-            },
-            "require": {
-                "maxmind-db/reader": "~1.0",
-                "maxmind/web-service-common": "~0.5",
-                "php": ">=5.4"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "2.*",
-                "phpunit/phpunit": "4.*",
-                "squizlabs/php_codesniffer": "3.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "GeoIp2\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Gregory J. Oschwald",
-                    "email": "goschwald@maxmind.com",
-                    "homepage": "http://www.maxmind.com/"
-                }
-            ],
-            "description": "MaxMind GeoIP2 PHP API",
-            "homepage": "https://github.com/maxmind/GeoIP2-php",
-            "keywords": [
-                "IP",
-                "geoip",
-                "geoip2",
-                "geolocation",
-                "maxmind"
-            ],
-            "time": "2018-04-10T15:32:59+00:00"
-        },
-        {
             "name": "guzzlehttp/guzzle",
             "version": "6.4.1",
             "source": {
@@ -1931,16 +1880,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v6.6.0",
+            "version": "v6.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "b48528ba5422ac909dbabf0b1cc34534928e7bce"
+                "reference": "0a8e3e6e96e5ec3af6b9f30026cb8e5551554875"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/b48528ba5422ac909dbabf0b1cc34534928e7bce",
-                "reference": "b48528ba5422ac909dbabf0b1cc34534928e7bce",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/0a8e3e6e96e5ec3af6b9f30026cb8e5551554875",
+                "reference": "0a8e3e6e96e5ec3af6b9f30026cb8e5551554875",
                 "shasum": ""
             },
             "require": {
@@ -2073,7 +2022,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2019-11-26T15:33:08+00:00"
+            "time": "2019-12-03T15:23:55+00:00"
         },
         {
             "name": "laravel/horizon",
@@ -2530,109 +2479,6 @@
                 "zip"
             ],
             "time": "2019-07-17T11:01:58+00:00"
-        },
-        {
-            "name": "maxmind-db/reader",
-            "version": "v1.5.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/maxmind/MaxMind-DB-Reader-php.git",
-                "reference": "bd436094fc0a9b0558a899fb80b0ae34fe1808a0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/maxmind/MaxMind-DB-Reader-php/zipball/bd436094fc0a9b0558a899fb80b0ae34fe1808a0",
-                "reference": "bd436094fc0a9b0558a899fb80b0ae34fe1808a0",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.6"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "2.*",
-                "php-coveralls/php-coveralls": "^2.1",
-                "phpunit/phpcov": "^3.0",
-                "phpunit/phpunit": "5.*",
-                "squizlabs/php_codesniffer": "3.*"
-            },
-            "suggest": {
-                "ext-bcmath": "bcmath or gmp is required for decoding larger integers with the pure PHP decoder",
-                "ext-gmp": "bcmath or gmp is required for decoding larger integers with the pure PHP decoder",
-                "ext-maxminddb": "A C-based database decoder that provides significantly faster lookups"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "MaxMind\\Db\\": "src/MaxMind/Db"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Gregory J. Oschwald",
-                    "email": "goschwald@maxmind.com",
-                    "homepage": "https://www.maxmind.com/"
-                }
-            ],
-            "description": "MaxMind DB Reader API",
-            "homepage": "https://github.com/maxmind/MaxMind-DB-Reader-php",
-            "keywords": [
-                "database",
-                "geoip",
-                "geoip2",
-                "geolocation",
-                "maxmind"
-            ],
-            "time": "2019-09-30T22:56:38+00:00"
-        },
-        {
-            "name": "maxmind/web-service-common",
-            "version": "v0.5.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/maxmind/web-service-common-php.git",
-                "reference": "61a9836fa3bb1743ab89752bae5005d71e78c73b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/maxmind/web-service-common-php/zipball/61a9836fa3bb1743ab89752bae5005d71e78c73b",
-                "reference": "61a9836fa3bb1743ab89752bae5005d71e78c73b",
-                "shasum": ""
-            },
-            "require": {
-                "composer/ca-bundle": "^1.0.3",
-                "ext-curl": "*",
-                "ext-json": "*",
-                "php": ">=5.4"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "2.*",
-                "phpunit/phpunit": "4.*",
-                "squizlabs/php_codesniffer": "3.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "MaxMind\\Exception\\": "src/Exception",
-                    "MaxMind\\WebService\\": "src/WebService"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Gregory Oschwald",
-                    "email": "goschwald@maxmind.com"
-                }
-            ],
-            "description": "Internal MaxMind Web Service API",
-            "homepage": "https://github.com/maxmind/web-service-common-php",
-            "time": "2018-02-12T22:31:54+00:00"
         },
         {
             "name": "mockery/mockery",
@@ -5498,16 +5344,21 @@
         {
             "name": "spatie/laravel-mailcoach",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:spatie/laravel-mailcoach.git",
+                "reference": "d29b98cd6b1e392baf566447e7b97b69ea406b6a"
+            },
             "dist": {
-                "type": "path",
-                "url": "../laravel-mailcoach",
-                "reference": "820f025581be143fc1594eaa3ab36caef8b2add4"
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-mailcoach/zipball/d29b98cd6b1e392baf566447e7b97b69ea406b6a",
+                "reference": "d29b98cd6b1e392baf566447e7b97b69ea406b6a",
+                "shasum": ""
             },
             "require": {
                 "cakephp/chronos": "^1.2.8",
                 "ext-dom": "*",
                 "ext-libxml": "*",
-                "geoip2/geoip2": "^2.9",
                 "illuminate/database": "^6.4",
                 "illuminate/events": "^6.4",
                 "illuminate/mail": "^6.4",
@@ -5588,15 +5439,22 @@
                 "mail",
                 "mass mailing",
                 "spatie"
-            ]
+            ],
+            "time": "2019-12-05T10:33:23+00:00"
         },
         {
             "name": "spatie/laravel-mailcoach-mailgun-feedback",
             "version": "dev-master",
-            "dist": {
-                "type": "path",
-                "url": "../laravel-mailcoach-mailgun-feedback",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:spatie/laravel-mailcoach-mailgun-feedback.git",
                 "reference": "9fc7ffd3a381d8200f0262190de1099b3345ccda"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-mailcoach-mailgun-feedback/zipball/9fc7ffd3a381d8200f0262190de1099b3345ccda",
+                "reference": "9fc7ffd3a381d8200f0262190de1099b3345ccda",
+                "shasum": ""
             },
             "require": {
                 "illuminate/http": "^6.4",
@@ -5650,15 +5508,22 @@
             "keywords": [
                 "laravel-mailcoach-mailgun-feedback",
                 "spatie"
-            ]
+            ],
+            "time": "2019-12-02T17:17:14+00:00"
         },
         {
             "name": "spatie/laravel-mailcoach-sendgrid-feedback",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:spatie/laravel-mailcoach-sendgrid-feedback.git",
+                "reference": "936bff79d1d4f9e2ae433c255476f969fd30ca9a"
+            },
             "dist": {
-                "type": "path",
-                "url": "../laravel-mailcoach-sendgrid-feedback",
-                "reference": "30d3a641bbeaca169e0a6dc9f872733562eb8a97"
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-mailcoach-sendgrid-feedback/zipball/936bff79d1d4f9e2ae433c255476f969fd30ca9a",
+                "reference": "936bff79d1d4f9e2ae433c255476f969fd30ca9a",
+                "shasum": ""
             },
             "require": {
                 "illuminate/http": "^6.4",
@@ -5712,15 +5577,22 @@
             "keywords": [
                 "laravel-mailcoach-sendgrid-feedback",
                 "spatie"
-            ]
+            ],
+            "time": "2019-12-02T17:28:54+00:00"
         },
         {
             "name": "spatie/laravel-mailcoach-ses-feedback",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:spatie/laravel-mailcoach-ses-feedback.git",
+                "reference": "86a14cc9e46a09bddef8575886dd5c0a0f514b64"
+            },
             "dist": {
-                "type": "path",
-                "url": "../laravel-mailcoach-ses-feedback",
-                "reference": "0469bd45b82ac2f7afaf26480347faabda0126ba"
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-mailcoach-ses-feedback/zipball/86a14cc9e46a09bddef8575886dd5c0a0f514b64",
+                "reference": "86a14cc9e46a09bddef8575886dd5c0a0f514b64",
+                "shasum": ""
             },
             "require": {
                 "aws/aws-php-sns-message-validator": "^1.5",
@@ -5776,20 +5648,21 @@
             "keywords": [
                 "laravel-mailcoach-ses-feedback",
                 "spatie"
-            ]
+            ],
+            "time": "2019-12-02T17:30:40+00:00"
         },
         {
             "name": "spatie/laravel-medialibrary",
-            "version": "7.14.2",
+            "version": "7.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "f96fd75f70e893b1b2c85224526e6d4a2c235ef8"
+                "reference": "9fa2989f826da065d098f6f865cc7ad755c35d33"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/f96fd75f70e893b1b2c85224526e6d4a2c235ef8",
-                "reference": "f96fd75f70e893b1b2c85224526e6d4a2c235ef8",
+                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/9fa2989f826da065d098f6f865cc7ad755c35d33",
+                "reference": "9fa2989f826da065d098f6f865cc7ad755c35d33",
                 "shasum": ""
             },
             "require": {
@@ -5800,7 +5673,7 @@
                 "illuminate/pipeline": "~5.5.0|~5.6.0|~5.7.0|~5.8.0|^6.0",
                 "illuminate/support": "~5.5.0|~5.6.0|~5.7.0|~5.8.0|^6.0",
                 "league/flysystem": "^1.0.8",
-                "maennchen/zipstream-php": "^0.4|^1.0",
+                "maennchen/zipstream-php": "^1.0",
                 "php": "^7.2",
                 "spatie/image": "^1.4.0",
                 "spatie/pdf-to-image": "^1.2",
@@ -5860,7 +5733,7 @@
                 "media",
                 "spatie"
             ],
-            "time": "2019-10-16T13:46:56+00:00"
+            "time": "2019-12-02T20:15:48+00:00"
         },
         {
             "name": "spatie/laravel-model-cleanup",
@@ -6471,22 +6344,22 @@
         },
         {
             "name": "spatie/simple-excel",
-            "version": "1.2.2",
+            "version": "1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/simple-excel.git",
-                "reference": "eead9ffe77e3c1fe580417a6ecce8aa51e187dfe"
+                "reference": "f615e0cbc2c1cf67a1ed79cbb46466d818c32d0e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/simple-excel/zipball/eead9ffe77e3c1fe580417a6ecce8aa51e187dfe",
-                "reference": "eead9ffe77e3c1fe580417a6ecce8aa51e187dfe",
+                "url": "https://api.github.com/repos/spatie/simple-excel/zipball/f615e0cbc2c1cf67a1ed79cbb46466d818c32d0e",
+                "reference": "f615e0cbc2c1cf67a1ed79cbb46466d818c32d0e",
                 "shasum": ""
             },
             "require": {
                 "box/spout": "^3.0",
                 "illuminate/support": "^6.3",
-                "php": "^7.2"
+                "php": "^7.4"
             },
             "require-dev": {
                 "phpunit/phpunit": "^8.2",
@@ -6517,7 +6390,7 @@
                 "simple-excel",
                 "spatie"
             ],
-            "time": "2019-11-29T07:55:06+00:00"
+            "time": "2019-12-02T17:33:54+00:00"
         },
         {
             "name": "spatie/temporary-directory",
@@ -9160,7 +9033,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.2",
+        "php": "^7.4",
         "ext-json": "*"
     },
     "platform-dev": []
