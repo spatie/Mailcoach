@@ -1,7 +1,6 @@
 /node_modules
 /public/hot
 /public/storage
-/public/vendor/mailcoach
 /storage/*.key
 /storage/temp
 /vendor
