@@ -1,10 +1,9 @@
 {
-    "name": "laravel/laravel",
+    "name": "spatie/mailcoach",
     "type": "project",
-    "description": "The Laravel Framework.",
     "keywords": [
-        "framework",
-        "laravel"
+        "mailcoach",
+        "spatie"
     ],
     "license": "MIT",
     "repositories": [
