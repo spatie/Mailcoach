@@ -1,30 +1,36 @@
-@extends('auth.layouts.master')
+@extends('auth.layouts.master', ['title' => 'Request new password'])
 
 @section('content')
-    <form method="POST" action="{{ route('password.email') }}">
+
+    <h1 class="markup-h1">
+        Request Mailcoach password
+    </h1>
+
+    <form class="mt-6 form-grid" method="POST" action="{{ route('password.email') }}">
         @csrf
 
-        <div class="form-group row">
-            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+        <a class="link" href="{{ route('login') }}">{{ __('To login page') }}</a>
 
-            <div class="col-md-6">
-                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email"
-                       value="{{ old('email') }}" required autocomplete="email" autofocus>
+        <div class="form-row">
+            @error('email')
+                <p class="form-error" role="alert">
+                {{ $message }}
+                </p>
+            @enderror
 
-                @error('email')
-                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                @enderror
-            </div>
+            <label for="email" class="label">{{ __('Email') }}</label>
+
+            <input id="email" type="email" class="input @error('email') is-invalid @enderror" name="email"
+                    value="{{ old('email') }}" required autocomplete="email" autofocus>
         </div>
 
-        <div class="form-group row mb-0">
-            <div class="col-md-6 offset-md-4">
-                <button type="submit" class="btn btn-primary">
-                    {{ __('Send Password Reset Link') }}
-                </button>
-            </div>
+        <div class="form-buttons">
+            <button type="submit" class="button">
+                <span class="icon-label">
+                    <i
+                    <span class="icon-label-text">{{ __('Send password reset link') }}</span>
+                </span>
+            </button>
         </div>
     </form>
 @endsection
