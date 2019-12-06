@@ -31,5 +31,7 @@ class EmailListSeeder extends Seeder
             Subscriber::createWithEmail("freek+test{$i}@spatie.be")->subscribeTo($emailList);
         }
 
+        Subscriber::first()->update(['subscribed_at' => null]);
+
     }
 }
