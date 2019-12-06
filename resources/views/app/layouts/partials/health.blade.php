@@ -1,6 +1,6 @@
 @if ((! $mailConfigurationValid && ! request()->routeIs('mailConfiguration')) || ! $horizonActive)
     <div class="z-50 text-white bg-red-500 px-4 py-8">
-        <div class="max-w-6xl mx-auto grid gap-3">
+        <div class="max-w-layout mx-auto grid gap-3">
             @if (! request()->routeIs('mailConfiguration'))
                 @if(! $mailConfigurationValid)
                     <div class="flex items-baseline">
