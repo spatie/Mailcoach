@@ -8,7 +8,7 @@ use Spatie\Mailcoach\Models\CampaignLink;
 
 $factory->define(CampaignLink::class, function (Generator $faker) {
     return [
-        'email_campaign_id' => factory(Campaign::class),
+        'campaign_id' => factory(Campaign::class),
         'url' => $faker->url,
     ];
 });
