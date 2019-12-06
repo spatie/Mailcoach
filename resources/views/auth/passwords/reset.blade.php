@@ -1,7 +1,18 @@
 @extends('auth.layouts.master', ['title' => __('Reset Password')])
 
+@section('breadcrumbs')
+    <ul class="breadcrumbs">
+        <li>
+            <a class="breadcrumb" href="{{ route('login') }}"> {{ __('Login') }}</a>
+        </li>
+        <li>
+            <span class="breadcrumb"> {{ __('Reset Password') }}</span>
+        </li>
+    </ul>
+@endsection
+
 @section('content')
-    <form method="POST" action="{{ route('password.update') }}">
+    <form class="form-grid" method="POST" action="{{ route('password.update') }}">
         @csrf
 
         <input type="hidden" name="token" value="{{ $token }}">

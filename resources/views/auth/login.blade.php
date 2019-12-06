@@ -1,10 +1,20 @@
 @extends('auth.layouts.master', ['title' => __('Login')])
 
+@section('breadcrumbs')
+    <ul class="breadcrumbs">
+        <li>
+            <span class="breadcrumb"> {{ __('Login') }}</span>
+        </li>
+    </ul>
+@endsection
+
 @section('content')
-    <form class="mt-6 form-grid" method="POST" action="{{ route('login') }}">
+    <form class="form-grid" method="POST" action="{{ route('login') }}">
         @csrf
 
-        <a class="link" href="{{ route('forgot-password') }}">{{ __('Forgot password?') }}</a>
+        <p>
+            <a class="link" href="{{ route('forgot-password') }}">{{ __('Forgot password?') }}</a>
+        </p>
 
         <div class="form-row">
             @error('email')
