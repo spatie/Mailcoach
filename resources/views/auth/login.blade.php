@@ -1,14 +1,10 @@
-@extends('auth.layouts.master', ['title' => 'Login'])
+@extends('auth.layouts.master', ['title' => __('Login')])
 
 @section('content')
-    <h1 class="markup-h1">
-        Login to Mailcoach
-    </h1>
-
     <form class="mt-6 form-grid" method="POST" action="{{ route('login') }}">
         @csrf
 
-        <a class="link" href="{{ route('forgot-password') }}">Forgot password?</a>
+        <a class="link" href="{{ route('forgot-password') }}">{{ __('Forgot password?') }}</a>
 
         <div class="form-row">
             @error('email')
@@ -47,7 +43,10 @@
 
         <div class="form-buttons">
             <button type="submit" class="button">
-                {{ __('Login') }}
+                <span class="icon-label">
+                    <i class="fas fa-unlock"></i>
+                    <span class="icon-label-text">{{ __('Login') }}</span>
+                </span>
             </button>
 
             @if (Route::has('password.request'))

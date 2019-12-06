@@ -24,10 +24,25 @@
     <div id="app">
     @include('mailcoach::app.layouts.partials.flash')
 
-    <div class="min-h-screen flex place-center p-4">
-        <div class="card w-full max-w-lg">
-            @yield('content')
+    <div class="min-h-screen flex flex-col p-4">
+        <div class="fixed inset-0 bg-cover" style="opacity: .075; background-image: url('/images/banner-3000.jpg')">
         </div>
+
+        <div class="flex-grow flex place-center">
+            <div class="card w-full max-w-lg shadow-2xl">
+                <div class="grid cols-auto-1fr mb-8">
+                    @include('mailcoach::app.layouts.partials.logoSvg')
+                    <ul class="breadcrumbs">
+                        <li>
+                            <span class="breadcrumb"> {{ $title }}</span>
+                        </li>
+                    </ul>
+                </div>
+
+                @yield('content')
+            </div>
+        </div>
+        @include('mailcoach::app.layouts.partials.footer')
     </div>
 </div>
 </body>

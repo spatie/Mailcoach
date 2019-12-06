@@ -1,11 +1,6 @@
-@extends('auth.layouts.master', ['title' => 'Request new password'])
+@extends('auth.layouts.master', ['title' => __('Forgot password?')])
 
 @section('content')
-
-    <h1 class="markup-h1">
-        Request Mailcoach password
-    </h1>
-
     <form class="mt-6 form-grid" method="POST" action="{{ route('password.email') }}">
         @csrf
 
@@ -27,7 +22,7 @@
         <div class="form-buttons">
             <button type="submit" class="button">
                 <span class="icon-label">
-                    <i
+                    <i class="fas fa-paper-plane"></i>
                     <span class="icon-label-text">{{ __('Send password reset link') }}</span>
                 </span>
             </button>
