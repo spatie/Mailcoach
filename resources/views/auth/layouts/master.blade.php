@@ -19,6 +19,8 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <script type="text/javascript" src="{{ asset('vendor/mailcoach/app.js') }}" defer></script>
 </head>
 <body class="bg-blue-100">
     <div class="absolute inset-0 overflow-hidden">
@@ -47,10 +49,9 @@
             <div class="flex-grow flex items-start justify-center | md:items-center">
                 <div class="w-full max-w-lg">
                     <div class="grid cols-auto-1fr mb-8 text-white">
-                        <span class="mr-1">
+                        <a href="{{ route('mailcoach.home') }}" class="opacity-50 mr-1 | hover:opacity-75">
                             @include('mailcoach::app.layouts.partials.logoSvg')
-                        </span>
-
+                        </a>
                         @yield('breadcrumbs')
                     </div>
 
