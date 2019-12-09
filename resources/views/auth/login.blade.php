@@ -13,7 +13,14 @@
         @csrf
 
         <p>
-            <a class="link" href="{{ route('forgot-password') }}">{{ __('Forgot password?') }}</a>
+            <a class="link-icon" href="{{ route('forgot-password') }}">
+                <span class="icon-label">
+                    <i class="fas fa-envelope"></i>
+                    <span class="icon-label-text">
+                        {{ __('Forgot password?') }}
+                    </span>
+                </span>
+            </a>
         </p>
 
         <div class="form-row">
