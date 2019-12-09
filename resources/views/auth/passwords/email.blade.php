@@ -31,7 +31,7 @@
         <div class="form-buttons">
             <button type="submit" class="button">
                 <span class="icon-label">
-                    <i class="fas fa-paper-plane"></i>
+                    <i class="fas fa-envelope"></i>
                     <span class="icon-label-text">{{ __('Send password reset link') }}</span>
                 </span>
             </button>
