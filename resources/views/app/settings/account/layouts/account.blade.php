@@ -11,8 +11,8 @@
 @endsection
 
 @section('content')
-<nav>
-    <ul class="tabs">
+<nav class="tabs">
+    <ul>
         <x-navigation-item :href="route('account')">
             <x-icon-label icon="fa-user" text="User details" />
         </x-navigation-item>
