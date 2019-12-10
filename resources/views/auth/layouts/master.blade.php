@@ -25,7 +25,7 @@
 <body class="bg-blue-100">
     <div class="absolute inset-0 overflow-hidden">
         <div class="absolute top-0 bg-blue-900 overflow-hidden"
-        style="border-bottom-left-radius: 40vw 10px; border-bottom-right-radius: 60vw 35px; height: 55vh; width: 110%; left: -5%;">
+        style="border-bottom-left-radius: 40vw 10px; border-bottom-right-radius: 60vw 35px; height: 52vh; width: 110%; left: -5%;">
             <div class="absolute inset-0"
                 style="opacity: .1;">
                 <img loading="eager"
@@ -46,10 +46,10 @@
         @include('mailcoach::app.layouts.partials.flash')
 
         <div class="min-h-screen flex flex-col p-6">
-            <div class="flex-grow flex items-start justify-center | md:items-center">
+            <div class="flex-grow flex items-center justify-center">
                 <div class="w-full max-w-lg">
                     <div class="grid cols-auto-1fr mb-8 text-white">
-                        <a href="{{ route('mailcoach.home') }}" class="hidden opacity-50 mr-1 | hover:opacity-75 | lg:block">
+                        <a href="{{ route('mailcoach.home') }}" class="opacity-50 mr-1 | hover:opacity-75">
                             @include('mailcoach::app.layouts.partials.logoSvg')
                         </a>
                         @yield('breadcrumbs')
