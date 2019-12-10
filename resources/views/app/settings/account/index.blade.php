@@ -1,5 +1,9 @@
 @extends('app.settings.account.layouts.account')
 
+@section('breadcrumbs')
+    <li>Account</li>
+@endsection
+
 @section('account')
     <form
         class="form-grid"

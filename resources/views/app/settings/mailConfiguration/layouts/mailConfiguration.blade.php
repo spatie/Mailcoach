@@ -1,11 +1,9 @@
 @extends('mailcoach::app.layouts.app', ['title' => 'Mail configuration'])
 
 @section('header')
-    <nav class="breadcrumbs">
-        <ul>
-            <li>
-                Mail configuration
-            </li>
+    <nav>
+        <ul class="breadcrumbs">
+            @yield('breadcrumbs')
         </ul>
     </nav>
 @endsection

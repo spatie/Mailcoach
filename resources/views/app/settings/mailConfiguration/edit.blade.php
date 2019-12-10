@@ -1,5 +1,9 @@
 @extends('app.settings.mailConfiguration.layouts.mailConfiguration', ['title' => 'Mail configuration'])
 
+@section('breadcrumbs')
+    <li>Mail configuration</li>
+@endsection
+
 @section('mailConfiguration')
     <form
         class="form-grid"
