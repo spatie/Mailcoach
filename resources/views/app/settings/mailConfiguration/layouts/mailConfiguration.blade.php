@@ -11,8 +11,8 @@
 @endsection
 
 @section('content')
-    <nav>
-        <ul class="tabs">
+    <nav class="tabs">
+        <ul>
             <x-navigation-item :href="route('mailConfiguration')">
                 <x-icon-label icon="fa-cogs" text="Mail configuration" />
             </x-navigation-item>
