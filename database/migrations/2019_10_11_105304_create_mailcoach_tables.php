@@ -37,7 +37,9 @@ class CreateMailcoachTables extends Migration
             $table->string('report_recipients')->nullable();
             $table->boolean('report_campaign_sent')->default(false);
             $table->boolean('report_campaign_summary')->default(false);
-            $table->boolean('report_subscribers_summary')->default(false);
+            $table->boolean('report_email_list_summary')->default(false);
+
+            $table->timestamp('email_list_summary_sent_at')->nullable();
 
             $table->timestamps();
         });
