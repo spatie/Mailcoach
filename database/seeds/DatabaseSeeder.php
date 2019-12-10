@@ -10,6 +10,7 @@ class DatabaseSeeder extends Seeder
             ->call(UserSeeder::class)
             ->call(TemplateSeeder::class)
             ->call(EmailListSeeder::class)
-            ->call(CampaignSeeder::class);
+           // ->call(CampaignSeeder::class)
+        ;
     }
 }
