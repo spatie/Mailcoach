@@ -20,6 +20,10 @@ class RouteServiceProvider extends ServiceProvider
             ->mapAuthRoutes($router)
             ->mapAppRoutes($router)
             ->mapApiRoutes($router);
+
+        if (app()->environment('local')) {
+            $this->mapMailRoutes($router);
+        }
     }
 
     protected function mapWebRoutes(Router $router)
@@ -55,6 +59,16 @@ class RouteServiceProvider extends ServiceProvider
             ->prefix('api')
             ->middleware('api')
             ->group(base_path('routes/api.php'));
+
+        return $this;
+    }
+
+    private function mapMailRoutes(Router $router)
+    {
+        $router
+            ->prefix('mail')
+            ->middleware('web')
+            ->group(base_path('routes/local/mails.php'));
 
         return $this;
     }
