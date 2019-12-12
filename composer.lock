@@ -1887,12 +1887,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "f5c3c60d52eccd77274e586fc4c775374e826b0f"
+                "reference": "e3b4f7f183bb41b26a90777c7114eb4867bb777c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/f5c3c60d52eccd77274e586fc4c775374e826b0f",
-                "reference": "f5c3c60d52eccd77274e586fc4c775374e826b0f",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/e3b4f7f183bb41b26a90777c7114eb4867bb777c",
+                "reference": "e3b4f7f183bb41b26a90777c7114eb4867bb777c",
                 "shasum": ""
             },
             "require": {
@@ -2025,7 +2025,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2019-12-11T20:26:52+00:00"
+            "time": "2019-12-12T14:22:45+00:00"
         },
         {
             "name": "laravel/horizon",
@@ -5401,7 +5401,7 @@
             "dist": {
                 "type": "path",
                 "url": "../laravel-mailcoach",
-                "reference": "6ecfac411b91e12c8446763398bbefe32349d3d1"
+                "reference": "92baea20cab38f1ee0fc59ca0429619fb16f58ce"
             },
             "require": {
                 "cakephp/chronos": "^1.2.8",
@@ -5497,19 +5497,19 @@
             "dist": {
                 "type": "path",
                 "url": "../laravel-mailcoach-mailgun-feedback",
-                "reference": "525dcfbd81dd7607187c7b4096a3b550169e7ba9"
+                "reference": "dcb2f5d08a626f0991b40e613e6d244115da58ab"
             },
             "require": {
                 "illuminate/http": "^6.4",
                 "orchestra/testbench": "^4.3",
-                "php": "^7.3",
+                "php": "^7.4",
                 "spatie/laravel-mailcoach": "dev-master",
                 "spatie/laravel-webhook-client": "^2.2"
             },
             "require-dev": {
                 "ext-json": "*",
                 "friendsofphp/php-cs-fixer": "^2.16",
-                "phpunit/phpunit": "^8.2",
+                "phpunit/phpunit": "^8.4",
                 "symfony/var-dumper": "^4.3"
             },
             "type": "library",
@@ -5559,7 +5559,7 @@
             "dist": {
                 "type": "path",
                 "url": "../laravel-mailcoach-sendgrid-feedback",
-                "reference": "30d3a641bbeaca169e0a6dc9f872733562eb8a97"
+                "reference": "ac8af42249e274e13e7635f2582eb15c4094e2d1"
             },
             "require": {
                 "illuminate/http": "^6.4",
@@ -5621,28 +5621,28 @@
             "dist": {
                 "type": "path",
                 "url": "../laravel-mailcoach-ses-feedback",
-                "reference": "bd4c096679013f404c362245d7d9221f939a4787"
+                "reference": "cb9d84422839e8e6414946875367542958025283"
             },
             "require": {
                 "aws/aws-php-sns-message-validator": "^1.5",
                 "ext-json": "*",
                 "illuminate/http": "^6.4",
                 "orchestra/testbench": "^4.3",
-                "php": "^7.3",
+                "php": "^7.4",
                 "spatie/laravel-mailcoach": "dev-master",
                 "spatie/laravel-webhook-client": "^2.2"
             },
             "require-dev": {
                 "ext-json": "*",
                 "friendsofphp/php-cs-fixer": "^2.16",
-                "phpunit/phpunit": "^8.2",
+                "phpunit/phpunit": "^8.4",
                 "symfony/var-dumper": "^4.3"
             },
             "type": "library",
             "extra": {
                 "laravel": {
                     "providers": [
-                        "Spatie\\MailcoachSesFeedback\\MailCoachSesFeedbackServiceProvider"
+                        "Spatie\\MailcoachSesFeedback\\MailcoachSesFeedbackServiceProvider"
                     ]
                 }
             },
