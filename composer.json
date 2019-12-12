@@ -35,7 +35,7 @@
         "barryvdh/laravel-ide-helper": "^2.6",
         "box/spout": "^3.0",
         "fideloper/proxy": "^4.0",
-        "laravel/framework": "^6.2",
+        "laravel/framework": "6.x-dev",
         "laravel/horizon": "^3.4",
         "laravel/tinker": "^1.0",
         "spatie/laravel-flash": "^1.3",
