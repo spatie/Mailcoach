@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>MailCoach</title>
+        <title>Mailcoach</title>
 
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
