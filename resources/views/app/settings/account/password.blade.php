@@ -1,4 +1,4 @@
-@extends('app.settings.account.layouts.account')
+@extends('app.settings.account.layouts.account', ['titlePrefix' => 'Password'])
 
 @section('breadcrumbs')
     <li>

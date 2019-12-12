@@ -1,4 +1,4 @@
-@extends('app.settings.mailConfiguration.layouts.mailConfiguration', ['title' => 'Mail configuration'])
+@extends('app.settings.mailConfiguration.layouts.mailConfiguration', ['titlePrefix' => 'Send test mail'])
 
 @section('breadcrumbs')
     <li>

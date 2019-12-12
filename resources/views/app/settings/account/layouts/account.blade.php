@@ -1,4 +1,6 @@
-@extends('mailcoach::app.layouts.app', ['title' => 'Account'])
+@extends('mailcoach::app.layouts.app', [
+    'title' => isset($titlePrefix) ?  $titlePrefix . ' | Account' : 'Account'
+])
 
 @section('header')
     <nav>
