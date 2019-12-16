@@ -14,6 +14,7 @@ class SendgridConfigurationDriver extends MailConfigurationDriver
     public function validationRules(): array
     {
         return [
+            'sendgrid_mails_per_second' => 'required|numeric|between:1,100',
             'sendgrid_api_key' => 'required',
             'sendgrid_signing_secret' => 'required',
         ];
@@ -21,6 +22,8 @@ class SendgridConfigurationDriver extends MailConfigurationDriver
 
     public function registerConfigValues(Repository $config, array $values)
     {
+        $this->throttleNumberOfMailsPerSecond($config, $values['sendgrid_mails_per_second'] ?? 5);
+
         $config->set('mail.driver', 'smtp');
         $config->set('mail.host', 'smtp.sendgrid.net');
         $config->set('mail.username', 'apikey');

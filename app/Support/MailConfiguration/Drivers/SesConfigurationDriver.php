@@ -14,6 +14,7 @@ class SesConfigurationDriver extends MailConfigurationDriver
     public function validationRules(): array
     {
         return [
+            'ses_mails_per_second' => 'required',
             'ses_key' => 'required',
             'ses_secret' => 'required',
             'ses_region' => 'required',
@@ -23,6 +24,8 @@ class SesConfigurationDriver extends MailConfigurationDriver
 
     public function registerConfigValues(Repository $config, array $values)
     {
+        $this->throttleNumberOfMailsPerSecond($config, $values['ses_mails_per_second'] ?? 5);
+
         $config->set('mail.driver', $this->name());
         $config->set('services.ses', [
             'key' => $values['ses_key'],
