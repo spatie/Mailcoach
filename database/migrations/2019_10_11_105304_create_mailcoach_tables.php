@@ -318,8 +318,6 @@ class CreateMailcoachTables extends Migration
                 ->onDelete('cascade');
         });
 
-
-
         Schema::create('mailcoach_positive_segment_tags', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('segment_id');
