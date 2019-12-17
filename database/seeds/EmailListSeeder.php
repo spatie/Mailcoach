@@ -29,7 +29,7 @@ class EmailListSeeder extends Seeder
             'default_from_name' => 'Freek Van der Herten',
         ]);
 
-        foreach (range(1, 100) as $i) {
+        foreach (range(1, 10) as $i) {
             Subscriber::createWithEmail("freek+test{$i}@spatie.be")->subscribeTo($emailList);
         }
 

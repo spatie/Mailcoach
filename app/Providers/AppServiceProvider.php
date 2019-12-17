@@ -16,7 +16,7 @@ class AppServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        Gate::define('viewMailcoach', fn(User $user) => true);
+        Gate::define('viewMailcoach', fn (User $user) => true);
 
         Flash::levels([
             'success' => 'success',
