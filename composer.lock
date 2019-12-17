@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5e57593399dafa0b817b2cef339217d4",
+    "content-hash": "6f88934b84f38c07b07c4cefd5fb1910",
     "packages": [
         {
             "name": "aws/aws-php-sns-message-validator",
@@ -1883,16 +1883,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "6.x-dev",
+            "version": "v6.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "503e9c388da87300d3878374f4733c8d5386b83a"
+                "reference": "3d1d74bf11a72f030983f39e0f6b7ec55de952f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/503e9c388da87300d3878374f4733c8d5386b83a",
-                "reference": "503e9c388da87300d3878374f4733c8d5386b83a",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/3d1d74bf11a72f030983f39e0f6b7ec55de952f4",
+                "reference": "3d1d74bf11a72f030983f39e0f6b7ec55de952f4",
                 "shasum": ""
             },
             "require": {
@@ -2025,7 +2025,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2019-12-16T18:23:04+00:00"
+            "time": "2019-12-17T15:13:23+00:00"
         },
         {
             "name": "laravel/horizon",
@@ -5409,12 +5409,12 @@
                 "ext-dom": "*",
                 "ext-libxml": "*",
                 "guzzlehttp/guzzle": "^6.4",
-                "illuminate/database": "^6.4",
-                "illuminate/events": "^6.4",
-                "illuminate/mail": "^6.4",
-                "illuminate/queue": "^6.4",
-                "illuminate/redis": "^6.4",
-                "illuminate/support": "^6.3",
+                "illuminate/database": "^6.8",
+                "illuminate/events": "^6.8",
+                "illuminate/mail": "^6.8",
+                "illuminate/queue": "^6.8",
+                "illuminate/redis": "^6.8",
+                "illuminate/support": "^6.8",
                 "laravel/horizon": "^3.4",
                 "league/html-to-markdown": "^4.9",
                 "nesbot/carbon": "^2.26",
@@ -5498,7 +5498,7 @@
             "dist": {
                 "type": "path",
                 "url": "../laravel-mailcoach-mailgun-feedback",
-                "reference": "f76538669165e584f682575f423c985010e992f6"
+                "reference": "0111df8fd33306f41af283b86aceb2268589ebee"
             },
             "require": {
                 "illuminate/http": "^6.4",
@@ -5560,12 +5560,12 @@
             "dist": {
                 "type": "path",
                 "url": "../laravel-mailcoach-sendgrid-feedback",
-                "reference": "df43bfa00cc6b4ef845f4a3f5da937f3dec4bc15"
+                "reference": "1b929f0960202d35c4e82599e5872b4afac80513"
             },
             "require": {
                 "illuminate/http": "^6.4",
                 "orchestra/testbench": "^4.3",
-                "php": "^7.3",
+                "php": "^7.4",
                 "spatie/laravel-mailcoach": "dev-master",
                 "spatie/laravel-webhook-client": "^2.2"
             },
@@ -5622,7 +5622,7 @@
             "dist": {
                 "type": "path",
                 "url": "../laravel-mailcoach-ses-feedback",
-                "reference": "493561548b64143a5d0227fb74b3eec87a6ac4d3"
+                "reference": "d75be0e77053a00844636ef60d2f7c6577a2f350"
             },
             "require": {
                 "aws/aws-php-sns-message-validator": "^1.5",
@@ -9055,7 +9055,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "laravel/framework": 20,
         "spatie/laravel-mailcoach": 20,
         "spatie/laravel-mailcoach-mailgun-feedback": 20,
         "spatie/laravel-mailcoach-sendgrid-feedback": 20,
