@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e4e06154855b07e46f77c48bb45d6403",
+    "content-hash": "5e57593399dafa0b817b2cef339217d4",
     "packages": [
         {
             "name": "aws/aws-php-sns-message-validator",
@@ -9056,8 +9056,8 @@
         "laravel/framework": 20,
         "spatie/laravel-mailcoach": 20,
         "spatie/laravel-mailcoach-mailgun-feedback": 20,
-        "spatie/laravel-mailcoach-ses-feedback": 20,
-        "spatie/laravel-mailcoach-sendgrid-feedback": 20
+        "spatie/laravel-mailcoach-sendgrid-feedback": 20,
+        "spatie/laravel-mailcoach-ses-feedback": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
