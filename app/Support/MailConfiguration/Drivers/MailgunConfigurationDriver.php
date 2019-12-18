@@ -14,6 +14,7 @@ class MailgunConfigurationDriver extends MailConfigurationDriver
     public function validationRules(): array
     {
         return [
+            'default_from_mail' => 'required',
             'mailgun_mails_per_second' => 'required|numeric|between:1,100',
             'mailgun_domain' => 'required',
             'mailgun_secret' => 'required',
@@ -24,7 +25,9 @@ class MailgunConfigurationDriver extends MailConfigurationDriver
 
     public function registerConfigValues(Repository $config, array $values)
     {
-        $this->throttleNumberOfMailsPerSecond($config, $values['mailgun_mails_per_second'] ?? 5);
+        $this
+            ->setDefaultFromEmail($config, $values['default_from_mail'] ?? '')
+            ->throttleNumberOfMailsPerSecond($config, $values['mailgun_mails_per_second'] ?? 5);
 
         $config->set('mail.driver', $this->name());
         $config->set('services.mailgun', [

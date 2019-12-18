@@ -2,14 +2,10 @@
 
 namespace App\Http\App\Controllers\Settings\Users;
 
-use App\Actions\CreateUserAction;
 use App\Http\App\Requests\UpdateUserRequest;
-use App\Http\App\Resources\UserResource;
-use App\Mail\WelcomeMail;
 use App\Models\User;
-use Illuminate\Support\Facades\Mail;
+use Exception;
 use Illuminate\Support\Str;
-use Spatie\WelcomeNotification\WelcomeNotification;
 
 class CreateUserController
 {
@@ -20,9 +16,15 @@ class CreateUserController
         $user = User::create(array_merge($validatedProperties, ['password' => Str::random(64)]));
 
         $expiresAt = now()->addDay();
-        $user->sendWelcomeNotification($expiresAt);
 
-        flash()->success("The user has been created. A mail with login instructions has been sent to {$user->email}");
+        try {
+            $user->sendWelcomeNotification($expiresAt);
+
+            flash()->success("The user has been created. A mail with login instructions has been sent to {$user->email}");
+        } catch (Exception $exception) {
+            report($exception);
+            flash()->warning("The user has been created. A mail with setup instructions could not be sent.");
+        }
 
         return redirect()->action(UsersIndexController::class);
     }
