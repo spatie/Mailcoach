@@ -14,8 +14,6 @@
         @csrf
         @method('PUT')
 
-        <x-text-field label="Default from mail" name="default_from_mail" type="text" :value="$mailConfiguration->default_from_mail"/>
-
         <x-select-field
             label="Driver"
             name="driver"
@@ -44,6 +42,8 @@
         <div class="form-grid" data-conditional-driver="smtp">
             @include('app.settings.mailConfiguration.partials.smtp')
         </div>
+
+        <x-text-field label="Default from mail" name="default_from_mail" type="text" :value="$mailConfiguration->default_from_mail"/>
 
         <div class="form-buttons">
             <button class="button">

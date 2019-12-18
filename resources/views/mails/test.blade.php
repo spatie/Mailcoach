@@ -1,3 +1,7 @@
-<h1>Mailcoach test mail</h1>
+@component('mail::message')
 
-Hi, this is a test email sent from mailcoach.
+Hi,
+
+this is a test email sent from mailcoach.
+
+@endcomponent

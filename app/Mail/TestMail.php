@@ -11,6 +11,8 @@ class TestMail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public string $theme = 'mailcoach::mails.layout.mailcoach';
+
     private string $email;
 
     public function __construct(string $email)
@@ -24,6 +26,6 @@ class TestMail extends Mailable
             ->subject('Mailcoach testmail')
             ->to($this->email)
             ->from($this->email)
-            ->view('mails.test');
+            ->markdown('mails.test');
     }
 }
