@@ -24,7 +24,7 @@ class EmailListSeeder extends Seeder
 
 
         $emailList = EmailList::create([
-            'name' => 'freek.dev newsletter #1',
+            'name' => 'my audience',
             'default_from_email' => 'freek@spatie.be',
             'default_from_name' => 'Freek Van der Herten',
         ]);
