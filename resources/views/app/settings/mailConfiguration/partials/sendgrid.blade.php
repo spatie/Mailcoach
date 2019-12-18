@@ -6,7 +6,7 @@
 
 </p>
 
-<x-text-field label="Mails per second" name="sendgrid_mails_per_second" type="text" :value="$mailConfiguration->sendgrid_mails_per_second"/>
+<x-text-field label="Mails per second" name="sendgrid_mails_per_second" type="number" :value="$mailConfiguration->sendgrid_mails_per_second"/>
 <x-text-field label="API key" name="sendgrid_api_key" type="password" :value="$mailConfiguration->sendgrid_api_key"/>
 <x-text-field label="Webhook signing secret" name="sendgrid_signing_secret" type="text"
               :value="$mailConfiguration->sendgrid_signing_secret"/>
