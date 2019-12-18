@@ -5402,7 +5402,7 @@
             "dist": {
                 "type": "path",
                 "url": "../laravel-mailcoach",
-                "reference": "f9273e36fee5e4759a2fb6d3c1268952d1e84d71"
+                "reference": "e5f118be00d5c73bc4438633cc967ea0248a3a5e"
             },
             "require": {
                 "cakephp/chronos": "^1.2.8",
