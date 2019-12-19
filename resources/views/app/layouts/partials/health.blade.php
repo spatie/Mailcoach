@@ -1,5 +1,5 @@
 @if ((! $mailConfigurationValid && ! request()->routeIs('mailConfiguration')) || ! $horizonActive)
-    <div class="fixed bottom-0 left-0 z-50 alert alert-error shadow-2xl">
+    <div class="fixed bottom-0 right-0 z-50 alert alert-error shadow-2xl">
         <div class="max-w-layout mx-auto grid">
             @if (! request()->routeIs('mailConfiguration'))
                 @if(! $mailConfigurationValid)
