@@ -1,4 +1,4 @@
-<p class="alert alert-info text-sm markup-links">
+<p class="alert alert-info text-sm">
     Learn how to configure SES by reading <a href="TODO: add link">this section of the Mailcoach docs</a>.
     <br>
     You must set a webhook to <code class="markup-code">{{ url(action(\Spatie\MailcoachSesFeedback\SesWebhookController::class)) }}</code>
