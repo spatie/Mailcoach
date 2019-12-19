@@ -4,7 +4,7 @@
             @if (! request()->routeIs('mailConfiguration'))
                 @if(! $mailConfigurationValid)
                     <div class="flex items-baseline">
-                        <span class="w-6"><i class="fas fa-cog opacity-50"></i></span>
+                        <span class="w-6"><i class="fas fa-server opacity-50"></i></span>
                         <span class="ml-2 text-sm | lg:text-base">Your <strong>mail configuration</strong> is invalid. Head over to the <a href="{{ route('mailConfiguration') }}">mail
                             configuration</a> screen.</span>
                     </div>

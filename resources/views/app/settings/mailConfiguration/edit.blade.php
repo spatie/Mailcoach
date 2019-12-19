@@ -47,7 +47,7 @@
 
         <div class="form-buttons">
             <button class="button">
-                <x-icon-label icon="fa-cogs" text="Save configuration" />
+                <x-icon-label icon="fa-server" text="Save configuration" />
             </button>
         </div>
     </form>

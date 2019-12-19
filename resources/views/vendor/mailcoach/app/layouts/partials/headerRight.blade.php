@@ -1,6 +1,6 @@
 <div class="dropdown" data-dropdown>
     <button class="dropdown-trigger" data-dropdown-trigger>
-        <i class="fas fa-user-circle | block text-2xl icon-button"></i>
+        <i class="fas fa-cog | block text-2xl icon-button"></i>
     </button>
     <ul class="dropdown-list dropdown-list-left | hidden" data-dropdown-list>
         <li>
@@ -20,7 +20,7 @@
         <li>
             <a href="{{ route('mailConfiguration') }}">
                 <span class="icon-label">
-                    <i class="fas fa-cog"></i> Mail&nbsp;config
+                    <i class="fas fa-server"></i>Mail&nbsp;configuration
                 </span>
             </a>
         </li>
