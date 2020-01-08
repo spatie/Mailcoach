@@ -25,7 +25,7 @@ class MailConfigurationDriverRepository
     public function getForDriver(string $driverName): ?MailConfigurationDriver
     {
         return collect($this->drivers)
-            ->map(fn(string $driverClass) => app($driverClass))
-            ->first(fn(MailConfigurationDriver $driver) => $driver->name() === $driverName);
+            ->map(fn (string $driverClass) => app($driverClass))
+            ->first(fn (MailConfigurationDriver $driver) => $driver->name() === $driverName);
     }
 }
