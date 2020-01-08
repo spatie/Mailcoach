@@ -14,8 +14,11 @@ class MailConfiguration
 
     protected MailConfigurationDriverRepository $mailConfigurationDriverRepository;
 
-    public function __construct(Valuestore $valuestore, Repository $config, MailConfigurationDriverRepository $mailConfigurationDriverRepository)
-    {
+    public function __construct(
+        Valuestore $valuestore,
+        Repository $config,
+        MailConfigurationDriverRepository $mailConfigurationDriverRepository
+    ) {
         $this->valuestore = $valuestore;
         $this->config = $config;
         $this->mailConfigurationDriverRepository = $mailConfigurationDriverRepository;
