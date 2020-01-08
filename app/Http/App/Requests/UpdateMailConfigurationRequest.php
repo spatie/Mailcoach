@@ -12,11 +12,9 @@ class UpdateMailConfigurationRequest extends FormRequest
     {
         $mailConfigurationDriverRepository = new MailConfigurationDriverRepository();
 
-        $rules =  array_merge([
+        return array_merge([
           'driver' => ['required','bail',  Rule::in($mailConfigurationDriverRepository->getSupportedDrivers())]
         ], $this->getDriverSpecificValidationRules($mailConfigurationDriverRepository));
-
-        return $rules;
     }
 
     public function getDriverSpecificValidationRules(MailConfigurationDriverRepository $mailConfigurationDriverRepository): array
