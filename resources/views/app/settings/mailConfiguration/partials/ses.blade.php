@@ -1,5 +1,5 @@
 <p class="alert alert-info text-sm">
-    Learn how to configure SES by reading <a href="https://mailcoach.app/docs/app/mail-configuration/amazon-ses">this section of the Mailcoach
+    Learn how to configure SES by reading <a target="_blank" href="https://mailcoach.app/docs/app/mail-configuration/amazon-ses">this section of the Mailcoach
         docs</a>.
     <br>
     You must set a webhook to <code
