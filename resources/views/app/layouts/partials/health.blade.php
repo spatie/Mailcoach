@@ -14,7 +14,7 @@
             @if(! $horizonActive)
                 <div class="flex items-baseline">
                     <span class="w-6"><i class="fas fa-database opacity-50"></i></span>
-                    <span class="ml-2 text-sm | lg:text-base"><strong>Horizon</strong> is not active on your server. <a href="https://mailcoach.app/docs">Read the docs</a>.</span>
+                    <span class="ml-2 text-sm | lg:text-base"><strong>Horizon</strong> is not active on your server. <a target="_blank" href="https://mailcoach.app/docs">Read the docs</a>.</span>
                 </div>
             @endif
         </div>
