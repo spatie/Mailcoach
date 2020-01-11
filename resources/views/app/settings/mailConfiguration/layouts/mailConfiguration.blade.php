@@ -1,18 +1,16 @@
 @extends('mailcoach::app.layouts.app', ['title' => 'Mail configuration'])
 
 @section('header')
-    <nav class="breadcrumbs">
-        <ul>
-            <li>
-                Mail configuration
-            </li>
+    <nav>
+        <ul class="breadcrumbs">
+            @yield('breadcrumbs')
         </ul>
     </nav>
 @endsection
 
 @section('content')
-    <nav>
-        <ul class="tabs">
+    <nav class="tabs">
+        <ul>
             <x-navigation-item :href="route('mailConfiguration')">
                 <x-icon-label icon="fa-cogs" text="Mail configuration" />
             </x-navigation-item>

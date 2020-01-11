@@ -8,6 +8,7 @@ class EmailListSeeder extends Seeder
 {
     public function run()
     {
+        /*
         factory(EmailList::class, 1)
             ->create()
             ->each(function (EmailList $emailList) {
@@ -20,6 +21,7 @@ class EmailListSeeder extends Seeder
                     }
                 }
             });
+        */
 
         $emailList = EmailList::create([
             'name' => 'freek.dev newsletter #1',
@@ -27,6 +29,10 @@ class EmailListSeeder extends Seeder
             'default_from_name' => 'Freek Van der Herten',
         ]);
 
-        Subscriber::createWithEmail('freek@spatie.be')->subscribeTo($emailList);
+        foreach (range(1, 10) as $i) {
+            Subscriber::createWithEmail("freek+test{$i}@spatie.be")->subscribeTo($emailList);
+        }
+
+        Subscriber::first()->update(['subscribed_at' => null]);
     }
 }

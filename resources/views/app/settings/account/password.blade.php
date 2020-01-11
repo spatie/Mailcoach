@@ -1,5 +1,14 @@
 @extends('app.settings.account.layouts.account')
 
+@section('breadcrumbs')
+    <li>
+        <a href="{{ route('account') }}">
+            Account
+        </a>
+    </li>
+    <li>Password</li>
+@endsection
+
 @section('account')
     <form
         class="form-grid"

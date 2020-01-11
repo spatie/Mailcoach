@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Eloquent\Factory;
 
 class DatabaseSeeder extends Seeder
 {
@@ -11,6 +10,7 @@ class DatabaseSeeder extends Seeder
             ->call(UserSeeder::class)
             ->call(TemplateSeeder::class)
             ->call(EmailListSeeder::class)
-            ->call(CampaignSeeder::class);
+           // ->call(CampaignSeeder::class)
+        ;
     }
 }

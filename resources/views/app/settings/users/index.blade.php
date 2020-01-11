@@ -11,9 +11,8 @@
 @endsection
 
 @section('content')
-<main class="layout-main">
-    <section class="card card-grid">
-        <div class="flex justify-between">
+    <section class="card">
+        <div class="table-actions">
             <button class="button" data-modal-trigger="create-template">
                 <x-icon-label icon="fa-user" text="Create new user" />
             </button>
@@ -22,7 +21,9 @@
                 @include('app.settings.users.partials.create')
             </x-modal>
 
-            <x-search placeholder="Filter users…" />
+            <div class=table-filters>
+                <x-search placeholder="Filter users…" />
+            </div>
         </div>
 
         <table class="table">
@@ -65,5 +66,4 @@
 
         <x-table-status name="user" :paginator="$users" :total-count="$totalUsersCount" :show-all-url="route('users')">
         </x-table-status>
-</main>
 @endsection

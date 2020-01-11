@@ -1,5 +1,14 @@
 @extends('app.settings.mailConfiguration.layouts.mailConfiguration', ['title' => 'Mail configuration'])
 
+@section('breadcrumbs')
+    <li>
+        <a href="{{ route('mailConfiguration') }}">
+            Mail configuration
+        </a>
+    </li>
+    <li>Send test mail</li>
+@endsection
+
 @section('mailConfiguration')
     <form class="flex items-end justify-start" method="POST">
         <div class="flex-grow max-w-lg">

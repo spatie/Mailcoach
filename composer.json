@@ -77,13 +77,17 @@
             "@php artisan package:discover --ansi"
         ],
         "post-update-cmd": [
-            "@php artisan vendor:publish --tag mailcoach-assets"
+            "@php artisan vendor:publish --tag mailcoach-assets --force"
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
+        ],
+        "link-mailcoach-assets": [
+            "rm -rf public/vendor/mailcoach",
+            "ln -s $(pwd)/vendor/spatie/laravel-mailcoach/resources/dist public/vendor/mailcoach"
         ]
     }
 }

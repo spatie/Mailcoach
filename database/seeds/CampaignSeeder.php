@@ -5,8 +5,7 @@ use Spatie\Mailcoach\Enums\CampaignStatus;
 use Spatie\Mailcoach\Jobs\CalculateStatisticsJob;
 use Spatie\Mailcoach\Models\Campaign;
 use Spatie\Mailcoach\Models\CampaignLink;
-use Spatie\Mailcoach\Models\CampaignOpen;
-use Spatie\Mailcoach\Models\CampaignSend;
+use Spatie\Mailcoach\Models\Send;
 use Spatie\Mailcoach\Models\EmailList;
 use Spatie\Mailcoach\Models\Subscriber;
 
@@ -40,56 +39,50 @@ class CampaignSeeder extends Seeder
         ])->each(function (Campaign $campaign) {
             foreach (range(1, faker()->numberBetween(1, 10)) as $i) {
                 factory(CampaignLink::class, 10)->create([
-                    'email_campaign_id' => $campaign->id,
+                    'campaign_id' => $campaign->id,
                 ]);
             }
 
             $campaign->emailList
                 ->subscribers
                 ->each(function (Subscriber $subscriber) use ($campaign) {
-                    /** @var CampaignSend $campaignSend */
-                    $campaignSend = factory(CampaignSend::class)->create([
-                        'email_list_subscriber_id' => $subscriber->id,
-                        'email_campaign_id' => $campaign->id,
+                    /** @var Send $send */
+                    $send = factory(Send::class)->create([
+                        'subscriber_id' => $subscriber->id,
+                        'campaign_id' => $campaign->id,
                         'sent_at' => $campaign->sent_at,
                     ]);
 
-                    if (faker()->boolean(90)) {
-                        factory(CampaignOpen::class)->create([
-                            'campaign_send_id' => $campaignSend->id,
-                            'email_campaign_id' => $campaign->id,
-                            'email_list_subscriber_id' => $subscriber->id,
-                            'created_at' => faker()->dateTimeBetween('-1 week', '+1 week')
-                        ]);
-                    }
-
                     $linkUrl = faker()->url;
-                    if (faker()->boolean(40)) {
-                        $campaignClick = $campaignSend->registerClick($linkUrl);
-                        if ($campaignClick) {
-                            $campaignClick->created_at = faker()->dateTimeBetween('now', '+1 day');
-                            $campaignClick->save();
+
+                    if (faker()->boolean(70)) {
+                        $open = $send->registerOpen();
+
+                        if ($open) {
+                            $open->created_at = faker()->dateTimeBetween($campaign->sent_at, $campaign->sent_at->addHours(16));
+                            $open->save();
+                        }
+
+                        if (faker()->boolean(50)) {
+                            $campaignClick = $send->registerClick($linkUrl);
+
+                            if ($campaignClick) {
+                                $campaignClick->created_at = faker()->dateTimeBetween($campaign->sent_at, $campaign->sent_at->addHours(16));
+                                $campaignClick->save();
+                            }
                         }
                     }
 
-                    if (faker()->boolean(40)) {
-                        $campaignClick = $campaignSend->registerClick($linkUrl);
-                        if ($campaignClick) {
-                            $campaignClick->created_at = faker()->dateTimeBetween('now', '+1 day');
-                            $campaignClick->save();
-                        }
-                    }
-
-                    if (faker()->boolean(20)) {
+                    if (faker()->boolean(2)) {
                         $campaign->emailList->unsubscribe($subscriber->email);
                     }
 
-                    if (faker()->boolean(10)) {
-                        $campaignSend->registerBounce();
+                    if (faker()->boolean(2)) {
+                        $send->registerBounce();
                     }
 
-                    if (faker()->boolean(10)) {
-                        $campaignSend->registerComplaint();
+                    if (faker()->boolean(2)) {
+                        $send->registerComplaint();
                     }
                 });
 
