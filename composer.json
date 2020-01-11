@@ -8,24 +8,8 @@
     "license": "MIT",
     "repositories": [
         {
-            "type": "path",
-            "url": "../simple-excel"
-        },
-        {
-            "type": "path",
-            "url": "../laravel-mailcoach"
-        },
-        {
-            "type": "path",
-            "url": "../laravel-mailcoach-mailgun-feedback"
-        },
-        {
-            "type": "path",
-            "url": "../laravel-mailcoach-ses-feedback"
-        },
-        {
-            "type": "path",
-            "url": "../laravel-mailcoach-sendgrid-feedback"
+            "type": "composer",
+            "url": "https://satis.mailcoach.app"
         }
     ],
     "require": {
