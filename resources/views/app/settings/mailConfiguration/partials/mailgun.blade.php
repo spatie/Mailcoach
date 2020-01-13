@@ -1,5 +1,5 @@
 <p class="alert alert-info text-sm">
-    Learn how to configure Mailgun by reading <a href="https://mailcoach.app/docs/mailgun">this section of the Mailcoach
+    Learn how to configure Mailgun by reading <a target="_blank" href="https://mailcoach.app/docs/app/mail-configuration/mailgun">this section of the Mailcoach
         docs</a>.
     <br>
     You must set a webhook to

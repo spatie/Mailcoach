@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6f88934b84f38c07b07c4cefd5fb1910",
+    "content-hash": "d7e2743063c82a69f40aa34de1b28d46",
     "packages": [
         {
             "name": "aws/aws-php-sns-message-validator",
@@ -61,16 +61,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.132.1",
+            "version": "3.132.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "b12a8adb23793baa2b69f8078d05ee59e816f1ec"
+                "reference": "f814995664d4ad616f674e664ae069b9f4e340bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/b12a8adb23793baa2b69f8078d05ee59e816f1ec",
-                "reference": "b12a8adb23793baa2b69f8078d05ee59e816f1ec",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/f814995664d4ad616f674e664ae069b9f4e340bf",
+                "reference": "f814995664d4ad616f674e664ae069b9f4e340bf",
                 "shasum": ""
             },
             "require": {
@@ -141,7 +141,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2020-01-08T19:14:13+00:00"
+            "time": "2020-01-10T19:14:49+00:00"
         },
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -446,16 +446,16 @@
         },
         {
             "name": "composer/composer",
-            "version": "1.9.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "bb01f2180df87ce7992b8331a68904f80439dd2f"
+                "reference": "ec32c03915b95dafe4313d14f981e008b14db6f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/bb01f2180df87ce7992b8331a68904f80439dd2f",
-                "reference": "bb01f2180df87ce7992b8331a68904f80439dd2f",
+                "url": "https://api.github.com/repos/composer/composer/zipball/ec32c03915b95dafe4313d14f981e008b14db6f4",
+                "reference": "ec32c03915b95dafe4313d14f981e008b14db6f4",
                 "shasum": ""
             },
             "require": {
@@ -468,10 +468,10 @@
                 "psr/log": "^1.0",
                 "seld/jsonlint": "^1.4",
                 "seld/phar-utils": "^1.0",
-                "symfony/console": "^2.7 || ^3.0 || ^4.0",
-                "symfony/filesystem": "^2.7 || ^3.0 || ^4.0",
-                "symfony/finder": "^2.7 || ^3.0 || ^4.0",
-                "symfony/process": "^2.7 || ^3.0 || ^4.0"
+                "symfony/console": "^2.7 || ^3.0 || ^4.0 || ^5.0",
+                "symfony/filesystem": "^2.7 || ^3.0 || ^4.0 || ^5.0",
+                "symfony/finder": "^2.7 || ^3.0 || ^4.0 || ^5.0",
+                "symfony/process": "^2.7 || ^3.0 || ^4.0 || ^5.0"
             },
             "conflict": {
                 "symfony/console": "2.8.38"
@@ -491,7 +491,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.9-dev"
+                    "dev-master": "1.10-dev"
                 }
             },
             "autoload": {
@@ -522,7 +522,7 @@
                 "dependency",
                 "package"
             ],
-            "time": "2019-11-01T16:20:17+00:00"
+            "time": "2020-01-10T21:50:13+00:00"
         },
         {
             "name": "composer/semver",
@@ -2115,16 +2115,16 @@
         },
         {
             "name": "league/commonmark",
-            "version": "1.1.2",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/commonmark.git",
-                "reference": "772e03fa9c6477ef5ef2d154fefd8a2a8d8ed03c"
+                "reference": "2533c389fd2a7573d4f7be279b1c33cf941c8dfc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/772e03fa9c6477ef5ef2d154fefd8a2a8d8ed03c",
-                "reference": "772e03fa9c6477ef5ef2d154fefd8a2a8d8ed03c",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/2533c389fd2a7573d4f7be279b1c33cf941c8dfc",
+                "reference": "2533c389fd2a7573d4f7be279b1c33cf941c8dfc",
                 "shasum": ""
             },
             "require": {
@@ -2136,7 +2136,7 @@
             },
             "require-dev": {
                 "cebe/markdown": "~1.0",
-                "commonmark/commonmark.js": "0.29.0",
+                "commonmark/commonmark.js": "0.29.1",
                 "erusev/parsedown": "~1.0",
                 "ext-json": "*",
                 "michelf/php-markdown": "~1.4",
@@ -2155,7 +2155,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.2-dev"
+                    "dev-master": "1.3-dev"
                 }
             },
             "autoload": {
@@ -2182,7 +2182,7 @@
                 "markdown",
                 "parser"
             ],
-            "time": "2019-12-10T02:55:03+00:00"
+            "time": "2020-01-09T22:41:09+00:00"
         },
         {
             "name": "league/commonmark-ext-table",
@@ -5227,16 +5227,16 @@
         },
         {
             "name": "spatie/laravel-blade-x",
-            "version": "2.4.1",
+            "version": "2.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-blade-x.git",
-                "reference": "1978597d0afc63782aecd062cf8ede7d0ef306f7"
+                "reference": "e6c2625dd46325d2fbe594ddf1de96326e5e59f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-blade-x/zipball/1978597d0afc63782aecd062cf8ede7d0ef306f7",
-                "reference": "1978597d0afc63782aecd062cf8ede7d0ef306f7",
+                "url": "https://api.github.com/repos/spatie/laravel-blade-x/zipball/e6c2625dd46325d2fbe594ddf1de96326e5e59f5",
+                "reference": "e6c2625dd46325d2fbe594ddf1de96326e5e59f5",
                 "shasum": ""
             },
             "require": {
@@ -5309,7 +5309,7 @@
                 "laravel-blade-x",
                 "spatie"
             ],
-            "time": "2019-12-14T16:30:35+00:00"
+            "time": "2020-01-10T00:45:12+00:00"
         },
         {
             "name": "spatie/laravel-feed",
@@ -5491,10 +5491,16 @@
         {
             "name": "spatie/laravel-mailcoach",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:spatie/laravel-mailcoach.git",
+                "reference": "65886cde7d9c56b270c7c1e561c901b4bf669e93"
+            },
             "dist": {
-                "type": "path",
-                "url": "../laravel-mailcoach",
-                "reference": "f23aea41491abc05cca1868d0926204447c7b51a"
+                "type": "zip",
+                "url": "https://satis.mailcoach.app/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-65886cde7d9c56b270c7c1e561c901b4bf669e93-zip-1876d0.zip",
+                "reference": "65886cde7d9c56b270c7c1e561c901b4bf669e93",
+                "shasum": "21b5e6ed394a1a8bba480c9525dc21eb0ffb9f32"
             },
             "require": {
                 "cakephp/chronos": "^1.2.8",
@@ -5583,15 +5589,22 @@
                 "mail",
                 "mass mailing",
                 "spatie"
-            ]
+            ],
+            "time": "2020-01-10T15:44:59+00:00"
         },
         {
             "name": "spatie/laravel-mailcoach-mailgun-feedback",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:spatie/laravel-mailcoach-mailgun-feedback.git",
+                "reference": "f76538669165e584f682575f423c985010e992f6"
+            },
             "dist": {
-                "type": "path",
-                "url": "../laravel-mailcoach-mailgun-feedback",
-                "reference": "0111df8fd33306f41af283b86aceb2268589ebee"
+                "type": "zip",
+                "url": "https://satis.mailcoach.app/dist/spatie/laravel-mailcoach-mailgun-feedback/spatie-laravel-mailcoach-mailgun-feedback-f76538669165e584f682575f423c985010e992f6-zip-500c18.zip",
+                "reference": "f76538669165e584f682575f423c985010e992f6",
+                "shasum": "f2bec8797e1a782abbaf2655a3f41f63332b30d1"
             },
             "require": {
                 "illuminate/http": "^6.4",
@@ -5645,15 +5658,22 @@
             "keywords": [
                 "laravel-mailcoach-mailgun-feedback",
                 "spatie"
-            ]
+            ],
+            "time": "2019-12-16T08:11:21+00:00"
         },
         {
             "name": "spatie/laravel-mailcoach-sendgrid-feedback",
             "version": "dev-master",
-            "dist": {
-                "type": "path",
-                "url": "../laravel-mailcoach-sendgrid-feedback",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:spatie/laravel-mailcoach-sendgrid-feedback.git",
                 "reference": "1b929f0960202d35c4e82599e5872b4afac80513"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://satis.mailcoach.app/dist/spatie/laravel-mailcoach-sendgrid-feedback/spatie-laravel-mailcoach-sendgrid-feedback-1b929f0960202d35c4e82599e5872b4afac80513-zip-0a5897.zip",
+                "reference": "1b929f0960202d35c4e82599e5872b4afac80513",
+                "shasum": "727b25254322521d92fe34fae3f38bf4145f06b7"
             },
             "require": {
                 "illuminate/http": "^6.4",
@@ -5707,15 +5727,22 @@
             "keywords": [
                 "laravel-mailcoach-sendgrid-feedback",
                 "spatie"
-            ]
+            ],
+            "time": "2019-12-17T16:17:02+00:00"
         },
         {
             "name": "spatie/laravel-mailcoach-ses-feedback",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:spatie/laravel-mailcoach-ses-feedback.git",
+                "reference": "d05a7de376ebf849171e34d621988acc60e420e0"
+            },
             "dist": {
-                "type": "path",
-                "url": "../laravel-mailcoach-ses-feedback",
-                "reference": "7263b4cffdf213e0159f8e9f3fa74973a528bb6b"
+                "type": "zip",
+                "url": "https://satis.mailcoach.app/dist/spatie/laravel-mailcoach-ses-feedback/spatie-laravel-mailcoach-ses-feedback-d05a7de376ebf849171e34d621988acc60e420e0-zip-ba31e6.zip",
+                "reference": "d05a7de376ebf849171e34d621988acc60e420e0",
+                "shasum": "28b504e5f764948370119726bbb67f4ede06e8cd"
             },
             "require": {
                 "aws/aws-php-sns-message-validator": "^1.5",
@@ -5771,7 +5798,8 @@
             "keywords": [
                 "laravel-mailcoach-ses-feedback",
                 "spatie"
-            ]
+            ],
+            "time": "2020-01-09T14:21:15+00:00"
         },
         {
             "name": "spatie/laravel-medialibrary",
@@ -7107,26 +7135,26 @@
         },
         {
             "name": "symfony/filesystem",
-            "version": "v4.4.2",
+            "version": "v5.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
-                "reference": "40c2606131d56eff6f193b6e2ceb92414653b591"
+                "reference": "1d71f670bc5a07b9ccc97dc44f932177a322d4e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/filesystem/zipball/40c2606131d56eff6f193b6e2ceb92414653b591",
-                "reference": "40c2606131d56eff6f193b6e2ceb92414653b591",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/1d71f670bc5a07b9ccc97dc44f932177a322d4e6",
+                "reference": "1d71f670bc5a07b9ccc97dc44f932177a322d4e6",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.1.3",
+                "php": "^7.2.5",
                 "symfony/polyfill-ctype": "~1.8"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.4-dev"
+                    "dev-master": "5.0-dev"
                 }
             },
             "autoload": {
@@ -7153,7 +7181,7 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
-            "time": "2019-11-26T23:16:41+00:00"
+            "time": "2019-11-26T23:25:11+00:00"
         },
         {
             "name": "symfony/finder",
