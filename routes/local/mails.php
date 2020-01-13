@@ -12,7 +12,7 @@ use Spatie\Mailcoach\Models\SubscriberImport;
 
 Route::get('campaign-sent', function () {
     $campaign = factory(Campaign::class)->create([
-        'sent_to_number_of_subscribers' => 1234
+        'sent_to_number_of_subscribers' => 1234,
     ]);
 
     return new CampaignSentMail($campaign);
@@ -22,6 +22,8 @@ Route::get('campaign-summary', function() {
     $campaign = factory(Campaign::class)->create([
         'sent_to_number_of_subscribers' => 1234,
         'sent_at' => now(),
+        'track_opens' => true,
+        'track_clicks' => true,
     ]);
 
     return new CampaignSummaryMail($campaign);
