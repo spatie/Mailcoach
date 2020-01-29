@@ -17,3 +17,4 @@ mailConfiguration.json
 _ide_helper.php
 _ide_helper_models.php
 auth.json
+composer.lock
