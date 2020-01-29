@@ -5,7 +5,6 @@
         "mailcoach",
         "spatie"
     ],
-    "license": "MIT",
     "repositories": [
         {
             "type": "composer",
