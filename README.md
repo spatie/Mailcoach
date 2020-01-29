@@ -1,6 +1,6 @@
 # The Mailcoach application
 
-![Header image](https://spatie.github.io/mailcoach/images/header.jpg)
+![Header image](https://spatie.github.io/Mailcoach/images/header.jpg)
 
 [Mailcoach](https://mailcoach.app) is a self-hosted email list manager - in a modern jacket.
 
