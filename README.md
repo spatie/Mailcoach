@@ -1,4 +1,4 @@
-# The Mailcoach application
+# Welcome to Mailcoach
 
 ![Header image](https://spatie.github.io/Mailcoach/images/header.jpg)
 
@@ -14,4 +14,4 @@ It features:
 
 In order to be able to install all necessary dependencies you need an mailcoach license you can buy at [mailcoach.app](https://mailcoach.com)
 
-This repository contains the [full Mailcoach application](https://mailcoach.app/docs/app). 
+Read our documentation on [how to get started](https://mailcoach.app/docs/app). 
