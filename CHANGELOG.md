@@ -1,5 +1,9 @@
 # Mailcoach
 
+## 1.0.4 - 2020-01-29
+
+- fixed typo in `TemplateSeeder`: changed `unsubcribeUrl` to `unsubscribeUrl`
+
 ## 1.0.3 - 2020-01-29
 
 - remove `composer.lock`
