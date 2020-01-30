@@ -2,8 +2,8 @@
 
 namespace App\Http\App\Queries;
 
-use Spatie\Mailcoach\Http\App\Filters\FuzzyFilter;
 use App\Models\User;
+use Spatie\Mailcoach\Http\App\Queries\Filters\FuzzyFilter;
 use Spatie\QueryBuilder\AllowedFilter;
 use Spatie\QueryBuilder\QueryBuilder;
 
