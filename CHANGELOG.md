@@ -1,5 +1,9 @@
 # Mailcoach
 
+## 1.0.6 - 2020-01-30
+
+- fix users screen
+
 ## 1.0.5 - 2020-01-30
 
 - clean up seeders
