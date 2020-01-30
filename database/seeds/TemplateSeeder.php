@@ -64,7 +64,7 @@ class TemplateSeeder extends Seeder
                             <tbody style="box-sizing:border-box">
                             <tr>
                                 <td align="center" style="box-sizing:border-box;padding:35px"><a
-                                  href="::unsubcribeUrl::" style="color:rgb(107,106,103);box-sizing:border-box"
+                                  href="::unsubscribeUrl::" style="color:rgb(107,106,103);box-sizing:border-box"
                                   target="_blank"
                                   data-saferedirecturl="https://www.google.com/url?hl=en-GB&amp;q=https://mailcoach.app/&amp;source=gmail&amp;ust=1576780573482000&amp;usg=AFQjCNHHb9SlzlbxiX6o9-ApTpvdU4MaQw">Unsubscribe</a>
                                 </td>
