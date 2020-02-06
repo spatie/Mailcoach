@@ -26,12 +26,12 @@ class CreateMailcoachTables extends Migration
 
             $table->boolean('requires_confirmation')->default(false);
             $table->string('confirmation_mail_subject')->nullable();
-            $table->string('confirmation_mail_content')->nullable();
+            $table->text('confirmation_mail_content')->nullable();
             $table->string('confirmation_mailable_class')->nullable();
 
             $table->boolean('send_welcome_mail')->nullable();
             $table->string('welcome_mail_subject')->nullable();
-            $table->string('welcome_mail_content')->nullable();
+            $table->text('welcome_mail_content')->nullable();
             $table->string('welcome_mailable_class')->nullable();
 
             $table->string('report_recipients')->nullable();
