@@ -1,5 +1,9 @@
 # Mailcoach
 
+## 1.0.7 - 2020-02-06
+
+- change content fields to be of type text (#9)
+
 ## 1.0.6 - 2020-01-30
 
 - fix users screen
