@@ -1,5 +1,9 @@
 # Mailcoach
 
+## 1.0.8 - 2020-02-09
+
+- clear cached config on mail config save
+
 ## 1.0.7 - 2020-02-06
 
 - change content fields to be of type text (#9)
