@@ -12,6 +12,6 @@ It features:
 - Send newsletters to an unlimited amount of subscribers
 - Statistics and tracking of opens and clicks
 
-In order to be able to install all necessary dependencies you need an mailcoach license you can buy at [mailcoach.app](https://mailcoach.com)
+In order to be able to install all necessary dependencies you need an mailcoach license you can buy at [mailcoach.app](https://mailcoach.app)
 
 Read our documentation on [how to get started](https://mailcoach.app/docs/app). 
