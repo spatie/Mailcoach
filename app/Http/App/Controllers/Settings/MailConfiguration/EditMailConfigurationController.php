@@ -17,7 +17,9 @@ class EditMailConfigurationController
     {
         $mailConfiguration->put($request->validated());
 
-        Artisan::call('horizon:terminate');
+        dispatch(function () {
+            Artisan::call('horizon:terminate');
+        });
 
         flash()->success('The mail configuration was saved.');
 
