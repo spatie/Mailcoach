@@ -1,5 +1,9 @@
 # Mailcoach
 
+## 1.0.9 - 2020-02-11
+
+- fix for terminating horizon
+
 ## 1.0.8 - 2020-02-09
 
 - clear cached config on mail config save
