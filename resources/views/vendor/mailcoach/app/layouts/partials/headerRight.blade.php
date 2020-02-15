@@ -6,21 +6,21 @@
         <li>
             <a href="{{ route('account') }}">
                 <span class="icon-label">
-                    <i class="fas fa-user"></i> Account
+                    <i class="fas fa-fw fa-user"></i> Account
                 </span>
             </a>
         </li>
         <li>
             <a href="{{ route('users') }}">
                 <span class="icon-label">
-                    <i class="fas fa-users"></i> Users
+                    <i class="fas fa-fw fa-users"></i> Users
                 </span>
             </a>
         </li>
         <li>
             <a href="{{ route('mailConfiguration') }}">
                 <span class="icon-label">
-                    <i class="fas fa-server"></i>Mail&nbsp;configuration
+                    <i class="fas fa-fw fa-server"></i>Mail&nbsp;configuration
                 </span>
             </a>
         </li>
@@ -28,7 +28,7 @@
             <form method="post" action="{{ route('logout') }}">
                 <button type="submit">
                     <span class="icon-label">
-                        <i class="fas fa-power-off text-red-500"></i>
+                        <i class="fas fa-fw fa-power-off text-red-500"></i>
                         Log out
                     </span>
                 </button>
