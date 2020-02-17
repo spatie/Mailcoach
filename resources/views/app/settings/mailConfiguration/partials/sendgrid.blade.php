@@ -4,7 +4,7 @@
     <br>
     You must set a webhook to
     <code
-        class=markup-code>{{ url(action(\Spatie\MailcoachSendgridFeedback\SendgridWebhookController::class)) . '?secret=YOUR-WEBHOOK-SIGNING-SECRET' }}</code>
+        class=markup-code>{{ url(action(\Spatie\MailcoachSendgridFeedback\SendgridWebhookController::class)) . '?secret=' . $mailConfiguration->sendgrid_signing_secret }}</code>
 
 </p>
 
