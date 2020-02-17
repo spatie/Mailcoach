@@ -1,5 +1,10 @@
 # Mailcoach
 
+## 1.0.10 - 2020-02-17
+
+- fix icon alignment
+- add shared secret of webhook url to config after it's set
+
 ## 1.0.9 - 2020-02-11
 
 - fix for terminating horizon
