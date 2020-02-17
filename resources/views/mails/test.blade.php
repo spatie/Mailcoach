@@ -2,6 +2,6 @@
 
 Hi,
 
-this is a test email sent from mailcoach.
+this is a test email sent from Mailcoach.
 
 @endcomponent
