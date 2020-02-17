@@ -1,5 +1,9 @@
 # Mailcoach
 
+# 1.1.0 - 2020-02-17
+
+- add from email to mail configuration test email (#13)
+
 ## 1.0.10 - 2020-02-17
 
 - fix icon alignment
