@@ -17,12 +17,13 @@ class SendTestMailController
     public function sendTestEmail(Request $request)
     {
         $request->validate([
-            'email' => 'email',
+            'from_email' => 'email',
+            'to_email' => 'email',
         ]);
         try {
-            Mail::to($request->email)->sendNow(new TestMail($request->email));
+            Mail::to($request->to_email)->sendNow(new TestMail($request->from_email, $request->to_email));
 
-            flash()->success("A test mail has been sent to {$request->email}. Please check if it arrived.");
+            flash()->success("A test mail has been sent to {$request->to_email}. Please check if it arrived.");
         } catch (Exception $exception) {
             report($exception);
 
