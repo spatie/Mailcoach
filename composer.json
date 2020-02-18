@@ -26,6 +26,7 @@
         "spatie/laravel-mailcoach-mailgun-feedback": "^1.0",
         "spatie/laravel-mailcoach-sendgrid-feedback": "^1.0",
         "spatie/laravel-mailcoach-ses-feedback": "^1.0",
+        "spatie/laravel-mailcoach-postmark-feedback": "dev-master",
         "spatie/laravel-query-builder": "^2.3",
         "spatie/laravel-welcome-notification": "^1.0",
         "spatie/valuestore": "^1.2"

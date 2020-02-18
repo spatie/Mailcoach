@@ -4,6 +4,7 @@ namespace App\Support\MailConfiguration;
 
 use App\Support\MailConfiguration\Drivers\MailConfigurationDriver;
 use App\Support\MailConfiguration\Drivers\MailgunConfigurationDriver;
+use App\Support\MailConfiguration\Drivers\PostmarkConfigurationDriver;
 use App\Support\MailConfiguration\Drivers\SendgridConfigurationDriver;
 use App\Support\MailConfiguration\Drivers\SesConfigurationDriver;
 use App\Support\MailConfiguration\Drivers\SmtpConfigurationDriver;
@@ -14,6 +15,7 @@ class MailConfigurationDriverRepository
         'ses' => SesConfigurationDriver::class,
         'mailgun' => MailgunConfigurationDriver::class,
         'sendgrid' => SendgridConfigurationDriver::class,
+        'postmark' => PostmarkConfigurationDriver::class,
         'smtp' => SmtpConfigurationDriver::class,
     ];
 
