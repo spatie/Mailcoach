@@ -31,11 +31,9 @@ class PostmarkConfigurationDriver extends MailConfigurationDriver
         $config->set('mail.driver', $this->name());
         $config->set('services.postmark', [
             'token' => $values['postmark_token'],
-            'secret' => $values['mailgun_secret'],
-            'endpoint' => $values['mailgun_endpoint'],
         ]);
         $config->set('mailcoach.postmark_feedback', [
-            'signing_secret' => $values['user'] . ':' . $values['password'],
+            'signing_secret' => $values['postmark_user'] . ':' . $values['postmark_password'],
         ]);
     }
 }

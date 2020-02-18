@@ -18,19 +18,19 @@
     label="Token"
     name="postmark_token"
     type="password"
-    :value="$mailConfiguration->token"
+    :value="$mailConfiguration->postmark_token"
 />
 
 <x-text-field
     label="User"
     name="postmark_user"
     type="text"
-    :value="$mailConfiguration->user"
+    :value="$mailConfiguration->postmark_user"
 />
 
 <x-text-field
     label="Password"
     name="postmark_password"
-    type="secret"
+    type="password"
     :value="$mailConfiguration->postmark_password"
 />
