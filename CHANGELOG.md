@@ -1,5 +1,9 @@
 # Mailcoach
 
+## 1.1.1 - 2020-02-19
+
+- fix scheduled command
+
 ## 1.1.0 - 2020-02-17
 
 - add from email to mail configuration test email (#13)
