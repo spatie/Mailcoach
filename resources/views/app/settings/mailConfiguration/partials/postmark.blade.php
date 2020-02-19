@@ -15,21 +15,21 @@
 />
 
 <x-text-field
-    label="Token"
+    label="Server Token"
     name="postmark_token"
     type="password"
     :value="$mailConfiguration->postmark_token"
 />
 
 <x-text-field
-    label="User"
+    label="SMTP User"
     name="postmark_user"
     type="text"
     :value="$mailConfiguration->postmark_user"
 />
 
 <x-text-field
-    label="Password"
+    label="SMTP Password"
     name="postmark_password"
     type="password"
     :value="$mailConfiguration->postmark_password"
