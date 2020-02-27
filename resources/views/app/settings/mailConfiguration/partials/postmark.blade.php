@@ -3,7 +3,7 @@
         docs</a>.
     <br>
     You must set a webhook to
-    <code class="markup-code">{{ url(action(\Spatie\MailcoachPostmarkFeedback\PostmarkWebhookController::class)) }}</code>
+    <code class="markup-code">{{ url(action(\Spatie\MailcoachPostmarkFeedback\PostmarkWebhookController::class)) }}</code>. You should set a header `mailcoach_signature` with the signing secret you specify in the form below.
 </p>
 
 
@@ -22,15 +22,8 @@
 />
 
 <x-text-field
-    label="SMTP User"
-    name="postmark_user"
+    label="Signing secret"
+    name="postmark_signing_secret"
     type="text"
-    :value="$mailConfiguration->postmark_user"
-/>
-
-<x-text-field
-    label="SMTP Password"
-    name="postmark_password"
-    type="password"
-    :value="$mailConfiguration->postmark_password"
+    :value="$mailConfiguration->postmark_signing_secret"
 />

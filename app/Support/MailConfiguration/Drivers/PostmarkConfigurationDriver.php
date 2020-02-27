@@ -17,8 +17,7 @@ class PostmarkConfigurationDriver extends MailConfigurationDriver
             'default_from_mail' => 'required',
             'postmark_mails_per_second' => 'required|numeric|between:1,100',
             'postmark_token' => 'required',
-            'postmark_user' => 'required',
-            'postmark_password' => 'required',
+            'postmark_signing_secret' => 'required',
         ];
     }
 
@@ -33,7 +32,7 @@ class PostmarkConfigurationDriver extends MailConfigurationDriver
             'token' => $values['postmark_token'],
         ]);
         $config->set('mailcoach.postmark_feedback', [
-            'signing_secret' => $values['postmark_user'] . ':' . $values['postmark_password'],
+            'signing_secret' => $values['postmark_signing_secret'],
         ]);
     }
 }
