@@ -24,7 +24,7 @@
         "spatie/laravel-json-api-paginate": "^1.6",
         "spatie/laravel-mailcoach": "^1.8",
         "spatie/laravel-mailcoach-mailgun-feedback": "^1.0",
-        "spatie/laravel-mailcoach-postmark-feedback": "dev-master",
+        "spatie/laravel-mailcoach-postmark-feedback": "^1.0",
         "spatie/laravel-mailcoach-sendgrid-feedback": "^1.0",
         "spatie/laravel-mailcoach-ses-feedback": "^1.0",
         "spatie/laravel-query-builder": "^2.3",
