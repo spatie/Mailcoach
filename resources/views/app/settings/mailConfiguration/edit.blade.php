@@ -22,6 +22,7 @@
                 'ses' => 'Amazon SES',
                 'sendgrid' => 'SendGrid',
                 'mailgun' => 'Mailgun',
+                'postmark' => 'Postmark',
                 'smtp' => 'SMTP',
             ]"
             data-conditional="driver"
@@ -37,6 +38,10 @@
 
         <div class="form-grid" data-conditional-driver="sendgrid">
             @include('app.settings.mailConfiguration.partials.sendgrid')
+        </div>
+
+        <div class="form-grid" data-conditional-driver="postmark">
+            @include('app.settings.mailConfiguration.partials.postmark')
         </div>
 
         <div class="form-grid" data-conditional-driver="smtp">

@@ -14,6 +14,7 @@ class RouteServiceProvider extends ServiceProvider
         Route::sesFeedback('ses-feedback');
         Route::mailgunFeedback('mailgun-feedback');
         Route::sendgridFeedback('sendgrid-feedback');
+        Route::postmarkFeedback('postmark-feedback');
 
         $this
             ->mapWebRoutes($router)
