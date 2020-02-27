@@ -11,7 +11,7 @@ class CreateWebhookCallsTable extends Migration
             $table->bigIncrements('id');
 
             $table->string('name');
-            $table->text('payload')->nullable();
+            $table->json('payload')->nullable();
             $table->text('exception')->nullable();
 
             $table->timestamps();
