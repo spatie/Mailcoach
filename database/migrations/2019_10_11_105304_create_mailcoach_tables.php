@@ -29,8 +29,8 @@ class CreateMailcoachTables extends Migration
             $table->text('confirmation_mail_content')->nullable();
             $table->string('confirmation_mailable_class')->nullable();
 
-            $table->string('campaign_mailer');
-            $table->string('transactional_mailer');
+            $table->string('campaign_mailer')->nullable();
+            $table->string('transactional_mailer')->nullable();
 
             $table->boolean('send_welcome_mail')->nullable();
             $table->string('welcome_mail_subject')->nullable();
