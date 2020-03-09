@@ -33,5 +33,4 @@ abstract class MailConfigurationDriver
 
         return $this;
     }
-
 }

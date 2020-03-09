@@ -18,7 +18,7 @@ Route::get('campaign-sent', function () {
     return new CampaignSentMail($campaign);
 });
 
-Route::get('campaign-summary', function() {
+Route::get('campaign-summary', function () {
     $campaign = factory(Campaign::class)->create([
         'sent_to_number_of_subscribers' => 1234,
         'sent_at' => now(),
@@ -29,19 +29,19 @@ Route::get('campaign-summary', function() {
     return new CampaignSummaryMail($campaign);
 });
 
-Route::get('confirm-subscriber', function() {
+Route::get('confirm-subscriber', function () {
     $subscriber = factory(Subscriber::class)->create();
 
     return new ConfirmSubscriberMail($subscriber);
 });
 
-Route::get('email-list-summary', function() {
+Route::get('email-list-summary', function () {
     $emailList = factory(EmailList::class)->create();
 
     return new EmailListSummaryMail($emailList, now());
 });
 
-Route::get('import-subscribers-result', function() {
+Route::get('import-subscribers-result', function () {
     $subscriberImport = factory(SubscriberImport::class)->create();
 
     return new ImportSubscribersResultMail($subscriberImport);

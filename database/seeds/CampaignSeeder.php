@@ -5,8 +5,8 @@ use Spatie\Mailcoach\Enums\CampaignStatus;
 use Spatie\Mailcoach\Jobs\CalculateStatisticsJob;
 use Spatie\Mailcoach\Models\Campaign;
 use Spatie\Mailcoach\Models\CampaignLink;
-use Spatie\Mailcoach\Models\Send;
 use Spatie\Mailcoach\Models\EmailList;
+use Spatie\Mailcoach\Models\Send;
 use Spatie\Mailcoach\Models\Subscriber;
 
 class CampaignSeeder extends Seeder
