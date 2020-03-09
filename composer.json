@@ -30,7 +30,8 @@
         "spatie/laravel-query-builder": "^2.3",
         "spatie/laravel-welcome-notification": "^1.0",
         "spatie/valuestore": "^1.2",
-        "wildbit/swiftmailer-postmark": "^3.1"
+        "wildbit/swiftmailer-postmark": "^3.1",
+        "laravel/ui": "^2.0"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.6",
