@@ -22,13 +22,13 @@
         "laravel/tinker": "^2.0",
         "spatie/laravel-flash": "^1.5",
         "spatie/laravel-json-api-paginate": "^1.7",
-        "spatie/laravel-mailcoach": "^1.8",
-        "spatie/laravel-mailcoach-mailgun-feedback": "^1.0",
-        "spatie/laravel-mailcoach-postmark-feedback": "^1.0",
-        "spatie/laravel-mailcoach-sendgrid-feedback": "^1.0",
-        "spatie/laravel-mailcoach-ses-feedback": "^1.0",
+        "spatie/laravel-mailcoach": "v2.x-dev",
+        "spatie/laravel-mailcoach-mailgun-feedback": "v2.x-dev",
+        "spatie/laravel-mailcoach-postmark-feedback": "v2.x-dev",
+        "spatie/laravel-mailcoach-sendgrid-feedback": "v2.x-dev",
+        "spatie/laravel-mailcoach-ses-feedback": "v2.x-dev",
         "spatie/laravel-query-builder": "^2.8",
-        "spatie/laravel-welcome-notification": "^1.0",
+        "spatie/laravel-welcome-notification": "^2.0",
         "spatie/valuestore": "^1.2",
         "wildbit/swiftmailer-postmark": "^3.1",
         "laravel/ui": "^2.0",
@@ -42,8 +42,8 @@
         "fzaninotto/faker": "^1.4",
         "mockery/mockery": "^1.3.1",
         "nunomaduro/collision": "^4.1",
-        "phpunit/phpunit": "^8.5",
-        "spatie/laravel-tail": "^3.3"
+        "phpunit/phpunit": "^9.0",
+        "spatie/laravel-tail": "^4.0"
     },
     "config": {
         "optimize-autoloader": true,
@@ -80,7 +80,8 @@
             "@php artisan package:discover --ansi"
         ],
         "post-update-cmd": [
-            "@php artisan vendor:publish --tag mailcoach-assets --force"
+            "@php artisan vendor:publish --tag mailcoach-assets --force",
+            "@php artisan horizon:publish"
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
