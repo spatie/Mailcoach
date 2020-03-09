@@ -29,7 +29,7 @@ class SesConfigurationDriver extends MailConfigurationDriver
             ->setDefaultFromEmail($config, $values['default_from_mail'] ?? '')
             ->throttleNumberOfMailsPerSecond($config, $values['ses_mails_per_second'] ?? 5);
 
-        $config->set('mail.driver', $this->name());
+        $config->set('mail.mailers.mailcoach.transport', $this->name());
         $config->set('services.ses', [
             'key' => $values['ses_key'],
             'secret' => $values['ses_secret'],
