@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Illuminate\Auth\Passwords\DatabaseTokenRepository;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\WelcomeNotification\ReceivesWelcomeNotification;

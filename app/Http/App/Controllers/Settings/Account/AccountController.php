@@ -3,7 +3,6 @@
 namespace App\Http\App\Controllers\Settings\Account;
 
 use App\Http\App\Requests\UpdateAccountRequest;
-use App\Http\App\Resources\UserResource;
 
 class AccountController
 {
