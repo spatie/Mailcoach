@@ -1,12 +1,11 @@
-<p class="alert alert-info text-sm">
+<x-help>
     Learn how to configure Sendgrid by reading <a target="_blank" href="https://mailcoach.app/docs/app/mail-configuration/sendgrid">this section of the
         Mailcoach docs</a>.
     <br>
     You must set a webhook to
     <code
         class=markup-code>{{ url(action(\Spatie\MailcoachSendgridFeedback\SendgridWebhookController::class)) . '?secret=' . $mailConfiguration->sendgrid_signing_secret }}</code>
-
-</p>
+</x-help>
 
 <x-text-field
     label="Mails per second"

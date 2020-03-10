@@ -3,7 +3,7 @@
 @section('breadcrumbs')
     <li>
         <a href="{{ route('mailConfiguration') }}">
-            Transactional Mail configuration
+            Transactional mail configuration
         </a>
     </li>
     <li>Send test mail</li>

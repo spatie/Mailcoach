@@ -1,10 +1,10 @@
-<p class="alert alert-info text-sm">
+<x-help>
     Learn how to configure Mailgun by reading <a target="_blank" href="https://mailcoach.app/docs/app/mail-configuration/mailgun">this section of the Mailcoach
         docs</a>.
     <br>
     You must set a webhook to
     <code class="markup-code">{{ url(action(\Spatie\MailcoachMailgunFeedback\MailgunWebhookController::class)) }}</code>
-</p>
+</x-help>
 
 
 <x-text-field

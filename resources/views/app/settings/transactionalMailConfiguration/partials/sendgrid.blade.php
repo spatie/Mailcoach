@@ -1,7 +1,7 @@
-<p class="alert alert-info text-sm">
+<x-help>
     Learn how to configure Sendgrid by reading <a target="_blank" href="https://mailcoach.app/docs/app/mail-configuration/sendgrid">this section of the
         Mailcoach docs</a>.
-</p>
+</x-help>
 
 <x-text-field
     label="API key"

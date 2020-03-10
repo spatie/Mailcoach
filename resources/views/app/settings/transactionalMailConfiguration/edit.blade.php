@@ -1,17 +1,10 @@
-@extends('app.settings.transactionalMailConfiguration.layouts.mailConfiguration', ['title' => 'Mail configuration'])
+@extends('app.settings.transactionalMailConfiguration.layouts.mailConfiguration', ['title' => 'Transactional mail configuration'])
 
 @section('breadcrumbs')
     <li>Transactional mail configuration</li>
 @endsection
 
 @section('mailConfiguration')
-    @if(! $mailConfiguration->isValid())
-        <x-help>
-            You haven't configured a transactional mailer yet. Mailcoach will send confirmation mails and welcome mails
-            using the regular mailer.
-        </x-help>
-    @endif
-
     <form
         class="form-grid"
         action="{{ route('transactionalMailConfiguration') }}"
@@ -20,6 +13,13 @@
     >
         @csrf
         @method('PUT')
+
+        @if(! $mailConfiguration->isValid())
+            <x-help>
+                You haven't configured a transactional mailer yet. Mailcoach will send confirmation mails and welcome mails
+                using the regular mailer.
+            </x-help>
+        @endif
 
         <x-select-field
             label="Driver"
