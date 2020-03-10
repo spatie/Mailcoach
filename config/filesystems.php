@@ -69,6 +69,11 @@ return [
             'url' => env('AWS_URL'),
         ],
 
+        'unlayer' => [
+            'disk_name' => env('MAILCOACH_UPLOAD_DISK', 'public'),
+            'max_width' => 1500,
+            'max_height' => 1500,
+        ],
     ],
 
     /*

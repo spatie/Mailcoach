@@ -25,6 +25,7 @@
         "laravel/horizon": "^4.0",
         "laravel/tinker": "^2.0",
         "spatie/laravel-flash": "^1.5",
+        "spatie/laravel-mailcoach-unlayer": "dev-master",
         "spatie/laravel-json-api-paginate": "^1.7",
         "spatie/laravel-mailcoach": "v2.x-dev",
         "spatie/laravel-mailcoach-mailgun-feedback": "v2.x-dev",
