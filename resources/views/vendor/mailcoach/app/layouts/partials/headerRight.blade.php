@@ -27,7 +27,7 @@
         <li>
             <a href="{{ route('transactionalMailConfiguration') }}">
                 <span class="icon-label whitespace-no-wrap">
-                    <i class="fas fa-fw fa-server"></i> Transactional Mail configuration
+                    <i class="fas fa-fw fa-server"></i> Transactional mail configuration
                 </span>
             </a>
         </li>
