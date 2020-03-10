@@ -26,5 +26,7 @@ class SesConfigurationDriver extends TransactionalMailConfigurationDriver
         $config->set('mail.mailers.mailcoach-transactional.key', $values['ses_key']);
         $config->set('mail.mailers.mailcoach-transactional.secret', $values['ses_secret']);
         $config->set('mail.mailers.mailcoach-transactional.region', $values['ses_region']);
+        $config->set('mail.mailers.mailcoach-transactional.version', 'latest');
+        $config->set('mail.mailers.mailcoach-transactional.service', 'email');
     }
 }
