@@ -25,10 +25,3 @@
 
     :value="$mailConfiguration->ses_region"
 />
-
-<x-text-field
-    label="Configuration set name"
-    name="ses_configuration_set"
-    type="text"
-    :value="$mailConfiguration->ses_configuration_set"
-/>

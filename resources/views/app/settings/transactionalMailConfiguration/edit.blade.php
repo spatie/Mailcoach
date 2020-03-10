@@ -56,9 +56,6 @@
             @include('app.settings.transactionalMailConfiguration.partials.smtp')
         </div>
 
-        <x-text-field label="Default from mail" name="default_from_mail" type="text"
-                      :value="$mailConfiguration->default_from_mail"/>
-
         <div class="form-buttons">
             <button class="button">
                 <x-icon-label icon="fa-server" text="Save configuration"/>
