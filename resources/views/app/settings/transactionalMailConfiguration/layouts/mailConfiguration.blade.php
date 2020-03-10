@@ -17,7 +17,7 @@
                 <x-icon-label icon="fa-server" text="Transactional Mail configuration" />
             </x-navigation-item>
             <x-navigation-item :href="route('sendTransactionalTestEmail')">
-                <x-icon-label icon="fa-paper-plane" text="Send test mail" />
+                <x-icon-label icon="fa-paper-plane" text="Send transactional test mail" />
             </x-navigation-item>
         </ul>
     </nav>

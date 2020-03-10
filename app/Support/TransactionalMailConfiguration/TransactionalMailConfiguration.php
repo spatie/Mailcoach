@@ -25,6 +25,13 @@ class TransactionalMailConfiguration
         $this->transactionalMailConfigurationDriverRepository = $mailConfigurationDriverRepository;
     }
 
+    public function empty(): self
+    {
+        $this->valuestore->flush();
+
+        return $this;
+    }
+
     public function put(array $values)
     {
         $this->valuestore->flush();

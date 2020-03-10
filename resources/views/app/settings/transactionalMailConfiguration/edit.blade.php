@@ -5,6 +5,14 @@
 @endsection
 
 @section('mailConfiguration')
+
+    @if(! $mailConfiguration->isValid())
+        <x-help>
+            You haven't configured a transactional mailer yet. Mailcoach will send confirmation mails and welcome mails
+            using the regular mailer.
+        </x-help>
+    @endif
+
     <form
         class="form-grid"
         action="{{ route('transactionalMailConfiguration') }}"
@@ -48,12 +56,28 @@
             @include('app.settings.transactionalMailConfiguration.partials.smtp')
         </div>
 
-        <x-text-field label="Default from mail" name="default_from_mail" type="text" :value="$mailConfiguration->default_from_mail"/>
+        <x-text-field label="Default from mail" name="default_from_mail" type="text"
+                      :value="$mailConfiguration->default_from_mail"/>
 
         <div class="form-buttons">
             <button class="button">
-                <x-icon-label icon="fa-server" text="Save configuration" />
+                <x-icon-label icon="fa-server" text="Save configuration"/>
             </button>
         </div>
     </form>
+
+    @if($mailConfiguration->isValid())
+        <form
+            class="form-grid"
+            action="{{ route('deleteTransactionalMailConfiguration') }}"
+            method="POST"
+            data-cloak
+        >
+            @csrf
+            @method('DELETE')
+            <button class="button">
+                <x-icon-label icon="fa-server" text="Delete configuration"/>
+            </button>
+        </form>
+    @endif
 @endsection
