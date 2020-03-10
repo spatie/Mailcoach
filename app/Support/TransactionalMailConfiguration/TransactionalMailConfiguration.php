@@ -60,6 +60,8 @@ class TransactionalMailConfiguration
             $this->valuestore->all()
         );
 
+        config()->set('mailcoach.transactional_mailer', 'mailcoach-transactional');
+
         $this->clearCachedConfig();
     }
 
