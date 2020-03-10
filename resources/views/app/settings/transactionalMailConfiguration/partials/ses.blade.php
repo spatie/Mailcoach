@@ -1,8 +1,7 @@
-<p class="alert alert-info text-sm">
+<x-help>
     Learn how to configure SES by reading <a target="_blank" href="https://mailcoach.app/docs/app/mail-configuration/amazon-ses">this section of the Mailcoach
         docs</a>.
-    <br>
-</p>
+</x-help>
 
 <x-text-field
     label="Key"

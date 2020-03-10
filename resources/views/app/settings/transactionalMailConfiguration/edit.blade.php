@@ -1,17 +1,10 @@
-@extends('app.settings.transactionalMailConfiguration.layouts.mailConfiguration', ['title' => 'Mail configuration'])
+@extends('app.settings.transactionalMailConfiguration.layouts.mailConfiguration', ['title' => 'Transactional mail configuration'])
 
 @section('breadcrumbs')
     <li>Transactional mail configuration</li>
 @endsection
 
 @section('mailConfiguration')
-    @if(! $mailConfiguration->isValid())
-        <x-help>
-            You haven't configured a transactional mailer yet. Mailcoach will send confirmation mails and welcome mails
-            using the regular mailer.
-        </x-help>
-    @endif
-
     <form
         class="form-grid"
         action="{{ route('transactionalMailConfiguration') }}"
@@ -20,6 +13,13 @@
     >
         @csrf
         @method('PUT')
+
+        @if(! $mailConfiguration->isValid())
+            <div class="alert alert-warning max-w-xl">
+                You haven't configured a transactional mailer yet. Mailcoach will send confirmation mails and welcome mails
+                using the regular mailer.
+            </div>
+        @endif
 
         <x-select-field
             label="Driver"
@@ -64,16 +64,19 @@
 
     @if($mailConfiguration->isValid())
         <form
-            class="form-grid"
+            class="mt-8"
             action="{{ route('deleteTransactionalMailConfiguration') }}"
             method="POST"
             data-cloak
         >
             @csrf
             @method('DELETE')
-            <button class="button">
-                <x-icon-label icon="fa-server" text="Delete configuration"/>
-            </button>
+            <div class="form-buttons">
+                <button class="text-red-400 hover:text-red-500">
+                    <x-icon-label caution="true" icon="fa-trash" text="Delete configuration"/>
+                </button>
+            </div>
         </form>
     @endif
 @endsection
+
