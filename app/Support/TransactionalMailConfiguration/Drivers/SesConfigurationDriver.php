@@ -28,8 +28,5 @@ class SesConfigurationDriver extends TransactionalMailConfigurationDriver
             'secret' => $values['ses_secret'],
             'region' => $values['ses_region'],
         ]);
-        $config->set('mailcoach.ses_feedback', [
-            'configuration_set' => $values['ses_configuration_set']
-        ]);
     }
 }

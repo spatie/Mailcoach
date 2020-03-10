@@ -5,7 +5,6 @@
 @endsection
 
 @section('mailConfiguration')
-
     @if(! $mailConfiguration->isValid())
         <x-help>
             You haven't configured a transactional mailer yet. Mailcoach will send confirmation mails and welcome mails

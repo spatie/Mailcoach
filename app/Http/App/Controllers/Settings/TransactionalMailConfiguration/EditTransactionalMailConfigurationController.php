@@ -2,8 +2,7 @@
 
 namespace App\Http\App\Controllers\Settings\TransactionalMailConfiguration;
 
-use App\Http\App\Requests\UpdateMailConfigurationRequest;
-use App\Support\MailConfiguration\MailConfiguration;
+use App\Http\App\Requests\UpdateTransactionalMailConfigurationRequest;
 use App\Support\TransactionalMailConfiguration\TransactionalMailConfiguration;
 use Artisan;
 
@@ -14,8 +13,10 @@ class EditTransactionalMailConfigurationController
         return view('app.settings.transactionalMailConfiguration.edit', compact('mailConfiguration'));
     }
 
-    public function update(UpdateMailConfigurationRequest $request, MailConfiguration $mailConfiguration)
-    {
+    public function update(
+        UpdateTransactionalMailConfigurationRequest $request,
+        TransactionalMailConfiguration $mailConfiguration
+    ) {
         $mailConfiguration->put($request->validated());
 
         dispatch(function () {
