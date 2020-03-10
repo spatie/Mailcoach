@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class TestMail extends Mailable
+class TransactionalTestMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -25,8 +25,8 @@ class TestMail extends Mailable
     public function build()
     {
         return $this
-            ->mailer('mailcoach')
-            ->subject('Mailcoach testmail')
+            ->mailer('mailcoach-transactional')
+            ->subject('Mailcoach transactional testmail')
             ->to($this->toEmail)
             ->from($this->fromEmail)
             ->markdown('mails.test');

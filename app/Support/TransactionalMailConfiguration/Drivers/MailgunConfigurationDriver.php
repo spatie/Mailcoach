@@ -23,13 +23,8 @@ class MailgunConfigurationDriver extends TransactionalMailConfigurationDriver
     public function registerConfigValues(Repository $config, array $values)
     {
         $config->set('mail.mailers.mailcoach-transactional.transport', $this->name());
-        $config->set('services.mailgun', [
-            'domain' => $values['mailgun_domain'],
-            'secret' => $values['mailgun_secret'],
-            'endpoint' => $values['mailgun_endpoint'],
-        ]);
-        $config->set('mailcoach.mailgun_feedback', [
-            'signing_secret' => $values['mailgun_signing_secret'],
-        ]);
+        $config->set('mail.mailers.mailcoach-transactional.domain', $values['mailgun_domain']);
+        $config->set('mail.mailers.mailcoach-transactional.secret', $values['mailgun_secret']);
+        $config->set('mail.mailers.mailcoach-transactional.endpoint', $values['mailgun_endpoint']);
     }
 }

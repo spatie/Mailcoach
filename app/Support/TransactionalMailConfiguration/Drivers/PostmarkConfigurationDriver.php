@@ -21,11 +21,6 @@ class PostmarkConfigurationDriver extends TransactionalMailConfigurationDriver
     public function registerConfigValues(Repository $config, array $values)
     {
         $config->set('mail.mailers.mailcoach-transactional.transport', $this->name());
-        $config->set('services.postmark', [
-            'token' => $values['postmark_token'],
-        ]);
-        $config->set('mailcoach.postmark_feedback', [
-            'signing_secret' => $values['postmark_signing_secret'],
-        ]);
+        $config->set('mail.mailers.mailcoach-transactional.token', $values['postmark_token']);
     }
 }

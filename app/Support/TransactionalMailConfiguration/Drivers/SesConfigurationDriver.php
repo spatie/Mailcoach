@@ -23,10 +23,8 @@ class SesConfigurationDriver extends TransactionalMailConfigurationDriver
     public function registerConfigValues(Repository $config, array $values)
     {
         $config->set('mail.mailers.mailcoach-transactional.transport', $this->name());
-        $config->set('services.ses', [
-            'key' => $values['ses_key'],
-            'secret' => $values['ses_secret'],
-            'region' => $values['ses_region'],
-        ]);
+        $config->set('mail.mailers.mailcoach-transactional.key', $values['ses_key']);
+        $config->set('mail.mailers.mailcoach-transactional.secret', $values['ses_secret']);
+        $config->set('mail.mailers.mailcoach-transactional.region', $values['ses_region']);
     }
 }
