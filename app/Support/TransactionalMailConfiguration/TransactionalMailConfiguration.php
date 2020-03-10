@@ -1,28 +1,28 @@
 <?php
 
-namespace App\Support\MailConfiguration;
+namespace App\Support\TransactionalMailConfiguration;
 
 use App\Support\MailConfiguration\Drivers\MailConfigurationDriver;
 use Illuminate\Config\Repository;
 use Illuminate\Filesystem\Filesystem;
 use Spatie\Valuestore\Valuestore;
 
-class MailConfiguration
+class TransactionalMailConfiguration
 {
     protected Valuestore $valuestore;
 
     protected Repository $config;
 
-    protected MailConfigurationDriverRepository $mailConfigurationDriverRepository;
+    protected TransactionalMailConfigurationDriverRepository $transactionalMailConfigurationDriverRepository;
 
     public function __construct(
         Valuestore $valuestore,
         Repository $config,
-        MailConfigurationDriverRepository $mailConfigurationDriverRepository
+        TransactionalMailConfigurationDriverRepository $mailConfigurationDriverRepository
     ) {
         $this->valuestore = $valuestore;
         $this->config = $config;
-        $this->mailConfigurationDriverRepository = $mailConfigurationDriverRepository;
+        $this->transactionalMailConfigurationDriverRepository = $mailConfigurationDriverRepository;
     }
 
     public function put(array $values)
@@ -61,9 +61,11 @@ class MailConfiguration
         return $this->getDriver() !== null;
     }
 
-    protected function getDriver() : ?MailConfigurationDriver
+    protected function getDriver() : ?TransactionalMailConfiguration
     {
-        return $this->mailConfigurationDriverRepository->getForDriver($this->valuestore->get('driver', ''));
+        return $this
+            ->transactionalMailConfigurationDriverRepository
+            ->getForDriver($this->valuestore->get('driver', ''));
     }
 
     protected function clearCachedConfig(): void

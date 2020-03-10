@@ -4,6 +4,8 @@ use App\Http\App\Controllers\Settings\Account\AccountController;
 use App\Http\App\Controllers\Settings\Account\PasswordController;
 use App\Http\App\Controllers\Settings\MailConfiguration\EditMailConfigurationController;
 use App\Http\App\Controllers\Settings\MailConfiguration\SendTestMailController;
+use App\Http\App\Controllers\Settings\MailConfiguration\SendTestTransactionalMailController;
+use App\Http\App\Controllers\Settings\TransactionalMailConfiguration\EditTransactionalMailConfigurationController;
 use App\Http\App\Controllers\Settings\Users\CreateUserController;
 use App\Http\App\Controllers\Settings\Users\DestroyUserController;
 use App\Http\App\Controllers\Settings\Users\UpdateUserController;
@@ -37,6 +39,11 @@ Route::prefix('settings')->group(function () {
     Route::put('mail-configuration', [EditMailConfigurationController::class, 'update']);
     Route::get('send-test-mail', [SendTestMailController::class, 'show'])->name('sendTestMail');
     Route::post('send-test-mail', [SendTestMailController::class, 'sendTestEmail']);
+
+    Route::get('transactional-mail-configuration', [EditTransactionalMailConfigurationController::class, 'edit'])->name('transactionalMailConfiguration');
+    Route::put('transactional-mail-configuration', [EditTransactionalMailConfigurationController::class, 'update']);
+    Route::get('send-transactional-test-mail', [SendTestTransactionalMailController::class, 'show'])->name('sendTransactionalTestEmail');
+    Route::post('send-transactional-test-mail', [SendTestTransactionalMailController::class, 'sendTransactionalTestEmail']);
 });
 
 Route::post('logout', LogoutController::class)->name('logout');

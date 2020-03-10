@@ -6,6 +6,8 @@ use App\Http\App\ViewComposers\HealthViewComposer;
 use App\Models\User;
 use App\Support\MailConfiguration\MailConfiguration;
 use App\Support\MailConfiguration\MailConfigurationDriverRepository;
+use App\Support\TransactionalMailConfiguration\TransactionalMailConfiguration;
+use App\Support\TransactionalMailConfiguration\TransactionalMailConfigurationDriverRepository;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -25,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
         ]);
 
         $this->app->bind(MailConfiguration::class, function () {
-            $valueStore = Valuestore::make(base_path('mailConfiguration.json'));
+            $valueStore = Valuestore::make(base_path('config-mailcoach-app/mailConfiguration.json'));
 
             return new MailConfiguration(
                 $valueStore,
@@ -35,6 +37,18 @@ class AppServiceProvider extends ServiceProvider
         });
 
         app(MailConfiguration::class)->registerConfigValues();
+
+        $this->app->bind(TransactionalMailConfiguration::class, function () {
+            $valueStore = Valuestore::make(base_path('config-mailcoach-app/transactionalMailConfiguration.json'));
+
+            return new TransactionalMailConfiguration(
+                $valueStore,
+                app()->get('config'),
+                new TransactionalMailConfigurationDriverRepository()
+            );
+        });
+
+        app(TransactionalMailConfiguration::class)->registerConfigValues();
 
         View::composer('app.layouts.partials.health', HealthViewComposer::class);
     }
