@@ -41,7 +41,7 @@ return [
      * Here you can configure which template editor Mailcoach uses.
      * By default this is a text editor that highlights HTML.
      */
-    'editor' => \Spatie\MailcoachUnlayer\UnlayerEditor::class,
+    'editor' => \Spatie\Mailcoach\Support\Editor\TextEditor::class,
 
     /*
      * Here you can specify which jobs should run on which queues.
