@@ -1,3 +1,3 @@
-<p>
+<x-help>
 This editor is a plain textarea field.
-</p>
+</x-help>

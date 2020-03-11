@@ -1,7 +1,7 @@
-<p>
+<x-help>
     <a href="https://microsoft.github.io/monaco-editor/">Monaco</a> is a powerful code editor created by Microsoft. It
     provides code highlighting, auto completion and much more.
-</p>
+</x-help>
 
 <x-select-field
     label="Editor"
