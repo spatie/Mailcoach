@@ -14,6 +14,12 @@ class EditorConfiguration
 
     private Repository $config;
 
+    private $editorClasses = [
+        'Text' => TextEditor::class,
+        'Unlayer' => UnlayerEditor::class,
+        'Monaco' => MonacoEditor::class,
+    ];
+
     public function __construct(
         Valuestore $valuestore,
         Repository $config
@@ -23,14 +29,18 @@ class EditorConfiguration
         $this->config = $config;
     }
 
-    public function switchDefaultEditor(string $editorClassName)
+    public function switchDefaultEditor(string $editorName): void
     {
+        $editorClassName = $this->getAvailableEditors()[$editorName];
+
         $this->valuestore->put('editor', $editorClassName);
     }
 
-    public function registerConfigValues()
+    public function registerConfigValues(): void
     {
-        $editorClassName = $this->valuestore->get('editor');
+        $editorName = $this->valuestore->get('editor');
+
+        $editorClassName = $this->editorClasses[$editorName];
 
         if (!class_exists($editorClassName)) {
             return;
@@ -39,17 +49,20 @@ class EditorConfiguration
         $this->config->set('mailcoach.editor', $editorClassName);
     }
 
-    public function getCurrentEditor()
+    public function getCurrentEditorClass(): string
     {
-        return config('mailcoach.editor');
+        return $this->editorClasses[$this->getCurrentEditorName()];
     }
 
-    public function getAvailableEditors()
+    public function getCurrentEditorName(): string
     {
-        return [
-            'Text' => TextEditor::class,
-            'Unlayer' => UnlayerEditor::class,
-            'Monaco' => MonacoEditor::class,
-        ];
+        return $this->valuestore->get('editor') ?? 'Text';
+    }
+
+    public function getAvailableEditors(): array
+    {
+        $editorNames = array_keys($this->editorClasses);
+
+        return array_combine($editorNames, $editorNames);
     }
 }

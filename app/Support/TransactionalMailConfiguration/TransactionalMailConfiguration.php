@@ -6,6 +6,7 @@ use App\Support\MailConfiguration\Drivers\MailConfigurationDriver;
 use App\Support\TransactionalMailConfiguration\Drivers\TransactionalMailConfigurationDriver;
 use Illuminate\Config\Repository;
 use Illuminate\Filesystem\Filesystem;
+use Illuminate\Support\Facades\Artisan;
 use Spatie\Valuestore\Valuestore;
 
 class TransactionalMailConfiguration
@@ -63,7 +64,7 @@ class TransactionalMailConfiguration
 
         config()->set('mailcoach.transactional_mailer', 'mailcoach-transactional');
 
-        $this->clearCachedConfig();
+        Artisan::call('cache:clear');
     }
 
     public function isValid(): bool

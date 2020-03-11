@@ -1,5 +1,6 @@
-@extends('app.settings.mailConfiguration.layouts.mailConfiguration', ['title' => 'Mail configuration'])
-
+@extends('mailcoach::app.layouts.app', [
+    'title' => 'Editor configuration'
+])
 @section('header')
     <nav>
         <ul class="breadcrumbs">
@@ -10,6 +11,27 @@
 
 @section('content')
     <section class="card card-grid">
-        This is the editor screen
+        <form
+            class="form-grid"
+            action="{{ route('editor') }}"
+            method="POST"
+            data-cloak
+        >
+            @csrf
+
+            <x-select-field
+                label="Editor"
+                name="editor"
+                :value="$editorConfiguration->getCurrentEditorName()"
+                :options="$editorConfiguration->getAvailableEditors()"
+            />
+
+
+            <div class="form-buttons">
+                <button class="button">
+                    <x-icon-label icon="fa-server" text="Save configuration"/>
+                </button>
+            </div>
+        </form>
     </section>
 @endsection
