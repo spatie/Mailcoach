@@ -19,7 +19,7 @@
 <x-text-field
     label="Font size"
     name="monaco_font_size"
-    :value="$editorConfiguration->monaco_font_size ?? 14"
+    :value="$editorConfiguration->monaco_font_size ?? 16"
     type="number"
 />
 
@@ -33,6 +33,6 @@
 <x-text-field
     label="Line height"
     name="monaco_line_height"
-    :value="$editorConfiguration->monaco_line_height ?? 12"
+    :value="$editorConfiguration->monaco_line_height ?? 18"
     type="number"
 />
