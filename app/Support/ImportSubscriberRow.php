@@ -2,10 +2,10 @@
 
 namespace App\Support;
 
-use App\Models\EmailList;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use Spatie\Mailcoach\Enums\SubscriptionStatus;
+use Spatie\Mailcoach\Models\EmailList;
 
 class ImportSubscriberRow
 {
@@ -55,8 +55,8 @@ class ImportSubscriberRow
     public function getExtraAttributes(): array
     {
         return collect($this->values)
-            ->reject(fn($value, string $key) => in_array($key, ['email', 'first_name', 'last_name']))
-            ->map(fn($value, string $key) => [$key, $value])
+            ->reject(fn ($value, string $key) => in_array($key, ['email', 'first_name', 'last_name']))
+            ->map(fn ($value, string $key) => [$key, $value])
             ->reduce(function (array $result, $keyValuePair) {
                 [$key, $value] = $keyValuePair;
 

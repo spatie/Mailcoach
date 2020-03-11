@@ -2,7 +2,6 @@
 
 namespace App\Http\App\Requests;
 
-use App\Support\MailConfiguration\MailConfigurationDriverRepository;
 use App\Support\TransactionalMailConfiguration\TransactionalMailConfigurationDriverRepository;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;

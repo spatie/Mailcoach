@@ -25,6 +25,4 @@ class TextareaEditorConfigurationDriver extends EditorConfigurationDriver
     {
         parent::registerConfigValues($config, $values);
     }
-
-
 }

@@ -4,7 +4,6 @@ namespace App\Support\EditorConfiguration\Editors;
 
 use Illuminate\Contracts\Config\Repository;
 use Spatie\MailcoachMonaco\MonacoEditor;
-use Spatie\MailcoachUnlayer\UnlayerEditor;
 
 class MonacoEditorConfigurationDriver extends EditorConfigurationDriver
 {

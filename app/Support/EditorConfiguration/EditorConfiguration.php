@@ -3,11 +3,8 @@
 namespace App\Support\EditorConfiguration;
 
 use App\Support\EditorConfiguration\Editors\EditorConfigurationDriver;
-use App\Support\EditorConfiguration\EditorConfigurationDriverRepository;
 use Illuminate\Contracts\Config\Repository;
 use Spatie\Mailcoach\Support\Editor\TextEditor;
-use Spatie\MailcoachMonaco\MonacoEditor;
-use Spatie\MailcoachUnlayer\UnlayerEditor;
 use Spatie\Valuestore\Valuestore;
 
 class EditorConfiguration

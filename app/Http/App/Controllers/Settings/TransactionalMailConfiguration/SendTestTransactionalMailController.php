@@ -2,7 +2,6 @@
 
 namespace App\Http\App\Controllers\Settings\MailConfiguration;
 
-use App\Mail\TestMail;
 use App\Mail\TransactionalTestMail;
 use App\Support\TransactionalMailConfiguration\TransactionalMailConfiguration;
 use Exception;

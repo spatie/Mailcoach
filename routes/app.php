@@ -50,7 +50,6 @@ Route::prefix('settings')->group(function () {
 
     Route::get('editor', [EditorController::class, 'edit'])->name('editor');
     Route::post('editor', [EditorController::class, 'update']);
-
 });
 
 Route::post('logout', LogoutController::class)->name('logout');

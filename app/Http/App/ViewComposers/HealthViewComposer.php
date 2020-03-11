@@ -2,16 +2,14 @@
 
 namespace App\Http\App\ViewComposers;
 
-use Spatie\Mailcoach\Support\HorizonStatus;
 use App\Support\MailConfiguration\MailConfiguration;
 use Illuminate\View\View;
+use Spatie\Mailcoach\Support\HorizonStatus;
 
 class HealthViewComposer
 {
-    /** @var \Spatie\Mailcoach\Support\HorizonStatus */
     protected HorizonStatus $horizonStatus;
 
-    /** @var \App\Support\MailConfiguration\MailConfiguration */
     protected MailConfiguration $mailConfiguration;
 
     public function __construct(HorizonStatus $horizonStatus, MailConfiguration $mailConfiguration)

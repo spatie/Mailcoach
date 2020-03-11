@@ -2,7 +2,6 @@
 
 namespace App\Support\TransactionalMailConfiguration;
 
-use App\Support\MailConfiguration\Drivers\MailConfigurationDriver;
 use App\Support\TransactionalMailConfiguration\Drivers\TransactionalMailConfigurationDriver;
 use Illuminate\Config\Repository;
 use Illuminate\Filesystem\Filesystem;

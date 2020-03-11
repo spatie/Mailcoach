@@ -2,12 +2,12 @@
 
 namespace App\Support\TransactionalMailConfiguration;
 
-use App\Support\TransactionalMailConfiguration\Drivers\TransactionalMailConfigurationDriver;
 use App\Support\TransactionalMailConfiguration\Drivers\MailgunConfigurationDriver;
 use App\Support\TransactionalMailConfiguration\Drivers\PostmarkConfigurationDriver;
 use App\Support\TransactionalMailConfiguration\Drivers\SendgridConfigurationDriver;
 use App\Support\TransactionalMailConfiguration\Drivers\SesConfigurationDriver;
 use App\Support\TransactionalMailConfiguration\Drivers\SmtpConfigurationDriver;
+use App\Support\TransactionalMailConfiguration\Drivers\TransactionalMailConfigurationDriver;
 
 class TransactionalMailConfigurationDriverRepository
 {
