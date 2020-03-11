@@ -15,7 +15,7 @@ class EditorConfiguration
     private Repository $config;
 
     private $editorClasses = [
-        'Text' => TextEditor::class,
+        'Textarea' => TextEditor::class,
         'Unlayer' => UnlayerEditor::class,
         'Monaco' => MonacoEditor::class,
     ];

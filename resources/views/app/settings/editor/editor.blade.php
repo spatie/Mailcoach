@@ -24,7 +24,20 @@
                 name="editor"
                 :value="$editorConfiguration->getCurrentEditorName()"
                 :options="$editorConfiguration->getAvailableEditors()"
+                data-conditional="editor"
             />
+
+            <div class="form-grid" data-conditional-editor="text">
+                @include('app.settings.mailConfiguration.partials.text')
+            </div>
+
+            <div class="form-grid" data-conditional-editor="unlayer">
+                @include('app.settings.mailConfiguration.partials.unlayer')
+            </div>
+
+            <div class="form-grid" data-conditional-editor="monaco">
+                @include('app.settings.mailConfiguration.partials.monaco')
+            </div>
 
             <div class="form-buttons">
                 <button class="button">
