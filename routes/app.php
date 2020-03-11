@@ -2,6 +2,7 @@
 
 use App\Http\App\Controllers\Settings\Account\AccountController;
 use App\Http\App\Controllers\Settings\Account\PasswordController;
+use App\Http\App\Controllers\Settings\EditorController;
 use App\Http\App\Controllers\Settings\MailConfiguration\EditMailConfigurationController;
 use App\Http\App\Controllers\Settings\MailConfiguration\SendTestMailController;
 use App\Http\App\Controllers\Settings\MailConfiguration\SendTestTransactionalMailController;
@@ -46,6 +47,10 @@ Route::prefix('settings')->group(function () {
     Route::delete('transactional-mail-configuration', DeleteTransactionalMailConfiguration::class)->name('deleteTransactionalMailConfiguration');
     Route::get('send-transactional-test-mail', [SendTestTransactionalMailController::class, 'show'])->name('sendTransactionalTestEmail');
     Route::post('send-transactional-test-mail', [SendTestTransactionalMailController::class, 'sendTransactionalTestEmail']);
+
+    Route::get('editor', [EditorController::class, 'edit']);
+    Route::post('editor', [EditorController::class, 'update']);
+
 });
 
 Route::post('logout', LogoutController::class)->name('logout');

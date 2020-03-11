@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Http\App\ViewComposers\HealthViewComposer;
 use App\Models\User;
+use App\Support\EditorConfiguration;
 use App\Support\MailConfiguration\MailConfiguration;
 use App\Support\MailConfiguration\MailConfigurationDriverRepository;
 use App\Support\TransactionalMailConfiguration\TransactionalMailConfiguration;
@@ -18,7 +19,7 @@ class AppServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        Gate::define('viewMailcoach', fn (User $user) => true);
+        Gate::define('viewMailcoach', fn(User $user) => true);
 
         Flash::levels([
             'success' => 'success',
@@ -26,8 +27,19 @@ class AppServiceProvider extends ServiceProvider
             'error' => 'error',
         ]);
 
+        $this
+            ->registerMailConfiguration()
+            ->registerTransactionalMailConfiguration()
+            ->registerEditorConfiguration();
+
+
+        View::composer('app.layouts.partials.health', HealthViewComposer::class);
+    }
+
+    protected function registerMailConfiguration(): self
+    {
         $this->app->bind(MailConfiguration::class, function () {
-            $valueStore = Valuestore::make(base_path('config-mailcoach-app/mailConfiguration.json'));
+            $valueStore = Valuestore::make(base_path('config-mailcoach-app/mail.json'));
 
             return new MailConfiguration(
                 $valueStore,
@@ -38,8 +50,13 @@ class AppServiceProvider extends ServiceProvider
 
         app(MailConfiguration::class)->registerConfigValues();
 
+        return $this;
+    }
+
+    protected function registerTransactionalMailConfiguration(): self
+    {
         $this->app->bind(TransactionalMailConfiguration::class, function () {
-            $valueStore = Valuestore::make(base_path('config-mailcoach-app/transactionalMailConfiguration.json'));
+            $valueStore = Valuestore::make(base_path('config-mailcoach-app/transactional-mail.json'));
 
             return new TransactionalMailConfiguration(
                 $valueStore,
@@ -50,6 +67,23 @@ class AppServiceProvider extends ServiceProvider
 
         app(TransactionalMailConfiguration::class)->registerConfigValues();
 
-        View::composer('app.layouts.partials.health', HealthViewComposer::class);
+        return $this;
+    }
+
+    protected function registerEditorConfiguration(): self
+    {
+        $this->app->bind(EditorConfiguration::class, function () {
+            $valueStore = Valuestore::make(base_path('config-mailcoach-app/editor.json'));
+
+            return new TransactionalMailConfiguration(
+                $valueStore,
+                app()->get('config'),
+                new TransactionalMailConfigurationDriverRepository()
+            );
+        });
+
+        app(EditorConfiguration::class)->registerConfigValues();
+
+        return $this;
     }
 }

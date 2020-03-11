@@ -13,8 +13,9 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
-mailConfiguration.json
-transactionalMailConfiguration.json
+config-mailcoach-app/mail.json
+config-mailcoach-app/transactional-mail.json
+config-mailcoach-app/editor.json
 _ide_helper.php
 _ide_helper_models.php
 auth.json
