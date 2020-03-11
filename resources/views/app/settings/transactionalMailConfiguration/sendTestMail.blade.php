@@ -10,6 +10,8 @@
 @endsection
 
 @section('mailConfiguration')
+    @if ($mailConfiguration->isValid())
+
     <form class="flex items-end justify-start" method="POST">
         <div class="flex-grow max-w-lg">
             <x-text-field placeholder="From Email" label="From Email" name="from_email" type="email" :value="auth()->user()->email"/>
@@ -23,4 +25,9 @@
             <x-icon-label icon="fa-paper-plane" text="Send test mail" />
         </button>
     </form>
+    @else
+        <div class="alert alert-warning max-w-xl">
+            You haven't configured a transactional mailer yet.
+        </div>
+    @endif
 @endsection

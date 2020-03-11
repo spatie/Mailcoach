@@ -4,15 +4,19 @@ namespace App\Http\App\Controllers\Settings\MailConfiguration;
 
 use App\Mail\TestMail;
 use App\Mail\TransactionalTestMail;
+use App\Support\TransactionalMailConfiguration\TransactionalMailConfiguration;
 use Exception;
 use Illuminate\Http\Request;
 use Mail;
 
 class SendTestTransactionalMailController
 {
-    public function show()
+    public function show(TransactionalMailConfiguration $mailConfiguration)
     {
-        return view('app.settings.transactionalMailConfiguration.sendTestMail');
+        return view(
+            'app.settings.transactionalMailConfiguration.sendTestMail',
+            compact('mailConfiguration')
+        );
     }
 
     public function sendTransactionalTestEmail(Request $request)
