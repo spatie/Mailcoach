@@ -26,7 +26,6 @@
                 :options="$editorConfiguration->getAvailableEditors()"
             />
 
-
             <div class="form-buttons">
                 <button class="button">
                     <x-icon-label icon="fa-server" text="Save configuration"/>
