@@ -3,8 +3,8 @@
 namespace App\Http\App\Controllers\Settings\MailConfiguration;
 
 use App\Http\App\Requests\UpdateMailConfigurationRequest;
+use App\Support\ConfigCache;
 use App\Support\MailConfiguration\MailConfiguration;
-use Artisan;
 
 class EditMailConfigurationController
 {
@@ -20,6 +20,8 @@ class EditMailConfigurationController
         dispatch(function () {
             Artisan::call('horizon:terminate');
         });
+
+        ConfigCache::clear();
 
         flash()->success('The mail configuration was saved.');
 

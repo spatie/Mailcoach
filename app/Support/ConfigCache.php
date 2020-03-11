@@ -4,7 +4,7 @@ namespace App\Support;
 
 use Illuminate\Contracts\Filesystem\Filesystem;
 
-class Cache
+class ConfigCache
 {
     public static function clear()
     {
