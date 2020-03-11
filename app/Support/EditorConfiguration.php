@@ -40,6 +40,10 @@ class EditorConfiguration
     {
         $editorName = $this->valuestore->get('editor');
 
+        if (! $editorName) {
+            return;
+        }
+
         $editorClassName = $this->editorClasses[$editorName];
 
         if (!class_exists($editorClassName)) {
