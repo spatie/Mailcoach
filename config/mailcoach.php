@@ -118,5 +118,13 @@ return [
         Spatie\Mailcoach\Http\App\Middleware\Authenticate::class,
         Spatie\Mailcoach\Http\App\Middleware\Authorize::class,
         Spatie\Mailcoach\Http\App\Middleware\SetMailcoachDefaults::class,
-    ]
+    ],
+
+    'monaco' => [
+        'theme' => 'vs-light',
+        'fontLigatures' => true,
+        'fontWeight' => 400,
+        'fontSize' => '14',
+        'lineHeight' => '12',
+    ],
 ];

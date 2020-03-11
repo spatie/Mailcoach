@@ -4,7 +4,8 @@ namespace App\Providers;
 
 use App\Http\App\ViewComposers\HealthViewComposer;
 use App\Models\User;
-use App\Support\EditorConfiguration;
+use App\Support\EditorConfiguration\EditorConfiguration;
+use App\Support\EditorConfiguration\EditorConfigurationDriverRepository;
 use App\Support\MailConfiguration\MailConfiguration;
 use App\Support\MailConfiguration\MailConfigurationDriverRepository;
 use App\Support\TransactionalMailConfiguration\TransactionalMailConfiguration;
@@ -78,6 +79,7 @@ class AppServiceProvider extends ServiceProvider
             return new EditorConfiguration(
                 $valueStore,
                 app()->get('config'),
+                new EditorConfigurationDriverRepository()
             );
         });
 

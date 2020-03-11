@@ -4,13 +4,13 @@ namespace App\Http\App\Controllers\Settings;
 
 use App\Http\App\Requests\UpdateEditorRequest;
 use App\Support\ConfigCache;
-use App\Support\EditorConfiguration;
+use App\Support\EditorConfiguration\EditorConfiguration;
 
 class EditorController
 {
     public function edit(EditorConfiguration $editorConfiguration)
     {
-        return view('app.settings.editor', compact('editorConfiguration'));
+        return view('app.settings.editor.edit', compact('editorConfiguration'));
     }
 
     public function update(UpdateEditorRequest $request, EditorConfiguration $editorConfiguration)

@@ -2,9 +2,9 @@
 
 namespace App\Support\MailConfiguration;
 
+use App\Support\ConfigCache;
 use App\Support\MailConfiguration\Drivers\MailConfigurationDriver;
 use Illuminate\Config\Repository;
-use Illuminate\Filesystem\Filesystem;
 use Spatie\Valuestore\Valuestore;
 
 class MailConfiguration
@@ -53,7 +53,7 @@ class MailConfiguration
             $this->valuestore->all()
         );
 
-        $this->clearCachedConfig();
+        ConfigCache::clear();
     }
 
     public function isValid(): bool
@@ -64,17 +64,5 @@ class MailConfiguration
     protected function getDriver() : ?MailConfigurationDriver
     {
         return $this->mailConfigurationDriverRepository->getForDriver($this->valuestore->get('driver', ''));
-    }
-
-    protected function clearCachedConfig(): void
-    {
-        /** @var \Illuminate\Filesystem\Filesystem $filesystem */
-        $filesystem = app(Filesystem::class);
-
-        $cacheConfigPath = app()->getCachedConfigPath();
-
-        if (file_exists($cacheConfigPath)) {
-            $filesystem->delete($cacheConfigPath);
-        }
     }
 }

@@ -22,21 +22,21 @@
             <x-select-field
                 label="Editor"
                 name="editor"
-                :value="$editorConfiguration->getCurrentEditorName()"
+                :value="$editorConfiguration->editor"
                 :options="$editorConfiguration->getAvailableEditors()"
                 data-conditional="editor"
             />
 
-            <div class="form-grid" data-conditional-editor="text">
-                @include('app.settings.mailConfiguration.partials.text')
+            <div class="form-grid" data-conditional-editor="Textarea">
+                @include('app.settings.editor.partials.textarea')
             </div>
 
-            <div class="form-grid" data-conditional-editor="unlayer">
-                @include('app.settings.mailConfiguration.partials.unlayer')
+            <div class="form-grid" data-conditional-editor="Unlayer">
+                @include('app.settings.editor.partials.unlayer')
             </div>
 
-            <div class="form-grid" data-conditional-editor="monaco">
-                @include('app.settings.mailConfiguration.partials.monaco')
+            <div class="form-grid" data-conditional-editor="Monaco">
+                @include('app.settings.editor.partials.monaco')
             </div>
 
             <div class="form-buttons">
