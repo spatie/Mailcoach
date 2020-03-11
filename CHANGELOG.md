@@ -1,5 +1,11 @@
 # Mailcoach
 
+## 2.0.0 - 2020-03-10
+
+- add support for multiple mailers
+- add support for custom editors
+- you can now set a delay on sending the welcome mail
+
 ## 1.1.1 - 2020-02-19
 
 - fix scheduled command
