@@ -7,10 +7,6 @@
     ],
     "repositories": [
         {
-            "type": "path",
-            "url": "../laravel-mailcoach"
-        },
-        {
             "type": "composer",
             "url": "https://satis.mailcoach.app"
         }
