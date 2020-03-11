@@ -21,7 +21,7 @@ class MonacoEditorConfigurationDriver extends EditorConfigurationDriver
     {
         return [
             'monaco_theme' => 'required',
-            'monaco_font_family' => 'required',
+            'monaco_font_family' => '',
             'monaco_font_size' => 'required|numeric',
             'monaco_font_weight' => 'required|numeric',
             'monaco_line_height' => 'required|numeric',

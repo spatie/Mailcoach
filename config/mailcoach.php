@@ -125,7 +125,7 @@ return [
         'fontLigatures' => true,
         'fontFamily' => '"Courier New", Courier, monospace',
         'fontWeight' => 400,
-        'fontSize' => '14',
-        'lineHeight' => '12',
+        'fontSize' => '16',
+        'lineHeight' => '18',
     ],
 ];

@@ -5,6 +5,7 @@ namespace App\Http\App\Controllers\Settings;
 use App\Http\App\Requests\UpdateEditorRequest;
 use App\Support\ConfigCache;
 use App\Support\EditorConfiguration\EditorConfiguration;
+use Illuminate\Support\Facades\Artisan;
 
 class EditorController
 {
@@ -20,6 +21,8 @@ class EditorController
         flash()->success('The editor has been updated.');
 
         ConfigCache::clear();
+
+        Artisan::call('view:clear');
 
         return back();
     }

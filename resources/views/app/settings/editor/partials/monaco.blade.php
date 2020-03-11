@@ -24,7 +24,7 @@
 />
 
 <x-text-field
-    label="Font size"
+    label="Font weight"
     name="monaco_font_weight"
     :value="$editorConfiguration->monaco_font_weight ?? 400"
     type="number"
