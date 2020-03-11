@@ -25,6 +25,7 @@ class TestMail extends Mailable
     public function build()
     {
         return $this
+            ->mailer('mailcoach')
             ->subject('Mailcoach testmail')
             ->to($this->toEmail)
             ->from($this->fromEmail)

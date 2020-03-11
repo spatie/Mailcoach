@@ -11,20 +11,6 @@
             </a>
         </li>
         <li>
-            <a href="{{ route('users') }}">
-                <span class="icon-label">
-                    <i class="fas fa-fw fa-users"></i> Users
-                </span>
-            </a>
-        </li>
-        <li>
-            <a href="{{ route('mailConfiguration') }}">
-                <span class="icon-label">
-                    <i class="fas fa-fw fa-server"></i>Mail&nbsp;configuration
-                </span>
-            </a>
-        </li>
-        <li>
             <form method="post" action="{{ route('logout') }}">
                 <button type="submit">
                     <span class="icon-label">
@@ -33,6 +19,39 @@
                     </span>
                 </button>
             </form>
+        </li>
+        <li class="my-2 py-2 border-t border-gray-200">
+            <p class="px-4 py-2 uppercase text-xs text-gray-400 tracking-widest"> Configuration</p>
+            <ul>
+                <li>
+                    <a href="{{ route('users') }}">
+                        <span class="icon-label">
+                            <i class="fas fa-fw fa-users"></i> Users
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('mailConfiguration') }}">
+                        <span class="icon-label whitespace-no-wrap">
+                            <i class="fas fa-fw fa-mail-bulk"></i> Mail
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('transactionalMailConfiguration') }}">
+                        <span class="icon-label whitespace-no-wrap">
+                            <i class="fas fa-fw fa-handshake"></i> Transactional mail
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('editor') }}">
+                        <span class="icon-label whitespace-no-wrap">
+                            <i class="fas fa-fw fa-code"></i> Editor
+                        </span>
+                    </a>
+                </li>
+            </ul>
         </li>
     </ul>
 </div>

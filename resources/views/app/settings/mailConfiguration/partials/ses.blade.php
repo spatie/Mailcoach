@@ -1,10 +1,10 @@
-<p class="alert alert-info text-sm">
+<x-help>
     Learn how to configure SES by reading <a target="_blank" href="https://mailcoach.app/docs/app/mail-configuration/amazon-ses">this section of the Mailcoach
         docs</a>.
     <br>
     You must set a webhook to <code
         class="markup-code">{{ url(action(\Spatie\MailcoachSesFeedback\SesWebhookController::class)) }}</code>
-</p>
+</x-help>
 
 <x-text-field
     label="Mails per second"

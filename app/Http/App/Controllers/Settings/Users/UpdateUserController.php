@@ -3,7 +3,6 @@
 namespace App\Http\App\Controllers\Settings\Users;
 
 use App\Http\App\Requests\UpdateUserRequest;
-use App\Http\App\Resources\UserResource;
 use App\Models\User;
 
 class UpdateUserController

@@ -27,11 +27,11 @@ class SendgridConfigurationDriver extends MailConfigurationDriver
             ->setDefaultFromEmail($config, $values['default_from_mail'] ?? '')
             ->throttleNumberOfMailsPerSecond($config, $values['sendgrid_mails_per_second'] ?? 5);
 
-        $config->set('mail.driver', 'smtp');
-        $config->set('mail.host', 'smtp.sendgrid.net');
-        $config->set('mail.username', 'apikey');
-        $config->set('mail.encryption', null);
-        $config->set('mail.password', $values['sendgrid_api_key']);
+        $config->set('mail.mailers.mailcoach.transport', 'smtp');
+        $config->set('mail.mailers.mailcoach.host', 'smtp.sendgrid.net');
+        $config->set('mail.mailers.mailcoach.username', 'apikey');
+        $config->set('mail.mailers.mailcoach.encryption', null);
+        $config->set('mail.mailers.mailcoach.password', $values['sendgrid_api_key']);
 
         $config->set('mailcoach.sendgrid_feedback', [
             'signing_secret' => $values['sendgrid_signing_secret'],

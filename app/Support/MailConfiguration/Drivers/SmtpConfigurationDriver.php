@@ -29,10 +29,10 @@ class SmtpConfigurationDriver extends MailConfigurationDriver
             ->setDefaultFromEmail($config, $values['default_from_mail'] ?? '')
             ->throttleNumberOfMailsPerSecond($config, $values['smtp_mails_per_second'] ?? 5);
 
-        $config->set('mail.driver', $this->name());
-        $config->set('mail.host', $values['smtp_host']);
-        $config->set('mail.port', $values['smtp_port']);
-        $config->set('mail.username', $values['smtp_username']);
-        $config->set('mail.password', $values['smtp_password']);
+        $config->set('mail.mailers.mailcoach.transport', $this->name());
+        $config->set('mail.mailers.mailcoach.host', $values['smtp_host']);
+        $config->set('mail.mailers.mailcoach.port', $values['smtp_port']);
+        $config->set('mail.mailers.mailcoach.username', $values['smtp_username']);
+        $config->set('mail.mailers.mailcoach.password', $values['smtp_password']);
     }
 }

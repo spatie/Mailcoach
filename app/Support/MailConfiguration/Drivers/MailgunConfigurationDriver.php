@@ -29,7 +29,7 @@ class MailgunConfigurationDriver extends MailConfigurationDriver
             ->setDefaultFromEmail($config, $values['default_from_mail'] ?? '')
             ->throttleNumberOfMailsPerSecond($config, $values['mailgun_mails_per_second'] ?? 5);
 
-        $config->set('mail.driver', $this->name());
+        $config->set('mail.mailers.mailcoach.transport', $this->name());
         $config->set('services.mailgun', [
             'domain' => $values['mailgun_domain'],
             'secret' => $values['mailgun_secret'],
