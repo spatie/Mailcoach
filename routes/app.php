@@ -48,7 +48,7 @@ Route::prefix('settings')->group(function () {
     Route::get('send-transactional-test-mail', [SendTestTransactionalMailController::class, 'show'])->name('sendTransactionalTestEmail');
     Route::post('send-transactional-test-mail', [SendTestTransactionalMailController::class, 'sendTransactionalTestEmail']);
 
-    Route::get('editor', [EditorController::class, 'edit']);
+    Route::get('editor', [EditorController::class, 'edit'])->name('editor');
     Route::post('editor', [EditorController::class, 'update']);
 
 });

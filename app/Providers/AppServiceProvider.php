@@ -75,10 +75,9 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(EditorConfiguration::class, function () {
             $valueStore = Valuestore::make(base_path('config-mailcoach-app/editor.json'));
 
-            return new TransactionalMailConfiguration(
+            return new EditorConfiguration(
                 $valueStore,
                 app()->get('config'),
-                new TransactionalMailConfigurationDriverRepository()
             );
         });
 

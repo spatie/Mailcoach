@@ -32,6 +32,13 @@
             </a>
         </li>
         <li>
+            <a href="{{ route('editor') }}">
+                <span class="icon-label whitespace-no-wrap">
+                    <i class="fas fa-fw fa-server"></i> Change editor
+                </span>
+            </a>
+        </li>
+        <li>
             <form method="post" action="{{ route('logout') }}">
                 <button type="submit">
                     <span class="icon-label">
