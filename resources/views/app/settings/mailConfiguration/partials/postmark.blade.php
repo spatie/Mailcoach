@@ -1,5 +1,5 @@
 <x-help>
-    Learn how to configure Postmark by reading <a target="_blank" href="https://mailcoach.app/docs/app/mail-configuration/postmark">this section of the Mailcoach
+    Learn how to configure Postmark by reading <a target="_blank" href="https://mailcoach.app/docs/v2/app/mail-configuration/postmark">this section of the Mailcoach
         docs</a>.
     <br><br />
     You must set a webhook to

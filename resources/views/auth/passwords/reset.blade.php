@@ -3,7 +3,7 @@
 @section('breadcrumbs')
     <ul class="breadcrumbs">
         <li>
-            <a class="breadcrumb" href="{{ route('login') }}"> {{ __('Login') }}</a>
+            <a class="breadcrumb" href="{{ route('login') }}"> {{ __('Log in') }}</a>
         </li>
         <li>
             <span class="breadcrumb"> {{ __('Reset Password') }}</span>

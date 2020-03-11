@@ -1,5 +1,5 @@
 <x-help>
-    Learn how to configure Sendgrid by reading <a target="_blank" href="https://mailcoach.app/docs/app/mail-configuration/sendgrid">this section of the
+    Learn how to configure Sendgrid by reading <a target="_blank" href="https://mailcoach.app/docs/v2/app/mail-configuration/sendgrid">this section of the
         Mailcoach docs</a>.
     <br>
     You must set a webhook to

@@ -1,5 +1,5 @@
 <x-help>
-    Learn how to configure SES by reading <a target="_blank" href="https://mailcoach.app/docs/app/mail-configuration/amazon-ses">this section of the Mailcoach
+    Learn how to configure SES by reading <a target="_blank" href="https://mailcoach.app/docs/v2/app/mail-configuration/amazon-ses">this section of the Mailcoach
         docs</a>.
     <br>
     You must set a webhook to <code

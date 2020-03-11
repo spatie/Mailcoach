@@ -1,9 +1,9 @@
-@extends('auth.layouts.master', ['title' => __('Login')])
+@extends('auth.layouts.master', ['title' => __('Log in')])
 
 @section('breadcrumbs')
     <ul class="breadcrumbs">
         <li>
-            <span class="breadcrumb"> {{ __('Login') }}</span>
+            <span class="breadcrumb"> {{ __('Log in') }}</span>
         </li>
     </ul>
 @endsection
@@ -62,7 +62,7 @@
             <button type="submit" class="button">
                 <span class="icon-label">
                     <i class="fas fa-unlock"></i>
-                    <span class="icon-label-text">{{ __('Login') }}</span>
+                    <span class="icon-label-text">{{ __('Log in') }}</span>
                 </span>
             </button>
 
