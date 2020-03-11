@@ -69,9 +69,9 @@ class EditorConfiguration
 
     public function getAvailableEditors(): array
     {
-        $editorNames = array_keys($this->editorClasses);
+        $editors = $this->editorConfigurationRepository->getSupportedEditors();
 
-        return array_combine($editorNames, $editorNames);
+        return array_combine($editors, $editors);
     }
 
     protected function getEditor() : EditorConfigurationDriver

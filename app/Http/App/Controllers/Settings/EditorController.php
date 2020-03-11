@@ -15,9 +15,9 @@ class EditorController
 
     public function update(UpdateEditorRequest $request, EditorConfiguration $editorConfiguration)
     {
-        $editorConfiguration->switchDefaultEditor($request->editor);
+        $editorConfiguration->put($request->validated());
 
-        flash()->success('The default editor has been updated.');
+        flash()->success('The editor has been updated.');
 
         ConfigCache::clear();
 

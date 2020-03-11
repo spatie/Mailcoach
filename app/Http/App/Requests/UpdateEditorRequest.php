@@ -2,9 +2,7 @@
 
 namespace App\Http\App\Requests;
 
-use App\Support\EditorConfiguration\EditorConfiguration;
-use App\Support\MailConfiguration\EditorConfigurationDriverRepository;
-use App\Support\MailConfiguration\MailConfigurationDriverRepository;
+use App\Support\EditorConfiguration\EditorConfigurationDriverRepository;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 

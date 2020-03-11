@@ -1,1 +1,3 @@
-The default editor is just a plain textarea field.
+<p>
+This editor is a plain textarea field.
+</p>

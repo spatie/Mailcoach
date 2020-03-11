@@ -123,6 +123,7 @@ return [
     'monaco' => [
         'theme' => 'vs-light',
         'fontLigatures' => true,
+        'fontFamily' => '"Courier New", Courier, monospace',
         'fontWeight' => 400,
         'fontSize' => '14',
         'lineHeight' => '12',

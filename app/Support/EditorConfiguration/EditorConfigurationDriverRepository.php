@@ -20,11 +20,11 @@ class EditorConfigurationDriverRepository
         return array_keys($this->editors);
     }
 
-    public function getForEditor(string $editorName): EditorConfigurationDriver
+    public function getForEditor(string $editorLabel): EditorConfigurationDriver
     {
         $configuredEditor =  collect($this->editors)
             ->map(fn (string $editorClass) => app($editorClass))
-            ->first(fn (EditorConfigurationDriver $editor) => $editor->name() === $editorName);
+            ->first(fn (EditorConfigurationDriver $editor) => $editor->label() === $editorLabel);
 
         return $configuredEditor ?? app(TextareaEditorConfigurationDriver::class);
     }

@@ -1,16 +1,19 @@
-[Monaco](https://microsoft.github.io/monaco-editor/) is a powerful code editor created by Microsoft. It provides code highlighting, auto completion and much more.
+<p>
+    <a href="https://microsoft.github.io/monaco-editor/">Monaco</a> is a powerful code editor created by Microsoft. It
+    provides code highlighting, auto completion and much more.
+</p>
 
 <x-select-field
     label="Editor"
     name="monaco_theme"
-    :value="$editorConfiguration->theme"
-    :options="['vs-light', 'vs-dark']"
+    :value="$editorConfiguration->monaco_theme"
+    :options="['vs-light' => 'vs-light', 'vs-dark' => 'vs-dark']"
 />
 
 <x-text-field
     label="Font family"
     name="monaco_font_family"
-    :value="$editorConfiguration->monaco_font_family"
+    :value="$editorConfiguration->monaco_font_family ?? 'Courier New, Courier, monospace'"
 />
 
 <x-text-field
