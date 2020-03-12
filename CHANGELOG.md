@@ -1,5 +1,9 @@
 # Mailcoach
 
+## 2.0.1 - 2020-03-11
+
+- fix sending with sendgrid
+
 ## 2.0.0 - 2020-03-10
 
 - add support for multiple mailers
