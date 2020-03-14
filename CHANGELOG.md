@@ -1,5 +1,9 @@
 # Mailcoach
 
+## 2.0.4 - 2020-03-13
+
+- add tail command
+
 ## 2.0.3 - 2020-03-13
 
 - use production environment by default
