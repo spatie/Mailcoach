@@ -1,5 +1,9 @@
 # Mailcoach
 
+## 2.0.6 - 2020-03-13
+
+- improve clearing config cache
+
 ## 2.0.5 - 2020-03-13
 
 - remove tail command
