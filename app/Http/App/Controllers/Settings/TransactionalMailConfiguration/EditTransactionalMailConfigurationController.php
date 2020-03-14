@@ -19,13 +19,13 @@ class EditTransactionalMailConfigurationController
     ) {
         $mailConfiguration->put($request->validated());
 
+        ConfigCache::clear();
+
         dispatch(function () {
             Artisan::call('horizon:terminate');
         });
 
         flash()->success('The transactional mail configuration was saved.');
-
-        ConfigCache::clear();
 
         return back();
     }

@@ -17,11 +17,11 @@ class EditMailConfigurationController
     {
         $mailConfiguration->put($request->validated());
 
+        ConfigCache::clear();
+
         dispatch(function () {
             Artisan::call('horizon:terminate');
         });
-
-        ConfigCache::clear();
 
         flash()->success('The mail configuration was saved.');
 
