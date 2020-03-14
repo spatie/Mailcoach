@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\App\Controllers\Settings\MailConfiguration;
+namespace App\Http\App\Controllers\Settings\TransactionalMailConfiguration;
 
 use App\Mail\TransactionalTestMail;
 use App\Support\TransactionalMailConfiguration\TransactionalMailConfiguration;

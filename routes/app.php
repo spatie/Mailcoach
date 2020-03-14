@@ -5,7 +5,7 @@ use App\Http\App\Controllers\Settings\Account\PasswordController;
 use App\Http\App\Controllers\Settings\EditorController;
 use App\Http\App\Controllers\Settings\MailConfiguration\EditMailConfigurationController;
 use App\Http\App\Controllers\Settings\MailConfiguration\SendTestMailController;
-use App\Http\App\Controllers\Settings\MailConfiguration\SendTestTransactionalMailController;
+use App\Http\App\Controllers\Settings\TransactionalMailConfiguration\SendTestTransactionalMailController;
 use App\Http\App\Controllers\Settings\TransactionalMailConfiguration\DeleteTransactionalMailConfiguration;
 use App\Http\App\Controllers\Settings\TransactionalMailConfiguration\EditTransactionalMailConfigurationController;
 use App\Http\App\Controllers\Settings\Users\CreateUserController;
