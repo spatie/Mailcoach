@@ -1,5 +1,9 @@
 # Mailcoach
 
+## 2.0.3 - 2020-03-13
+
+- use production environment by default
+
 ## 2.0.2 - 2020-03-13
 
 - fix namespace of `SendTestTransactionalMailController`
