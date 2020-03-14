@@ -1,5 +1,9 @@
 # Mailcoach
 
+## 2.0.2 - 2020-03-13
+
+- fix namespace of `SendTestTransactionalMailController`
+
 ## 2.0.1 - 2020-03-11
 
 - fix sending with sendgrid
