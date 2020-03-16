@@ -24,6 +24,13 @@
             <p class="px-4 py-2 uppercase text-xs text-gray-400 tracking-widest"> Configuration</p>
             <ul>
                 <li>
+                    <a href="{{ route('appConfiguration') }}">
+                        <span class="icon-label">
+                            <i class="fas fa-fw fa-cog"></i> App
+                        </span>
+                    </a>
+                </li>
+                <li>
                     <a href="{{ route('users') }}">
                         <span class="icon-label">
                             <i class="fas fa-fw fa-users"></i> Users

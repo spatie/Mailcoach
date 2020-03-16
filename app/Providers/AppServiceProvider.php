@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Http\App\ViewComposers\HealthViewComposer;
 use App\Models\User;
+use App\Support\AppConfiguration\AppConfiguration;
 use App\Support\EditorConfiguration\EditorConfiguration;
 use App\Support\EditorConfiguration\EditorConfigurationDriverRepository;
 use App\Support\MailConfiguration\MailConfiguration;
@@ -29,12 +30,29 @@ class AppServiceProvider extends ServiceProvider
         ]);
 
         $this
+            ->registerAppConfiguration()
             ->registerMailConfiguration()
             ->registerTransactionalMailConfiguration()
             ->registerEditorConfiguration();
 
 
         View::composer('app.layouts.partials.health', HealthViewComposer::class);
+    }
+
+    protected function registerAppConfiguration(): self
+    {
+        $this->app->bind(AppConfiguration::class, function () {
+            $valueStore = Valuestore::make(base_path('config-mailcoach-app/app.json'));
+
+            return new AppConfiguration(
+                $valueStore,
+                app()->get('config'),
+            );
+        });
+
+        app(AppConfiguration::class)->registerConfigValues();
+
+        return $this;
     }
 
     protected function registerMailConfiguration(): self

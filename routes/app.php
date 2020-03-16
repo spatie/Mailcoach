@@ -2,6 +2,7 @@
 
 use App\Http\App\Controllers\Settings\Account\AccountController;
 use App\Http\App\Controllers\Settings\Account\PasswordController;
+use App\Http\App\Controllers\Settings\App\EditAppConfigurationController;
 use App\Http\App\Controllers\Settings\EditorController;
 use App\Http\App\Controllers\Settings\MailConfiguration\EditMailConfigurationController;
 use App\Http\App\Controllers\Settings\MailConfiguration\SendTestMailController;
@@ -17,6 +18,9 @@ use App\Http\Auth\Controllers\LogoutController;
 Route::mailcoachUnlayer();
 
 Route::prefix('settings')->group(function () {
+    Route::get('app-configuration', [EditAppConfigurationController::class, 'edit'])->name('appConfiguration');
+    Route::put('app-configuration', [EditAppConfigurationController::class, 'update']);
+
     Route::prefix('account')->group(function () {
         Route::get('details', [AccountController::class, 'index'])->name('account');
         Route::put('details', [AccountController::class, 'update']);
