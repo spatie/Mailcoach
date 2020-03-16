@@ -12,6 +12,7 @@ use App\Support\MailConfiguration\MailConfigurationDriverRepository;
 use App\Support\TransactionalMailConfiguration\TransactionalMailConfiguration;
 use App\Support\TransactionalMailConfiguration\TransactionalMailConfigurationDriverRepository;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use Spatie\Flash\Flash;
@@ -39,6 +40,8 @@ class AppServiceProvider extends ServiceProvider
             ->registerMailConfiguration()
             ->registerTransactionalMailConfiguration()
             ->registerEditorConfiguration();
+
+        URL::forceRootUrl(config('app.url'));
     }
 
     protected function registerAppConfiguration(): self

@@ -1,5 +1,9 @@
 # Mailcoach
 
+## 2.0.9 - 2020-03-16
+
+- fix uploads having a wrong url
+
 ## 2.0.8 - 2020-03-16
 
 - move registering settings to register method
