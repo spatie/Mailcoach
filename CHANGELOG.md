@@ -1,5 +1,9 @@
 # Mailcoach
 
+## 2.0.7 - 2020-03-16
+
+- allow setting app name & url from settings
+
 ## 2.0.6 - 2020-03-13
 
 - improve clearing config cache
