@@ -29,14 +29,16 @@ class AppServiceProvider extends ServiceProvider
             'error' => 'error',
         ]);
 
+        View::composer('app.layouts.partials.health', HealthViewComposer::class);
+    }
+
+    public function register()
+    {
         $this
             ->registerAppConfiguration()
             ->registerMailConfiguration()
             ->registerTransactionalMailConfiguration()
             ->registerEditorConfiguration();
-
-
-        View::composer('app.layouts.partials.health', HealthViewComposer::class);
     }
 
     protected function registerAppConfiguration(): self

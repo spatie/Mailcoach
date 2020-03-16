@@ -1,5 +1,9 @@
 # Mailcoach
 
+## 2.0.8 - 2020-03-16
+
+- move registering settings to register method
+
 ## 2.0.7 - 2020-03-16
 
 - allow setting app name & url from settings
