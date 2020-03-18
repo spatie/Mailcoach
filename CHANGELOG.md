@@ -1,5 +1,9 @@
 # Mailcoach
 
+## 2.0.10 - 2020-03-18
+
+- fix `TransactionalMailConfiguration` (#23)
+
 ## 2.0.9 - 2020-03-16
 
 - fix uploads having a wrong url
