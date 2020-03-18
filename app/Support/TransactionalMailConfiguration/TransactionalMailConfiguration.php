@@ -2,10 +2,9 @@
 
 namespace App\Support\TransactionalMailConfiguration;
 
+use App\Support\ConfigCache;
 use App\Support\TransactionalMailConfiguration\Drivers\TransactionalMailConfigurationDriver;
 use Illuminate\Config\Repository;
-use Illuminate\Filesystem\Filesystem;
-use Illuminate\Support\Facades\Artisan;
 use Spatie\Valuestore\Valuestore;
 
 class TransactionalMailConfiguration
@@ -61,9 +60,7 @@ class TransactionalMailConfiguration
             $this->valuestore->all()
         );
 
-        config()->set('mailcoach.transactional_mailer', 'mailcoach-transactional');
-
-        Artisan::call('cache:clear');
+        ConfigCache::clear();
     }
 
     public function isValid(): bool
@@ -76,17 +73,5 @@ class TransactionalMailConfiguration
         return $this
             ->transactionalMailConfigurationDriverRepository
             ->getForDriver($this->valuestore->get('driver', ''));
-    }
-
-    protected function clearCachedConfig(): void
-    {
-        /** @var \Illuminate\Filesystem\Filesystem $filesystem */
-        $filesystem = app(Filesystem::class);
-
-        $cacheConfigPath = app()->getCachedConfigPath();
-
-        if (file_exists($cacheConfigPath)) {
-            $filesystem->delete($cacheConfigPath);
-        }
     }
 }
