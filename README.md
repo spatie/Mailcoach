@@ -14,4 +14,4 @@ It features:
 
 In order to be able to install all necessary dependencies you need an mailcoach license you can buy at [mailcoach.app](https://mailcoach.app)
 
-Read our documentation on [how to get started](https://mailcoach.app/docs/app). 
+Read our documentation on [how to get started](https://mailcoach.app/docs). 
