@@ -2,9 +2,10 @@
 
 namespace App\Http\App\Controllers\Settings\MailConfiguration;
 
-use App\Http\App\Requests\UpdateMailConfigurationRequest;
 use App\Support\ConfigCache;
+use Illuminate\Support\Facades\Artisan;
 use App\Support\MailConfiguration\MailConfiguration;
+use App\Http\App\Requests\UpdateMailConfigurationRequest;
 
 class EditMailConfigurationController
 {
