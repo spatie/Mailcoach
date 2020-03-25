@@ -1,5 +1,9 @@
 # Mailcoach
 
+## 2.0.11 - 2020-03-25
+
+- add missing import in `EditMailConfigurationController`
+
 ## 2.0.10 - 2020-03-18
 
 - fix `TransactionalMailConfiguration` (#23)
