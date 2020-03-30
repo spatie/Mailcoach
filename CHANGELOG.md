@@ -1,5 +1,9 @@
 # Mailcoach
 
+## 2.0.12 - 2020-03-30
+
+- use horizon timeouts of an hour
+
 ## 2.0.11 - 2020-03-25
 
 - add missing import in `EditMailConfigurationController`
