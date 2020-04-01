@@ -74,7 +74,7 @@ return [
         'production' => [
             'mailcoach-general' => [
                 'connection' => 'redis',
-                'queue' => ['default', 'mailcoach', 'mailcoach-feedback'],
+                'queue' => ['default', 'mailcoach', 'mailcoach-feedback', 'send-mail'],
                 'balance' => 'auto',
                 'processes' => 10,
                 'tries' => 2,
@@ -82,7 +82,7 @@ return [
             ],
             'mailcoach-heavy' => [
                 'connection' => 'mailcoach-redis',
-                'queue' => ['send-campaign', 'send-mail'],
+                'queue' => ['send-campaign'],
                 'balance' => 'auto',
                 'processes' => 3,
                 'tries' => 1,
@@ -93,7 +93,7 @@ return [
         'local' => [
             'mailcoach-general' => [
                 'connection' => 'redis',
-                'queue' => ['default', 'mailcoach', 'mailcoach-feedback'],
+                'queue' => ['default', 'mailcoach', 'mailcoach-feedback', 'send-mail'],
                 'balance' => 'auto',
                 'processes' => 10,
                 'tries' => 2,
@@ -101,7 +101,7 @@ return [
             ],
             'mailcoach-heavy' => [
                 'connection' => 'mailcoach-redis',
-                'queue' => ['send-campaign', 'send-mail'],
+                'queue' => ['send-campaign'],
                 'balance' => 'auto',
                 'processes' => 3,
                 'tries' => 1,
