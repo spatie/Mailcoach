@@ -72,17 +72,17 @@ return [
 
     'environments' => [
         'production' => [
-            'supervisor-1' => [
+            'mailcoach-general' => [
                 'connection' => 'redis',
-                'queue' => ['default'],
-                'balance' => 'simple',
+                'queue' => ['default', 'mailcoach', 'mailcoach-feedback'],
+                'balance' => 'auto',
                 'processes' => 10,
                 'tries' => 2,
                 'timeout' => 60 * 60,
             ],
-            'mailcoach' => [
+            'mailcoach-heavy' => [
                 'connection' => 'mailcoach-redis',
-                'queue' => ['send-campaign', 'send-mail', 'mailcoach-feedback', 'mailcoach'],
+                'queue' => ['send-campaign', 'send-mail'],
                 'balance' => 'auto',
                 'processes' => 3,
                 'tries' => 1,
@@ -91,17 +91,17 @@ return [
         ],
 
         'local' => [
-            'supervisor-1' => [
+            'mailcoach-general' => [
                 'connection' => 'redis',
-                'queue' => ['default'],
-                'balance' => 'simple',
+                'queue' => ['default', 'mailcoach', 'mailcoach-feedback'],
+                'balance' => 'auto',
                 'processes' => 10,
                 'tries' => 2,
                 'timeout' => 60 * 60,
             ],
-            'mailcoach' => [
+            'mailcoach-heavy' => [
                 'connection' => 'mailcoach-redis',
-                'queue' => ['send-campaign', 'send-mail', 'mailcoach-feedback', 'mailcoach'],
+                'queue' => ['send-campaign', 'send-mail'],
                 'balance' => 'auto',
                 'processes' => 3,
                 'tries' => 1,
