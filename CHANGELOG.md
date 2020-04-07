@@ -1,5 +1,9 @@
 # Mailcoach
 
+## 2.0.13 - 2020-04-07
+
+- update config file
+
 ## 2.0.12 - 2020-03-30
 
 - use horizon timeouts of an hour
