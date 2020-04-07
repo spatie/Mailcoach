@@ -9,14 +9,12 @@ return [
     'mailer' => null,
 
     /*
-     * The default mailer used by Mailcoach for campaign sends. This can
-     * be overridden on a List level.
+     * The default mailer used by Mailcoach for sending campaigns.
      */
     'campaign_mailer' => null,
 
     /*
-     * The default mailer used by Mailcoach for double opt-in and confirmation mails.
-     * This can be overridden on a List level.
+     * The default mailer used by Mailcoach for confirmation and welcome mails.
      */
     'transactional_mailer' => null,
 
@@ -52,8 +50,15 @@ return [
         'send_campaign_job' => 'send-campaign',
         'send_mail_job' => 'send-mail',
         'send_test_mail_job' => 'mailcoach',
-        'process_feedback_job' => 'mailcoach-feedback'
+        'process_feedback_job' => 'mailcoach-feedback',
+        'import_subscribers_job' => 'mailcoach',
     ],
+
+    /*
+     * Here you can specify on which connection Mailcoach's jobs will be dispatched.
+     * Leave empty to use the app default's env('QUEUE_CONNECTION')
+     */
+    'queue_connection' => '',
 
     /*
      * By default only 10 mails per second will be sent to avoid overwhelming your
@@ -77,10 +82,12 @@ return [
          * Actions concerning campaigns
          */
         'calculate_statistics' => \Spatie\Mailcoach\Actions\Campaigns\CalculateStatisticsAction::class,
+        'prepare_email_html' => \Spatie\Mailcoach\Actions\Campaigns\PrepareEmailHtmlAction::class,
+        'prepare_subject' => \Spatie\Mailcoach\Actions\Campaigns\PrepareSubjectAction::class,
+        'prepare_webview_html' => \Spatie\Mailcoach\Actions\Campaigns\PrepareWebviewHtmlAction::class,
         'convert_html_to_text' => \Spatie\Mailcoach\Actions\Campaigns\ConvertHtmlToTextAction::class,
         'personalize_html' => \Spatie\Mailcoach\Actions\Campaigns\PersonalizeHtmlAction::class,
-        'prepare_email_html' => \Spatie\Mailcoach\Actions\Campaigns\PrepareEmailHtmlAction::class,
-        'prepare_webview_html' => \Spatie\Mailcoach\Actions\Campaigns\PrepareWebviewHtmlAction::class,
+        'personalize_subject' => \Spatie\Mailcoach\Actions\Campaigns\PersonalizeSubjectAction::class,
         'retry_sending_failed_sends' => \Spatie\Mailcoach\Actions\Campaigns\RetrySendingFailedSendsAction::class,
         'send_campaign' => \Spatie\Mailcoach\Actions\Campaigns\SendCampaignAction::class,
         'send_mail' => \Spatie\Mailcoach\Actions\Campaigns\SendMailAction::class,
@@ -120,12 +127,9 @@ return [
         Spatie\Mailcoach\Http\App\Middleware\SetMailcoachDefaults::class,
     ],
 
-    'monaco' => [
-        'theme' => 'vs-light',
-        'fontLigatures' => true,
-        'fontFamily' => '"Courier New", Courier, monospace',
-        'fontWeight' => 400,
-        'fontSize' => '16',
-        'lineHeight' => '18',
-    ],
+    /*
+     * This disk will be used to store files regarding importing subscribers. This must
+     * be a disk that uses the `local` driver.
+     */
+    'import_subscribers_disk' => 'public',
 ];
