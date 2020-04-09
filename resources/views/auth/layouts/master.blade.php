@@ -10,10 +10,10 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.0/css/all.css">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ asset('site.webmanifest') }}">
     <meta name="msapplication-TileColor" content="#1288ff">
     <meta name="theme-color" content="#ffffff">
 
@@ -30,11 +30,11 @@
                 style="opacity: .1;">
                 <img loading="eager"
                 class="absolute w-full h-full"
-                srcset="/images/banner-3000.jpg 3000w,
-                /images/banner-2000.jpg 2000w,
-                /images/banner-1000.jpg 1000w"
+                srcset="{{ asset('images/banner-3000.jpg') }} 3000w,
+                {{ asset('images/banner-2000.jpg') }} 2000w,
+                {{ asset('images/banner-1000.jpg') }} 1000w"
                 sizes="100vw"
-                src="/images/banner-3000.jpg"
+                src="{{ asset('images/banner-3000.jpg') }}"
                 style="object-fit: cover; object-position: center right;"
                 alt="">
             </div>
