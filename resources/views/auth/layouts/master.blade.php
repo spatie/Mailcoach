@@ -48,7 +48,7 @@
         <div class="min-h-screen flex flex-col p-6">
             <div class="flex-grow flex items-center justify-center">
                 <div class="w-full max-w-lg">
-                    <div class="grid cols-auto-1fr mb-8 text-white">
+                    <div class="grid grid-cols-auto-1fr mb-8 text-white">
                         <a href="{{ route('mailcoach.home') }}" class="opacity-50 h-8 mr-1 | hover:opacity-75">
                             @include('mailcoach::app.layouts.partials.logoSvg')
                         </a>
