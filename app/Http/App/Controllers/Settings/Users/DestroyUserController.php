@@ -9,14 +9,14 @@ class DestroyUserController
     public function __invoke(User $user)
     {
         if ($user->id === auth()->user()->id) {
-            flash()->error('You cannot delete yourself!');
+            flash()->error(__('You cannot delete yourself!'));
 
             return redirect()->action(UsersIndexController::class);
         }
 
         $user->delete();
 
-        flash()->success('The user has been deleted.');
+        flash()->success(__('The user has been deleted.'));
 
         return redirect()->action(UsersIndexController::class);
     }

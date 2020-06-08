@@ -1,10 +1,9 @@
 <x-help>
-    Learn how to configure Postmark by reading <a target="_blank" href="https://mailcoach.app/docs/v2/app/mail-configuration/postmark">this section of the Mailcoach
-        docs</a>.
+    {!! __('Learn how to configure :provider by reading <a target="_blank" href=":docsLink">this section of the Mailcoach docs</a>.', ['provider' => 'Postmark', 'docsLink' => 'https://mailcoach.app/docs/v2/app/mail-configuration/postmark']) !!}
 </x-help>
 
 <x-text-field
-    label="Server Token"
+    :label="__('Server Token')"
     name="postmark_token"
     type="password"
     :value="$mailConfiguration->postmark_token"

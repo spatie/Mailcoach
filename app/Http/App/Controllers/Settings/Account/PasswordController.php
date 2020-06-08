@@ -15,7 +15,7 @@ class PasswordController
     {
         auth()->user()->update(['password' => bcrypt($request->password)]);
 
-        flash()->success('Your password has been updated.');
+        flash()->success(__('Your password has been updated.'));
 
         return redirect()->action([static::class, 'index']);
     }

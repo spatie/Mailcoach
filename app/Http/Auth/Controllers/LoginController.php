@@ -21,7 +21,7 @@ class LoginController
 
     public function authenticated(Request $request, $user)
     {
-        flash()->success('You are now logged in!');
+        flash()->success(__('You are now logged in!'));
 
         return redirect()->intended(route('mailcoach.campaigns'));
     }

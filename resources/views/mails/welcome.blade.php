@@ -1,16 +1,16 @@
-<h1>Welcome to <a href="{{ config('app.url') }}">{{ config('app.name') }}</a></h1>
+<h1>{!! __('Welcome to <a href=":appLink">:appName</a>', ['appLink' => config('app.link'), 'appName' => config('app.name')]) !!}</h1>
 <p>
-    Dear {{ $user->first_name }},
+    {{ __('Dear :firstName', ['firstName' => $user->first_name]) }},
 </p>
 <p>
-    Your account has been approved. You can now pick a password at our site and login.
+    {{ __('Your account has been approved. You can now pick a password at our site and login.') }}
 </p>
 <table>
     <tr>
         <td>
             <p>
                 <a href="{{ route('welcome', [$user->id, $token]) }}" class="btn-primary">
-                    Pick a password
+                    {{ __('Pick a password') }}
                 </a>
             </p>
         </td>
@@ -18,6 +18,8 @@
 </table>
 
 <p>
-    <em>This link is valid until {{ now()->addMinutes(config('auth.passwords.users.expire'))->format('Y/m/d') }}.</em>
+    <em>
+        {{ __('This link is valid until :validUntil', ['validUntil' => now()->addMinutes(config('auth.passwords.users.expire'))->format('Y/m/d')]) }}
+    </em>
 </p>
 

@@ -1,10 +1,10 @@
 @extends('mailcoach::app.layouts.app', [
-    'title' => 'Editor configuration'
+    'title' => __('Editor configuration')
 ])
 @section('header')
     <nav>
         <ul class="breadcrumbs">
-            <li>Editor</li>
+            <li>{{ __('Editor') }}</li>
         </ul>
     </nav>
 @endsection
@@ -20,7 +20,7 @@
             @csrf
 
             <x-select-field
-                label="Editor"
+                :label="__('Editor')"
                 name="editor"
                 :value="$editorConfiguration->editor"
                 :options="$editorConfiguration->getAvailableEditors()"
@@ -41,7 +41,7 @@
 
             <div class="form-buttons">
                 <button class="button">
-                    <x-icon-label icon="fa-code" text="Save"/>
+                    <x-icon-label icon="fa-code" :text="__('Save')"/>
                 </button>
             </div>
         </form>

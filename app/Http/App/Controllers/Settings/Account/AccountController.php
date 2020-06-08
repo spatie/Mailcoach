@@ -20,7 +20,7 @@ class AccountController
             'name' => $request->name,
         ]);
 
-        flash()->success('Your account has been updated.');
+        flash()->success(__('Your account has been updated.'));
 
         return redirect()->action([static::class, 'index']);
     }

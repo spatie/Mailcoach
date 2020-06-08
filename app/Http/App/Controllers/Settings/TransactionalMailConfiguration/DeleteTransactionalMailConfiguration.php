@@ -8,7 +8,7 @@ class DeleteTransactionalMailConfiguration
 {
     public function __invoke(TransactionalMailConfiguration $mailConfiguration)
     {
-        flash()->success('The transactional mail configuration has been deleted');
+        flash()->success(__('The transactional mail configuration has been deleted'));
 
         $mailConfiguration->empty();
 

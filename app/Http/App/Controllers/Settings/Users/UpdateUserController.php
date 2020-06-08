@@ -18,7 +18,7 @@ class UpdateUserController
     {
         $user->update($updateUserRequest->validated());
 
-        flash()->success('The user has been updated.');
+        flash()->success(__('The user has been updated.'));
 
         return redirect()->action(UsersIndexController::class);
     }

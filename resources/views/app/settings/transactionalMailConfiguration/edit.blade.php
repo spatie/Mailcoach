@@ -1,7 +1,7 @@
-@extends('app.settings.transactionalMailConfiguration.layouts.mailConfiguration', ['title' => 'Transactional mail configuration'])
+@extends('app.settings.transactionalMailConfiguration.layouts.mailConfiguration', ['title' => __('Transactional mail configuration')])
 
 @section('breadcrumbs')
-    <li>Transactional mail configuration</li>
+    <li>{{ __('Transactional mail configuration') }}</li>
 @endsection
 
 @section('mailConfiguration')
@@ -16,13 +16,12 @@
 
         @if(! $mailConfiguration->isValid())
             <div class="alert alert-warning max-w-xl">
-                You haven't configured a transactional mailer yet. Mailcoach will send confirmation mails and welcome mails
-                using the regular mailer.
+                {{ __("You haven't configured a transactional mailer yet. Mailcoach will send confirmation mails and welcome mails using the regular mailer.") }}
             </div>
         @endif
 
         <x-select-field
-            label="Driver"
+            :label="__('Driver')"
             name="driver"
             :value="$mailConfiguration->driver"
             :options="[
@@ -57,7 +56,7 @@
 
         <div class="form-buttons">
             <button class="button">
-                <x-icon-label icon="fa-server" text="Save configuration"/>
+                <x-icon-label icon="fa-server" :text="__('Save configuration')"/>
             </button>
         </div>
     </form>
@@ -73,7 +72,7 @@
             @method('DELETE')
             <div class="form-buttons">
                 <button class="text-red-400 hover:text-red-500">
-                    <x-icon-label caution="true" icon="fa-trash" text="Delete configuration"/>
+                    <x-icon-label caution="true" icon="fa-trash" :text="__('Delete configuration')"/>
                 </button>
             </div>
         </form>

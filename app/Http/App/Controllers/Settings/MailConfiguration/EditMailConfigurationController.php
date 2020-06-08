@@ -24,7 +24,7 @@ class EditMailConfigurationController
             Artisan::call('horizon:terminate');
         });
 
-        flash()->success('The mail configuration was saved.');
+        flash()->success(__('The mail configuration was saved.'));
 
         return back();
     }

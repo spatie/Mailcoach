@@ -1,5 +1,5 @@
 <x-help>
-    Open and click tracking is not available for the SMTP driver.
+    {{ __('Open and click tracking is not available for the SMTP driver.') }}
 </x-help>
 
 <x-text-field label="Mails per second" name="smtp_mails_per_second" type="number" :value="$mailConfiguration->smtp_mails_per_second"/>

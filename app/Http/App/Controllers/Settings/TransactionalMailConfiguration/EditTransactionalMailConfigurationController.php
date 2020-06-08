@@ -25,7 +25,7 @@ class EditTransactionalMailConfigurationController
             Artisan::call('horizon:terminate');
         });
 
-        flash()->success('The transactional mail configuration was saved.');
+        flash()->success(__('The transactional mail configuration was saved.'));
 
         return back();
     }

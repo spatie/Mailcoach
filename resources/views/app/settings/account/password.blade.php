@@ -1,12 +1,12 @@
-@extends('app.settings.account.layouts.account', ['titlePrefix' => 'Password'])
+@extends('app.settings.account.layouts.account', ['titlePrefix' => __('Password')])
 
 @section('breadcrumbs')
     <li>
         <a href="{{ route('account') }}">
-            Account
+            {{ __('Account') }}
         </a>
     </li>
-    <li>Password</li>
+    <li>{{ __('Password') }}</li>
 @endsection
 
 @section('account')
@@ -18,14 +18,13 @@
         @csrf
         @method('PUT')
 
-        <x-text-field label="Current password" name="current_password" type="password"  required />
-
-        <x-text-field label="New password" name="password" type="password"  required />
-        <x-text-field label="Confirm new password" name="password_confirmation" type="password" required />
+        <x-text-field :label="__('Current password')" name="current_password" type="password"  required />
+        <x-text-field :label="__('New password')" name="password" type="password"  required />
+        <x-text-field :label="__('Confirm new password')" name="password_confirmation" type="password" required />
 
         <div class="form-buttons">
             <button type="submit" class="button">
-                <x-icon-label icon="fa-lock" text="Update password" />
+                <x-icon-label icon="fa-lock" :text="__('Update password')" />
             </button>
         </div>
     </form>
