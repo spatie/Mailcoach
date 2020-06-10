@@ -1,8 +1,12 @@
 # Mailcoach
 
+##. 2.2.0 - 2020-16-10
+
+- add translations (#43)
+
 ## 2.1.0 - 2020-04-30
 
-refactor to Tailwind grid (#36)
+- refactor to Tailwind grid (#36)
 
 ## 2.0.13 - 2020-04-07
 
