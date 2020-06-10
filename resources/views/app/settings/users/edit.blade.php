@@ -4,7 +4,7 @@
 <nav>
     <ul class="breadcrumbs">
         <li>
-            <a href="{{ route('users') }}">Users</a>
+            <a href="{{ route('users') }}">{{ __('Users') }}</a>
         </li>
         <li>
             {{ $user->email }}
@@ -20,13 +20,13 @@
         @csrf
         @method('PUT')
 
-        <x-text-field type="email" label="Email" name="email" :value="$user->email" required />
+        <x-text-field type="email" :label="__('Email')" name="email" :value="$user->email" required />
 
-        <x-text-field label="Name" name="name" :value="$user->name" required />
+        <x-text-field :label="__('Name')" name="name" :value="$user->name" required />
 
         <div class="form-buttons">
             <button type="submit" class="button">
-                <x-icon-label icon="fa-user" text="Save user" />
+                <x-icon-label icon="fa-user" :text="__('Save user')" />
             </button>
         </div>
     </form>

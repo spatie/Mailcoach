@@ -24,7 +24,7 @@ class EditAppConfigurationController
             Artisan::call('horizon:terminate');
         });
 
-        flash()->success('The app configuration was saved.');
+        flash()->success(__('The app configuration was saved.'));
 
         return back();
     }

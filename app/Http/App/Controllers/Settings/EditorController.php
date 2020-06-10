@@ -18,7 +18,7 @@ class EditorController
     {
         $editorConfiguration->put($request->validated());
 
-        flash()->success('The editor has been updated.');
+        flash()->success(__('The editor has been updated.'));
 
         ConfigCache::clear();
 

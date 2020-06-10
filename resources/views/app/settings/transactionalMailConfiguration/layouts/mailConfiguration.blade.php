@@ -1,5 +1,5 @@
 @extends('mailcoach::app.layouts.app', [
-    'title' => isset($titlePrefix) ?  $titlePrefix . ' | Transactional mail configuration' : 'Transactional mail configuration'
+    'title' => isset($titlePrefix) ?  $titlePrefix . ' | ' . __('Transactional mail configuration') : __('Transactional mail configuration')
 ])
 
 @section('header')
@@ -14,10 +14,10 @@
     <nav class="tabs">
         <ul>
             <x-navigation-item :href="route('transactionalMailConfiguration')">
-                <x-icon-label icon="fa-server" text="Transactional mail configuration" />
+                <x-icon-label icon="fa-server" :text="__('Transactional mail configuration')" />
             </x-navigation-item>
             <x-navigation-item :href="route('sendTransactionalTestEmail')">
-                <x-icon-label icon="fa-paper-plane" text="Send transactional test mail" />
+                <x-icon-label icon="fa-paper-plane" :text="__('Send transactional test mail')" />
             </x-navigation-item>
         </ul>
     </nav>

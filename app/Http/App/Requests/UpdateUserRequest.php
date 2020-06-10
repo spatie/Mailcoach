@@ -27,7 +27,7 @@ class UpdateUserRequest extends FormRequest
     public function messages()
     {
         return [
-            'email.unique' => 'There already is a user with this email.',
+            'email.unique' => __('There already is a user with this email.'),
         ];
     }
 

@@ -25,7 +25,7 @@ class TestMail extends Mailable
     {
         return $this
             ->mailer('mailcoach')
-            ->subject('Mailcoach testmail')
+            ->subject(__('Mailcoach testmail'))
             ->to($this->toEmail)
             ->from($this->fromEmail)
             ->markdown('mails.test');

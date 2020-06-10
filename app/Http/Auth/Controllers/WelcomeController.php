@@ -9,7 +9,7 @@ class WelcomeController extends BaseWelcomeController
 {
     public function sendPasswordSavedResponse(): Response
     {
-        flash()->success('Your password has been saved.');
+        flash()->success(__('Your password has been saved.'));
 
         return redirect()->route('mailcoach.campaigns');
     }

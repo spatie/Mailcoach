@@ -1,24 +1,23 @@
 <x-help>
-    Learn how to configure Mailgun by reading <a target="_blank" href="https://mailcoach.app/docs/v2/app/mail-configuration/mailgun">this section of the Mailcoach
-        docs</a>.
+    {!! __('Learn how to configure :provider by reading <a target="_blank" href=":docsLink">this section of the Mailcoach docs</a>.', ['provider' => 'Mailgun', 'docsLink' => 'https://mailcoach.app/docs/v2/app/mail-configuration/mailgun']) !!}
 </x-help>
 
 <x-text-field
-    label="Domain"
+    :label="__('Domain')"
     name="mailgun_domain"
     type="text"
     :value="$mailConfiguration->mailgun_domain"
 />
 
 <x-text-field
-    label="Secret"
+    :label="__('Secret')"
     name="mailgun_secret"
     type="password"
     :value="$mailConfiguration->mailgun_secret"
 />
 
 <x-text-field
-    label="Endpoint"
+    :label="__('Endpoint')"
     name="mailgun_endpoint"
     type="text"
     :value="$mailConfiguration->mailgun_endpoint"

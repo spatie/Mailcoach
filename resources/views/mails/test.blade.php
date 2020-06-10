@@ -1,7 +1,7 @@
 @component('mail::message')
 
-Hi,
+{{ __('Hi') }}
 
-this is a test email sent from Mailcoach.
+{{ __('This is a test email sent from Mailcoach.') }}
 
 @endcomponent
