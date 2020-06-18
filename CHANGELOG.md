@@ -1,6 +1,10 @@
 # Mailcoach
 
-## 2.2.0 - 2020-16-10
+## 2.2.1 - 2020-06-18
+
+- fix test mail and transactional test mail
+
+## 2.2.0 - 2020-06-10
 
 - add translations (#43)
 

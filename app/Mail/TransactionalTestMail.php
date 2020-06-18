@@ -10,7 +10,7 @@ class TransactionalTestMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public string $theme = 'mailcoach::mails.layout.mailcoach';
+    public $theme = 'mailcoach::mails.layout.mailcoach';
 
     private string $fromEmail;
     private string $toEmail;
