@@ -1,5 +1,9 @@
 # Mailcoach
 
+## 2.2.2 - 2020-06-24
+
+- added missing imports to the mail configuration settings controllers (#44)
+
 ## 2.2.1 - 2020-06-18
 
 - fix test mail and transactional test mail
