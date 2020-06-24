@@ -6,7 +6,7 @@ use App\Mail\TransactionalTestMail;
 use App\Support\TransactionalMailConfiguration\TransactionalMailConfiguration;
 use Exception;
 use Illuminate\Http\Request;
-use Mail;
+use Illuminate\Support\Facades\Mail;
 
 class SendTestTransactionalMailController
 {
