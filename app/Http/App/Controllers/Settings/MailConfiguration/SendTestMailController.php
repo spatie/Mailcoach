@@ -5,7 +5,7 @@ namespace App\Http\App\Controllers\Settings\MailConfiguration;
 use App\Mail\TestMail;
 use Exception;
 use Illuminate\Http\Request;
-use Mail;
+use Illuminate\Support\Facades\Mail;
 
 class SendTestMailController
 {

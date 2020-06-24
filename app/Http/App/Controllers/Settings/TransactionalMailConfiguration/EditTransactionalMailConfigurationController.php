@@ -5,6 +5,7 @@ namespace App\Http\App\Controllers\Settings\TransactionalMailConfiguration;
 use App\Http\App\Requests\UpdateTransactionalMailConfigurationRequest;
 use App\Support\ConfigCache;
 use App\Support\TransactionalMailConfiguration\TransactionalMailConfiguration;
+use Illuminate\Support\Facades\Artisan;
 
 class EditTransactionalMailConfigurationController
 {
