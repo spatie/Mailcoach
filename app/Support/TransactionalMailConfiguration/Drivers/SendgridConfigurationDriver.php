@@ -26,6 +26,5 @@ class SendgridConfigurationDriver extends TransactionalMailConfigurationDriver
         $config->set('mail.mailers.mailcoach-transactional.encryption', null);
         $config->set('mail.mailers.mailcoach-transactional.password', $values['sendgrid_api_key']);
         $config->set('mail.mailers.mailcoach-transactional.port', 587);
-
     }
 }

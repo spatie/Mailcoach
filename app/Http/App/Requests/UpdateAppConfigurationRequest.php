@@ -2,9 +2,7 @@
 
 namespace App\Http\App\Requests;
 
-use App\Support\MailConfiguration\MailConfigurationDriverRepository;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
 class UpdateAppConfigurationRequest extends FormRequest
 {

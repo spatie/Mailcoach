@@ -3,6 +3,7 @@
 namespace App\Console;
 
 use App\Console\Commands\MakeUserCommand;
+use App\Console\Commands\PrepareGitIgnoreCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 use Laravel\Horizon\Console\TerminateCommand;
@@ -14,6 +15,7 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         TerminateCommand::class,
         MakeUserCommand::class,
+        PrepareGitIgnoreCommand::class,
     ];
 
     protected function schedule(Schedule $schedule)
