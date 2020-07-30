@@ -1,5 +1,9 @@
 # Mailcoach
 
+## 2.2.4 - 2020-07-30
+
+- do not ignore `composer.lock` after installing the package
+
 ## 2.2.3 - 2020-07-30
 
 - do not ignore `composer.lock` after installing the package
