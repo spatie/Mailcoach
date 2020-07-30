@@ -94,7 +94,8 @@
             "@php artisan mailcoach:prepare-git-ignore"
         ],
         "post-create-project-cmd": [
-            "@php artisan key:generate --ansi"
+            "@php artisan key:generate --ansi",
+            "@php artisan mailcoach:prepare-git-ignore"
         ],
         "link-mailcoach-assets": [
             "rm -rf public/vendor/mailcoach",
