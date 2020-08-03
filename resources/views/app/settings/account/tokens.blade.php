@@ -46,15 +46,33 @@
                 <p data-confirm-modal-text class="mb-2">
                     We will display this token only once. Make sure to copy it to a save place.
                 </p>
-                <pre class="max-w-full whitespace-pre-wrap break-all font-mono bg-gray-100">{{ session()->get('newToken') }}</pre>
 
 
-                <div class="form-buttons">
+                <pre id="newKey" class="max-w-full whitespace-pre-wrap break-all font-mono bg-gray-100">{{ session()->get('newToken') }}</pre>
+
+
+                <div class="form-buttons justify-end">
+                    <div>
+                    <span class="underline text-sm mr-4" onclick="copyToClipboard(this, '{{ session()->get('newToken') }}')">Copy to clipboard</span>
                     <button type="button" class="button" data-modal-dismiss>
                         {{ __('OK') }}
                     </button>
+                    </div>
                 </div>
             </x-modal>
+            <script>
+                function copyToClipboard(element, key)
+                {
+                    const el = document.createElement('textarea');
+                    el.value = key;
+                    document.body.appendChild(el);
+                    el.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(el);
+
+                    element.innerText = 'Copied!';
+                }
+            </script>
         @endpush
     @endif
 
