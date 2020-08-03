@@ -44,7 +44,7 @@
         @push('modals')
             <x-modal :open="true" :title="__('Your new token')" name="token">
                 <p data-confirm-modal-text class="mb-2">
-                    This is your token. Make sure to copy it to a save place.
+                    We will display this token only once. Make sure to copy it to a save place.
                 </p>
                 <pre class="max-w-full whitespace-pre-wrap break-all font-mono bg-gray-100">{{ session()->get('newToken') }}</pre>
 
