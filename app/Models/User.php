@@ -39,7 +39,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function tokens(): MorphMany
+    public function personalAccessTokens(): MorphMany
     {
         return $this->morphMany(PersonalAccessToken::class, 'tokenable');
     }

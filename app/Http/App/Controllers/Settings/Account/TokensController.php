@@ -29,6 +29,6 @@ class TokensController
 
         flash()->success(__('The token has been deleted.'));
 
-        return back();
+        return redirect()->route('tokens');
     }
 }

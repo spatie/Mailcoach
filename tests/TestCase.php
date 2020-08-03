@@ -22,6 +22,8 @@ abstract class TestCase extends BaseTestCase
     {
         $user = factory(User::class)->create();
 
+        $user->createToken('test');
+
         $this->actingAs($user);
     }
 }

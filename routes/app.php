@@ -31,8 +31,13 @@ Route::prefix('settings')->group(function () {
         Route::get('password', [PasswordController::class, 'index'])->name('password');
         Route::put('password', [PasswordController::class, 'update']);
 
-        Route::get('tokens', [TokensController::class, 'index'])->name('tokens');
-        Route::put('tokens', [TokensController::class, 'destroy']);
+        Route::prefix('tokens')->group(function () {
+            Route::get('/', [TokensController::class, 'index'])->name('tokens');
+            Route::post('/', [TokensController::class, 'create'])->name('tokens.create');
+            Route::delete("{personalAccessToken}", [TokensController::class, 'destroy'])
+                ->name('tokens.delete')
+                ->middleware('can:administer,personalAccessToken');
+        });
     });
 
     Route::prefix('users')->group(function () {
