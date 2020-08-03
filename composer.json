@@ -91,10 +91,11 @@
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
-            "@php artisan mailcoach:prepare-git-ignore"
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi",
+            "@php artisan vendor:publish --tag mailcoach-assets --force",
+            "@php artisan vendor:publish --tag mailcoach-monaco-assets --force",
             "@php artisan mailcoach:prepare-git-ignore"
         ],
         "link-mailcoach-assets": [

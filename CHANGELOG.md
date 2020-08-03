@@ -1,5 +1,9 @@
 # Mailcoach
 
+## 2.2.5 - 2020-07-30
+
+- fix publishing of assets after composer create-project
+
 ## 2.2.4 - 2020-07-30
 
 - do not ignore `composer.lock` after installing the package
