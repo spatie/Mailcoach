@@ -36,8 +36,7 @@ class CreateMailcoachTables extends Migration
             $table->string('welcome_mail_subject')->nullable();
             $table->text('welcome_mail_content')->nullable();
             $table->string('welcome_mailable_class')->nullable();
-            $table->boolean('welcome_mail_delay_in_minutes')->default(0);
-
+            $table->integer('welcome_mail_delay_in_minutes')->default(0);
 
             $table->string('report_recipients')->nullable();
             $table->boolean('report_campaign_sent')->default(false);
@@ -59,6 +58,9 @@ class CreateMailcoachTables extends Migration
             $table->json('extra_attributes')->nullable();
 
             $table->uuid('uuid');
+
+            $table->uuid('imported_via_import_uuid')->nullable();
+
             $table->timestamp('subscribed_at')->nullable();
             $table->timestamp('unsubscribed_at')->nullable();
             $table->nullableTimestamps();
@@ -272,8 +274,12 @@ class CreateMailcoachTables extends Migration
 
         Schema::create('mailcoach_subscriber_imports', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->longText('subscribers_csv')->nullable();
+            $table->uuid('uuid');
             $table->string('status');
             $table->unsignedBigInteger('email_list_id');
+            $table->boolean('subscribe_unsubscribed')->default(false);
+            $table->boolean('unsubscribe_others')->default(false);
             $table->integer('imported_subscribers_count')->default(0);
             $table->integer('error_count')->default(0);
             $table->timestamps();

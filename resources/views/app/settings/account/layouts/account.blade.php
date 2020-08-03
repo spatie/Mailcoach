@@ -19,6 +19,9 @@
             <x-navigation-item :href="route('password')">
                 <x-icon-label icon="fa-lock" :text="__('Password')" />
             </x-navigation-item>
+            <x-navigation-item :href="route('tokens')">
+                <x-icon-label icon="fa-key" :text="__('Tokens')" />
+            </x-navigation-item>
         </ul>
     </nav>
 

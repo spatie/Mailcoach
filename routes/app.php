@@ -2,6 +2,7 @@
 
 use App\Http\App\Controllers\Settings\Account\AccountController;
 use App\Http\App\Controllers\Settings\Account\PasswordController;
+use App\Http\App\Controllers\Settings\Account\TokensController;
 use App\Http\App\Controllers\Settings\App\EditAppConfigurationController;
 use App\Http\App\Controllers\Settings\EditorController;
 use App\Http\App\Controllers\Settings\MailConfiguration\EditMailConfigurationController;
@@ -14,8 +15,10 @@ use App\Http\App\Controllers\Settings\Users\DestroyUserController;
 use App\Http\App\Controllers\Settings\Users\UpdateUserController;
 use App\Http\App\Controllers\Settings\Users\UsersIndexController;
 use App\Http\Auth\Controllers\LogoutController;
+use Illuminate\Support\Facades\Route;
 
-Route::mailcoachUnlayer();
+/*TODO: figure out why this is not working */
+//Route::mailcoachUnlayer();
 
 Route::prefix('settings')->group(function () {
     Route::get('app-configuration', [EditAppConfigurationController::class, 'edit'])->name('appConfiguration');
@@ -27,6 +30,9 @@ Route::prefix('settings')->group(function () {
 
         Route::get('password', [PasswordController::class, 'index'])->name('password');
         Route::put('password', [PasswordController::class, 'update']);
+
+        Route::get('tokens', [TokensController::class, 'index'])->name('tokens');
+        Route::put('tokens', [TokensController::class, 'destroy']);
     });
 
     Route::prefix('users')->group(function () {

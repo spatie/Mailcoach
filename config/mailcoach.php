@@ -33,6 +33,7 @@ return [
         \Spatie\Mailcoach\Support\Replacers\SubscriberReplacer::class,
         \Spatie\Mailcoach\Support\Replacers\EmailListReplacer::class,
         \Spatie\Mailcoach\Support\Replacers\UnsubscribeUrlReplacer::class,
+        \Spatie\Mailcoach\Support\Replacers\CampaignReplacer::class,
     ],
 
     /**
@@ -50,6 +51,7 @@ return [
         'send_campaign_job' => 'send-campaign',
         'send_mail_job' => 'send-mail',
         'send_test_mail_job' => 'mailcoach',
+        'send_welcome_mail_job' => 'mailcoach',
         'process_feedback_job' => 'mailcoach-feedback',
         'import_subscribers_job' => 'mailcoach',
     ],
@@ -71,6 +73,7 @@ return [
         'allowed_number_of_jobs_in_timespan' => 10,
         'timespan_in_seconds' => 1,
         'release_in_seconds' => 5,
+        'retry_until_hours' => 24,
     ],
 
     /*
@@ -117,19 +120,69 @@ return [
     'guard' => env('MAILCOACH_GUARD', null),
 
     /*
-     *  These middleware will be assigned to every Mailcoach UI route, giving you the chance
+     *  These middleware will be assigned to every Mailcoach routes, giving you the chance
      *  to add your own middleware to this stack or override any of the existing middleware.
      */
     'middleware' => [
-        'web',
-        Spatie\Mailcoach\Http\App\Middleware\Authenticate::class,
-        Spatie\Mailcoach\Http\App\Middleware\Authorize::class,
-        Spatie\Mailcoach\Http\App\Middleware\SetMailcoachDefaults::class,
+        'web' => [
+            'web',
+            Spatie\Mailcoach\Http\App\Middleware\Authenticate::class,
+            Spatie\Mailcoach\Http\App\Middleware\Authorize::class,
+            Spatie\Mailcoach\Http\App\Middleware\SetMailcoachDefaults::class,
+        ],
+        'api' => [
+            'api',
+            'auth:sanctum',
+        ],
     ],
 
     /*
-     * This disk will be used to store files regarding importing subscribers. This must
-     * be a disk that uses the `local` driver.
+     * This disk will be used to store files regarding importing subscribers.
      */
     'import_subscribers_disk' => 'public',
+
+
+    'models' => [
+
+        /*
+         * The model you want to use as a Campaign model. It needs to be or
+         * extend the `Spatie\Mailcoach\Models\Campaign` model.
+         */
+        'campaign' => Spatie\Mailcoach\Models\Campaign::class,
+
+        /*
+         * The model you want to use as a EmailList model. It needs to be or
+         * extend the `Spatie\Mailcoach\Models\EmailList` model.
+         */
+        'email_list' => Spatie\Mailcoach\Models\EmailList::class,
+
+        /*
+         * The model you want to use as a Subscriber model. It needs to be or
+         * extend the `Spatie\Mailcoach\Models\Subscriber` model.
+         */
+        'subscriber' => Spatie\Mailcoach\Models\Subscriber::class,
+
+        /*
+         * The model you want to use as a Template model. It needs to be or
+         * extend the `Spatie\Mailcoach\Models\Template` model.
+         */
+        'template' => Spatie\Mailcoach\Models\Template::class,
+
+    ],
+
+    'views' => [
+
+        /*
+         * The service provider registers several Blade components that are
+         * used in Mailcoach's views. If you are using the default Mailcoach
+         * views, leave this as true so they work as expected. If you have
+         * your own views and don't need/want Mailcoach to register these
+         * blade components (e.g., because of naming conflicts), you can
+         * change this setting to false and they won't be registered.
+         *
+         * If you change this setting, be sure to run `php artisan view:clear`
+         * so Laravel can recompile your views.
+         */
+        'use_blade_components' => true,
+    ],
 ];
