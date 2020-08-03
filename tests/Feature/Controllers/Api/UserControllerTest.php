@@ -13,10 +13,7 @@ class UserControllerTest extends TestCase
     {
         $user = factory(User::class)->create();
 
-        Sanctum::actingAs(
-            $user
-            ['*']
-        );
+        Sanctum::actingAs($user, ['*']);
 
         $this
             ->getJson('api/user')

@@ -7,11 +7,16 @@ use Tests\TestCase;
 
 class TokensControllerTest extends TestCase
 {
+    public function setUp(): void
+    {
+        parent::setUp();
+
+        $this->authenticate();
+    }
+
     /** @test */
     public function it_can_delete_a_personal_access_token()
     {
-        $this->authenticate();
-
         $token = auth()->user()->personalAccessTokens()->first();
 
         $this
@@ -27,8 +32,6 @@ class TokensControllerTest extends TestCase
     public function it_will_not_delete_a_personal_access_token_belonging_to_another_user()
     {
         $this->withExceptionHandling();
-
-        $this->authenticate();
 
         $anotherUser = factory(User::class)->create();
 
