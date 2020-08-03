@@ -11,14 +11,10 @@
 
 @section('account')
 
-    <x-help>
-        You can use tokens to authenticate against our the Mailcoach. You'll find more info in <a href="https://mailcoach.app/docs">our docs</a>.
-    </x-help>
-
-    <form class="mt-6"
-        action="{{ route('tokens.create') }}"
-        method="POST"
-        data-dirty-check
+    <form class="mb-6"
+          action="{{ route('tokens.create') }}"
+          method="POST"
+          data-dirty-check
     >
         @csrf
 
@@ -45,38 +41,60 @@
     </form>
 
     @if (session()->has('newToken'))
-        Your new token: {{ session()->get('newToken') }}
+        @push('modals')
+            <x-modal :open="true" :title="__('Your new token')" name="token">
+                <p data-confirm-modal-text class="mb-2">
+                    This is your token. Make sure to copy it to a save place.
+                </p>
+                <pre class="max-w-full whitespace-pre-wrap break-all font-mono bg-gray-100">{{ session()->get('newToken') }}</pre>
+
+
+                <div class="form-buttons">
+                    <button type="button" class="button" data-modal-dismiss>
+                        {{ __('OK') }}
+                    </button>
+                </div>
+            </x-modal>
+        @endpush
     @endif
 
-    <table class="table">
-        <thead>
-        <tr>
-            <x-th sort-by="name" sort-default>{{ __('Name') }}</x-th>
-            <x-th sort-by="-name">{{ __('Created at') }}</x-th>
-            <th></th>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach($tokens as $token)
+    @if (count($tokens))
+        <table class="table mb-6">
+            <thead>
             <tr>
-                <td>{{ $token->name }}</td>
-                <td>{{ $token->created_at }}</td>
-                <td class="td-action">
+                <x-th>{{ __('Name') }}</x-th>
+                <x-th>{{ __('Last used at') }}</x-th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach($tokens as $token)
+                <tr>
+                    <td>{{ $token->name }}</td>
+                    <td>{{ $token->last_used_at ?? 'Not used yet' }}</td>
+                    <td class="td-action">
                         <div class="dropdown" data-dropdown>
                             <button class="icon-button" data-dropdown-trigger>
                                 <i class="fas fa-ellipsis-v | dropdown-trigger-rotate"></i>
                             </button>
                             <ul class="dropdown-list dropdown-list-left | hidden" data-dropdown-list>
                                 <li>
-                                    <x-form-button :action="route('tokens.delete', $token)" method="DELETE" data-confirm>
-                                        <x-icon-label icon="fa-trash-alt" :text="__('Delete')" :caution="true" />
+                                    <x-form-button :action="route('tokens.delete', $token)" method="DELETE"
+                                                   data-confirm>
+                                        <x-icon-label icon="fa-trash-alt" :text="__('Delete')" :caution="true"/>
                                     </x-form-button>
                                 </li>
                             </ul>
                         </div>
-                </td>
-            </tr>
-        @endforeach
-        </tbody>
-    </table>
+                    </td>
+                </tr>
+            @endforeach
+            </tbody>
+        </table>
+    @endif
+
+    <x-help>
+        You can use tokens to authenticate against our the Mailcoach. You'll find more info in <a
+            href="https://mailcoach.app/docs">our docs</a>.
+    </x-help>
 @endsection

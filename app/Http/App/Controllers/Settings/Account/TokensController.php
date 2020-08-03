@@ -21,9 +21,7 @@ class TokensController
 
         session()->flash('newToken', $token->plainTextToken);
 
-        flash()->success(__('The token has been deleted.'));
-
-
+        flash()->success(__('The token has been created.'));
 
         return redirect()->route('tokens');
     }
