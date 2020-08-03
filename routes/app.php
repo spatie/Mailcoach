@@ -33,7 +33,7 @@ Route::prefix('settings')->group(function () {
 
         Route::prefix('tokens')->group(function () {
             Route::get('/', [TokensController::class, 'index'])->name('tokens');
-            Route::post('/', [TokensController::class, 'create'])->name('tokens.create');
+            Route::post('/', [TokensController::class, 'store'])->name('tokens.create');
             Route::delete("{personalAccessToken}", [TokensController::class, 'destroy'])
                 ->name('tokens.delete')
                 ->middleware('can:administer,personalAccessToken');

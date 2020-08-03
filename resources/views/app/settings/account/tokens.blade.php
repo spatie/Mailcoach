@@ -11,7 +11,11 @@
 
 @section('account')
 
-    <form
+    <x-help>
+        You can use tokens to authenticate against our the Mailcoach. You'll find more info in <a href="https://mailcoach.app/docs">our docs</a>.
+    </x-help>
+
+    <form class="mt-6"
         action="{{ route('tokens.create') }}"
         method="POST"
         data-dirty-check
@@ -39,6 +43,10 @@
         <p class="form-error">{{ $message }}</p>
         @enderror
     </form>
+
+    @if (session()->has('newToken'))
+        Your new token: {{ session()->get('newToken') }}
+    @endif
 
     <table class="table">
         <thead>

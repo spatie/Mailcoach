@@ -2,7 +2,7 @@
 
 namespace App\Http\App\Controllers\Settings\Account;
 
-use App\Http\App\Requests\UpdatePasswordRequest;
+use App\Http\App\Requests\StoreTokenRequest;
 use App\Models\PersonalAccessToken;
 
 class TokensController
@@ -14,13 +14,18 @@ class TokensController
         ]);
     }
 
-    public function update(UpdatePasswordRequest $request)
+    public function store(StoreTokenRequest $request)
     {
-        auth()->user()->update(['password' => bcrypt($request->password)]);
+        /** @var \Laravel\Sanctum\NewAccessToken $token */
+        $token = auth()->user()->createToken($request->name);
 
-        flash()->success(__('Your password has been updated.'));
+        session()->flash('newToken', $token->plainTextToken);
 
-        return redirect()->action([static::class, 'index']);
+        flash()->success(__('The token has been deleted.'));
+
+
+
+        return redirect()->route('tokens');
     }
 
     public function destroy(PersonalAccessToken $personalAccessToken)
