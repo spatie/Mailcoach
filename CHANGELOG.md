@@ -1,5 +1,9 @@
 # Mailcoach
 
+## 2.2.6 - 2020-08-02
+
+- fix composer.json
+
 ## 2.2.5 - 2020-07-30
 
 - fix publishing of assets after composer create-project
