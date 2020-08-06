@@ -78,7 +78,8 @@
         "post-update-cmd": [
             "@php artisan vendor:publish --tag mailcoach-ui-vendor-views --force",
             "@php artisan vendor:publish --tag mailcoach-assets --force",
-            "@php artisan vendor:publish --tag mailcoach-monaco-assets --force"
+            "@php artisan vendor:publish --tag mailcoach-monaco-assets --force",
+            "@php artisan horizon:publish"
         ]
     }
 }
