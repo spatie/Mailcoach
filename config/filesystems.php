@@ -48,11 +48,6 @@ return [
             'root' => storage_path('app'),
         ],
 
-        'media' => [
-            'driver' => 'local',
-            'root' => public_path('media'),
-        ],
-
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
@@ -67,13 +62,9 @@ return [
             'region' => env('AWS_DEFAULT_REGION'),
             'bucket' => env('AWS_BUCKET'),
             'url' => env('AWS_URL'),
+            'endpoint' => env('AWS_ENDPOINT'),
         ],
 
-        'unlayer' => [
-            'disk_name' => env('MAILCOACH_UPLOAD_DISK', 'public'),
-            'max_width' => 1500,
-            'max_height' => 1500,
-        ],
     ],
 
     /*

@@ -132,7 +132,7 @@ return [
         ],
         'api' => [
             'api',
-            'auth:sanctum',
+            'auth:api',
         ],
     ],
 

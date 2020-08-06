@@ -1,0 +1,64 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateMailcoachUiTables extends Migration
+{
+    public function up()
+    {
+        Schema::table('users', function (Blueprint $table) {
+            $table->timestamp('welcome_valid_until')->nullable();
+        });
+
+        Schema::create('personal_access_tokens', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->morphs('tokenable');
+            $table->string('name');
+            $table->string('token', 64)->unique();
+            $table->text('abilities')->nullable();
+            $table->timestamp('last_used_at')->nullable();
+            $table->timestamps();
+        });
+
+        Schema::create('mailcoach_uploads', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->timestamps();
+        });
+
+        Schema::create('mailcoach_campaign_uploads', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('campaign_id');
+            $table->unsignedBigInteger('upload_id');
+            $table->timestamps();
+
+            $table
+                ->foreign('campaign_id')
+                ->references('id')->on('mailcoach_campaigns')
+                ->onDelete('cascade');
+
+            $table
+                ->foreign('upload_id')
+                ->references('id')->on('mailcoach_uploads')
+                ->onDelete('cascade');
+        });
+
+        Schema::create('mailcoach_template_uploads', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('template_id');
+            $table->unsignedBigInteger('upload_id');
+            $table->timestamps();
+
+            $table
+                ->foreign('template_id')
+                ->references('id')->on('mailcoach_templates')
+                ->onDelete('cascade');
+
+            $table
+                ->foreign('upload_id')
+                ->references('id')->on('mailcoach_uploads')
+                ->onDelete('cascade');
+        });
+    }
+}

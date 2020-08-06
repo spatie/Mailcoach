@@ -3,74 +3,67 @@
 namespace App\Providers;
 
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
-use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Route;
 
 class RouteServiceProvider extends ServiceProvider
 {
-    public function map(Router $router)
+    /**
+     * The path to the "home" route for your application.
+     *
+     * @var string
+     */
+    public const HOME = '/home';
+
+    /**
+     * Define your route model bindings, pattern filters, etc.
+     *
+     * @return void
+     */
+    public function boot()
     {
-        Route::mailcoach('/');
-        Route::sesFeedback('ses-feedback');
-        Route::mailgunFeedback('mailgun-feedback');
-        Route::sendgridFeedback('sendgrid-feedback');
-        Route::postmarkFeedback('postmark-feedback');
+        //
 
-        $this
-            ->mapWebRoutes($router)
-            ->mapAuthRoutes($router)
-            ->mapAppRoutes($router)
-            ->mapApiRoutes($router);
-
-        if (app()->environment('local')) {
-            $this->mapMailRoutes($router);
-        }
+        parent::boot();
     }
 
-    protected function mapWebRoutes(Router $router)
+    /**
+     * Define the routes for the application.
+     *
+     * @return void
+     */
+    public function map()
     {
-        $router
-            ->middleware('web')
+        $this->mapApiRoutes();
+
+        $this->mapWebRoutes();
+
+        //
+    }
+
+    /**
+     * Define the "web" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+    protected function mapWebRoutes()
+    {
+        Route::middleware('web')
             ->group(base_path('routes/web.php'));
-
-        return $this;
     }
 
-    protected function mapAuthRoutes(Router $router): self
+    /**
+     * Define the "api" routes for the application.
+     *
+     * These routes are typically stateless.
+     *
+     * @return void
+     */
+    protected function mapApiRoutes()
     {
-        $router
-            ->middleware(['web', 'guest'])
-            ->group(base_path('routes/auth.php'));
-
-        return $this;
-    }
-
-    protected function mapAppRoutes(Router $router)
-    {
-        $router
-            ->middleware(['web', 'auth'])
-            ->group(base_path('routes/app.php'));
-
-        return $this;
-    }
-
-    protected function mapApiRoutes(Router $router)
-    {
-        $router
-            ->prefix('api')
+        Route::prefix('api')
             ->middleware('api')
             ->group(base_path('routes/api.php'));
-
-        return $this;
-    }
-
-    private function mapMailRoutes(Router $router)
-    {
-        $router
-            ->prefix('mail')
-            ->middleware('web')
-            ->group(base_path('routes/local/mails.php'));
-
-        return $this;
     }
 }

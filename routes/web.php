@@ -1,3 +1,5 @@
 <?php
 
-Route::redirect('/', '/campaigns');
+use Illuminate\Support\Facades\Route;
+
+Route::mailcoachUi('/');

@@ -1,1 +1,1 @@
-@include('app.layouts.partials.health')
+@include('mailcoach-ui::app.layouts.partials.health')
