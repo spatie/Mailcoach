@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f35ad02223de850c4612ad46d88cb4c9",
+    "content-hash": "e7b9836e4d2c0159b58d256f17bc6253",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4854,13 +4854,13 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-mailcoach.git",
-                "reference": "ab0c4d057f14057d74c5f9cb57ffdf0379226b79"
+                "reference": "df3d75bfe72c47bcca82ab3756d56d9efd197891"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.mailcoach.app/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-ab0c4d057f14057d74c5f9cb57ffdf0379226b79-zip-85ed6d.zip",
-                "reference": "ab0c4d057f14057d74c5f9cb57ffdf0379226b79",
-                "shasum": "4921a2d5b707b4f2fd19c19b481a983df77479f9"
+                "url": "https://satis.mailcoach.app/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-df3d75bfe72c47bcca82ab3756d56d9efd197891-zip-8c3e91.zip",
+                "reference": "df3d75bfe72c47bcca82ab3756d56d9efd197891",
+                "shasum": "fde78d80e486083bcef3fc7ecf283287318e4b9d"
             },
             "require": {
                 "cakephp/chronos": "^2.0",
@@ -4963,7 +4963,7 @@
                 "source": "https://github.com/spatie/laravel-mailcoach/tree/v3",
                 "issues": "https://github.com/spatie/laravel-mailcoach/issues"
             },
-            "time": "2020-08-06T11:58:07+00:00"
+            "time": "2020-08-07T10:28:04+00:00"
         },
         {
             "name": "spatie/laravel-mailcoach-mailgun-feedback",
@@ -5773,6 +5773,73 @@
             "time": "2020-03-18T19:08:09+00:00"
         },
         {
+            "name": "spatie/laravel-tail",
+            "version": "4.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-tail.git",
+                "reference": "6adfdebcfa1ec8aa896673f87e2f2b6c9897d698"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-tail/zipball/6adfdebcfa1ec8aa896673f87e2f2b6c9897d698",
+                "reference": "6adfdebcfa1ec8aa896673f87e2f2b6c9897d698",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "~5.8.0|^6.0|^7.0",
+                "illuminate/support": "~5.8.0|^6.0|^7.0",
+                "php": "^7.4",
+                "spatie/ssh": "^1.3",
+                "symfony/process": "^4.0|^5.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^4.6|^5.0",
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\Tail\\TailServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Tail\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://murze.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Easily tail application logs",
+            "homepage": "https://github.com/spatie/laravel-tail",
+            "keywords": [
+                "development",
+                "laravel",
+                "laravel-tail",
+                "log",
+                "tail"
+            ],
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                }
+            ],
+            "time": "2020-06-08T07:52:12+00:00"
+        },
+        {
             "name": "spatie/laravel-validation-rules",
             "version": "2.5.2",
             "source": {
@@ -6029,7 +6096,7 @@
             "dist": {
                 "type": "path",
                 "url": "../mailcoach-ui",
-                "reference": "cb139d5656c4411846ba1c2419af342ee2c3c6bd"
+                "reference": "871990d3e9dd06eeac86923a0bb07a9fdfa79ab6"
             },
             "require": {
                 "laravel/sanctum": "^2.4",
@@ -6059,10 +6126,7 @@
                 "laravel": {
                     "providers": [
                         "Spatie\\MailcoachUi\\MailcoachUiServiceProvider"
-                    ],
-                    "aliases": {
-                        "MailcoachUi": "Spatie\\MailcoachUi\\MailcoachUiFacade"
-                    }
+                    ]
                 }
             },
             "autoload": {
@@ -6089,9 +6153,6 @@
                     "vendor/bin/php-cs-fixer fix --allow-risky=yes"
                 ]
             },
-            "license": [
-                "MIT"
-            ],
             "authors": [
                 {
                     "name": "Freek Van der Herten",
@@ -6101,7 +6162,7 @@
                 }
             ],
             "description": "The UI of the Mailcoach app",
-            "homepage": "https://github.com/spatie/mailcoach-ui",
+            "homepage": "https://mailcoach.app",
             "keywords": [
                 "mailcoach-ui",
                 "spatie"
@@ -6213,6 +6274,61 @@
                 }
             ],
             "time": "2020-07-16T13:47:18+00:00"
+        },
+        {
+            "name": "spatie/ssh",
+            "version": "1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/ssh.git",
+                "reference": "9bfb2d06f4d020d957bb360350dfe224de6fd78d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/ssh/zipball/9bfb2d06f4d020d957bb360350dfe224de6fd78d",
+                "reference": "9bfb2d06f4d020d957bb360350dfe224de6fd78d",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4",
+                "symfony/process": "^4.3 || ^5.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8.2",
+                "spatie/phpunit-snapshot-assertions": "^4.0",
+                "symfony/var-dumper": "^4.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Ssh\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A lightweight package to execute commands over an SSH connection",
+            "homepage": "https://github.com/spatie/ssh",
+            "keywords": [
+                "spatie",
+                "ssh"
+            ],
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                }
+            ],
+            "time": "2020-04-10T14:43:27+00:00"
         },
         {
             "name": "spatie/temporary-directory",

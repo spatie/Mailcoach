@@ -8,24 +8,25 @@
     ],
     "repositories": [
         {
-            "type": "composer",
-            "url": "https://satis.mailcoach.app"
-        },
-        {
             "type": "path",
             "url": "../mailcoach-ui"
+        },
+        {
+            "type": "composer",
+            "url": "https://satis.mailcoach.app"
         }
     ],
     "license": "MIT",
     "require": {
         "php": "^7.4",
-        "spatie/laravel-mailcoach": "v3.x-dev as v2.9",
-        "spatie/mailcoach-ui": "dev-master",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "^7.22.2",
-        "laravel/tinker": "^2.0"
+        "laravel/tinker": "^2.0",
+        "spatie/laravel-mailcoach": "v3.x-dev as v2.9",
+        "spatie/laravel-tail": "^4.2",
+        "spatie/mailcoach-ui": "dev-master"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
