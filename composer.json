@@ -71,11 +71,13 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi",
+            "@php artisan horizon:publish",
             "@php artisan vendor:publish --tag mailcoach-ui-vendor-views --force",
             "@php artisan vendor:publish --tag mailcoach-assets --force",
             "@php artisan vendor:publish --tag mailcoach-monaco-assets --force"
         ],
         "post-update-cmd": [
+            "@php artisan horizon:publish",
             "@php artisan vendor:publish --tag mailcoach-ui-vendor-views --force",
             "@php artisan vendor:publish --tag mailcoach-assets --force",
             "@php artisan vendor:publish --tag mailcoach-monaco-assets --force",
