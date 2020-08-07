@@ -12,16 +12,6 @@ class CreateMailcoachUiTables extends Migration
             $table->timestamp('welcome_valid_until')->nullable();
         });
 
-        Schema::create('personal_access_tokens', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->morphs('tokenable');
-            $table->string('name');
-            $table->string('token', 64)->unique();
-            $table->text('abilities')->nullable();
-            $table->timestamp('last_used_at')->nullable();
-            $table->timestamps();
-        });
-
         Schema::create('mailcoach_uploads', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
