@@ -16,7 +16,7 @@ class ForgotPasswordControllerTest extends TestCase
     /** @var string */
     private $resetUrl;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         parent::setUp();
 
