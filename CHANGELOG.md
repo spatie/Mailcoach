@@ -1,5 +1,9 @@
 # Mailcoach
 
+## 2.3.0 - 2020-09-09
+
+- upgrade to Laravel 8
+
 ## 2.2.6 - 2020-08-02
 
 - fix composer.json
