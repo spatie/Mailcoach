@@ -1,15 +1,13 @@
 <?php
 
-namespace Database\Seeders;
-
-use Database\Factories\TemplateFactory;
 use Illuminate\Database\Seeder;
+use Spatie\Mailcoach\Models\Template;
 
 class TemplateSeeder extends Seeder
 {
     public function run()
     {
-        TemplateFactory::new()->create([
+        factory(Template::class)->create([
             'name' => 'simple',
             'html' => 'dummy content',
         ]);

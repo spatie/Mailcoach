@@ -21,7 +21,7 @@ class SendTestMailController
             'to_email' => 'email',
         ]);
         try {
-            Mail::mailer('mailcoach')->to($request->to_email)->sendNow(new TestMail($request->from_email, $request->to_email));
+            Mail::mailer('mailcoach')->to($request->to_email)->send(new TestMail($request->from_email, $request->to_email));
 
             flash()->success(__('A test mail has been sent to :email. Please check if it arrived.', ['email' => $request->to_email]));
         } catch (Exception $exception) {

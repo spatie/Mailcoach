@@ -25,7 +25,7 @@ class SendTestTransactionalMailController
             'to_email' => 'email',
         ]);
         try {
-            Mail::mailer('mailcoach-transactional')->to($request->to_email)->sendNow((new TransactionalTestMail($request->from_email, $request->to_email)));
+            Mail::mailer('mailcoach-transactional')->to($request->to_email)->send((new TransactionalTestMail($request->from_email, $request->to_email)));
 
             flash()->success(__('A test mail has been sent to :email. Please check if it arrived.', ['email' => $request->to_email]));
         } catch (Exception $exception) {
