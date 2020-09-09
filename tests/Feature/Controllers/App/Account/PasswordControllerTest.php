@@ -14,7 +14,7 @@ class PasswordControllerTest extends TestCase
         $currentPassword = 'current-password';
         $newPassword = 'my-new-password';
 
-        $user = factory(User::class)->create([
+        $user = User::factory()->create([
             'password' => bcrypt($currentPassword),
         ]);
 

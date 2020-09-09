@@ -7,7 +7,7 @@ class TemplateSeeder extends Seeder
 {
     public function run()
     {
-        factory(Template::class)->create([
+        Template::factory()->create([
             'name' => 'simple',
             'html' => 'dummy content',
         ]);

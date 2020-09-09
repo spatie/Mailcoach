@@ -13,24 +13,24 @@ class CampaignSeeder extends Seeder
 {
     public function run()
     {
-        factory(Campaign::class, 1)->create([
+        Campaign::factory()->times(1)->create([
             'status' => CampaignStatus::DRAFT,
             'scheduled_at' => null,
             'email_list_id' => EmailList::all()->random()->id,
         ]);
 
-        factory(Campaign::class, 1)->create([
+        Campaign::factory()->times(1)->create([
             'status' => CampaignStatus::DRAFT,
             'scheduled_at' => faker()->dateTimeBetween('+1 day', '+1 year'),
             'email_list_id' => EmailList::all()->random()->id,
         ]);
 
-        factory(Campaign::class, 1)->create([
+        Campaign::factory()->times(1)->create([
             'status' => CampaignStatus::SENDING,
             'email_list_id' => EmailList::all()->random()->id,
         ]);
 
-        factory(Campaign::class, 5)->create([
+        Campaign::factory()->times(5)->create([
             'status' => CampaignStatus::SENT,
             'track_opens' => true,
             'track_clicks' => true,
@@ -38,7 +38,7 @@ class CampaignSeeder extends Seeder
             'email_list_id' => EmailList::all()->random()->id,
         ])->each(function (Campaign $campaign) {
             foreach (range(1, faker()->numberBetween(1, 10)) as $i) {
-                factory(CampaignLink::class, 10)->create([
+                CampaignLink::factory()->times(10)->create([
                     'campaign_id' => $campaign->id,
                 ]);
             }
@@ -47,7 +47,7 @@ class CampaignSeeder extends Seeder
                 ->subscribers
                 ->each(function (Subscriber $subscriber) use ($campaign) {
                     /** @var Send $send */
-                    $send = factory(Send::class)->create([
+                    $send = Send::factory()->create([
                         'subscriber_id' => $subscriber->id,
                         'campaign_id' => $campaign->id,
                         'sent_at' => $campaign->sent_at,

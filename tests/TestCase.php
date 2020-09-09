@@ -20,7 +20,7 @@ abstract class TestCase extends BaseTestCase
 
     public function authenticate()
     {
-        $user = factory(User::class)->create();
+        $user = User::factory()->create();
 
         $this->actingAs($user);
     }
