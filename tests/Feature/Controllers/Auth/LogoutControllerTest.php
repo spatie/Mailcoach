@@ -12,7 +12,7 @@ class LogoutControllerTest extends TestCase
     /** @test */
     public function it_can_logout()
     {
-        $user = factory(User::class)->create();
+        $user = User::factory()->create();
 
         $this->actingAs($user);
         $this->assertTrue($this->isAuthenticated());

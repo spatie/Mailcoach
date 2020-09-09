@@ -11,7 +11,7 @@ use Spatie\Mailcoach\Models\Subscriber;
 use Spatie\Mailcoach\Models\SubscriberImport;
 
 Route::get('campaign-sent', function () {
-    $campaign = factory(Campaign::class)->create([
+    $campaign = Campaign::factory()->create([
         'sent_to_number_of_subscribers' => 1234,
     ]);
 
@@ -19,7 +19,7 @@ Route::get('campaign-sent', function () {
 });
 
 Route::get('campaign-summary', function () {
-    $campaign = factory(Campaign::class)->create([
+    $campaign = Campaign::factory()->create([
         'sent_to_number_of_subscribers' => 1234,
         'sent_at' => now(),
         'track_opens' => true,
@@ -30,19 +30,19 @@ Route::get('campaign-summary', function () {
 });
 
 Route::get('confirm-subscriber', function () {
-    $subscriber = factory(Subscriber::class)->create();
+    $subscriber = Subscriber::factory()->create();
 
     return new ConfirmSubscriberMail($subscriber);
 });
 
 Route::get('email-list-summary', function () {
-    $emailList = factory(EmailList::class)->create();
+    $emailList = EmailList::factory()->create();
 
     return new EmailListSummaryMail($emailList, now());
 });
 
 Route::get('import-subscribers-result', function () {
-    $subscriberImport = factory(SubscriberImport::class)->create();
+    $subscriberImport = SubscriberImport::factory()->create();
 
     return new ImportSubscribersResultMail($subscriberImport);
 });

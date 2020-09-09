@@ -1,12 +1,29 @@
 <?php
 
-use Faker\Generator;
+namespace Database\Factories;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
 use Spatie\Mailcoach\Models\Template;
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(Template::class, function (Generator $faker) {
-    return [
-        'name' => $faker->word,
-        'html' => $faker->randomHtml()
+class TemplateFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Template::class;
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+        'name' => $this->faker->word,
+        'html' => $this->faker->randomHtml()
     ];
-});
+    }
+}
