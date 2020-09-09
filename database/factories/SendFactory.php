@@ -3,7 +3,6 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Faker\Generator;
 use Spatie\Mailcoach\Models\Campaign;
 use Spatie\Mailcoach\Models\Send;
 use Spatie\Mailcoach\Models\Subscriber;

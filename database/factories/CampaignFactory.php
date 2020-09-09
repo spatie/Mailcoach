@@ -3,7 +3,6 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Faker\Generator;
 use Illuminate\Support\Str;
 use Spatie\Mailcoach\Enums\CampaignStatus;
 use Spatie\Mailcoach\Models\Campaign;

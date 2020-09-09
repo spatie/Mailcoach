@@ -3,7 +3,6 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Faker\Generator;
 use Spatie\Mailcoach\Models\Template;
 
 class TemplateFactory extends Factory

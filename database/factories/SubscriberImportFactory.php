@@ -3,7 +3,6 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Faker\Generator;
 use Spatie\Mailcoach\Enums\SubscriberImportStatus;
 use Spatie\Mailcoach\Models\EmailList;
 use Spatie\Mailcoach\Models\SubscriberImport;
