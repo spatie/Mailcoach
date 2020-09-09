@@ -1,5 +1,7 @@
 <?php
 
+namespace Database\Seeders;
+
 use Illuminate\Database\Seeder;
 use Spatie\Mailcoach\Enums\CampaignStatus;
 use Spatie\Mailcoach\Jobs\CalculateStatisticsJob;
