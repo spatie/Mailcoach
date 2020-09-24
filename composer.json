@@ -68,7 +68,6 @@
             "@php artisan key:generate --ansi",
             "@php artisan vendor:publish --tag mailcoach-migrations",
             "@php artisan vendor:publish --tag mailcoach-ui-migrations",
-            "@php artisan vendor:publish --tag mailcoach-unlayer-migrations",
             "@php artisan mailcoach:prepare-git-ignore",
             "@php artisan mailcoach:execute-composer-hook"
         ],
