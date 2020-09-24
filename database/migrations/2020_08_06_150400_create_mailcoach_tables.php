@@ -72,6 +72,8 @@ class CreateMailcoachTables extends Migration
 
             $table
                 ->unique(['email_list_id', 'email']);
+
+            $table->index(['email_list_id', 'subscribed_at', 'unsubscribed_at'], 'email_list_subscribed_index');
         });
 
         Schema::create('mailcoach_segments', function (Blueprint $table) {
