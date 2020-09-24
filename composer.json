@@ -21,10 +21,9 @@
         "laravel/framework": "^8.0",
         "laravel/horizon": "^5.0",
         "laravel/tinker": "^2.0",
-        "spatie/laravel-mailcoach": "v3.x-dev",
+        "spatie/laravel-mailcoach": "^3.0",
         "spatie/laravel-tail": "^4.2",
         "spatie/mailcoach-ui": "dev-master"
-        "laravel/tinker": "^2.0"
     },
     "require-dev": {
         "facade/ignition": "^2.3.6",
@@ -67,6 +66,9 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi",
+            "@php artisan vendor:publish --tag mailcoach-migrations",
+            "@php artisan vendor:publish --tag mailcoach-ui-migrations",
+            "@php artisan vendor:publish --tag mailcoach-unlayer-migrations",
             "@php artisan mailcoach:execute-composer-hook"
         ],
         "post-update-cmd": [
