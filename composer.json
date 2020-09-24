@@ -13,7 +13,7 @@
         },
         {
             "type": "composer",
-            "url": "https://satis.mailcoach.app"
+            "url": "https://satis.spatie.be"
         }
     ],
     "license": "MIT",
@@ -21,10 +21,11 @@
         "php": "^7.4",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
-        "guzzlehttp/guzzle": "^6.3",
-        "laravel/framework": "^7.22.2",
+        "guzzlehttp/guzzle": "^7.0",
+        "laravel/framework": "^8.0",
+        "laravel/horizon": "^5.0",
         "laravel/tinker": "^2.0",
-        "spatie/laravel-mailcoach": "v3.x-dev as v2.9",
+        "spatie/laravel-mailcoach": "v3.x-dev",
         "spatie/laravel-tail": "^4.2",
         "spatie/mailcoach-ui": "dev-master"
     },
