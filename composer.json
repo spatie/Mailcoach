@@ -8,10 +8,6 @@
     ],
     "repositories": [
         {
-            "type": "path",
-            "url": "../mailcoach-ui"
-        },
-        {
             "type": "composer",
             "url": "https://satis.spatie.be"
         }
