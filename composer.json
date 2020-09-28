@@ -23,7 +23,7 @@
         "laravel/tinker": "^2.0",
         "spatie/laravel-mailcoach": "^3.0",
         "spatie/laravel-tail": "^4.2",
-        "spatie/mailcoach-ui": "dev-master"
+        "spatie/mailcoach-ui": "^1.0"
     },
     "require-dev": {
         "facade/ignition": "^2.3.6",
