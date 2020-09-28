@@ -1,7 +1,6 @@
 {
-    "name": "laravel/laravel",
+    "name": "spatie/mailcoach",
     "type": "project",
-    "description": "The Laravel Framework.",
     "keywords": [
         "mailcoach",
         "spatie"
