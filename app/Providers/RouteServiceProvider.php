@@ -37,6 +37,8 @@ class RouteServiceProvider extends ServiceProvider
     {
         $this->configureRateLimiting();
 
+        Route::mailcoachUi('/');
+
         $this->routes(function () {
             Route::prefix('api')
                 ->middleware('api')
