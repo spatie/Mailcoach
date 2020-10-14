@@ -72,6 +72,10 @@
         ],
         "post-update-cmd": [
             "@php artisan mailcoach:execute-composer-hook"
+        ],
+        "link-mailcoach-assets": [
+            "rm -rf public/vendor/mailcoach",
+            "ln -s $(pwd)/vendor/spatie/laravel-mailcoach/resources/dist public/vendor/mailcoach"
         ]
     }
 }
