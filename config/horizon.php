@@ -69,6 +69,8 @@ return [
     | queued jobs and will be provisioned by Horizon during deployment.
     |
     */
+    
+    'defaults' => [],
 
     'environments' => [
         'production' => [
