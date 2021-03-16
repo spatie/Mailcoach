@@ -13,3 +13,4 @@ yarn-error.log
 
 composer.lock
 resources/views/vendor
+public/vendor/mailcoach
