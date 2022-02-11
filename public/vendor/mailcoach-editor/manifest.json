@@ -1,0 +1,16 @@
+{
+  "resources/js/editor.js": {
+    "file": "assets/editor.04a488fe.js",
+    "src": "resources/js/editor.js",
+    "isEntry": true,
+    "imports": [
+      "_vendor.871f4f88.js"
+    ],
+    "css": [
+      "assets/editor.6fb81450.css"
+    ]
+  },
+  "_vendor.871f4f88.js": {
+    "file": "assets/vendor.871f4f88.js"
+  }
+}

@@ -140,7 +140,7 @@ return [
              * \Spatie\Mailcoach\Domain\Automation\Support\Conditions\Condition
              * interface.
              */
-            'conditions' => []
+            'conditions' => [],
         ],
 
         'perform_on_queue' => [
@@ -228,7 +228,6 @@ return [
      */
     'queue_connection' => '',
 
-
     /*
      * Unauthorized users will get redirected to this route.
      */
@@ -257,7 +256,6 @@ return [
             'auth:sanctum',
         ],
     ],
-
 
     'models' => [
         /*
