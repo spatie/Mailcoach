@@ -1,3 +1,6 @@
+
+[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/support-ukraine.svg?t=1" />](https://supportukrainenow.org)
+
 # Welcome to Mailcoach
 
 [Mailcoach](https://mailcoach.app) is a self-hosted email list manager - in a modern jacket.
