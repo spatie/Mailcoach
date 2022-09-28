@@ -1,4 +1,5 @@
 /node_modules
+/public/build
 /public/hot
 /public/storage
 /storage/*.key
@@ -8,9 +9,8 @@
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
+auth.json
 npm-debug.log
 yarn-error.log
-
-composer.lock
-resources/views/vendor
-public/vendor/mailcoach
+/.idea
+/.vscode

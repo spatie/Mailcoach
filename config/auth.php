@@ -68,7 +68,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => Spatie\MailcoachUi\Models\User::class,
+            'model' => \Spatie\Mailcoach\Domain\Settings\Models\User::class,
         ],
 
         // 'users' => [

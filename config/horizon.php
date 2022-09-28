@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'domain' => null,
+    'domain' => env('HORIZON_DOMAIN'),
 
     /*
     |--------------------------------------------------------------------------
@@ -28,7 +28,7 @@ return [
     |
     */
 
-    'path' => 'horizon',
+    'path' => env('HORIZON_PATH', 'horizon'),
 
     /*
     |--------------------------------------------------------------------------
@@ -164,44 +164,41 @@ return [
     |
     */
 
-    'defaults' => [],
+    'defaults' => [
+        'mailcoach-general' => [
+            'connection' => 'mailcoach-redis',
+            'queue' => ['default', 'mailcoach-schedule', 'mailcoach', 'mailcoach-feedback', 'send-mail', 'send-automation-mail'],
+            'balance' => 'auto',
+            'processes' => 10,
+            'tries' => 2,
+            'timeout' => 60 * 60,
+        ],
+        'mailcoach-heavy' => [
+            'connection' => 'mailcoach-redis',
+            'queue' => ['send-campaign'],
+            'balance' => 'auto',
+            'processes' => 3,
+            'tries' => 1,
+            'timeout' => 60 * 60,
+        ],
+    ],
 
     'environments' => [
         'production' => [
             'mailcoach-general' => [
-                'connection' => 'mailcoach-redis',
-                'queue' => ['default', 'mailcoach', 'mailcoach-feedback', 'send-mail', 'send-automation-mail'],
-                'balance' => 'auto',
                 'processes' => 10,
-                'tries' => 2,
-                'timeout' => 60 * 60,
             ],
             'mailcoach-heavy' => [
-                'connection' => 'mailcoach-redis',
-                'queue' => ['send-campaign'],
-                'balance' => 'auto',
                 'processes' => 3,
-                'tries' => 1,
-                'timeout' => 60 * 60,
             ],
         ],
 
         'local' => [
             'mailcoach-general' => [
-                'connection' => 'mailcoach-redis',
-                'queue' => ['default', 'mailcoach', 'mailcoach-feedback', 'send-mail', 'send-automation-mail'],
-                'balance' => 'auto',
-                'processes' => 10,
-                'tries' => 2,
-                'timeout' => 60 * 60,
+                'processes' => 5,
             ],
             'mailcoach-heavy' => [
-                'connection' => 'mailcoach-redis',
-                'queue' => ['send-campaign'],
-                'balance' => 'auto',
-                'processes' => 3,
-                'tries' => 1,
-                'timeout' => 60 * 60,
+                'processes' => 1,
             ],
         ],
     ],
