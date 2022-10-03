@@ -18,7 +18,7 @@
         "laravel/framework": "^9.19",
         "laravel/horizon": "^5.10",
         "laravel/tinker": "^2.7",
-        "spatie/laravel-mailcoach": "v6.x-dev"
+        "spatie/laravel-mailcoach": "^6.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
