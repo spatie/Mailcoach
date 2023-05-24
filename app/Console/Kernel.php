@@ -28,6 +28,8 @@ class Kernel extends ConsoleKernel
         $schedule->command('mailcoach:cleanup-processed-feedback')->hourly();
         $schedule->command('mailcoach:send-email-list-summary-mail')->mondays()->at('9:00');
         $schedule->command('mailcoach:delete-old-unconfirmed-subscribers')->daily();
+        
+        $schedule->command('horizon:snapshot')->everyFiveMinutes();
     }
 
     /**
