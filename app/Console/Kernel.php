@@ -10,7 +10,6 @@ class Kernel extends ConsoleKernel
     /**
      * Define the application's command schedule.
      *
-     * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
      * @return void
      */
     protected function schedule(Schedule $schedule)
@@ -28,7 +27,7 @@ class Kernel extends ConsoleKernel
         $schedule->command('mailcoach:cleanup-processed-feedback')->hourly();
         $schedule->command('mailcoach:send-email-list-summary-mail')->mondays()->at('9:00');
         $schedule->command('mailcoach:delete-old-unconfirmed-subscribers')->daily();
-        
+
         $schedule->command('horizon:snapshot')->everyFiveMinutes();
     }
 
