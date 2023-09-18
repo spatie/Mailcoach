@@ -16,5 +16,5 @@ yarn-error.log
 /.vscode
 
 composer.lock
-public/vendor/mailcoach
+public/vendor
 database/migrations
