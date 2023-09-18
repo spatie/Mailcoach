@@ -15,19 +15,19 @@
     "require": {
         "php": "^8.1",
         "guzzlehttp/guzzle": "^7.2",
-        "laravel/framework": "^9.19",
-        "laravel/horizon": "^5.10",
-        "laravel/tinker": "^2.7",
+        "laravel/framework": "^10.23",
+        "laravel/horizon": "^5.12",
+        "laravel/tinker": "^2.8",
         "spatie/laravel-mailcoach": "^6.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
         "laravel/pint": "^1.0",
-        "laravel/sail": "^1.0.1",
+        "laravel/sail": "^1.18",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^6.1",
         "phpunit/phpunit": "^9.5.10",
-        "spatie/laravel-ignition": "^1.0"
+        "spatie/laravel-ignition": "^2.0"
     },
     "autoload": {
         "psr-4": {
@@ -72,6 +72,6 @@
             "pestphp/pest-plugin": true
         }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true
 }
