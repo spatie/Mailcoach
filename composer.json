@@ -17,6 +17,7 @@
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^10.23",
         "laravel/horizon": "^5.12",
+        "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
         "spatie/laravel-mailcoach": "v7.x-dev"
     },
