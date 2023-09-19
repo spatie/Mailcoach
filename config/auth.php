@@ -1,5 +1,7 @@
 <?php
 
+use App\User;
+
 return [
 
     /*
@@ -68,7 +70,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => \Spatie\Mailcoach\Domain\Settings\Models\User::class,
+            'model' => User::class,
         ],
 
         // 'users' => [
