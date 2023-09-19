@@ -18,7 +18,7 @@
         "laravel/framework": "^10.23",
         "laravel/horizon": "^5.12",
         "laravel/tinker": "^2.8",
-        "spatie/laravel-mailcoach": "^6.0"
+        "spatie/laravel-mailcoach": "v7.x-dev"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
@@ -72,6 +72,6 @@
             "pestphp/pest-plugin": true
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true
 }
