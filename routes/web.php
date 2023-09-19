@@ -12,6 +12,10 @@ use App\Livewire\UsersComponent;
 use Illuminate\Support\Facades\Route;
 use Spatie\Mailcoach\Http\App\Middleware\BootstrapSettingsNavigation;
 
+Route::group([ 'middleware' => ['guest'] ], function(){
+    Route::redirect('/', '/login');
+});
+
 Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('login', [LoginController::class, 'login']);
 
