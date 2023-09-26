@@ -4,7 +4,12 @@ namespace App\Console\Commands;
 
 use App\User;
 use Illuminate\Console\Command;
+use Illuminate\Contracts\Auth\Authenticatable;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+
+use function Laravel\Prompts\password;
+use function Laravel\Prompts\text;
 
 class MakeUserCommand extends Command
 {
@@ -12,53 +17,52 @@ class MakeUserCommand extends Command
 
     protected $description = 'Create a user with credentials.';
 
-    public function handle()
+    public function handle(): int
     {
-        $username = $this->option('username');
-        $email = $this->option('email');
-        $password = $this->option('password');
+        User::create($this->requestData());
 
-        if (! $username) {
-            $username = $this->ask("What is the user's name?");
-        }
+        return self::SUCCESS;
+    }
 
-        if (! $email) {
-            $email = $this->ask('What is the email address?');
-        }
+    /** @return array{'username': string, 'email': string, 'password': string} */
+    protected function requestData(): array
+    {
+        return [
+            'name' => $this->option('username') ?? text(
+                    label: 'Username',
+                    required: true,
+                ),
 
-        if (! $password) {
-            $password = $this->secret('What is the password?');
-        }
+            'email' => $this->option('email') ?? text(
+                    label: 'Email address',
+                    required: true,
+                    validate: fn (string $value) => match (true) {
+                        ! filter_var($value, FILTER_VALIDATE_EMAIL) => 'The email address must be valid.',
+                        User::where('email', $value)->exists() => 'A user with this email address already exists.',
+                        ! is_null($error = $this->verifyDns($value)) => $error,
+                        default => null,
+                    },
+                ),
 
+            'password' => Hash::make($this->option('password') ?? password(
+                label: 'Password',
+                required: true,
+            )),
+        ];
+    }
+
+    protected function verifyDns($email): ?string
+    {
         $validator = Validator::make([
-            'username' => $username,
             'email' => $email,
-            'password' => $password,
         ], [
-            'username' => ['required'],
-            'email' => ['required', 'email:rfc,dns', 'unique:users,email'],
-            'password' => ['required', 'min:8'],
+            'email' => ['email:rfc,dns'],
         ]);
 
         if ($validator->fails()) {
-            $this->info('User not created. See error messages below:');
-
-            foreach ($validator->errors()->all() as $error) {
-                $this->error($error);
-            }
-
-            return self::FAILURE;
+            return $validator->errors()->first();
         }
 
-        User::create([
-            'name' => $username,
-            'email' => $email,
-            'password' => bcrypt($password),
-            'email_verified_at' => now(),
-        ]);
-
-        $this->info("User {$username} created!");
-
-        return self::SUCCESS;
+        return null;
     }
 }
