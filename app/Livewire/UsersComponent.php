@@ -6,10 +6,12 @@ use App\User;
 use Closure;
 use Filament\Tables\Actions\Action;
 use Filament\Tables\Columns\TextColumn;
+use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
+use Spatie\Mailcoach\Livewire\TableComponent;
 
-class UsersComponent extends Component
+class UsersComponent extends TableComponent
 {
     public function getTitle(): string
     {
@@ -44,7 +46,7 @@ class UsersComponent extends Component
         notify(__mc('The user has been deleted.'));
     }
 
-    protected function getTableQuery()
+    protected function getTableQuery(): Builder
     {
         return User::query();
     }
