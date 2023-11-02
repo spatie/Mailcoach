@@ -15,19 +15,20 @@
     "require": {
         "php": "^8.1",
         "guzzlehttp/guzzle": "^7.2",
-        "laravel/framework": "^9.19",
-        "laravel/horizon": "^5.10",
-        "laravel/tinker": "^2.7",
-        "spatie/laravel-mailcoach": "^6.0"
+        "laravel/framework": "^10.23",
+        "laravel/horizon": "^5.12",
+        "laravel/sanctum": "^3.3",
+        "laravel/tinker": "^2.8",
+        "spatie/laravel-mailcoach": "v7.x-dev"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
         "laravel/pint": "^1.0",
-        "laravel/sail": "^1.0.1",
+        "laravel/sail": "^1.18",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^6.1",
         "phpunit/phpunit": "^9.5.10",
-        "spatie/laravel-ignition": "^1.0"
+        "spatie/laravel-ignition": "^2.0"
     },
     "autoload": {
         "psr-4": {
@@ -44,18 +45,18 @@
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover --ansi"
+            "@php artisan package:discover --ansi",
+            "@php artisan filament:upgrade"
         ],
         "post-update-cmd": [
-            "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
-            "@php artisan mailcoach:publish"
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
         ],
         "post-root-package-install": [
-            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
+            "@php -r \"rename('.gitignore.example', '.gitignore');\""
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi",
-            "@php artisan mailcoach:prepare-git-ignore",
             "@php artisan mailcoach:publish"
         ]
     },

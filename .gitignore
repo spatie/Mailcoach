@@ -6,7 +6,7 @@
 /vendor
 .env
 .env.backup
-.phpunit.result.cache
+/.phpunit.cache
 Homestead.json
 Homestead.yaml
 auth.json
@@ -16,4 +16,7 @@ yarn-error.log
 /.vscode
 
 composer.lock
-public/vendor/mailcoach
+public/vendor
+public/js/filament
+public/css/filament
+database/migrations
