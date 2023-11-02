@@ -19,7 +19,7 @@
         "laravel/horizon": "^5.12",
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
-        "spatie/laravel-mailcoach": "v7.x-dev"
+        "spatie/laravel-mailcoach": "^7.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
