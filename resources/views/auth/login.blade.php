@@ -44,7 +44,7 @@
         <x-mailcoach::form-buttons>
             <x-mailcoach::button :label="__mc('Log in')" />
 
-            @if (Route::has('mailcoach.forgot-password'))
+            @if (Route::has('forgot-password'))
                 <a class="link ml-2" href="{{ route('forgot-password') }}">
                     {{ __mc('Forgot Your Password?') }}
                 </a>
