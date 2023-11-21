@@ -26,5 +26,5 @@ coverage
 .php_cs.cache
 .php-cs-fixer.cache
 node_modules
-mix-manifest.json
+/mix-manifest.json
 dump.rdb
