@@ -1,18 +1,14 @@
-# Welcome to Mailcoach
+# Mailcoach Self-Hosted
 
-[Mailcoach](https://mailcoach.app) is a self-hosted email list manager - in a modern jacket.
+Powerful email marketing, automations and transactional emails, seamlessly integrated into your Laravel application.
 
-It features:
-- Subscribers and lists management
-- Subscribe, double opt-in and unsubscribe flows
-- HTML templates with drop-in variables
-- Drafts, previews and test mails
-- Send newsletters to an unlimited amount of subscribers
-- Statistics and tracking of opens and clicks
+Mailcoach Self-Hosted lets you manage your contact lists and send marketing, automated and transactional emails from within Laravel.
 
-In order to be able to install all necessary dependencies you need a mailcoach license you can buy at [mailcoach.app](https://mailcoach.app)
+- Send marketing emails with all the features you need—including segmentation, split testing, and helpful analytics.
+- Automate your email marketing and create powerful workflows for onboarding or generating leads.
+- Edit, send and track transactional emails directly in Mailcoach
 
-Read our documentation on [how to get started](https://mailcoach.app/docs).
+Read our documentation on [how to get started](https://mailcoach.app/self-hosted).
 
 ## Support us
 
