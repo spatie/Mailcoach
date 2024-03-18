@@ -1,3 +1,5 @@
+<img width="450" alt="Mailcoach" src="https://github.com/spatie/Mailcoach/assets/3626559/be10e73d-e1f5-42ea-870f-38c40176939e">
+
 # Mailcoach Self-Hosted
 
 Powerful email marketing, automations and transactional emails, seamlessly integrated into your Laravel application.
