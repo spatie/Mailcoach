@@ -2,14 +2,23 @@
 
 namespace App\Livewire;
 
-use App\Models\User;
+use App\User;
+use Filament\Actions\Action;
+use Filament\Actions\Concerns\InteractsWithActions;
+use Filament\Actions\Contracts\HasActions;
+use Filament\Forms\Concerns\InteractsWithForms;
+use Filament\Forms\Contracts\HasForms;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 use Livewire\Component;
+use Spatie\WelcomeNotification\WelcomeNotification;
 
-class CreateUserComponent extends Component
+class CreateUserComponent extends Component implements HasActions, HasForms
 {
+    use InteractsWithActions;
+    use InteractsWithForms;
+
     public string $email = '';
 
     public string $name = '';

@@ -36,11 +36,11 @@
     </form>
 
     <x-mailcoach::fieldset card :legend="__mc('API Tokens')">
-        <x-mailcoach::help>
+        <x-mailcoach::alert type="help">
             {!! __mc('You can use tokens to authenticate with the Mailcoach API. You\'ll find more info in <a href=":docsUrl" target="_blank">our docs</a>.', [
-                    'docsUrl' => 'https://mailcoach.app/docs'
-                    ]) !!}
-        </x-mailcoach::help>
+                'docsUrl' => 'https://mailcoach.app/docs'
+            ]) !!}
+        </x-mailcoach::alert>
 
         <form
             wire:submit="saveToken"
@@ -71,40 +71,39 @@
 
 
         @if ($newToken)
-            <x-mailcoach::help>
+            <x-mailcoach::alert type="help">
                 <p class="mb-2">
                     {{ __mc('We will display this token only once. Make sure to copy it to a safe place.') }}
                 </p>
 
                 <x-mailcoach::code-copy :code="$newToken"/>
-            </x-mailcoach::help>
+            </x-mailcoach::alert>
         @endif
-    </x-mailcoach::fieldset>
 
-    @if (count($tokens))
-        <x-mailcoach::card class="p-0">
-            <table class="table-styled">
+        @if (count($tokens))
+            <table class="fi-ta fi-ta-table min-w-full border-separate">
                 <thead>
                 <tr>
-                    <x-mailcoach::th>{{ __mc('Name') }}</x-mailcoach::th>
-                    <x-mailcoach::th>{{ __mc('Last used at') }}</x-mailcoach::th>
+                    <th class="fi-ta-cell fi-ta-text-item px-3 py-4 text-left">{{ __mc('Name') }}</th>
+                    <th class="fi-ta-cell fi-ta-text-item px-3 py-4 text-left">{{ __mc('Last used at') }}</th>
                     <th></th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach($tokens as $token)
-                    <tr>
-                        <td>{{ $token->name }}</td>
-                        <td>{{ $token->last_used_at ?? 'Not used yet' }}</td>
-                        <td class="td-action">
-                            <x-mailcoach::confirm-button :confirm-text="__mc('Are you sure you want to delete this token?')" on-confirm="() => $wire.deleteToken({{ $token->id }})">
-                                <x-mailcoach::icon-label icon="far fa-trash-alt" :caution="true"/>
-                            </x-mailcoach::confirm-button>
+                    <tr class="fi-ta-row">
+                        <td class="fi-ta-cell fi-ta-text-item px-3 py-4">{{ $token->name }}</td>
+                        <td class="fi-ta-cell fi-ta-text-item px-3 py-4">{{ $token->last_used_at ?? 'Not used yet' }}</td>
+                        <td class="fi-ta-cell fi-ta-text-item px-3 py-4 text-right">
+                            {{ ($this->deleteTokenAction)(['token' => $token->id]) }}
                         </td>
                     </tr>
                 @endforeach
                 </tbody>
             </table>
-        </x-mailcoach::card>
-    @endif
+        @endif
+    </x-mailcoach::fieldset>
+
+
+    <x-filament-actions::modals />
 </div>

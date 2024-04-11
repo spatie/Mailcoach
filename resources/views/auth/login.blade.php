@@ -1,54 +1,41 @@
-@extends('auth.layout', ['title' => __mc('Log in')])
-
-@section('content')
-    <h1 class="markup-h2">{{ __mc('Log in') }}</h1>
-
-    <form class="form-grid" method="POST" action="{{ route('login') }}">
-        @csrf
-
-        <div class="form-field">
-            @error('email')
-            <p class="form-error" role="alert">
-                {{ $message }}
-            </p>
-            @enderror
-
-            <label for="email" class="label">{{ __mc('Email') }}</label>
-
-            <input id="email" type="email" class="input @error('email') is-invalid @enderror" name="email"
-                   value="{{ old('email') }}" required autocomplete="email" autofocus>
+<x-mailcoach::layout :title="__mc('Login')" hide-footer hide-nav>
+    <div class="flex flex-col gap-6 justify-center mt-12">
+        <div class="w-20 mx-auto">
+            @include('mailcoach::app.layouts.partials.logoSvg')
         </div>
+        <x-mailcoach::fieldset class="w-full max-w-md mx-auto" card :legend="__mc('Log in')">
+            <form class="form-grid" method="POST" action="{{ route('login') }}">
+                @csrf
 
-        <div class="form-field">
-            @error('password')
-            <p class="form-error" role="alert">
-                {{ $message }}
-            </p>
-            @enderror
+                <x-mailcoach::text-field
+                    :label="__mc('Email')"
+                    name="email"
+                    type="email"
+                    autofocus
+                    autocomplete="email"
+                    required
+                />
 
-            <label for="password" class="label">{{ __mc('Password') }}</label>
+                <x-mailcoach::text-field
+                    :label="__mc('Password')"
+                    name="password"
+                    type="password"
+                    autocomplete="current-password"
+                    required
+                />
 
-            <input id="password" type="password" class="input @error('password') is-invalid @enderror"
-                   name="password" required autocomplete="current-password">
-        </div>
+                <x-mailcoach::form-buttons>
+                    <x-mailcoach::button :label="__mc('Log in')" />
 
-        <div class="form-field">
-            <label class="checkbox-label" for="remember">
-                <input class="checkbox" type="checkbox" name="remember" id="remember"
-                    {{ old('remember') ? 'checked' : '' }}>
-
-                {{ __mc('Remember me next time') }}
-            </label>
-        </div>
-
-        <x-mailcoach::form-buttons>
-            <x-mailcoach::button :label="__mc('Log in')" />
-
-            @if (Route::has('forgot-password'))
-                <a class="link ml-2" href="{{ route('forgot-password') }}">
-                    {{ __mc('Forgot Your Password?') }}
-                </a>
-            @endif
-        </x-mailcoach::form-buttons>
-    </form>
-@endsection
+                    @if (Route::has('forgot-password'))
+                        <a class="ml-3" href="{{ route('forgot-password') }}">
+                            <x-mailcoach::button-link
+                                :label="__mc('Forgot Your Password?')"
+                            />
+                        </a>
+                    @endif
+                </x-mailcoach::form-buttons>
+            </form>
+        </x-mailcoach::fieldset>
+    </div>
+</x-mailcoach::layout>

@@ -21,6 +21,6 @@ class WelcomeController extends BaseWelcomeController
     {
         notify(__mc('Your password has been saved.'));
 
-        return redirect()->route('mailcoach.campaigns');
+        return redirect()->route('mailcoach.dashboard');
     }
 }

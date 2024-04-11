@@ -2,14 +2,21 @@
 
 namespace App\Livewire;
 
+use Filament\Actions\Action;
+use Filament\Actions\Concerns\InteractsWithActions;
+use Filament\Actions\Contracts\HasActions;
+use Filament\Forms\Concerns\InteractsWithForms;
+use Filament\Forms\Contracts\HasForms;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
-use Laravel\Sanctum\PersonalAccessToken;
 use Livewire\Component;
 
-class AccountComponent extends Component
+class AccountComponent extends Component implements HasForms, HasActions
 {
+    use InteractsWithActions;
+    use InteractsWithForms;
+
     public string $email;
 
     public string $name;
@@ -77,13 +84,28 @@ class AccountComponent extends Component
         $this->tokenName = '';
     }
 
-    public function deleteToken(PersonalAccessToken $token)
+    public function deleteTokenAction(): Action
     {
-        abort_unless($token?->tokenable_id === Auth::id(), 403);
+        return Action::make('deleteToken')
+            ->requiresConfirmation()
+            ->icon('heroicon-s-trash')
+            ->color('danger')
+            ->link()
+            ->label('')
+            ->tooltip(__mc('Delete token'))
+            ->modalIcon('heroicon-s-trash')
+            ->modalHeading(__mc('Delete token'))
+            ->modalDescription(__mc('Are you sure you want to delete this token?'))
+            ->modalCloseButton(false)
+            ->action(function (array $arguments) {
+                $token = Auth::user()->personalAccessTokens->find($arguments['token']);
 
-        $token->delete();
+                abort_unless($token, 404);
 
-        notify(__mc('The token has been deleted.'));
+                $token->delete();
+
+                notify(__mc('The token has been deleted.'));
+            });
     }
 
     public function render()

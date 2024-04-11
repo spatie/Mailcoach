@@ -17,6 +17,7 @@ Schedule::command('mailcoach:run-automation-actions')->everyMinute();
 
 Schedule::command('mailcoach:calculate-statistics')->everyMinute();
 Schedule::command('mailcoach:calculate-automation-mail-statistics')->everyMinute();
+Schedule::command('mailcoach:calculate-transactional-statistics')->everyMinute();
 Schedule::command('mailcoach:send-campaign-summary-mail')->hourly();
 Schedule::command('mailcoach:cleanup-processed-feedback')->hourly();
 Schedule::command('mailcoach:send-email-list-summary-mail')->mondays()->at('9:00');

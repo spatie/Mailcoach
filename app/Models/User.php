@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Laravel\Sanctum\PersonalAccessToken;
 use Spatie\Mailcoach\Domain\Settings\Models\MailcoachUser;
 use Spatie\Mailcoach\Domain\Shared\Traits\UsesMailcoachModels;
 use Spatie\WelcomeNotification\ReceivesWelcomeNotification;
@@ -48,7 +49,7 @@ class User extends \Illuminate\Foundation\Auth\User implements MailcoachUser
 
     public function personalAccessTokens(): MorphMany
     {
-        return $this->morphMany(self::getPersonalAccessTokenClass(), 'tokenable');
+        return $this->morphMany(PersonalAccessToken::class, 'tokenable');
     }
 
     public function canViewMailcoach(): bool

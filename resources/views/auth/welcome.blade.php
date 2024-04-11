@@ -1,40 +1,35 @@
-@extends('auth.layout', ['title' => __mc('Welcome')])
-@section('content')
-    <h1 class="markup-h2">{{ __mc('Welcome') }}</h1>
-
-    <form class="form-grid" method="POST">
-        @csrf
-
-        <input type="hidden" name="email" value="{{ $user->email }}"/>
-
-        <div class="form-field">
-            @error('password')
-            <p class="form-error" role="alert">
-                {{ $message }}
-            </p>
-            @enderror
-
-            <label for="password" class="label">{{ __mc('Password') }}</label>
-
-            <input id="password" type="password" class="input @error('password') is-invalid @enderror"
-                   name="password" required autocomplete="new-password">
+<x-mailcoach::layout :title="__mc('Welcome')" hide-footer hide-nav>
+    <div class="flex flex-col gap-6 justify-center mt-12">
+        <div class="w-20 mx-auto">
+            @include('mailcoach::app.layouts.partials.logoSvg')
         </div>
+        <x-mailcoach::fieldset class="w-full max-w-md mx-auto" card :legend="__mc('Welcome')">
+            <p>{{ __mc('Welcome to Mailcoach! Choose a password:') }}</p>
+            <form class="form-grid" method="POST">
+                @csrf
 
-        <div class="form-field">
-            @error('password_confirmation')
-            <p class="form-error" role="alert">
-                {{ $message }}
-            </p>
-            @enderror
+                <input type="hidden" name="email" value="{{ $user->email }}"/>
 
-            <label for="password_confirmation" class="label">{{ __mc('Confirm Password') }}</label>
+                <x-mailcoach::text-field
+                    :label="__mc('Password')"
+                    name="password"
+                    type="password"
+                    autocomplete="new-password"
+                    required
+                />
 
-            <input id="password_confirmation" type="password" class="input @error('password_confirmation') is-invalid @enderror"
-                   name="password_confirmation" required autocomplete="new-password">
-        </div>
+                <x-mailcoach::text-field
+                    :label="__mc('Confirm password')"
+                    name="password_confirmation"
+                    type="password"
+                    autocomplete="new-password"
+                    required
+                />
 
-        <x-mailcoach::form-buttons>
-            <x-mailcoach::button :label="__mc('Save password and login')" />
-        </x-mailcoach::form-buttons>
-    </form>
-@endsection
+                <x-mailcoach::form-buttons>
+                    <x-mailcoach::button :label="__mc('Save password and login')" />
+                </x-mailcoach::form-buttons>
+            </form>
+        </x-mailcoach::fieldset>
+    </div>
+</x-mailcoach::layout>
