@@ -2,7 +2,7 @@
 
 namespace App\Livewire;
 
-use App\User;
+use App\Models\User;
 use Closure;
 use Filament\Tables\Actions\Action;
 use Filament\Tables\Columns\TextColumn;

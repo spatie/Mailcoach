@@ -3,11 +3,12 @@
 namespace App\Listeners;
 
 use Spatie\Mailcoach\Domain\Settings\Support\MenuItem;
+use Spatie\Mailcoach\Domain\Shared\Events\ServingMailcoach;
 use Spatie\Mailcoach\Mailcoach;
 
 class SetupMailcoach
 {
-    public function handle(): void
+    public function handle(ServingMailcoach $event): void
     {
         Mailcoach::addUserMenuItemsBefore(
             MenuItem::make()
