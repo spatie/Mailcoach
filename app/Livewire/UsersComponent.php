@@ -2,13 +2,12 @@
 
 namespace App\Livewire;
 
-use App\User;
+use App\Models\User;
 use Closure;
 use Filament\Tables\Actions\Action;
 use Filament\Tables\Columns\TextColumn;
 use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Auth;
-use Livewire\Component;
 use Spatie\Mailcoach\Livewire\TableComponent;
 
 class UsersComponent extends TableComponent

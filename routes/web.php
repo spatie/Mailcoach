@@ -12,7 +12,7 @@ use App\Livewire\UsersComponent;
 use Illuminate\Support\Facades\Route;
 use Spatie\Mailcoach\Http\App\Middleware\BootstrapSettingsNavigation;
 
-Route::group([ 'middleware' => ['guest'] ], function(){
+Route::middleware('guest')->group(function () {
     Route::redirect('/', '/login');
 });
 
@@ -25,12 +25,12 @@ Route::post('forgot-password', [ForgotPasswordController::class, 'sendResetLinkE
 Route::get('reset-password', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
 Route::post('reset-password', [ResetPasswordController::class, 'reset'])->name('password.update');
 
-Route::group(['middleware' => ['web', WelcomesNewUsers::class]], function () {
+Route::middleware('web', WelcomesNewUsers::class)->group(function () {
     Route::get('welcome/{user}', [WelcomeController::class, 'showWelcomeForm'])->name('welcome');
     Route::post('welcome/{user}', [WelcomeController::class, 'savePassword']);
 });
 
-Route::group(['middleware' => 'auth'], function () {
+Route::middleware('auth')->group(function () {
     Route::post('logout', LogoutController::class)->name('logout');
 
     Route::middleware(array_merge(config('mailcoach.middleware.web'), [

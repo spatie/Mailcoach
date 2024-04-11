@@ -10,9 +10,9 @@ use Illuminate\Http\Request;
 
 class ForgotPasswordController
 {
-    use SendsPasswordResetEmails;
     use AuthorizesRequests;
     use DispatchesJobs;
+    use SendsPasswordResetEmails;
     use ValidatesRequests;
 
     public function showLinkRequestForm()
