@@ -45,6 +45,5 @@ class AppServiceProvider extends ServiceProvider
 
         Route::mailcoach('/');
 
-
     }
 }

@@ -8,7 +8,6 @@ Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->purpose('Display an inspiring quote')->hourly();
 
-
 Schedule::command('mailcoach:send-automation-mails')->everyMinute();
 Schedule::command('mailcoach:send-scheduled-campaigns')->everyMinute();
 Schedule::command('mailcoach:send-campaign-mails')->everyMinute();

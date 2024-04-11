@@ -1,7 +1,5 @@
 <?php
 
-use App\User;
-
 return [
 
     'guards' => [
