@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 use Livewire\Component;
-use Spatie\WelcomeNotification\WelcomeNotification;
 
 class CreateUserComponent extends Component
 {

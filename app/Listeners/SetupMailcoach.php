@@ -2,8 +2,8 @@
 
 namespace App\Listeners;
 
-use Spatie\Mailcoach\Mailcoach;
 use Spatie\Mailcoach\Domain\Settings\Support\MenuItem;
+use Spatie\Mailcoach\Mailcoach;
 
 class SetupMailcoach
 {

@@ -10,9 +10,9 @@ use Illuminate\Http\Request;
 
 class ResetPasswordController
 {
-    use ResetsPasswords;
     use AuthorizesRequests;
     use DispatchesJobs;
+    use ResetsPasswords;
     use ValidatesRequests;
 
     public function showResetForm(Request $request)

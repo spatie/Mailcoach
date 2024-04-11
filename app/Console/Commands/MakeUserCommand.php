@@ -4,7 +4,6 @@ namespace App\Console\Commands;
 
 use App\User;
 use Illuminate\Console\Command;
-use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -29,20 +28,20 @@ class MakeUserCommand extends Command
     {
         return [
             'name' => $this->option('username') ?? text(
-                    label: 'Username',
-                    required: true,
-                ),
+                label: 'Username',
+                required: true,
+            ),
 
             'email' => $this->option('email') ?? text(
-                    label: 'Email address',
-                    required: true,
-                    validate: fn (string $value) => match (true) {
-                        ! filter_var($value, FILTER_VALIDATE_EMAIL) => 'The email address must be valid.',
-                        User::where('email', $value)->exists() => 'A user with this email address already exists.',
-                        ! is_null($error = $this->verifyDns($value)) => $error,
-                        default => null,
-                    },
-                ),
+                label: 'Email address',
+                required: true,
+                validate: fn (string $value) => match (true) {
+                    ! filter_var($value, FILTER_VALIDATE_EMAIL) => 'The email address must be valid.',
+                    User::where('email', $value)->exists() => 'A user with this email address already exists.',
+                    ! is_null($error = $this->verifyDns($value)) => $error,
+                    default => null,
+                },
+            ),
 
             'password' => Hash::make($this->option('password') ?? password(
                 label: 'Password',
