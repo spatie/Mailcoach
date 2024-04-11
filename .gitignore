@@ -20,3 +20,5 @@ public/vendor
 public/js/filament
 public/css/filament
 database/migrations
+
+/.phpunit.cache
