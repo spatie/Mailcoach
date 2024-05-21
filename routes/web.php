@@ -22,7 +22,7 @@ Route::post('login', [LoginController::class, 'login']);
 Route::get('forgot-password', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('forgot-password');
 Route::post('forgot-password', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
 
-Route::get('reset-password', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
+Route::get('reset-password', [ResetPasswordController::class, 'showResetForm'])->name('mailcoach.password.reset');
 Route::post('reset-password', [ResetPasswordController::class, 'reset'])->name('password.update');
 
 Route::middleware('web', WelcomesNewUsers::class)->group(function () {
