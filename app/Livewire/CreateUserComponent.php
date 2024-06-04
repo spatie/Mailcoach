@@ -2,7 +2,7 @@
 
 namespace App\Livewire;
 
-use App\User;
+use App\Models\User;
 use Filament\Actions\Action;
 use Filament\Actions\Concerns\InteractsWithActions;
 use Filament\Actions\Contracts\HasActions;
