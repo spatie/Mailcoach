@@ -22,5 +22,3 @@ Schedule::command('mailcoach:send-campaign-summary-mail')->hourly();
 Schedule::command('mailcoach:cleanup-processed-feedback')->hourly();
 Schedule::command('mailcoach:send-email-list-summary-mail')->mondays()->at('9:00');
 Schedule::command('mailcoach:delete-old-unconfirmed-subscribers')->daily();
-
-Schedule::command('horizon:snapshot')->everyFiveMinutes();
