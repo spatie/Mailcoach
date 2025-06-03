@@ -11,15 +11,6 @@ use Illuminate\Support\ServiceProvider;
 class AppServiceProvider extends ServiceProvider
 {
     /**
-     * The path to the "home" route for your application.
-     *
-     * Typically, users are redirected here after authentication.
-     *
-     * @var string
-     */
-    public const HOME = '/dashboard';
-
-    /**
      * Register any application services.
      */
     public function register(): void
@@ -44,6 +35,5 @@ class AppServiceProvider extends ServiceProvider
         });
 
         Route::mailcoach('/');
-
     }
 }

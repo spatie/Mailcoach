@@ -2,7 +2,10 @@
 
 namespace App\Models;
 
+// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Laravel\Sanctum\PersonalAccessToken;
@@ -10,8 +13,10 @@ use Spatie\Mailcoach\Domain\Settings\Models\MailcoachUser;
 use Spatie\Mailcoach\Domain\Shared\Traits\UsesMailcoachModels;
 use Spatie\WelcomeNotification\ReceivesWelcomeNotification;
 
-class User extends \Illuminate\Foundation\Auth\User implements MailcoachUser
+class User extends Authenticatable implements MailcoachUser
 {
+    /** @use HasFactory<\Database\Factories\UserFactory> */
+    use HasFactory, Notifiable;
     use HasApiTokens;
     use Notifiable;
     use ReceivesWelcomeNotification;
@@ -20,19 +25,22 @@ class User extends \Illuminate\Foundation\Auth\User implements MailcoachUser
     /**
      * The attributes that are mass assignable.
      *
-     * @var array
+     * @var list<string>
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name',
+        'email',
+        'password',
     ];
 
     /**
-     * The attributes that should be hidden for arrays.
+     * The attributes that should be hidden for serialization.
      *
-     * @var array
+     * @var list<string>
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
+        'remember_token',
     ];
 
     /**
@@ -44,6 +52,7 @@ class User extends \Illuminate\Foundation\Auth\User implements MailcoachUser
     {
         return [
             'email_verified_at' => 'datetime',
+            'password' => 'hashed',
         ];
     }
 
