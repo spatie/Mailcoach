@@ -14,7 +14,7 @@ Read our documentation on [how to get started](https://mailcoach.app/self-hosted
 
 ## Support us
 
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/mailcoach.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/Mailcoach)
+[<img src="https://spatie.be/github-ad-image/Mailcoach.jpg" width="419px" />](https://spatie.be/github-ad-click/Mailcoach)
 
 We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
 
